@@ -1,0 +1,63 @@
+
+# Quarto
+/.quarto/
+/_site/
+/_book/
+/.luarc.json
+
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log
+
+# Package manager
+package-lock.json
+yarn.lock
+
+# Build artifacts
+*.html.map
+*.js.map
+
+# Firebase
+.firebase/
+.firebaserc
+firebase-debug.log
+
+# Project-specific files to ignore
+kwiz-website.Rproj
+QUICK_START.md
+START_HERE.txt
+logo.jpg
+styles.css
+blog.qmd
+FILE_STRUCTURE.txt
+mnt/
+custom.scss
+PROJECT_STRUCTURE.txt
+README.md
+CUSTOMIZATION_CHECKLIST.md
+PROJECT_SUMMARY.md

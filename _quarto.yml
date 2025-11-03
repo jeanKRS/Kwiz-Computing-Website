@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: docs
+  
+website:
+  title: "Kwiz Computing Technologies"
+  favicon: images/icon.png
+  navbar:
+    logo: images/logo.jpg
+    background: "#1a5e4a"
+    foreground: "#ffffff"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Services"
+        href: services.qmd
+      - text: "Blog"
+        href: blog/blog.qmd
+      - text: "Contact"
+        href: contact.qmd
+  page-footer:
+    background: "#1a5e4a"
+    foreground: "#ffffff"
+    center: |
+      © 2025 Kwiz Computing Technologies. All rights reserved.
+    right:
+      - icon: linkedin
+        href: https://linkedin.com
+      - icon: github
+        href: https://github.com
+      - icon: envelope
+        href: mailto:info@kwiztech.com
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - styles/custom.scss
+    css: styles/styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    code-tools: false
+    smooth-scroll: true
+    link-external-newwindow: true
+
+editor: visual
