@@ -1,5 +1,10 @@
 ---
 title: "Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments"
+author: "Kwiz Computing Technologies"
+date: "2025-01-30"
+categories: [Environmental Science, Data Analysis, ESIA, Reproducibility, Kenya]
+image: "https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=800"
+description: "A critical examination of data quality, accessibility, and reproducibility challenges in Kenya's Environmental Impact Assessment system"
 format: html
 ---
 

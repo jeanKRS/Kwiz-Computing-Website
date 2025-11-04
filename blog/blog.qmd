@@ -1,0 +1,21 @@
+---
+title: "Blog"
+subtitle: "Insights on Data Science, R Programming, and Environmental Consulting"
+listing:
+  contents:
+    - "*.qmd"
+    - "!blog.qmd"
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  fields: [image, date, title, description, categories]
+  image-height: 200px
+page-layout: full
+title-block-banner: true
+---
+
+Welcome to the Kwiz Computing Technologies blog! Here you'll find insights, tutorials, and case studies on data science, R programming, environmental consulting, and software development.
+
+Our blog covers topics ranging from practical data analysis techniques to reproducible research methodologies and real-world environmental consulting applications.
