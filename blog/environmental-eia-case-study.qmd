@@ -140,7 +140,7 @@ process_biodiversity_survey <- function(survey_data) {
 }
 ```
 
-**Water Quality Analysis**
+**Water Quality Analysis** 
 ```{r}
 #| eval: false
 # Comprehensive water quality assessment
