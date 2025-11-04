@@ -350,7 +350,13 @@ We specialize in helping organizations leverage R for production software develo
 
 ---
 
-**Related Articles:**
-- [R as a Data Analyst's Essential Tool](r-data-analysis.qmd)
-- [R for Software Development: Beyond Scripts](r-software-development.qmd) (Technical)
-- [Case Study: Data Science for Environmental Impact Assessments](environmental-eia-case-study.qmd)
+::: {.blog-related}
+## Related Blog Posts
+
+Explore more insights from our blog:
+
+- [R as a Data Analyst's Essential Tool](r-data-analysis.qmd) - Why R continues to be the preferred choice for data analysts
+- [R for Software Development: Beyond Scripts](r-software-development.qmd) - Learn how R has evolved into a robust platform for enterprise-grade applications
+- [Case Study: Data Science for Environmental Impact Assessments](environmental-eia-case-study.qmd) - Real-world application of R in environmental analysis
+- [Reproducibility in ESIA Analyses](Reproducibility%20in%20ESIA%20Analyses.qmd) - Critical evaluation of environmental assessment practices
+:::

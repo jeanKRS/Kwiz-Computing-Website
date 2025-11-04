@@ -424,3 +424,16 @@ For organizations investing in their data analysis capabilities, R represents no
 ---
 
 *Have questions about implementing R in your data analysis workflow? [Contact us](mailto:info@kwizcomputing.com) for a consultation.*
+
+---
+
+::: {.blog-related}
+## Related Blog Posts
+
+Explore more insights from our blog:
+
+- [R for Software Development: Beyond Scripts](r-software-development.qmd) - Learn how R has evolved into a robust platform for enterprise-grade applications
+- [Why R? Making the Business Case for R in Software Development](r-for-business-leaders.qmd) - A non-technical guide for business leaders on R's strategic value
+- [Case Study: Data Science for Environmental Impact Assessments](environmental-eia-case-study.qmd) - Real-world application of R in environmental analysis
+- [Reproducibility in ESIA Analyses](Reproducibility%20in%20ESIA%20Analyses.qmd) - Critical evaluation of environmental assessment practices
+:::

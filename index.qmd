@@ -8,7 +8,7 @@ page-layout: full
 
 ### Boutique Data Science Consultancy
 
-![](images/hero_section.png){width="auto" fig-align="center"}
+![](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80){width="100%" fig-align="center" alt="Data visualization and analytics"}
 
 Providing expert technical support for data-driven projects with a focus on R programming, statistical analysis, and enterprise-grade solutions.
 :::

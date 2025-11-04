@@ -329,3 +329,16 @@ The choice is clear: Kenya can continue with EIA processes that create the appea
 *This article was prepared as an independent analysis of publicly available information regarding Kenya's EIA system. The views expressed are those of the author and do not represent official positions of any government agency or organization.*
 
 **Word Count: \~5,800 words**
+
+---
+
+::: {.blog-related}
+## Related Blog Posts
+
+Explore more insights from our blog:
+
+- [Case Study: Data Science for Environmental Impact Assessments](environmental-eia-case-study.qmd) - Real-world application of R in environmental analysis
+- [R as a Data Analyst's Essential Tool](r-data-analysis.qmd) - Why R continues to be the preferred choice for data analysts
+- [R for Software Development: Beyond Scripts](r-software-development.qmd) - Learn how R has evolved into a robust platform for enterprise-grade applications
+- [Why R? Making the Business Case for R in Software Development](r-for-business-leaders.qmd) - A non-technical guide for business leaders
+:::

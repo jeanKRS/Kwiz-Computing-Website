@@ -1,0 +1,54 @@
+/*-- scss:defaults --*/
+$primary: #1a5e4a;
+$secondary: #2d8a6b;
+$light: #f5e6d3;
+$body-bg: #ffffff;
+$body-color: #333333;
+
+/*-- scss:rules --*/
+
+// Page background
+body {
+  background: linear-gradient(135deg, #f5e6d3 0%, #ffffff 50%, #f5e6d3 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+// Main content area
+.quarto-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+// Hero section enhancements
+.hero-section {
+  img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 1.5rem 0;
+  }
+}
+
+// Card styling for blog posts
+.card {
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+}
+
+// Navbar styling
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+// Footer styling
+.nav-footer {
+  margin-top: 3rem;
+}

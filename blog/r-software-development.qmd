@@ -848,3 +848,16 @@ For organizations looking to build data-centric applications, R offers a unique 
 ---
 
 *Ready to build enterprise-grade R applications? [Contact us](mailto:info@kwizcomputing.com) to discuss your project.*
+
+---
+
+::: {.blog-related}
+## Related Blog Posts
+
+Explore more insights from our blog:
+
+- [R as a Data Analyst's Essential Tool](r-data-analysis.qmd) - Why R continues to be the preferred choice for data analysts
+- [Why R? Making the Business Case for R in Software Development](r-for-business-leaders.qmd) - A non-technical guide for business leaders
+- [Case Study: Data Science for Environmental Impact Assessments](environmental-eia-case-study.qmd) - Real-world application of R in environmental analysis
+- [Reproducibility in ESIA Analyses](Reproducibility%20in%20ESIA%20Analyses.qmd) - Critical evaluation of environmental assessment practices
+:::

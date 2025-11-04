@@ -876,6 +876,13 @@ This case study presents a real-world application of data science methodologies 
 
 ---
 
-**Related Posts:**
-- [R as a Data Analyst's Essential Tool](r-data-analysis.qmd)
-- [R for Software Development: Beyond Scripts](r-software-development.qmd)
+::: {.blog-related}
+## Related Blog Posts
+
+Explore more insights from our blog:
+
+- [R as a Data Analyst's Essential Tool](r-data-analysis.qmd) - Why R continues to be the preferred choice for data analysts
+- [R for Software Development: Beyond Scripts](r-software-development.qmd) - Learn how R has evolved into a robust platform for enterprise-grade applications
+- [Why R? Making the Business Case for R in Software Development](r-for-business-leaders.qmd) - A non-technical guide for business leaders
+- [Reproducibility in ESIA Analyses](Reproducibility%20in%20ESIA%20Analyses.qmd) - Critical evaluation of environmental assessment practices
+:::

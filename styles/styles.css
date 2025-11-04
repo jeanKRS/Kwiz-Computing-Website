@@ -1,0 +1,67 @@
+/* Additional custom styles */
+
+/* Blog post styling */
+.blog-related {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5e6d3 0%, #ffffff 100%);
+  border-radius: 8px;
+  border-left: 4px solid #1a5e4a;
+}
+
+.blog-related h2 {
+  color: #1a5e4a;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.blog-related ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.blog-related li {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.blog-related li:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.blog-related a {
+  color: #1a5e4a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blog-related a:hover {
+  color: #2d8a6b;
+  text-decoration: underline;
+}
+
+/* Services grid enhancement */
+.grid {
+  gap: 1.5rem;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Code block styling */
+pre {
+  background: #f8f9fa;
+  border-left: 3px solid #1a5e4a;
+  border-radius: 4px;
+}
+
+/* Callout styling */
+.callout {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
