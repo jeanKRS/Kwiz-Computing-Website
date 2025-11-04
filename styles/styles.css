@@ -1,0 +1,329 @@
+/* Kwiz Computing Technologies - Custom Styles */
+
+/* Minimalist Geometric Background Pattern */
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Additional subtle dot pattern overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(26, 94, 74, 0.015) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(44, 138, 111, 0.015) 2px, transparent 2px);
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Content wrapper for better readability */
+#quarto-content {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg,
+    rgba(26, 94, 74, 0.08) 0%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(44, 138, 111, 0.05) 100%
+  );
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(26, 94, 74, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 40%;
+  height: 120%;
+  background: radial-gradient(ellipse at center,
+    rgba(26, 94, 74, 0.05) 0%,
+    transparent 70%
+  );
+  transform: rotate(-15deg);
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a5e4a;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Cards */
+.service-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(26, 94, 74, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: rgba(26, 94, 74, 0.3);
+}
+
+.service-card h3 {
+  color: #1a5e4a;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-card ul li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.service-card ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #1a5e4a;
+  font-weight: bold;
+}
+
+/* Blog Listing Grid */
+.quarto-listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Category badges */
+.listing-category {
+  display: inline-block;
+  background: linear-gradient(135deg,
+    rgba(26, 94, 74, 0.1) 0%,
+    rgba(44, 138, 111, 0.08) 100%
+  );
+  color: #1a5e4a;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(26, 94, 74, 0.15);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.listing-category:hover {
+  background: linear-gradient(135deg,
+    rgba(26, 94, 74, 0.2) 0%,
+    rgba(44, 138, 111, 0.15) 100%
+  );
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog post images */
+article img, .card-img-top {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article img:hover, .card-img-top:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Table styling */
+table {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+  background: linear-gradient(135deg,
+    rgba(26, 94, 74, 0.1) 0%,
+    rgba(44, 138, 111, 0.08) 100%
+  );
+  color: #1a5e4a;
+  font-weight: 600;
+}
+
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background: rgba(26, 94, 74, 0.03);
+}
+
+/* Code blocks */
+pre.sourceCode {
+  background: rgba(248, 249, 250, 0.98);
+  border: 1px solid rgba(26, 94, 74, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Contact form styling */
+.contact-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(26, 94, 74, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.form-control {
+  border: 1px solid rgba(26, 94, 74, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: #1a5e4a;
+  box-shadow: 0 0 0 0.2rem rgba(26, 94, 74, 0.15);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(26, 94, 74, 0.2);
+  color: #1a5e4a;
+}
+
+::-moz-selection {
+  background: rgba(26, 94, 74, 0.2);
+  color: #1a5e4a;
+}
+
+/* Loading animation for images */
+img {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  #quarto-content {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .quarto-listing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: 25px 25px;
+  }
+
+  body::after {
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+  }
+}
+
+/* Print styles */
+@media print {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  #quarto-content {
+    background: white;
+    box-shadow: none;
+  }
+}
+
+/* Accessibility improvements */
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
+  outline: 2px solid #1a5e4a;
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
