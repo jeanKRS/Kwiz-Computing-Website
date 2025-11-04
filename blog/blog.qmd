@@ -1,0 +1,17 @@
+---
+title: "Blog"
+listing:
+  contents: .
+  type: default
+  sort: "date desc"
+  categories: true
+  date-format: "MMMM D, YYYY"
+  fields: [date, title, description, categories]
+page-layout: full
+---
+
+::: content-section
+## Latest Insights
+
+Explore our thoughts on data science, R programming, environmental analytics, and software development best practices.
+:::
