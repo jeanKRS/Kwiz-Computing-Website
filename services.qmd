@@ -2,6 +2,7 @@
 title: "Services"
 ---
 
+::: content-section
 We offer comprehensive data science and software development services tailored to your organization's needs. All solutions are built with enterprise-grade quality standards and best practices.
 
 ## Core Services
@@ -138,3 +139,4 @@ Don't see exactly what you need? We're happy to discuss custom solutions tailore
 :::
 
 [Contact us](contact.qmd) to discuss your project needs.
+:::

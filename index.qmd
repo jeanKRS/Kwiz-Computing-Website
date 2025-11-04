@@ -8,13 +8,15 @@ page-layout: full
 
 ### Boutique Data Science Consultancy
 
-![](images/hero_section.png){width="auto" fig-align="center"}
+::: hero-visual
+:::
 
 Providing expert technical support for data-driven projects with a focus on R programming, statistical analysis, and enterprise-grade solutions.
 :::
 
 ------------------------------------------------------------------------
 
+::: content-section
 ## What We Do
 
 We specialize in transforming complex data challenges into actionable insights through sophisticated analytical solutions and robust software development practices.
@@ -44,21 +46,26 @@ Specialized expertise in environmental impact assessments, sustainability metric
 Empower your team with customized training programs in R programming, statistical methods, and data science workflows.
 :::
 :::::::
+:::
 
 ------------------------------------------------------------------------
 
+::: content-section
 ## Why Choose Kwiz?
 
 -   **Expertise**: Deep technical knowledge in R programming and statistical computing
 -   **Quality**: Enterprise-grade solutions following software development best practices
 -   **Flexibility**: Boutique consultancy offering personalized attention and agile response
 -   **Domain Knowledge**: Specialized experience in environmental and sustainability analytics
+:::
 
 ------------------------------------------------------------------------
 
+::: content-section
 ## Recent Insights
 
 Visit our [Blog](blog/blog.qmd) to explore our latest thoughts on data science, R programming, and industry trends.
+:::
 
 ------------------------------------------------------------------------
 
@@ -68,27 +75,3 @@ Visit our [Blog](blog/blog.qmd) to explore our latest thoughts on data science, 
 Let's discuss how we can help transform your data into strategic advantages. [Get in touch](contact.qmd) to schedule a consultation.
 :::
 
-```{=html}
-<style>
-.hero-section {
-  text-align: center;
-  padding: 3rem 0;
-  background: linear-gradient(135deg, #f5e6d3 0%, #ffffff 100%);
-  border-radius: 10px;
-  margin-bottom: 2rem;
-}
-
-.hero-section h1 {
-  color: #1a5e4a;
-  margin-top: 1rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.hero-section h3 {
-  color: #2d8a6b;
-  margin-top: 0.5rem;
-  font-weight: 400;
-}
-</style>
-```

@@ -2,6 +2,7 @@
 title: "About Us"
 ---
 
+::: content-section
 ## Our Story
 
 Kwiz Computing Technologies is a boutique data science consultancy founded on the principle that exceptional technical expertise should be accessible and personalized. As a small focused operation, we deliver enterprise-grade solutions with the agility and attention to detail that only a dedicated specialist can provide.
@@ -61,3 +62,4 @@ Our expertise extends beyond general data science into specialized domains:
 Whether you need a one-time analysis, an ongoing partnership, or specialized training for your team, we're here to help. Our boutique model means you get direct access to expertise without layers of management.
 
 [Contact us](contact.qmd) to discuss your project.
+:::
