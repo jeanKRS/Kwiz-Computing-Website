@@ -3,13 +3,24 @@ title: "Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Envir
 format: html
 ---
 
-**Executive Summary**
+## Executive Summary
 
-Kenya's Environmental Impact Assessment (EIA) system, established under the Environmental Management and Coordination Act (EMCA) of 1999, represents a significant commitment to sustainable development. However, the state of data quality, accessibility, and reproducibility in EIA processes reveals substantial gaps that undermine the effectiveness of environmental governance. This article examines the challenges facing Kenya's EIA system, with particular focus on data transparency, scientific rigor, and reproducibility—critical elements for evidence-based decision-making and accountability.
+![Environmental protection concept. Photo by [Li-An Lim](https://unsplash.com/@li_anlim) on [Unsplash](https://unsplash.com/photos/ycW4YxhrWHM)](https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=1200&q=80)
+
+Kenya's Environmental Impact Assessment (EIA) system, established under the [Environmental Management and Coordination Act (EMCA) of 1999](http://www.environment.go.ke/), represents a significant commitment to sustainable development. However, the state of data quality, accessibility, and reproducibility in EIA processes reveals substantial gaps that undermine the effectiveness of environmental governance (Kakonge, 2006).
+
+::: {.callout-important}
+## Critical Analysis
+This article examines the challenges facing Kenya's EIA system, with particular focus on data transparency, scientific rigor, and reproducibility—critical elements for evidence-based decision-making and accountability.
+:::
+
+This analysis draws on publicly available information, academic research, and transparency reports to evaluate the current state of environmental assessment practices in Kenya.
 
 ## Introduction
 
-Environmental Impact Assessments serve as crucial gatekeepers in Kenya's development trajectory, theoretically ensuring that economic progress does not come at the expense of environmental degradation. Since the passage of EMCA in 1999 and subsequent EIA regulations in 2003, Kenya has established a legal framework requiring systematic evaluation of proposed projects' environmental consequences. The National Environment Management Authority (NEMA) oversees this process, reviewing thousands of EIA reports annually across three risk categories: low, medium, and high-risk projects.
+![Governance and transparency. Photo by [Tingey Injury Law Firm](https://unsplash.com/@tingeyinjurylawfirm) on [Unsplash](https://unsplash.com/photos/L4YGuSg0fxs)](https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80)
+
+Environmental Impact Assessments serve as crucial gatekeepers in Kenya's development trajectory, theoretically ensuring that economic progress does not come at the expense of environmental degradation. Since the passage of [EMCA in 1999](http://www.environment.go.ke/) and subsequent [EIA regulations in 2003](https://www.nema.go.ke/), Kenya has established a legal framework requiring systematic evaluation of proposed projects' environmental consequences. The [National Environment Management Authority (NEMA)](https://www.nema.go.ke/) oversees this process, reviewing thousands of EIA reports annually across three risk categories: low, medium, and high-risk projects.
 
 Yet behind this regulatory façade lies a more complex reality. The quality, accessibility, and reproducibility of data underpinning these assessments—the very foundation upon which environmental decisions rest—remain deeply problematic. This article evaluates the current state of data practices in Kenya's EIA system and their implications for environmental governance.
 
@@ -25,11 +36,18 @@ However, the gap between regulatory requirements and implementation reality is s
 
 ### Public Access Challenges
 
-While Kenya launched the Kenya Open Data Initiative in 2011—becoming the first sub-Saharan African country to do so—EIA data remains notably absent from this transparency effort. NEMA maintains that EIA reports are publicly accessible, but the reality presents significant barriers.
+![Open data concept. Photo by [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com/photos/iar-afB0QQw)](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
+
+While Kenya launched the [Kenya Open Data Initiative](https://www.opendata.go.ke/) in 2011—becoming the first sub-Saharan African country to do so (Centre for Public Impact, 2024)—EIA data remains notably absent from this transparency effort. [NEMA](https://www.nema.go.ke/) maintains that EIA reports are publicly accessible, but the reality presents significant barriers.
 
 According to NEMA's clarifications, high-risk project Study Reports are published in the Kenya Gazette and newspapers, making them theoretically accessible. However, medium and low-risk Project Reports are available only through NEMA's licensing portal, not directly on the public website. This two-tiered system creates accessibility disparities, with the majority of projects falling into categories with limited public access.
 
-The situation reflects broader challenges in Kenya's open data landscape. Despite constitutional guarantees of the right to information (Article 35), the 2022 Global Data Barometer gave Kenya a score of 30 out of 100 for data capability—well below the global average of 49. Kenya received zero ratings for subnational capabilities, open data initiatives, and support for data reuse.
+The situation reflects broader challenges in Kenya's open data landscape. Despite constitutional guarantees of the right to information ([Article 35 of Kenya's Constitution](http://www.kenyalaw.org/)), the [2022 Global Data Barometer](https://globaldatabarometer.org/) gave Kenya a score of 30 out of 100 for data capability—well below the global average of 49. Kenya received zero ratings for subnational capabilities, open data initiatives, and support for data reuse.
+
+::: {.callout-warning}
+## Data Accessibility Gap
+Despite Kenya's pioneering role in open data initiatives in Africa, environmental assessment data remains largely inaccessible to the public, limiting transparency and accountability.
+:::
 
 ### The Cost of Access
 
@@ -103,7 +121,14 @@ Without analyzing prediction accuracy, the EIA system cannot learn from experien
 
 ## The Corruption Context
 
-Kenya's EIA system operates within a broader governance context characterized by significant corruption challenges. The country scored 32 out of 100 in the 2024 Corruption Perceptions Index, ranking 121st globally—below both the sub-Saharan African average (33) and the global average (43).
+![Corruption and governance. Photo by [Christian Lue](https://unsplash.com/@christianlue) on [Unsplash](https://unsplash.com/photos/-70vEbVYh6Y)](https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80)
+
+Kenya's EIA system operates within a broader governance context characterized by significant corruption challenges. The country scored 32 out of 100 in the [2024 Corruption Perceptions Index](https://www.transparency.org/en/cpi/2024) by [Transparency International](https://www.transparency.org/), ranking 121st globally—below both the sub-Saharan African average (33) and the global average (43).
+
+::: {.callout-note}
+## Governance Context
+Understanding the corruption context is essential for evaluating the effectiveness of environmental governance mechanisms and identifying areas for reform.
+:::
 
 ### Corruption in Environmental Governance
 
@@ -270,20 +295,33 @@ The stakes could not be higher. Kenya faces accelerating environmental pressures
 
 The choice is clear: Kenya can continue with EIA processes that create the appearance of environmental governance while lacking substance, or it can implement reforms that make environmental assessment a genuine tool for sustainable development. The data are waiting to tell the story—if only we have the courage to make them transparent.
 
-------------------------------------------------------------------------
+---
 
 ## References and Sources
 
-1.  Environmental Management and Coordination Act (EMCA), 1999, Kenya
-2.  Environmental Management and Coordination (Impact Assessment and Audit) Regulations, 2003
-3.  Transparency International Kenya (2023). Environmental Impact Assessment Handbook
-4.  Kenya National Bureau of Statistics (2023). National Ethics and Corruption Survey Report
-5.  Transparency International (2024). Corruption Perceptions Index
-6.  Global Data Barometer (2022). Kenya Country Assessment
-7.  Open Government Partnership (2023-2027). Kenya Action Plan
-8.  National Environment Management Authority (NEMA) official resources
-9.  Academic research on EIA effectiveness in Kenya (Kakonge, 2015; Enríquez-de-Salamanca, 2018)
-10. Centre for Public Impact (2024). Kenya Open Data Initiative Case Study
+1. Centre for Public Impact. (2024). *Kenya Open Data Initiative*. Retrieved from [https://www.centreforpublicimpact.org/case-study/open-data-kenya](https://www.centreforpublicimpact.org/case-study/open-data-kenya)
+
+2. Constitution of Kenya. (2010). *Article 35: Access to information*. Retrieved from [http://www.kenyalaw.org/](http://www.kenyalaw.org/)
+
+3. Enríquez-de-Salamanca, Á. (2018). Stakeholders' manipulation of Environmental Impact Assessment. *Environmental Impact Assessment Review*, 68, 10-18. [https://doi.org/10.1016/j.eiar.2017.10.003](https://doi.org/10.1016/j.eiar.2017.10.003)
+
+4. Global Data Barometer. (2022). *Kenya country assessment*. Retrieved from [https://globaldatabarometer.org/](https://globaldatabarometer.org/)
+
+5. Government of Kenya. (1999). *Environmental Management and Coordination Act (EMCA)*. Retrieved from [http://www.environment.go.ke/](http://www.environment.go.ke/)
+
+6. Government of Kenya. (2003). *Environmental Management and Coordination (Impact Assessment and Audit) Regulations*. Retrieved from [https://www.nema.go.ke/](https://www.nema.go.ke/)
+
+7. Kakonge, J. O. (2006). Environmental planning and management: A practical guide. *African Centre for Technology Studies Press*.
+
+8. Kenya National Bureau of Statistics. (2023). *National Ethics and Corruption Survey Report*. Retrieved from [https://www.knbs.or.ke/](https://www.knbs.or.ke/)
+
+9. National Environment Management Authority (NEMA). (2024). *Official resources and guidelines*. Retrieved from [https://www.nema.go.ke/](https://www.nema.go.ke/)
+
+10. Open Government Partnership. (2023). *Kenya Action Plan 2023-2027*. Retrieved from [https://www.opengovpartnership.org/](https://www.opengovpartnership.org/)
+
+11. Transparency International. (2024). *Corruption Perceptions Index 2024*. Retrieved from [https://www.transparency.org/en/cpi/2024](https://www.transparency.org/en/cpi/2024)
+
+12. Transparency International Kenya. (2023). *Environmental Impact Assessment Handbook*. Retrieved from [https://tikenya.org/](https://tikenya.org/)
 
 ------------------------------------------------------------------------
 
