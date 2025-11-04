@@ -1,0 +1,160 @@
+/*-- scss:defaults --*/
+
+// Brand colors
+$primary: #1a5e4a;
+$secondary: #2c7a64;
+$success: #28a745;
+$info: #17a2b8;
+$light: #f8f9fa;
+$dark: #343a40;
+
+// Typography
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-weight: 600;
+$line-height-base: 1.7;
+
+// Spacing
+$spacer: 1rem;
+
+/*-- scss:rules --*/
+
+// Enhanced typography
+body {
+    font-size: 1.05rem;
+    color: #333;
+}
+
+// Smooth scrolling
+html {
+    scroll-behavior: smooth;
+}
+
+// Brand accent colors
+.text-primary {
+    color: $primary !important;
+}
+
+.bg-primary {
+    background-color: $primary !important;
+}
+
+// Enhanced blockquotes
+blockquote {
+    border-left: 4px solid $primary;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #555;
+    background-color: rgba(26, 94, 74, 0.05);
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+// Table styling
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    thead {
+        background-color: $primary;
+        color: white;
+
+        th {
+            padding: 0.75rem;
+            font-weight: 600;
+        }
+    }
+
+    tbody {
+        tr {
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: rgba(26, 94, 74, 0.05);
+            }
+
+            &:nth-child(even) {
+                background-color: #f8f9fa;
+            }
+        }
+
+        td {
+            padding: 0.75rem;
+        }
+    }
+}
+
+// Button enhancements
+.btn {
+    border-radius: 6px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover {
+        background-color: darken($primary, 10%);
+        border-color: darken($primary, 10%);
+    }
+}
+
+// List styling
+ul, ol {
+    line-height: 1.8;
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+// Enhanced figure captions
+figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+// Section dividers
+hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, $primary 50%, transparent 100%);
+    margin: 2rem 0;
+}
+
+// Reading experience enhancements
+p {
+    margin-bottom: 1.2rem;
+}
+
+// Focus styles for accessibility
+:focus {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+}
+
+// Print styles
+@media print {
+    body {
+        background: white !important;
+        background-image: none !important;
+    }
+
+    .page-columns {
+        box-shadow: none !important;
+    }
+}

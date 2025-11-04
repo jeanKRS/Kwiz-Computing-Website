@@ -9,7 +9,14 @@ description: "How R has evolved into a robust platform for building enterprise-g
 
 ## Introduction
 
-For many, R is synonymous with statistical analysis and data visualization—tools for exploratory work and ad-hoc scripting. However, R has matured significantly as a platform for serious software development. Modern R development embraces software engineering best practices, from modular architecture to continuous integration, making it suitable for building production-grade applications.
+![Software development workspace. Photo by [James Harrison](https://unsplash.com/@jstrippa) on [Unsplash](https://unsplash.com/photos/vpOeXr5wmR4)](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80)
+
+For many, [R](https://www.r-project.org/) is synonymous with statistical analysis and data visualization—tools for exploratory work and ad-hoc scripting. However, R has matured significantly as a platform for serious software development (Wickham, 2015). Modern R development embraces software engineering best practices, from modular architecture to continuous integration, making it suitable for building production-grade applications.
+
+::: {.callout-important}
+## From Scripts to Software
+This post explores how R has evolved from a scripting language into a comprehensive software development platform, complete with modern tooling, testing frameworks, and deployment strategies.
+:::
 
 In this post, we'll explore how R can be used as a full-fledged software development platform, focusing on the tools, techniques, and frameworks that enable enterprise-grade applications.
 
@@ -53,7 +60,14 @@ This shift represents more than organizational preference—it's a fundamental c
 
 ### 1. Package Development with {devtools} and {usethis}
 
-Modern R development revolves around packages, even for internal projects. The {usethis} package automates setup and maintenance:
+![Code development. Photo by [Arnold Francisca](https://unsplash.com/@clark_fransa) on [Unsplash](https://unsplash.com/photos/f77Bh3inUpE)](https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80)
+
+Modern R development revolves around packages, even for internal projects. The [{usethis}](https://usethis.r-lib.org/) package, developed by the [RStudio team](https://posit.co/), automates setup and maintenance (Wickham & Bryan, 2023):
+
+::: {.callout-tip}
+## Package-Based Development
+Even if you're not publishing to CRAN, organizing your R code as a package provides automatic documentation, testing infrastructure, and dependency management—all essential for professional software development.
+:::
 
 ```{r}
 #| eval: false
@@ -88,7 +102,14 @@ use_github_action("check-standard")
 
 ### 2. Enterprise Shiny Applications with Rhino
 
-Rhino, developed by Appsilon, brings software engineering rigor to Shiny development:
+![Application development. Photo by [Eftakher Alam](https://unsplash.com/@easiblu) on [Unsplash](https://unsplash.com/photos/i1VQZsU86ok)](https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1200&q=80)
+
+[Rhino](https://appsilon.github.io/rhino/), developed by [Appsilon](https://appsilon.com/), brings software engineering rigor to [Shiny](https://shiny.posit.co/) development (Appsilon, 2023). Rhino provides a structured framework that enforces best practices for enterprise applications:
+
+::: {.callout-note}
+## Why Rhino?
+Rhino addresses common Shiny development challenges: unclear project structure, difficulty testing UI components, and lack of standardization across teams. It's particularly valuable for organizations building multiple Shiny applications.
+:::
 
 ```{r}
 #| eval: false
@@ -848,3 +869,15 @@ For organizations looking to build data-centric applications, R offers a unique 
 ---
 
 *Ready to build enterprise-grade R applications? [Contact us](mailto:info@kwizcomputing.com) to discuss your project.*
+
+## References
+
+- Appsilon. (2023). *Rhino: A framework for enterprise Shiny applications*. [https://appsilon.github.io/rhino/](https://appsilon.github.io/rhino/)
+
+- R Core Team. (2024). *R: A language and environment for statistical computing*. R Foundation for Statistical Computing. [https://www.R-project.org/](https://www.R-project.org/)
+
+- Wickham, H. (2015). *R packages: Organize, test, document, and share your code*. O'Reilly Media. [https://r-pkgs.org/](https://r-pkgs.org/)
+
+- Wickham, H., & Bryan, J. (2023). *R packages* (2nd ed.). O'Reilly Media. [https://r-pkgs.org/](https://r-pkgs.org/)
+
+- Wickham, H., Hester, J., Chang, W., & Bryan, J. (2022). *devtools: Tools to make developing R packages easier*. [https://devtools.r-lib.org/](https://devtools.r-lib.org/)

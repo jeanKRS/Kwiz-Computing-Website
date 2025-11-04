@@ -1,0 +1,103 @@
+/* Minimalist geometric background pattern */
+body {
+    background-color: #f8f9fa;
+    background-image:
+        linear-gradient(30deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
+        linear-gradient(150deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
+        linear-gradient(30deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
+        linear-gradient(150deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
+        linear-gradient(60deg, rgba(26, 94, 74, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(26, 94, 74, 0.03) 75%, rgba(26, 94, 74, 0.03)),
+        linear-gradient(60deg, rgba(26, 94, 74, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(26, 94, 74, 0.03) 75%, rgba(26, 94, 74, 0.03));
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+/* Ensure content area has clean white background */
+.page-columns {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+/* Smooth gradient overlay for header sections */
+#title-block-header {
+    background: linear-gradient(135deg, rgba(26, 94, 74, 0.05) 0%, rgba(26, 94, 74, 0.02) 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+/* Elegant hover effect for cards */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle accent for links */
+a {
+    transition: color 0.2s ease;
+}
+
+/* Better visual hierarchy for headings */
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #1a5e4a 0%, transparent 100%);
+}
+
+/* Callout boxes enhancement */
+.callout {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Code blocks styling */
+pre {
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+/* Image styling */
+img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer enhancement */
+footer {
+    background: linear-gradient(135deg, #1a5e4a 0%, #145240 100%);
+}
+
+/* Navigation bar enhancement */
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        background-size: 40px 70px;
+        background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+    }
+
+    .page-columns {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
