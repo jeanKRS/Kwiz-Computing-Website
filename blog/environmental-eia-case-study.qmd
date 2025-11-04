@@ -11,14 +11,7 @@ execute:
 
 ## Executive Summary
 
-![Environmental monitoring. Photo by [Noah Buscher](https://unsplash.com/@noahbuscher) on [Unsplash](https://unsplash.com/photos/x8ZStukS2PM)](https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=1200&q=80)
-
-This case study examines how modern data science techniques, implemented in [R](https://www.r-project.org/), transformed the environmental impact assessment (EIA) process for a major infrastructure development project in East Africa. By applying systematic data collection, rigorous statistical analysis, and interactive visualization tools, we delivered actionable insights that informed both environmental management plans and regulatory compliance (Pinho et al., 2007).
-
-::: {.callout-note}
-## Case Study Context
-This case study presents a real-world application demonstrating how data science can enhance environmental assessment quality, efficiency, and transparency while meeting regulatory requirements.
-:::
+This case study examines how modern data science techniques, implemented in R, transformed the environmental impact assessment (EIA) process for a major infrastructure development project in East Africa. By applying systematic data collection, rigorous statistical analysis, and interactive visualization tools, we delivered actionable insights that informed both environmental management plans and regulatory compliance.
 
 **Key Outcomes:**
 
@@ -49,11 +42,9 @@ The client sought a data-driven approach that could handle the project's complex
 
 ## Our Approach
 
-![Data collection in the field. Photo by [Sergei Akulich](https://unsplash.com/@sakulich) on [Unsplash](https://unsplash.com/photos/qLmpPJ3_z4U)](https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80)
-
 ### Phase 1: Data Collection Framework
 
-We designed a comprehensive data collection system integrating multiple environmental dimensions, following [ISO 14001 environmental management standards](https://www.iso.org/iso-14001-environmental-management.html) and international best practices (International Finance Corporation, 2012):
+We designed a comprehensive data collection system integrating multiple environmental dimensions:
 
 **Air Quality Monitoring**
 ```{r}
@@ -420,14 +411,7 @@ assess_habitat_impacts <- function(current_habitat_map,
 
 ### Phase 4: Interactive Monitoring Dashboard
 
-![Dashboard visualization. Photo by [Stephen Dawson](https://unsplash.com/@dawson2406) on [Unsplash](https://unsplash.com/photos/qwtCeJ5cLYs)](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
-
-We developed a [Shiny](https://shiny.posit.co/) dashboard using the [Rhino framework](https://appsilon.github.io/rhino/) for ongoing monitoring, providing stakeholders with real-time access to environmental data (Chang et al., 2021):
-
-::: {.callout-tip}
-## Interactive Dashboards
-Interactive dashboards transform environmental monitoring from static reports to dynamic tools that enable stakeholders to explore data, identify trends, and make informed decisions in real-time.
-:::
+We developed a Shiny dashboard (using Rhino framework) for ongoing monitoring:
 
 ```{r}
 #| eval: false
@@ -895,21 +879,3 @@ This case study presents a real-world application of data science methodologies 
 **Related Posts:**
 - [R as a Data Analyst's Essential Tool](r-data-analysis.qmd)
 - [R for Software Development: Beyond Scripts](r-software-development.qmd)
-
----
-
-## References
-
-- Chang, W., Cheng, J., Allaire, J., Sievert, C., Schloerke, B., Xie, Y., Allen, J., McPherson, J., Dipert, A., & Borges, B. (2021). *shiny: Web application framework for R*. [https://shiny.posit.co/](https://shiny.posit.co/)
-
-- International Finance Corporation. (2012). *Performance standard 1: Assessment and management of environmental and social risks and impacts*. World Bank Group. [https://www.ifc.org/wps/wcm/connect/topics_ext_content/ifc_external_corporate_site/sustainability-at-ifc/policies-standards/performance-standards](https://www.ifc.org/wps/wcm/connect/topics_ext_content/ifc_external_corporate_site/sustainability-at-ifc/policies-standards/performance-standards)
-
-- International Organization for Standardization. (2015). *ISO 14001:2015 Environmental management systems*. [https://www.iso.org/iso-14001-environmental-management.html](https://www.iso.org/iso-14001-environmental-management.html)
-
-- Pebesma, E. (2018). Simple features for R: Standardized support for spatial vector data. *The R Journal*, 10(1), 439-446. [https://doi.org/10.32614/RJ-2018-009](https://doi.org/10.32614/RJ-2018-009)
-
-- Pinho, P., Maia, R., & Monterroso, A. (2007). The quality of Portuguese Environmental Impact Studies: The case of small hydropower projects. *Environmental Impact Assessment Review*, 27(3), 189-205. [https://doi.org/10.1016/j.eiar.2006.10.005](https://doi.org/10.1016/j.eiar.2006.10.005)
-
-- R Core Team. (2024). *R: A language and environment for statistical computing*. R Foundation for Statistical Computing. [https://www.R-project.org/](https://www.R-project.org/)
-
-- Wickham, H. (2016). *ggplot2: Elegant graphics for data analysis* (2nd ed.). Springer-Verlag. [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
