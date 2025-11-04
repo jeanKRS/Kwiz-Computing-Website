@@ -11,22 +11,13 @@ execute:
 
 ## Introduction
 
-In the ever-expanding universe of data analysis tools, [R](https://www.r-project.org/) has maintained its position as a cornerstone technology for data analysts across industries (Ihaka & Gentleman, 1996). With over [2 million users worldwide](https://www.burns-stat.com/documents/tutorials/why-use-r/) and a vibrant community of contributors, R continues to be the preferred choice for statistical computing and data analysis.
-
-![Data analysis workflow visualization. Photo by [Luke Chesser](https://unsplash.com/@lukechesser) on [Unsplash](https://unsplash.com/photos/JKUTrJ4vK00)](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
-
-But what makes R particularly suited for data analysis work? In this post, we'll explore the features, ecosystem, and practical advantages that make R an essential tool in any data analyst's toolkit.
+In the ever-expanding universe of data analysis tools, R has maintained its position as a cornerstone technology for data analysts across industries. But what makes R particularly suited for data analysis work? In this post, we'll explore the features, ecosystem, and practical advantages that make R an essential tool in any data analyst's toolkit.
 
 ## The R Advantage for Data Analysis
 
 ### 1. Purpose-Built for Statistical Analysis
 
-Unlike general-purpose programming languages that were later adapted for data work, R was designed from the ground up for statistical computing and data analysis (R Core Team, 2024). Developed in the early 1990s at the University of Auckland, [R evolved from the S programming language](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf) created at Bell Laboratories. This heritage shows in every aspect of the language:
-
-::: {.callout-tip}
-## Did You Know?
-R is named partly after the first names of its two creators, Ross Ihaka and Robert Gentleman, and partly as a play on the name of S.
-:::
+Unlike general-purpose programming languages that were later adapted for data work, R was designed from the ground up for statistical computing and data analysis. This heritage shows in every aspect of the language:
 
 ```{r}
 #| eval: false
@@ -40,9 +31,7 @@ The language speaks the vocabulary of data analysis, making it intuitive for ana
 
 ### 2. The Tidyverse Revolution
 
-![Photo by [Mika Baumeister](https://unsplash.com/@kommumikation) on [Unsplash](https://unsplash.com/photos/Wpnoqo2plFA)](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80)
-
-The [tidyverse](https://www.tidyverse.org/) collection of packages, created by [Hadley Wickham](http://hadley.nz/) and the RStudio team, has transformed how data analysts work in R, providing a coherent and intuitive grammar for data manipulation (Wickham et al., 2019). With over [20 million downloads per month](https://www.tidyverse.org/), the tidyverse has become the de facto standard for modern R programming:
+The tidyverse collection of packages has transformed how data analysts work in R, providing a coherent and intuitive grammar for data manipulation:
 
 ```{r}
 #| eval: false
@@ -64,14 +53,7 @@ This pipe-based workflow mirrors how analysts think about data transformations: 
 
 ### 3. Unmatched Visualization Capabilities
 
-![Data visualization example. Photo by [Isaac Smith](https://unsplash.com/@isaacmsmith) on [Unsplash](https://unsplash.com/photos/6EnTPvPPL6I)](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
-
-[ggplot2](https://ggplot2.tidyverse.org/), R's flagship visualization package, implements the grammar of graphics—a principled approach to creating statistical graphics (Wickham, 2016). Based on Leland Wilkinson's groundbreaking work *The Grammar of Graphics* (2005), ggplot2 has become [one of the most downloaded R packages](https://www.r-pkg.org/downloaded) with over 10 million downloads monthly:
-
-::: {.callout-note}
-## Grammar of Graphics
-The grammar of graphics is a systematic framework for building statistical graphics by combining independent components like data, coordinate systems, and geometric objects.
-:::
+ggplot2, R's flagship visualization package, implements the grammar of graphics—a principled approach to creating statistical graphics:
 
 ```{r}
 #| eval: false
@@ -408,21 +390,14 @@ datatable(results_table,
 
 ## The R Community Advantage
 
-![Community collaboration. Photo by [Hannah Busing](https://unsplash.com/@hannahbusing) on [Unsplash](https://unsplash.com/photos/Zyx1bK9mqmA)](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80)
+One of R's greatest strengths is its welcoming and helpful community:
 
-One of R's greatest strengths is its welcoming and helpful community (Tippmann, 2015):
-
-- **[Stack Overflow](https://stackoverflow.com/questions/tagged/r)**: Active R community with over 400,000+ questions answered
-- **[RStudio Community](https://community.rstudio.com/)**: Supportive forum for all skill levels maintained by Posit
-- **[Twitter/X #rstats](https://twitter.com/search?q=%23rstats)**: Daily tips, package announcements, and help
-- **[R-Ladies](https://rladies.org/)**: Global organization promoting gender diversity in R with 200+ chapters worldwide
-- **[Local R User Groups](https://www.meetup.com/topics/r-project-for-statistical-computing/)**: In-person networking and learning opportunities
-- **[Posit Community](https://posit.co/community/)**: Official support and resources from the makers of RStudio
-
-::: {.callout-tip}
-## Getting Help
-The R community follows a "pay it forward" culture. As you learn, consider answering questions on Stack Overflow or participating in local user groups to help others.
-:::
+- **Stack Overflow**: Active R community answering questions
+- **RStudio Community**: Supportive forum for all skill levels
+- **Twitter/X #rstats**: Daily tips, package announcements, and help
+- **R-Ladies**: Global organization promoting gender diversity in R
+- **Local R User Groups**: In-person networking and learning
+- **Posit Community**: Official support and resources
 
 ## Conclusion
 
@@ -449,17 +424,3 @@ For organizations investing in their data analysis capabilities, R represents no
 ---
 
 *Have questions about implementing R in your data analysis workflow? [Contact us](mailto:info@kwizcomputing.com) for a consultation.*
-
-## References
-
-- Ihaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. *Journal of Computational and Graphical Statistics*, 5(3), 299-314. [https://doi.org/10.1080/10618600.1996.10474713](https://doi.org/10.1080/10618600.1996.10474713)
-
-- R Core Team. (2024). *R: A language and environment for statistical computing*. R Foundation for Statistical Computing. [https://www.R-project.org/](https://www.R-project.org/)
-
-- Tippmann, S. (2015). Programming tools: Adventures with R. *Nature*, 517(7532), 109-110. [https://doi.org/10.1038/517109a](https://doi.org/10.1038/517109a)
-
-- Wickham, H. (2016). *ggplot2: Elegant graphics for data analysis* (2nd ed.). Springer-Verlag. [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
-
-- Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., ... & Yutani, H. (2019). Welcome to the tidyverse. *Journal of Open Source Software*, 4(43), 1686. [https://doi.org/10.21105/joss.01686](https://doi.org/10.21105/joss.01686)
-
-- Wilkinson, L. (2005). *The grammar of graphics* (2nd ed.). Springer-Verlag. [https://doi.org/10.1007/0-387-28695-0](https://doi.org/10.1007/0-387-28695-0)
