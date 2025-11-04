@@ -1,7 +1,7 @@
 project:
   type: website
-  output-dir: docs
-  
+  output-dir: _site
+
 website:
   title: "Kwiz Computing Technologies"
   favicon: images/icon.png
@@ -35,7 +35,7 @@ website:
 
 format:
   html:
-    theme: 
+    theme:
       - cosmo
       - styles/custom.scss
     css: styles/styles.css

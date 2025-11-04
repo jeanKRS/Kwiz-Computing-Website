@@ -3,69 +3,72 @@ title: ""
 page-layout: full
 ---
 
-::: {.hero-section}
-![](images/hero_section.png){width='auto' fig-align="center"}
-
+::: hero-section
 # Welcome to Kwiz Computing Technologies
 
 ### Boutique Data Science Consultancy
 
+![](images/hero_section.png){width="auto" fig-align="center"}
+
 Providing expert technical support for data-driven projects with a focus on R programming, statistical analysis, and enterprise-grade solutions.
 :::
 
----
+------------------------------------------------------------------------
 
 ## What We Do
 
 We specialize in transforming complex data challenges into actionable insights through sophisticated analytical solutions and robust software development practices.
 
-::: {.grid}
-
+::::::: grid
 ::: {.g-col-12 .g-col-md-6}
 ### 📊 Data Analytics & Visualization
+
 Transform raw data into compelling insights with advanced statistical methods and interactive visualizations using R and modern data science tools.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ### 💻 Software Development
+
 Build enterprise-grade applications following industry best practices, including modular Shiny apps on the Rhino framework with comprehensive testing.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ### 🌍 Environmental Data Science
+
 Specialized expertise in environmental impact assessments, sustainability metrics, and regulatory compliance analytics.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ### 🎓 Training & Consultation
+
 Empower your team with customized training programs in R programming, statistical methods, and data science workflows.
 :::
+:::::::
 
-:::
-
----
+------------------------------------------------------------------------
 
 ## Why Choose Kwiz?
 
-- **Expertise**: Deep technical knowledge in R programming and statistical computing
-- **Quality**: Enterprise-grade solutions following software development best practices
-- **Flexibility**: Boutique consultancy offering personalized attention and agile response
-- **Domain Knowledge**: Specialized experience in environmental and sustainability analytics
+-   **Expertise**: Deep technical knowledge in R programming and statistical computing
+-   **Quality**: Enterprise-grade solutions following software development best practices
+-   **Flexibility**: Boutique consultancy offering personalized attention and agile response
+-   **Domain Knowledge**: Specialized experience in environmental and sustainability analytics
 
----
+------------------------------------------------------------------------
 
 ## Recent Insights
 
 Visit our [Blog](blog/blog.qmd) to explore our latest thoughts on data science, R programming, and industry trends.
 
----
+------------------------------------------------------------------------
 
-::: {.callout-tip}
+::: callout-tip
 ## Ready to Start Your Project?
 
 Let's discuss how we can help transform your data into strategic advantages. [Get in touch](contact.qmd) to schedule a consultation.
 :::
 
+```{=html}
 <style>
 .hero-section {
   text-align: center;
@@ -88,3 +91,4 @@ Let's discuss how we can help transform your data into strategic advantages. [Ge
   font-weight: 400;
 }
 </style>
+```
