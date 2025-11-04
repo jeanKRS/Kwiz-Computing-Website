@@ -37,16 +37,16 @@ However, the gap between regulatory requirements and implementation reality is s
 
 ### Public Access Challenges
 
-While Kenya launched the Kenya Open Data Initiative in 2011—becoming the first sub-Saharan African country to do so—EIA data remains notably absent from this transparency effort. NEMA maintains that EIA reports are publicly accessible, but the reality presents significant barriers.
+While Kenya launched the Kenya Open Data Initiative in 2011—becoming the first sub-Saharan African country to do so—EIA data remains notably absent from this transparency effort. In fact, the opendata.go.ke portal itself has faced significant accessibility challenges, [being offline for several years](/blog/kenya-open-data-initiative.qmd) due to institutional and resource constraints. NEMA maintains that EIA reports are publicly accessible, but the reality presents significant barriers.
 
 According to NEMA's clarifications, high-risk project Study Reports are published in the Kenya Gazette and newspapers, making them theoretically accessible. However, medium and low-risk Project Reports are available only through NEMA's licensing portal, not directly on the public website. This two-tiered system creates accessibility disparities, with the majority of projects falling into categories with limited public access.
 
-The situation reflects broader challenges in Kenya's open data landscape. Despite constitutional guarantees of the right to information ([Article 35 of Kenya's Constitution](http://www.kenyalaw.org/)), the [2022 Global Data Barometer](https://globaldatabarometer.org/) gave Kenya a score of 30 out of 100 for data capability—well below the global average of 49. Kenya received zero ratings for subnational capabilities, open data initiatives, and support for data reuse.
+The situation reflects broader challenges in Kenya's open data landscape. Despite constitutional guarantees of the right to information ([Article 35 of Kenya's Constitution](http://www.kenyalaw.org/)), the [2022 Global Data Barometer](https://globaldatabarometer.org/) gave Kenya a score of 30 out of 100 for data capability—well below the global average of 49. Kenya received zero ratings for subnational capabilities, open data initiatives, and support for data reuse. These systemic failures in open data infrastructure are explored in detail in our [analysis of Kenya's Open Data Initiative](/blog/kenya-open-data-initiative.qmd).
 
 ::: callout-warning
 ## Data Accessibility Gap
 
-Despite Kenya's pioneering role in open data initiatives in Africa, environmental assessment data remains largely inaccessible to the public, limiting transparency and accountability.
+Despite Kenya's pioneering role in open data initiatives in Africa, environmental assessment data remains largely inaccessible to the public, limiting transparency and accountability. For more on Kenya's open data challenges, see our [dedicated analysis](/blog/kenya-open-data-initiative.qmd).
 :::
 
 ### The Cost of Access

@@ -165,7 +165,7 @@ The inaccessibility of the open data portal has:
 
 ### Environmental Data Specifically
 
-As discussed in our [analysis of Kenya's Environmental Impact Assessment system](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd), environmental data remains particularly inaccessible. Despite Kenya's pioneering open data initiative, **EIA data is notably absent** from transparency efforts.
+As discussed in our [detailed analysis of Kenya's Environmental Impact Assessment system](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd), environmental data remains particularly inaccessible. Despite Kenya's pioneering open data initiative, **EIA data is notably absent** from transparency efforts—a critical gap given the importance of environmental governance for sustainable development.
 
 This gap:
 
@@ -203,7 +203,7 @@ Kenya's KODI experience reinforces lessons from open data initiatives globally:
 
 **Institutional clarity is essential**: Clear ownership, mandate, and resources are prerequisites
 
-**Data quality requires investment**: Publishing data is not enough; it must be current, complete, and usable
+**Data quality requires investment**: Publishing data is not enough; it must be current, complete, and usable. This challenge is particularly acute in [Kenya's Environmental Impact Assessment system](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd), where data quality and reproducibility remain deeply problematic.
 
 **User engagement sustains momentum**: Active user communities create accountability pressure
 
@@ -283,7 +283,7 @@ To build momentum, prioritize datasets with clear public value:
 
 - **Budget and spending data**: Enabling financial accountability
 - **Service delivery metrics**: Allowing performance comparison across regions
-- **Environmental data**: Supporting climate action and impact monitoring
+- **Environmental data**: Supporting climate action and impact monitoring, including making [Environmental Impact Assessment reports](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd) publicly accessible
 - **Health and education statistics**: Informing policy and resource allocation
 - **Land and property records**: Reducing disputes and enabling planning
 
