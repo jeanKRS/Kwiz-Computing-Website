@@ -23,8 +23,9 @@ But what makes R particularly suited for data analysis work? In this post, we'll
 
 Unlike general-purpose programming languages that were later adapted for data work, R was designed from the ground up for statistical computing and data analysis (R Core Team, 2024). Developed in the early 1990s at the University of Auckland, [R evolved from the S programming language](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf) created at Bell Laboratories. This heritage shows in every aspect of the language:
 
-::: {.callout-tip}
+::: callout-tip
 ## Did You Know?
+
 R is named partly after the first names of its two creators, Ross Ihaka and Robert Gentleman, and partly as a play on the name of S.
 :::
 
@@ -68,8 +69,9 @@ This pipe-based workflow mirrors how analysts think about data transformations: 
 
 [ggplot2](https://ggplot2.tidyverse.org/), R's flagship visualization package, implements the grammar of graphics—a principled approach to creating statistical graphics (Wickham, 2016). Based on Leland Wilkinson's groundbreaking work *The Grammar of Graphics* (2005), ggplot2 has become [one of the most downloaded R packages](https://www.r-pkg.org/downloaded) with over 10 million downloads monthly:
 
-::: {.callout-note}
+::: callout-note
 ## Grammar of Graphics
+
 The grammar of graphics is a systematic framework for building statistical graphics by combining independent components like data, coordinate systems, and geometric objects.
 :::
 
@@ -268,15 +270,13 @@ Key metrics for the month:
 
 ```
 
-
-
 ## Practical Tips for Data Analysts Using R
 
 ### 1. Build a Consistent Workflow
 
 Establish project structures that scale:
 
-```
+```         
 project_name/
 ├── data/
 │   ├── raw/
@@ -295,10 +295,10 @@ project_name/
 
 RStudio Projects help maintain organized, reproducible work:
 
-- Keep file paths relative
-- Isolate package libraries
-- Preserve workspace settings
-- Facilitate version control
+-   Keep file paths relative
+-   Isolate package libraries
+-   Preserve workspace settings
+-   Facilitate version control
 
 ### 3. Leverage Package Management
 
@@ -394,17 +394,9 @@ datatable(results_table,
 
 **Solution**: Focus on high-impact packages and incremental learning:
 
-**Essential packages for beginners:**
-1. `dplyr` - Data manipulation
-2. `ggplot2` - Visualization
-3. `readr` - Data import
-4. `tidyr` - Data tidying
+**Essential packages for beginners:** 1. `dplyr` - Data manipulation 2. `ggplot2` - Visualization 3. `readr` - Data import 4. `tidyr` - Data tidying
 
-**Learn by doing:**
-- Start with your actual work data
-- Replicate existing analyses in R
-- Gradually replace manual spreadsheet steps
-- Build a personal reference library of code snippets
+**Learn by doing:** - Start with your actual work data - Replicate existing analyses in R - Gradually replace manual spreadsheet steps - Build a personal reference library of code snippets
 
 ## The R Community Advantage
 
@@ -412,15 +404,16 @@ datatable(results_table,
 
 One of R's greatest strengths is its welcoming and helpful community (Tippmann, 2015):
 
-- **[Stack Overflow](https://stackoverflow.com/questions/tagged/r)**: Active R community with over 400,000+ questions answered
-- **[RStudio Community](https://community.rstudio.com/)**: Supportive forum for all skill levels maintained by Posit
-- **[Twitter/X #rstats](https://twitter.com/search?q=%23rstats)**: Daily tips, package announcements, and help
-- **[R-Ladies](https://rladies.org/)**: Global organization promoting gender diversity in R with 200+ chapters worldwide
-- **[Local R User Groups](https://www.meetup.com/topics/r-project-for-statistical-computing/)**: In-person networking and learning opportunities
-- **[Posit Community](https://posit.co/community/)**: Official support and resources from the makers of RStudio
+-   [**Stack Overflow**](https://stackoverflow.com/questions/tagged/r): Active R community with over 400,000+ questions answered
+-   [**RStudio Community**](https://community.rstudio.com/): Supportive forum for all skill levels maintained by Posit
+-   [**Twitter/X #rstats**](https://twitter.com/search?q=%23rstats): Daily tips, package announcements, and help
+-   [**R-Ladies**](https://rladies.org/): Global organization promoting gender diversity in R with 200+ chapters worldwide
+-   [**Local R User Groups**](https://www.meetup.com/topics/r-project-for-statistical-computing/): In-person networking and learning opportunities
+-   [**Posit Community**](https://posit.co/community/): Official support and resources from the makers of RStudio
 
-::: {.callout-tip}
+::: callout-tip
 ## Getting Help
+
 The R community follows a "pay it forward" culture. As you learn, consider answering questions on Stack Overflow or participating in local user groups to help others.
 :::
 
@@ -434,32 +427,24 @@ For organizations investing in their data analysis capabilities, R represents no
 
 ## Resources for Further Learning
 
-**Free Online Resources:**
-- [R for Data Science](https://r4ds.hadley.nz/) by Hadley Wickham & Garrett Grolemund
-- [RStudio Education](https://education.rstudio.com/)
-- [R Programming Coursera Course](https://www.coursera.org/learn/r-programming)
+**Free Online Resources:** - [R for Data Science](https://r4ds.hadley.nz/) by Hadley Wickham & Garrett Grolemund - [RStudio Education](https://education.rstudio.com/) - [R Programming Coursera Course](https://www.coursera.org/learn/r-programming)
 
-**Recommended Packages:**
-- **Data Manipulation**: dplyr, tidyr, data.table
-- **Visualization**: ggplot2, plotly, patchwork
-- **Reporting**: quarto, rmarkdown
-- **Time Series**: tsibble, feasts, fable
-- **Statistical Modeling**: stats, broom, modelr
+**Recommended Packages:** - **Data Manipulation**: dplyr, tidyr, data.table - **Visualization**: ggplot2, plotly, patchwork - **Reporting**: quarto, rmarkdown - **Time Series**: tsibble, feasts, fable - **Statistical Modeling**: stats, broom, modelr
 
----
+------------------------------------------------------------------------
 
 *Have questions about implementing R in your data analysis workflow? [Contact us](mailto:info@kwizcomputing.com) for a consultation.*
 
 ## References
 
-- Ihaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. *Journal of Computational and Graphical Statistics*, 5(3), 299-314. [https://doi.org/10.1080/10618600.1996.10474713](https://doi.org/10.1080/10618600.1996.10474713)
+-   Ihaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. *Journal of Computational and Graphical Statistics*, 5(3), 299-314. <https://doi.org/10.1080/10618600.1996.10474713>
 
-- R Core Team. (2024). *R: A language and environment for statistical computing*. R Foundation for Statistical Computing. [https://www.R-project.org/](https://www.R-project.org/)
+-   R Core Team. (2024). *R: A language and environment for statistical computing*. R Foundation for Statistical Computing. <https://www.R-project.org/>
 
-- Tippmann, S. (2015). Programming tools: Adventures with R. *Nature*, 517(7532), 109-110. [https://doi.org/10.1038/517109a](https://doi.org/10.1038/517109a)
+-   Tippmann, S. (2015). Programming tools: Adventures with R. *Nature*, 517(7532), 109-110. <https://doi.org/10.1038/517109a>
 
-- Wickham, H. (2016). *ggplot2: Elegant graphics for data analysis* (2nd ed.). Springer-Verlag. [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+-   Wickham, H. (2016). *ggplot2: Elegant graphics for data analysis* (2nd ed.). Springer-Verlag. <https://ggplot2.tidyverse.org/>
 
-- Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., ... & Yutani, H. (2019). Welcome to the tidyverse. *Journal of Open Source Software*, 4(43), 1686. [https://doi.org/10.21105/joss.01686](https://doi.org/10.21105/joss.01686)
+-   Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., ... & Yutani, H. (2019). Welcome to the tidyverse. *Journal of Open Source Software*, 4(43), 1686. <https://doi.org/10.21105/joss.01686>
 
-- Wilkinson, L. (2005). *The grammar of graphics* (2nd ed.). Springer-Verlag. [https://doi.org/10.1007/0-387-28695-0](https://doi.org/10.1007/0-387-28695-0)
+-   Wilkinson, L. (2005). *The grammar of graphics* (2nd ed.). Springer-Verlag. <https://doi.org/10.1007/0-387-28695-0>

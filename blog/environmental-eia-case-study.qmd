@@ -687,7 +687,6 @@ conclusions <- generate_conclusions(data)
 
 walk(conclusions, ~cat("- ", .x, "\n"))
 ```
-```
 
 ## Results and Impact
 

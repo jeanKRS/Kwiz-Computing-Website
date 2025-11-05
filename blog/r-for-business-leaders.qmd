@@ -375,6 +375,7 @@ We specialize in helping organizations leverage R for production software develo
 - [R as a Data Analyst's Essential Tool](r-data-analysis.qmd)
 - [R for Software Development: Beyond Scripts](r-software-development.qmd) (Technical)
 - [Case Study: Data Science for Environmental Impact Assessments](environmental-eia-case-study.qmd)
+<<<<<<< HEAD
 
 ---
 
@@ -389,3 +390,5 @@ We specialize in helping organizations leverage R for production software develo
 - Rexer Analytics. (2020). *2020 Data Science Survey*. Retrieved from [http://www.rexeranalytics.com/](http://www.rexeranalytics.com/)
 
 - Stack Overflow. (2023). *2023 Developer Survey*. Retrieved from [https://survey.stackoverflow.co/2023/](https://survey.stackoverflow.co/2023/)
+=======
+>>>>>>> parent of b933a05 (Update hero section, add page backgrounds, and enhance blog navigation)
