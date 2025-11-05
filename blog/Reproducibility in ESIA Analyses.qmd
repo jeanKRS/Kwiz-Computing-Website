@@ -1,13 +1,16 @@
 ---
 title: "Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments"
 format: html
+date: "2025-01-28"
+categories: [ESIA, Data Analysis, Sustainability, R Programming, Business Strategy, Decision Making]
+description: "A non-technical guide for business leaders and decision-makers on why R deserves a seat at the software development table"
 ---
 
-## Executive Summary
-
-![Environmental protection concept. Photo by [Li-An Lim](https://unsplash.com/@li_anlim) on [Unsplash](https://unsplash.com/photos/ycW4YxhrWHM)](https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=1200&q=80)
+**Executive Summary**
 
 Kenya's Environmental Impact Assessment (EIA) system, established under the [Environmental Management and Coordination Act (EMCA) of 1999](http://www.environment.go.ke/), represents a significant commitment to sustainable development. However, the state of data quality, accessibility, and reproducibility in EIA processes reveals substantial gaps that undermine the effectiveness of environmental governance (Kakonge, 2006).
+
+![Environmental protection concept. Photo by [Li-An Lim](https://unsplash.com/@li_anlim) on [Unsplash](https://unsplash.com/photos/ycW4YxhrWHM)](https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=1200&q=80)
 
 ::: callout-important
 ## Critical Analysis
@@ -19,9 +22,7 @@ This analysis draws on publicly available information, academic research, and tr
 
 ## Introduction
 
-![Governance and transparency. Photo by [Tingey Injury Law Firm](https://unsplash.com/@tingeyinjurylawfirm) on [Unsplash](https://unsplash.com/photos/L4YGuSg0fxs)](https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80)
-
-Environmental Impact Assessments serve as crucial gatekeepers in Kenya's development trajectory, theoretically ensuring that economic progress does not come at the expense of environmental degradation. Since the passage of [EMCA in 1999](http://www.environment.go.ke/) and subsequent [EIA regulations in 2003](https://www.nema.go.ke/), Kenya has established a legal framework requiring systematic evaluation of proposed projects' environmental consequences. The [National Environment Management Authority (NEMA)](https://www.nema.go.ke/) oversees this process, reviewing thousands of EIA reports annually across three risk categories: low, medium, and high-risk projects.
+Environmental Impact Assessments serve as crucial gatekeepers in Kenya's development trajectory, theoretically ensuring that economic progress does not come at the expense of environmental degradation. Since the passage of EMCA in 1999 and subsequent EIA regulations in 2003, Kenya has established a legal framework requiring systematic evaluation of proposed projects' environmental consequences. The National Environment Management Authority (NEMA) oversees this process, reviewing thousands of EIA reports annually across three risk categories: low, medium, and high-risk projects.
 
 Yet behind this regulatory façade lies a more complex reality. The quality, accessibility, and reproducibility of data underpinning these assessments—the very foundation upon which environmental decisions rest—remain deeply problematic. This article evaluates the current state of data practices in Kenya's EIA system and their implications for environmental governance.
 
@@ -37,9 +38,7 @@ However, the gap between regulatory requirements and implementation reality is s
 
 ### Public Access Challenges
 
-![Open data concept. Photo by Markus Spiske on Unsplash](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
-
-While Kenya launched the [Kenya Open Data Initiative](https://www.opendata.go.ke/) in 2011—becoming the first sub-Saharan African country to do so (Centre for Public Impact, 2024)—EIA data remains notably absent from this transparency effort. In fact, the opendata.go.ke portal itself has faced significant accessibility challenges, [being offline for several years](/blog/kenya-open-data-initiative.qmd) due to institutional and resource constraints. NEMA maintains that EIA reports are publicly accessible, but the reality presents significant barriers.
+While Kenya launched the Kenya Open Data Initiative in 2011—becoming the first sub-Saharan African country to do so—EIA data remains notably absent from this transparency effort. In fact, the opendata.go.ke portal itself has faced significant accessibility challenges, [being offline for several years](/blog/kenya-open-data-initiative.qmd) due to institutional and resource constraints. NEMA maintains that EIA reports are publicly accessible, but the reality presents significant barriers.
 
 According to NEMA's clarifications, high-risk project Study Reports are published in the Kenya Gazette and newspapers, making them theoretically accessible. However, medium and low-risk Project Reports are available only through NEMA's licensing portal, not directly on the public website. This two-tiered system creates accessibility disparities, with the majority of projects falling into categories with limited public access.
 
@@ -329,5 +328,3 @@ The choice is clear: Kenya can continue with EIA processes that create the appea
 ------------------------------------------------------------------------
 
 *This article was prepared as an independent analysis of publicly available information regarding Kenya's EIA system. The views expressed are those of the author and do not represent official positions of any government agency or organization.*
-
-**Word Count: \~5,800 words**
