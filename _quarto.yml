@@ -17,7 +17,7 @@ website:
       - text: "Services"
         href: services.qmd
       - text: "Blog"
-        href: blog/blog.qmd
+        href: blog.qmd
       - text: "Contact"
         href: contact.qmd
   page-footer:

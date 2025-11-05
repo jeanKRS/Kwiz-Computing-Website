@@ -12,16 +12,16 @@ Transform your data into actionable insights with sophisticated statistical meth
 
 **What we deliver:**
 
-- Exploratory data analysis and visualization
-- Statistical modeling and hypothesis testing
-- Predictive analytics and machine learning
-- Time series analysis and forecasting
-- Survey design and analysis
-- A/B testing and experimental design
+-   Exploratory data analysis and visualization
+-   Statistical modeling and hypothesis testing
+-   Predictive analytics and machine learning
+-   Time series analysis and forecasting
+-   Survey design and analysis
+-   A/B testing and experimental design
 
 **Tools:** R, tidyverse, ggplot2, caret, tidymodels, prophet
 
----
+------------------------------------------------------------------------
 
 ### Enterprise Shiny Application Development
 
@@ -29,16 +29,16 @@ Build robust, scalable interactive applications following industry best practice
 
 **What we deliver:**
 
-- Modular, maintainable Shiny architecture
-- Comprehensive unit and integration testing
-- Responsive UI/UX design with bslib
-- Performance optimization
-- Authentication and security
-- Deployment and DevOps support
+-   Modular, maintainable Shiny architecture
+-   Comprehensive unit and integration testing
+-   Responsive UI/UX design with bslib
+-   Performance optimization
+-   Authentication and security
+-   Deployment and DevOps support
 
 **Tools:** rhino, shiny, bslib, shinytest2, testthat
 
----
+------------------------------------------------------------------------
 
 ### Environmental Data Science
 
@@ -46,16 +46,16 @@ Specialized analytics for environmental impact assessments, sustainability repor
 
 **What we deliver:**
 
-- Environmental impact assessment analytics
-- Ecological data analysis and biodiversity metrics
-- Sustainability KPI tracking and reporting
-- Regulatory compliance automation
-- Geospatial analysis and mapping
-- Environmental audit data systems
+-   Environmental impact assessment analytics
+-   Ecological data analysis and biodiversity metrics
+-   Sustainability KPI tracking and reporting
+-   Regulatory compliance automation
+-   Geospatial analysis and mapping
+-   Environmental audit data systems
 
 **Tools:** sf, terra, leaflet, environmental R packages
 
----
+------------------------------------------------------------------------
 
 ### Data Visualization & Dashboards
 
@@ -63,15 +63,15 @@ Create compelling, interactive visualizations and dashboards that communicate co
 
 **What we deliver:**
 
-- Custom ggplot2 visualizations
-- Interactive plotly and highcharter graphics
-- Executive dashboards with flexdashboard or Shiny
-- Automated report generation with Quarto
-- Web-based data presentations
+-   Custom ggplot2 visualizations
+-   Interactive plotly and highcharter graphics
+-   Executive dashboards with flexdashboard or Shiny
+-   Automated report generation with Quarto
+-   Web-based data presentations
 
 **Tools:** ggplot2, plotly, highcharter, leaflet, Quarto
 
----
+------------------------------------------------------------------------
 
 ### R Package Development
 
@@ -79,15 +79,15 @@ Build custom R packages for your organization to standardize workflows and share
 
 **What we deliver:**
 
-- Custom package architecture and design
-- Comprehensive documentation with roxygen2
-- Unit testing with testthat
-- Continuous integration setup
-- CRAN-ready or internal deployment
+-   Custom package architecture and design
+-   Comprehensive documentation with roxygen2
+-   Unit testing with testthat
+-   Continuous integration setup
+-   CRAN-ready or internal deployment
 
 **Tools:** devtools, usethis, roxygen2, testthat, pkgdown
 
----
+------------------------------------------------------------------------
 
 ### Training & Knowledge Transfer
 
@@ -95,14 +95,14 @@ Empower your team with customized training programs designed for your specific n
 
 **What we offer:**
 
-- Introduction to R for data analysis
-- Advanced R programming and package development
-- Shiny application development
-- Statistical methods and modeling
-- Best practices for reproducible research
-- Custom workshops tailored to your domain
+-   Introduction to R for data analysis
+-   Advanced R programming and package development
+-   Shiny application development
+-   Statistical methods and modeling
+-   Best practices for reproducible research
+-   Custom workshops tailored to your domain
 
----
+------------------------------------------------------------------------
 
 ## Engagement Models
 
@@ -118,20 +118,20 @@ Ongoing partnership with dedicated hours per month. Perfect for continuous suppo
 
 Customized workshops and training programs for teams. Available as one-time sessions or multi-week courses.
 
----
+------------------------------------------------------------------------
 
 ## Our Process
 
-1. **Initial Consultation** (Free): Discuss your needs and explore potential solutions
-2. **Proposal**: Detailed scope, timeline, and cost estimate
-3. **Agreement**: Clear contract outlining deliverables and expectations
-4. **Execution**: Regular updates and iterative development
-5. **Delivery**: Comprehensive documentation and knowledge transfer
-6. **Support**: Optional ongoing maintenance and enhancement
+1.  **Initial Consultation** (Free): Discuss your needs and explore potential solutions
+2.  **Proposal**: Detailed scope, timeline, and cost estimate
+3.  **Agreement**: Clear contract outlining deliverables and expectations
+4.  **Execution**: Regular updates and iterative development
+5.  **Delivery**: Comprehensive documentation and knowledge transfer
+6.  **Support**: Optional ongoing maintenance and enhancement
 
----
+------------------------------------------------------------------------
 
-::: {.callout-note}
+::: callout-note
 ## Custom Solutions
 
 Don't see exactly what you need? We're happy to discuss custom solutions tailored to your specific requirements. Every organization has unique challenges, and we excel at crafting bespoke approaches.

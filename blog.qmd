@@ -1,0 +1,20 @@
+---
+title: "Blog & Insights"
+listing:
+  contents: 
+    - "blog/*.qmd"
+    - "!blog.qmd"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description, categories]
+page-layout: full
+---
+
+Welcome to the Kwiz Computing Technologies blog. Here we share insights on data science, R programming, and real-world applications of analytical techniques.
+
+## Featured Posts
+
+Browse our latest articles below, covering topics from practical R programming techniques to case studies demonstrating the impact of data science in various domains.

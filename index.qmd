@@ -58,7 +58,7 @@ Empower your team with customized training programs in R programming, statistica
 
 ## Recent Insights
 
-Visit our [Blog](blog/blog.qmd) to explore our latest thoughts on data science, R programming, and industry trends.
+Visit our [Blog](blog.qmd) to explore our latest thoughts on data science, R programming, and industry trends.
 
 ------------------------------------------------------------------------
 
