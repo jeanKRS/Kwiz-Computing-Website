@@ -3,98 +3,143 @@ title: "Services"
 ---
 
 ::: services-intro
-We deliver specialized data science solutions for environmental professionals, regulatory bodies, and organizations committed to sustainable development. Our expertise combines rigorous statistical methods with deep domain knowledge in environmental impact assessment and sustainability analytics.
+We deliver comprehensive data science solutions built on transferable technical capabilities. Our expertise in R programming, statistical analysis, and software engineering enables us to solve complex analytical challenges across diverse industries and domains.
 :::
 
 ------------------------------------------------------------------------
 
 ## Core Services {#core-services}
 
-### 🌍 Environmental Impact Assessment Analytics {#environmental-data-science}
+### 📊 Advanced Analytics & Statistical Consulting {#analytics}
 
 ::: service-detail
-Transform EIA/ESIA processes with reproducible, transparent analytics that meet regulatory standards and support evidence-based decision making.
+Transform complex data into actionable insights using rigorous statistical methods, predictive modeling, and advanced analytical techniques.
 
-#### Our Expertise Includes:
+#### Core Capabilities:
 
-**ESIA Data Analysis & Reproducibility**
-- Baseline environmental data processing and quality assurance
-- Impact prediction modeling with uncertainty quantification
-- Reproducible analytical workflows ensuring transparency
-- Compliance with EMCA regulations and international standards
+**Exploratory Data Analysis**
+- Comprehensive data profiling and pattern detection
+- Multivariate analysis and dimensionality reduction
+- Outlier detection and anomaly identification
+- Data visualization and insight communication
 
-**Environmental Monitoring Systems**
-- Automated data collection and validation pipelines
-- Real-time monitoring dashboards for environmental parameters
-- Post-approval audit data analysis and reporting
-- Long-term trend analysis and change detection
+**Statistical Modeling & Inference**
+- Regression analysis (linear, logistic, GLM, mixed effects)
+- Time series analysis and forecasting
+- Survival analysis and event history modeling
+- Bayesian inference and hierarchical modeling
 
-**Regulatory Compliance**
-- NEMA reporting format automation
-- Environmental Management Plan (EMP) tracking systems
-- Annual audit report generation
-- Multi-project cumulative impact assessment
+**Predictive Analytics & Machine Learning**
+- Classification and regression models
+- Ensemble methods and model stacking
+- Feature engineering and selection
+- Model validation and performance evaluation
+- Uncertainty quantification
 
-**Geospatial Environmental Analysis**
-- Spatial baseline studies and mapping
-- Buffer zone analysis and impact visualization
-- Biodiversity hotspot identification
-- Land use change detection
+**Experimental Design & Causal Inference**
+- A/B testing and experimental design
+- Power analysis and sample size determination
+- Propensity score matching
+- Difference-in-differences analysis
+- Instrumental variables and causal DAGs
+
+**Spatial & Geospatial Analysis**
+- Spatial statistics and geostatistics
+- Point pattern analysis
+- Spatial interpolation and kriging
+- Geographic information systems integration
+
+#### Example Applications:
+
+**Environmental:** Impact prediction modeling, baseline environmental data analysis, biodiversity metrics, regulatory compliance analytics (ESIA/EIA frameworks)
+
+**Healthcare:** Clinical trial analysis, epidemiological modeling, patient outcome prediction, health services research
+
+**Business:** Customer churn prediction, demand forecasting, pricing optimization, market segmentation
+
+**Finance:** Risk modeling, credit scoring, portfolio optimization, fraud detection
+
+**Research:** Survey analysis, meta-analysis, publication-quality statistical reporting
 
 #### Why This Matters:
 
-Environmental decisions affect communities, ecosystems, and long-term sustainability. Our analytics ensure your assessments are scientifically rigorous, legally defensible, and truly transparent.
+Rigorous statistical analysis ensures your decisions are based on evidence, not assumptions. Our methodologically sound approach produces defensible, reproducible results that stand up to scrutiny.
 
 #### Typical Deliverables:
+- Comprehensive statistical reports with clear interpretation
 - Reproducible R analysis scripts and documentation
-- Interactive dashboards for data exploration
-- Automated report generation systems
-- Data quality assurance frameworks
-- Training for your technical team
+- Publication-ready visualizations and tables
+- Model validation and diagnostic reports
+- Technical documentation and methodology descriptions
 
-**Tools & Technologies:** R, sf, terra, leaflet, Quarto, git
+**Tools & Technologies:** R, tidyverse, tidymodels, caret, Stan, brms, mgcv, sf, spatial packages
 
 [Schedule a Consultation →](contact.qmd){.btn .btn-primary}
 :::
 
 ------------------------------------------------------------------------
 
-### 📊 Sustainability Data Management & ESG Reporting
+### 🗄️ Data Management & Integration
 
 ::: service-detail
-Build robust systems for measuring, analyzing, and reporting sustainability performance that demonstrate environmental stewardship and regulatory compliance.
+Design and implement robust data pipelines, quality assurance frameworks, and integration systems that ensure data reliability, accessibility, and scalability.
 
-#### What We Deliver:
+#### Core Capabilities:
 
-**Sustainability KPI Dashboards**
-- Real-time tracking of environmental performance metrics
-- Automated data collection from multiple sources
-- Interactive visualizations for stakeholder communication
-- Trend analysis and benchmarking
+**Data Pipeline Development**
+- ETL (Extract, Transform, Load) process design
+- Automated data ingestion from multiple sources
+- Real-time and batch processing workflows
+- Scalable data processing architectures
 
-**Carbon Footprint & Climate Analytics**
-- Greenhouse gas inventory systems
-- Emissions tracking and reduction monitoring
-- Climate risk assessment frameworks
-- Carbon credit verification analytics
+**Data Quality & Validation**
+- Comprehensive data validation frameworks
+- Automated quality checks and anomaly detection
+- Data cleansing and standardization
+- Metadata management and documentation
 
-**ESG Data Management**
-- Centralized environmental data repositories
-- Data quality and validation workflows
-- Multi-standard reporting (GRI, TCFD, etc.)
-- Stakeholder reporting automation
+**Database Design & Optimization**
+- Relational and NoSQL database design
+- Query optimization and performance tuning
+- Data warehousing and dimensional modeling
+- Version control and change tracking
 
-**Biodiversity & Ecosystem Metrics**
-- Species diversity indices and monitoring
-- Habitat quality assessment
-- Ecosystem services valuation
-- Conservation impact measurement
+**API Development & Integration**
+- RESTful API design and implementation
+- Third-party API integration
+- Authentication and security protocols
+- Rate limiting and error handling
 
-#### Business Value:
+**Reporting & Dashboard Automation**
+- Automated report generation systems
+- Scheduled data refreshes and distribution
+- Multi-format output (PDF, Excel, HTML, interactive)
+- Email notifications and alerting
 
-Meet stakeholder expectations, comply with emerging regulations, and demonstrate genuine commitment to sustainability through data-driven reporting.
+#### Example Applications:
 
-**Tools & Technologies:** R, Shiny, databases, Quarto, visualization packages
+**Environmental:** Multi-source environmental monitoring integration, ESIA data repositories, sustainability KPI tracking, ESG reporting systems, biodiversity databases
+
+**Healthcare:** Electronic health records integration, clinical data warehouses, patient monitoring systems, regulatory reporting
+
+**Business:** Customer data platforms, sales and marketing analytics, inventory management, financial reporting automation
+
+**Research:** Multi-study data integration, longitudinal research databases, publication data management, open data repositories
+
+**Public Sector:** Open data portals, performance monitoring systems, citizen feedback platforms, transparency dashboards
+
+#### Why This Matters:
+
+Poor data management leads to inconsistent reporting, compliance issues, and missed insights. Well-designed data systems become strategic assets that enable agile decision-making.
+
+#### Typical Deliverables:
+- Production-ready data pipelines with monitoring
+- Comprehensive data quality reports and dashboards
+- Database schema and technical documentation
+- API documentation and integration guides
+- Automated reporting systems with scheduling
+
+**Tools & Technologies:** R, databases (PostgreSQL, MySQL, SQLite), Plumber, httr, DBI, dbplyr, pins
 
 [Explore Solutions →](contact.qmd){.btn .btn-primary}
 :::
@@ -104,110 +149,212 @@ Meet stakeholder expectations, comply with emerging regulations, and demonstrate
 ### 💻 Enterprise R Application Development {#r-development}
 
 ::: service-detail
-Create professional-grade analytical applications using R and the Rhino framework for scalable, maintainable solutions.
+Build production-grade analytical applications and interactive dashboards using modern R frameworks and professional software engineering practices.
 
-#### Our Development Approach:
+#### Core Capabilities:
 
-**Modular Shiny Applications**
-- Clean architecture with separated concerns
-- Rhino framework for enterprise scalability
-- Responsive UI/UX with modern design systems
+**Interactive Shiny Applications**
+- Modular architecture using Rhino framework
+- Clean separation of concerns (UI, server, business logic)
+- Responsive design with bslib and Bootstrap
 - Performance optimization for large datasets
+- Real-time data updates and reactivity
 
-**Quality Assurance**
-- Comprehensive unit and integration testing
-- Code review and best practices enforcement
-- Continuous integration/deployment pipelines
-- Version control and collaboration workflows
+**Data Visualization & Dashboards**
+- Interactive plots with plotly and highcharter
+- Geographic visualizations with leaflet
+- Custom ggplot2 themes and extensions
+- Executive dashboards and KPI tracking
+- Multi-page applications with navigation
+
+**Software Engineering Best Practices**
+- Comprehensive unit and integration testing (testthat, shinytest2)
+- Code review and quality standards
+- Version control with git
+- Continuous integration/deployment (CI/CD)
+- Documentation with roxygen2 and pkgdown
 
 **Security & Authentication**
-- User authentication and role-based access
-- Data encryption and secure connections
-- Audit trails and logging
-- Compliance with data protection regulations
+- User authentication (OAuth, LDAP, database)
+- Role-based access control (RBAC)
+- Session management and security headers
+- Data encryption in transit and at rest
+- Audit logging and compliance
 
-**Deployment & Support**
-- Cloud deployment (AWS, Azure, Posit Connect)
+**Deployment & DevOps**
+- Cloud deployment (AWS, Azure, Google Cloud)
+- Posit Connect and Shiny Server
 - Containerization with Docker
-- Monitoring and error tracking
-- Ongoing maintenance and enhancement
+- Load balancing and scaling strategies
+- Monitoring, logging, and error tracking
 
-#### Perfect For:
+#### Example Applications:
 
-Organizations needing custom analytical tools, interactive dashboards, or data exploration platforms that their teams can rely on daily.
+**Environmental:** Real-time environmental monitoring dashboards, ESIA data exploration platforms, sustainability reporting systems, compliance tracking tools
 
-**Tools & Technologies:** rhino, shiny, bslib, testthat, Docker, git
+**Healthcare:** Clinical trial dashboards, patient outcome trackers, hospital performance monitoring, epidemiological visualization tools
+
+**Business:** Sales analytics dashboards, customer segmentation tools, inventory management systems, financial reporting platforms
+
+**Research:** Interactive data explorers for publications, research collaboration platforms, grant portfolio tracking, lab management systems
+
+**Public Sector:** Citizen feedback portals, budget transparency dashboards, performance monitoring systems, open data exploration tools
+
+#### Why Choose R for Applications:
+
+R excels at statistical computing and data visualization, making it ideal for analytical applications. Combined with modern frameworks like Rhino, you get enterprise-grade applications with the analytical power R is known for.
+
+#### Typical Deliverables:
+- Production-ready Shiny applications
+- Comprehensive test suites and documentation
+- Deployment configurations and guides
+- User manuals and training materials
+- Source code with version control
+
+**Tools & Technologies:** rhino, shiny, bslib, plotly, leaflet, DT, testthat, shinytest2, Docker, git
 
 [See What's Possible →](contact.qmd){.btn .btn-primary}
 :::
 
 ------------------------------------------------------------------------
 
-### 🎯 Open Data & Transparency Solutions
+### 📈 Data Visualization & Reporting
 
 ::: service-detail
-Design and implement open data systems that enhance transparency, accountability, and enable data-driven decision making.
+Create compelling visualizations, automated reports, and interactive presentations that communicate complex data insights clearly and effectively.
 
-#### Our Services:
+#### Core Capabilities:
 
-**Open Data Portal Development**
-- User-friendly data discovery interfaces
-- Multiple format export capabilities (CSV, JSON, GeoJSON)
-- API development for programmatic access
-- Search and filtering functionality
+**Publication-Quality Visualizations**
+- Custom ggplot2 graphics with professional themes
+- Statistical plots (distributions, correlations, regressions)
+- Network diagrams and relationship visualizations
+- Infographics and explanatory graphics
+- Print-ready figures for publications
 
-**Data Quality Frameworks**
-- Metadata standards and documentation
-- Data validation and quality checks
-- Update frequency monitoring
-- Version control and change tracking
+**Interactive Visualizations**
+- Dynamic plotly and highcharter graphics
+- Geographic maps with leaflet
+- Interactive tables with DT and reactable
+- Drill-down and filtering capabilities
+- Export and sharing functionality
 
-**Transparency Systems**
-- Public reporting dashboards
-- Automated data publication workflows
-- Stakeholder engagement platforms
-- Feedback and data request mechanisms
+**Automated Reporting**
+- Parameterized Quarto/R Markdown reports
+- Scheduled report generation and distribution
+- Multi-format output (PDF, Word, HTML, PowerPoint)
+- Template-based report systems
+- Version-controlled documentation
 
-**Capacity Building**
-- Training for data publishers
-- Data literacy programs for users
-- Best practices documentation
-- Community engagement strategies
+**Dashboards & Communication Platforms**
+- Executive summary dashboards
+- Real-time KPI monitoring
+- Stakeholder-facing data portals
+- Internal analytics platforms
+- Mobile-responsive designs
 
-#### Impact:
+**Data Storytelling**
+- Narrative-driven presentations
+- Guided data exploration
+- Contextual annotations and insights
+- Audience-specific communication strategies
+- Clear, jargon-free explanations
 
-Enable evidence-based public participation, support research and innovation, and demonstrate institutional commitment to transparency.
+#### Example Applications:
 
-**Tools & Technologies:** R, Shiny, APIs, databases, ArcGIS Hub integration
+**Research:** Publication figures, supplementary materials, research summaries, grant reporting, conference presentations
+
+**Business:** Executive dashboards, quarterly reports, customer insights, market analysis, performance tracking
+
+**Public Sector:** Transparency portals, performance monitoring, citizen engagement, budget visualization, open data platforms
+
+**Healthcare:** Clinical trial results, patient outcomes, epidemiological reports, hospital dashboards, public health communication
+
+**Environmental:** Environmental monitoring reports, impact assessments, sustainability dashboards, compliance reporting, stakeholder communication
+
+#### Why Visualization Matters:
+
+Good visualizations don't just make data pretty—they make it understandable. Effective data communication drives better decisions, stakeholder buy-in, and organizational alignment.
+
+#### Typical Deliverables:
+- Custom visualizations in multiple formats
+- Interactive dashboards with user controls
+- Automated report templates and systems
+- Style guides and brand-aligned designs
+- Source code and reproducible workflows
+
+**Tools & Technologies:** ggplot2, plotly, highcharter, leaflet, DT, reactable, Quarto, R Markdown, flexdashboard
 
 [Learn More →](contact.qmd){.btn .btn-primary}
 :::
 
 ------------------------------------------------------------------------
 
-### 📈 Statistical Consulting & Advanced Analytics
+### 🔧 R Package Development & Custom Tools
 
 ::: service-detail
-Rigorous statistical analysis and modeling to support research, policy decisions, and organizational strategy.
+Build custom R packages and analytical tools to standardize workflows, share methodologies, and increase team productivity across your organization.
 
-#### Services Include:
+#### Core Capabilities:
 
-- Experimental design and power analysis
-- Predictive modeling and machine learning
-- Time series analysis and forecasting
-- Spatial statistics and geostatistics
-- Survey methodology and sampling
-- Causal inference and impact evaluation
-- Meta-analysis and systematic reviews
+**Package Architecture & Design**
+- Clean, modular package structure
+- Well-defined APIs and interfaces
+- Dependency management and version control
+- Namespace management and exports
+- S3/S4/R6 object systems as appropriate
 
-#### Specialized Applications:
+**Documentation & User Experience**
+- Comprehensive roxygen2 documentation
+- Vignettes and tutorials
+- pkgdown websites for package documentation
+- Function examples and use cases
+- README and Getting Started guides
 
-- Environmental exposure assessment
-- Risk modeling and uncertainty quantification
-- Population dynamics and ecological modeling
-- Climate change impact projections
+**Testing & Quality Assurance**
+- Unit tests with testthat
+- Code coverage analysis
+- Continuous integration setup
+- Error handling and input validation
+- Edge case testing
 
-**Tools & Technologies:** R, tidymodels, Stan, spatial statistics packages
+**Distribution & Deployment**
+- Internal package repositories
+- CRAN submission preparation
+- GitHub releases and versioning
+- Docker containers with pre-installed packages
+- Installation guides and troubleshooting
+
+**Maintenance & Support**
+- Bug tracking and issue management
+- Version updates and changelog
+- Backward compatibility considerations
+- User support and documentation updates
+
+#### Example Applications:
+
+**Research:** Standardized analysis workflows, reproducible research tools, discipline-specific statistical methods, publication automation
+
+**Business:** Internal analytics frameworks, reporting templates, data validation rules, company-specific calculations
+
+**Environmental:** ESIA analysis frameworks, environmental data processing tools, regulatory compliance helpers, sustainability metrics calculators
+
+**Healthcare:** Clinical trial analysis packages, patient data processing, regulatory reporting tools, epidemiological methods
+
+**General:** Data quality checking tools, visualization themes, API wrappers, workflow automation
+
+#### Why Build Custom Packages:
+
+Packages codify institutional knowledge, ensure consistency, and accelerate analysis. They turn repetitive tasks into one-line function calls and make complex methodologies accessible to entire teams.
+
+#### Typical Deliverables:
+- Fully functional R package with tests
+- Comprehensive documentation website
+- Installation and usage guides
+- Training materials for package users
+- Source code repository with CI/CD
+
+**Tools & Technologies:** devtools, usethis, roxygen2, testthat, pkgdown, R CMD check, GitHub Actions
 
 [Discuss Your Project →](contact.qmd){.btn .btn-primary}
 :::
@@ -217,39 +364,95 @@ Rigorous statistical analysis and modeling to support research, policy decisions
 ### 🎓 Training & Capacity Building
 
 ::: service-detail
-Empower your team with practical skills in R programming, environmental data analysis, and reproducible research.
+Empower your team with practical R programming skills, statistical methods, and modern data science workflows tailored to your organization's needs and domain.
 
-#### Training Programs:
+#### Core Training Programs:
 
-**R for Environmental Scientists**
-- Data manipulation with tidyverse
-- Statistical analysis for environmental data
-- Visualization and reporting
-- Reproducible workflows
+**Introduction to R for Data Analysis**
+- R fundamentals and RStudio workflow
+- Data manipulation with tidyverse (dplyr, tidyr)
+- Data visualization with ggplot2
+- Importing and exporting data
+- Basic statistical analysis
+- Reproducible workflows with R Markdown
 
-**ESIA Data Analytics Workshop**
-- Baseline data processing
-- Impact assessment methods
-- Regulatory reporting with R
-- Case studies from real projects
+**Advanced R Programming**
+- Functional programming concepts
+- Writing efficient R code
+- Package development basics
+- Debugging and profiling
+- Working with APIs
+- Best practices and code style
 
-**Enterprise Shiny Development**
-- Modern Shiny architecture
-- Testing and deployment
+**Statistical Analysis with R**
+- Exploratory data analysis
+- Regression modeling (linear, logistic, GLM)
+- Hypothesis testing and inference
+- Time series analysis
+- Spatial statistics
+- Model validation and diagnostics
+
+**Shiny Application Development**
+- Shiny fundamentals and reactivity
+- UI design with bslib
+- Modular Shiny with Rhino framework
+- Testing Shiny applications
+- Deployment strategies
 - Performance optimization
-- Best practices
 
-**Custom Workshops**
-- Tailored to your team's needs
-- Your own data and use cases
-- Hands-on practical exercises
-- Post-training support
+**Reproducible Research & Reporting**
+- Quarto and R Markdown
+- Version control with git and GitHub
+- Project organization best practices
+- Automated reporting workflows
+- Literate programming
+- Publication-ready outputs
+
+**Domain-Specific Workshops**
+- **Environmental:** ESIA data analysis, environmental monitoring, sustainability metrics, geospatial analysis
+- **Healthcare:** Clinical trial analysis, epidemiological methods, patient data workflows
+- **Business:** Customer analytics, forecasting, marketing analysis, financial modeling
+- **Research:** Survey analysis, experimental design, meta-analysis, research data management
+- **Public Sector:** Performance metrics, transparency reporting, policy analysis
 
 #### Delivery Options:
-- On-site workshops
-- Virtual training sessions
-- Self-paced online materials
-- One-on-one mentoring
+
+**In-Person Workshops**
+- On-site training at your organization
+- Hands-on exercises with your data
+- Direct interaction and Q&A
+- Team building and collaboration
+
+**Virtual Training**
+- Live online sessions via Zoom/Teams
+- Interactive coding exercises
+- Recorded sessions for review
+- Flexible scheduling
+
+**Hybrid Programs**
+- Combination of live sessions and self-paced learning
+- Online resources and exercises
+- Regular check-ins and support
+- Project-based assessments
+
+**Custom Curriculum Development**
+- Designed for your specific use cases
+- Incorporates your organization's data and workflows
+- Aligned with your team's skill levels
+- Ongoing support and mentoring
+
+#### What You Get:
+
+- Comprehensive training materials and code examples
+- Practice datasets and exercises
+- Reference guides and cheat sheets
+- Certificate of completion
+- Post-training support period
+- Access to a community forum or Slack channel
+
+#### Why Invest in Training:
+
+Building in-house R capabilities reduces dependence on external consultants, accelerates analysis workflows, and ensures institutional knowledge is retained and shared across teams.
 
 [Request Training Info →](contact.qmd){.btn .btn-primary}
 :::
@@ -272,10 +475,10 @@ Empower your team with practical skills in R programming, environmental data ana
 - Knowledge transfer session
 
 **Examples:**
-- ESIA data analysis for specific project
-- Sustainability dashboard development
-- Custom R package creation
-- Training workshop delivery
+- Statistical analysis for research study
+- Custom dashboard development
+- R package creation
+- Data pipeline implementation
 
 [Start a Project →](contact.qmd){.btn .btn-outline}
 :::
@@ -293,10 +496,10 @@ Empower your team with practical skills in R programming, environmental data ana
 - Long-term relationship
 
 **Examples:**
-- Monthly environmental data analysis
-- Continuous dashboard enhancement
-- On-call technical expertise
-- Compliance reporting support
+- Monthly data analysis and reporting
+- Continuous application enhancement
+- On-call statistical expertise
+- Ad-hoc analytical support
 
 [Explore Retainers →](contact.qmd){.btn .btn-outline}
 :::
@@ -314,10 +517,10 @@ Empower your team with practical skills in R programming, environmental data ana
 - Follow-up support
 
 **Examples:**
-- R for environmental scientists
-- ESIA analytics workshop
+- R fundamentals workshop
+- Statistical modeling training
 - Shiny development bootcamp
-- Reproducible research training
+- Domain-specific analytics course
 
 [Request Training →](contact.qmd){.btn .btn-outline}
 :::
@@ -398,13 +601,13 @@ We treat all client data with strict confidentiality, use secure communication c
 ::: services-cta
 ## Let's Build Something Together
 
-Every environmental challenge is unique. Whether you're navigating complex ESIA requirements, building transparency systems, or need advanced analytics support, we're here to help craft the right solution.
+Every analytical challenge is unique. Whether you need rigorous statistical analysis, enterprise R applications, reproducible workflows, or team training, we bring the technical expertise and methodological rigor to deliver results.
 
 ### What Happens Next?
 
-1. **Schedule a free 30-minute consultation** to discuss your needs
-2. **Receive a tailored proposal** outlining approach and pricing
-3. **Start your project** with clear milestones and deliverables
+1. **Schedule a free 30-minute consultation** to discuss your needs and challenges
+2. **Receive a tailored proposal** outlining our approach, timeline, and transparent pricing
+3. **Start your project** with clear milestones, deliverables, and regular communication
 
 **No sales pressure. No obligations. Just honest conversation about how we can help.**
 

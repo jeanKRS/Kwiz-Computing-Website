@@ -5,79 +5,87 @@ page-layout: full
 
 ::: hero-section
 ::: hero-content
-# Transform Environmental Data into Strategic Decisions
+# Transform Data into Strategic Decisions
 
-## Expert data science and analytics for environmental impact assessment, sustainability, and regulatory compliance
+## Expert R programming, statistical analysis, and enterprise-grade analytics solutions for organizations across all sectors
 
 ![](images/hero_section.png){width="auto" fig-align="center"}
 
-We combine deep expertise in R programming with specialized knowledge in environmental data science to help organizations make evidence-based decisions that matter.
+We deliver sophisticated data science solutions combining rigorous statistical methods, modern software development practices, and deep technical expertise in R programming.
 
 ::: hero-cta
-[Start Your Project](contact.qmd){.btn .btn-primary .btn-lg} [View Our Services](services.qmd){.btn .btn-outline .btn-lg}
+[Start Your Project](contact.qmd){.btn .btn-primary .btn-lg} [View Our Capabilities](services.qmd){.btn .btn-outline .btn-lg}
 :::
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## Our Expertise
+## Core Capabilities
 
-We specialize in environmental data science, delivering reproducible analytics and enterprise-grade solutions for organizations navigating complex regulatory landscapes.
+We provide comprehensive data science services built on transferable analytical and technical skills applicable across industries and domains.
 
 ::::::: services-grid
 ::: {.service-card .featured}
-### 🌍 Environmental Impact Assessment Analytics
+### 📊 Advanced Analytics & Statistical Modeling
 
-Transform EIA/ESIA data into reproducible, transparent analyses that meet regulatory standards and support sustainable development decisions.
+Turn complex data into actionable insights using sophisticated statistical methods, predictive modeling, and machine learning techniques.
 
-**Key capabilities:**
-- ESIA data analysis and reproducibility
-- Baseline environmental data processing
-- Impact prediction modeling
-- Regulatory compliance reporting
+**Core capabilities:**
+- Exploratory data analysis and pattern detection
+- Predictive modeling and forecasting
+- Statistical inference and hypothesis testing
+- Machine learning and classification
 
-[Learn More →](services.qmd#environmental-data-science)
+**Example applications:** Environmental impact prediction modeling, financial forecasting, customer behavior analysis, operational efficiency optimization
+
+[Learn More →](services.qmd#analytics)
 :::
 
 ::: service-card
-### 📊 Sustainability Data & Reporting
+### 💻 Enterprise R Application Development
 
-Build robust systems for tracking, analyzing, and reporting sustainability metrics that demonstrate environmental stewardship.
+Build robust, production-grade analytical applications and interactive dashboards using modern R frameworks and software engineering best practices.
 
 **What we deliver:**
-- KPI dashboards and automated reporting
-- Carbon footprint analysis
-- Biodiversity metrics and monitoring
-- ESG data management
+- Modular Shiny applications (Rhino framework)
+- Automated reporting systems
+- Data visualization platforms
+- Custom analytical tools
+
+**Example applications:** Environmental monitoring dashboards, business intelligence platforms, research data portals, compliance reporting systems
+
+[See What's Possible →](services.qmd#r-development)
+:::
+
+::: service-card
+### 🗄️ Data Management & Integration
+
+Design and implement robust data pipelines, quality assurance frameworks, and integration systems that ensure data reliability and accessibility.
+
+**Our approach:**
+- ETL pipeline development
+- Data validation and quality control
+- Database design and optimization
+- API development and integration
+
+**Example applications:** Multi-source environmental data integration, customer data platforms, research data repositories, regulatory reporting systems
 
 [Explore Solutions →](services.qmd)
 :::
 
 ::: service-card
-### 💻 R-Based Software Development
+### 📈 Custom Analytics Solutions
 
-Create enterprise-grade analytical applications using R and the Rhino framework for maintainable, tested, and scalable solutions.
+Develop tailored analytical frameworks and methodologies designed specifically for your organization's unique challenges and requirements.
 
-**Our approach:**
-- Modular Shiny applications
-- Comprehensive testing & documentation
-- Reproducible workflows
-- Best-practice architecture
+**We specialize in:**
+- Reproducible analytical workflows
+- Automated data processing
+- Custom statistical methodologies
+- Domain-specific analytics packages
 
-[See What's Possible →](services.qmd)
-:::
-
-::: service-card
-### 🎯 Open Data & Transparency Solutions
-
-Design and implement open data systems that enhance transparency, accountability, and data-driven decision making.
-
-**We help with:**
-- Data portal development
-- Data quality frameworks
-- Metadata standards
-- Public data accessibility
+**Example applications:** ESIA reproducibility frameworks, clinical trial analysis systems, financial risk models, supply chain analytics
 
 [Discover More →](services.qmd)
 :::
@@ -85,31 +93,75 @@ Design and implement open data systems that enhance transparency, accountability
 
 ------------------------------------------------------------------------
 
-## Why Organizations Trust Kwiz
+## Why Organizations Choose Kwiz
 
 ::::::: {.grid .why-choose}
 ::: {.g-col-12 .g-col-md-3}
-**🎓 Specialized Expertise**
+**🎓 Deep Technical Expertise**
 
-Deep knowledge in environmental data science, ESIA analytics, and sustainability reporting—not generic data science.
+Rigorous statistical training combined with modern software development practices—not just coding, but proper engineering.
 :::
 
 ::: {.g-col-12 .g-col-md-3}
 **🔬 Scientific Rigor**
 
-We prioritize reproducibility, transparency, and methodological soundness in every analysis we deliver.
+We prioritize reproducibility, transparency, and methodological soundness in every analysis, ensuring defensible results.
 :::
 
 ::: {.g-col-12 .g-col-md-3}
 **⚙️ Enterprise Quality**
 
-Professional software development practices with testing, documentation, and maintainability built in from day one.
+Production-ready solutions with comprehensive testing, documentation, and maintainability built in from the start.
 :::
 
 ::: {.g-col-12 .g-col-md-3}
-**🤝 Boutique Approach**
+**🤝 Boutique Service**
 
-Personalized attention, direct access to senior consultants, and solutions tailored to your specific challenges.
+Direct access to senior consultants who understand both the technical details and business context of your challenges.
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+## Industry Applications
+
+Our transferable data science capabilities serve diverse sectors:
+
+::::::: {.grid}
+::: {.g-col-12 .g-col-md-6}
+**Environmental & Sustainability**
+- Environmental impact assessments
+- Sustainability metrics and ESG reporting
+- Regulatory compliance analytics
+- Geospatial environmental analysis
+
+*Featured work: [Reproducibility in ESIA Analyses](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd)*
+:::
+
+::: {.g-col-12 .g-col-md-6}
+**Public Sector & Governance**
+- Open data portal development
+- Performance monitoring systems
+- Policy analysis and evaluation
+- Transparency and accountability platforms
+
+*Featured work: [Kenya's Open Data Initiative](/blog/kenya-open-data-initiative.qmd)*
+:::
+
+::: {.g-col-12 .g-col-md-6}
+**Research & Academia**
+- Statistical consulting for research projects
+- Reproducible research workflows
+- Data management systems
+- Publication-ready visualizations
+:::
+
+::: {.g-col-12 .g-col-md-6}
+**Business & Finance**
+- Predictive analytics and forecasting
+- Risk modeling and assessment
+- Customer analytics
+- Process optimization
 :::
 :::::::
 
@@ -117,7 +169,7 @@ Personalized attention, direct access to senior consultants, and solutions tailo
 
 ## From Our Blog
 
-Explore our latest insights on environmental data science, reproducibility in ESIA, and R programming best practices.
+Insights on data science methodology, reproducible analytics, and R programming best practices.
 
 ::: blog-preview
 📝 [Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd)
@@ -130,13 +182,13 @@ Explore our latest insights on environmental data science, reproducibility in ES
 ------------------------------------------------------------------------
 
 ::: cta-section
-## Ready to Elevate Your Environmental Data Analytics?
+## Ready to Leverage Data Science for Your Organization?
 
-Whether you're tackling an ESIA project, building a sustainability reporting system, or need expert R programming support, we're here to help.
+Whether you need advanced statistical analysis, custom R applications, or reproducible analytical frameworks, we bring the technical expertise and methodological rigor to deliver results.
 
-**Free 30-minute consultation** • **No obligation** • **Tailored solutions**
+**Free 30-minute consultation** • **No obligation** • **Solutions tailored to your needs**
 
-[Schedule a Consultation](contact.qmd){.btn .btn-primary .btn-lg} [Download Services Overview](services.qmd){.btn .btn-outline .btn-lg}
+[Schedule a Consultation](contact.qmd){.btn .btn-primary .btn-lg} [Download Capabilities Overview](services.qmd){.btn .btn-outline .btn-lg}
 :::
 
 ```{=html}
