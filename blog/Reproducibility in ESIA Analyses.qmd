@@ -8,7 +8,7 @@ description: "A non-technical guide for business leaders and decision-makers on 
 
 **Executive Summary**
 
-Kenya's Environmental Impact Assessment (EIA) system, established under the [Environmental Management and Coordination Act (EMCA) of 1999](http://www.environment.go.ke/), represents a significant commitment to sustainable development. However, the state of data quality, accessibility, and reproducibility in EIA processes reveals substantial gaps that undermine the effectiveness of environmental governance (Kakonge, 2006).
+Kenya's Environmental Impact Assessment (EIA) system, established under the [Environmental Management and Coordination Act (EMCA) of 1999](https://new.kenyalaw.org/akn/ke/act/1999/8/eng@2022-12-31), represents a significant commitment to sustainable development. However, the state of data quality, accessibility, and reproducibility in EIA processes reveals substantial gaps that undermine the effectiveness of environmental governance (Kakonge, 2006).
 
 ![Environmental protection concept. Photo by [Li-An Lim](https://unsplash.com/@li_anlim) on [Unsplash](https://unsplash.com/photos/ycW4YxhrWHM)](https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=1200&q=80)
 
@@ -188,7 +188,7 @@ Kenya's vulnerability to climate change amplifies the importance of robust basel
 
 **Adaptation planning**: EIAs rarely assess project vulnerability to climate change (e.g., flood risk under future precipitation scenarios), undermining resilience planning.
 
-The lack of transparency in climate financing mechanisms, including the Financing Locally-Led Climate Action (FLLoCA) program and carbon credit markets, further complicates efforts to track and verify climate-related environmental impacts.
+The lack of transparency in climate financing mechanisms, including the [Financing Locally-Led Climate Action (FLLoCA) program](https://newsite.treasury.go.ke/index.php/flloca-disclosures) and carbon credit markets, further complicates efforts to track and verify climate-related environmental impacts.
 
 ### Environmental Justice
 
@@ -309,7 +309,7 @@ The choice is clear: Kenya can continue with EIA processes that create the appea
 
 4.  Global Data Barometer. (2022). *Kenya country assessment*. Retrieved from <https://globaldatabarometer.org/>
 
-5.  Government of Kenya. (1999). *Environmental Management and Coordination Act (EMCA)*. Retrieved from <http://www.environment.go.ke/>
+5.  Government of Kenya. (1999). *Environmental Management and Coordination Act (EMCA)*. Retrieved from <https://new.kenyalaw.org/akn/ke/act/1999/8/eng@2022-12-31>
 
 6.  Government of Kenya. (2003). *Environmental Management and Coordination (Impact Assessment and Audit) Regulations*. Retrieved from <https://www.nema.go.ke/>
 
