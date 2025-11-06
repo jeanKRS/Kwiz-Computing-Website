@@ -10,7 +10,7 @@ description: "A non-technical guide for business leaders and decision-makers on 
 
 Kenya's Environmental Impact Assessment (EIA) system, established under the [Environmental Management and Coordination Act (EMCA) of 1999](https://new.kenyalaw.org/akn/ke/act/1999/8/eng@2022-12-31) and strengthened through the 2003 Impact Assessment and Audit Regulations, represents a significant commitment to sustainable development. With the introduction of new regulations in 2025 aimed at enhancing environmental governance, there is renewed opportunity to address persistent gaps in data quality, accessibility, and reproducibility that have historically undermined the effectiveness of environmental governance (Kakonge, 2006).
 
-![Environmental protection concept. Photo by [Li-An Lim](https://unsplash.com/@li_anlim) on [Unsplash](https://unsplash.com/photos/ycW4YxhrWHM)](https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=1200&q=80)
+![Environmental protection and conservation](https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80)
 
 ::: callout-important
 ## Critical Analysis
@@ -122,7 +122,7 @@ Without analyzing prediction accuracy, the EIA system cannot learn from experien
 
 ## The Corruption Context
 
-![Corruption and governance. Photo by [Christian Lue](https://unsplash.com/@christianlue) on [Unsplash](https://unsplash.com/photos/-70vEbVYh6Y)](https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80)
+![Governance and institutional accountability](https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80)
 
 Kenya's EIA system operates within a broader governance context characterized by significant corruption challenges. The country scored 32 out of 100 in the [2024 Corruption Perceptions Index](https://www.transparency.org/en/cpi/2024) by [Transparency International](https://www.transparency.org/), ranking 121st globally—below both the sub-Saharan African average (33) and the global average (43).
 

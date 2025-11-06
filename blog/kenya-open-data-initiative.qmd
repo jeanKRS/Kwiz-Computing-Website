@@ -10,7 +10,7 @@ description: "A review of the state of Kenya's Open Data initiative"
 
 In 2011, Kenya made history as the first sub-Saharan African country to launch a national open data portal at opendata.go.ke. This pioneering initiative promised to transform governance through transparency, enabling citizens, researchers, and developers to access government data freely. Yet more than a decade later, the Kenya Open Data Initiative (KODI) has faced significant challenges, including prolonged periods of inaccessibility, raising critical questions about the sustainability of open data commitments in developing countries.
 
-\![Data and digital transformation. Photo by [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
+![Open data and digital transformation](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
 
 ::: callout-important
 ## Critical Question
