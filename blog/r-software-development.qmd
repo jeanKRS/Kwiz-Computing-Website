@@ -1,7 +1,7 @@
 ---
 title: "R for Software Development: Beyond Scripts"
 author: "Kwiz Computing Technologies"
-date: "2025-10-25"
+date: "2025-09-29"
 categories: [R Programming, Software Development, Best Practices]
 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800"
 description: "How R has evolved into a robust platform for building enterprise-grade software applications with modern development practices"

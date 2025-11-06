@@ -1,7 +1,7 @@
 ---
 title: "Case Study: Data Science for Environmental Impact Assessments"
 author: "Kwiz Computing Technologies"
-date: "2025-11-14"
+date: "2025-11-03"
 categories: [Case Study, Environmental Science, R Programming, Data Analysis]
 image: "https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=800"
 description: "A real-world example of applying data science methodologies to environmental assessment and auditing"
