@@ -2,139 +2,670 @@
 title: "Services"
 ---
 
-We offer comprehensive data science and software development services tailored to your organization's needs. All solutions are built with enterprise-grade quality standards and best practices.
-
-## Core Services
-
-### Data Analytics & Statistical Consulting
-
-Transform your data into actionable insights with sophisticated statistical methods and modern analytical techniques.
-
-**What we deliver:**
-
--   Exploratory data analysis and visualization
--   Statistical modeling and hypothesis testing
--   Predictive analytics and machine learning
--   Time series analysis and forecasting
--   Survey design and analysis
--   A/B testing and experimental design
-
-**Tools:** R, tidyverse, ggplot2, caret, tidymodels, prophet
+::: services-intro
+We deliver specialized data science solutions for environmental professionals, regulatory bodies, and organizations committed to sustainable development. Our expertise combines rigorous statistical methods with deep domain knowledge in environmental impact assessment and sustainability analytics.
+:::
 
 ------------------------------------------------------------------------
 
-### Enterprise Shiny Application Development
+## Core Services {#core-services}
 
-Build robust, scalable interactive applications following industry best practices and the Rhino framework.
+### 🌍 Environmental Impact Assessment Analytics {#environmental-data-science}
 
-**What we deliver:**
+::: service-detail
+Transform EIA/ESIA processes with reproducible, transparent analytics that meet regulatory standards and support evidence-based decision making.
 
--   Modular, maintainable Shiny architecture
--   Comprehensive unit and integration testing
--   Responsive UI/UX design with bslib
--   Performance optimization
--   Authentication and security
--   Deployment and DevOps support
+#### Our Expertise Includes:
 
-**Tools:** rhino, shiny, bslib, shinytest2, testthat
+**ESIA Data Analysis & Reproducibility**
+- Baseline environmental data processing and quality assurance
+- Impact prediction modeling with uncertainty quantification
+- Reproducible analytical workflows ensuring transparency
+- Compliance with EMCA regulations and international standards
 
-------------------------------------------------------------------------
+**Environmental Monitoring Systems**
+- Automated data collection and validation pipelines
+- Real-time monitoring dashboards for environmental parameters
+- Post-approval audit data analysis and reporting
+- Long-term trend analysis and change detection
 
-### Environmental Data Science
+**Regulatory Compliance**
+- NEMA reporting format automation
+- Environmental Management Plan (EMP) tracking systems
+- Annual audit report generation
+- Multi-project cumulative impact assessment
 
-Specialized analytics for environmental impact assessments, sustainability reporting, and regulatory compliance.
+**Geospatial Environmental Analysis**
+- Spatial baseline studies and mapping
+- Buffer zone analysis and impact visualization
+- Biodiversity hotspot identification
+- Land use change detection
 
-**What we deliver:**
+#### Why This Matters:
 
--   Environmental impact assessment analytics
--   Ecological data analysis and biodiversity metrics
--   Sustainability KPI tracking and reporting
--   Regulatory compliance automation
--   Geospatial analysis and mapping
--   Environmental audit data systems
+Environmental decisions affect communities, ecosystems, and long-term sustainability. Our analytics ensure your assessments are scientifically rigorous, legally defensible, and truly transparent.
 
-**Tools:** sf, terra, leaflet, environmental R packages
+#### Typical Deliverables:
+- Reproducible R analysis scripts and documentation
+- Interactive dashboards for data exploration
+- Automated report generation systems
+- Data quality assurance frameworks
+- Training for your technical team
 
-------------------------------------------------------------------------
+**Tools & Technologies:** R, sf, terra, leaflet, Quarto, git
 
-### Data Visualization & Dashboards
-
-Create compelling, interactive visualizations and dashboards that communicate complex data clearly.
-
-**What we deliver:**
-
--   Custom ggplot2 visualizations
--   Interactive plotly and highcharter graphics
--   Executive dashboards with flexdashboard or Shiny
--   Automated report generation with Quarto
--   Web-based data presentations
-
-**Tools:** ggplot2, plotly, highcharter, leaflet, Quarto
-
-------------------------------------------------------------------------
-
-### R Package Development
-
-Build custom R packages for your organization to standardize workflows and share analytical tools.
-
-**What we deliver:**
-
--   Custom package architecture and design
--   Comprehensive documentation with roxygen2
--   Unit testing with testthat
--   Continuous integration setup
--   CRAN-ready or internal deployment
-
-**Tools:** devtools, usethis, roxygen2, testthat, pkgdown
+[Schedule a Consultation →](contact.qmd){.btn .btn-primary}
+:::
 
 ------------------------------------------------------------------------
 
-### Training & Knowledge Transfer
+### 📊 Sustainability Data Management & ESG Reporting
 
-Empower your team with customized training programs designed for your specific needs and skill levels.
+::: service-detail
+Build robust systems for measuring, analyzing, and reporting sustainability performance that demonstrate environmental stewardship and regulatory compliance.
 
-**What we offer:**
+#### What We Deliver:
 
--   Introduction to R for data analysis
--   Advanced R programming and package development
--   Shiny application development
--   Statistical methods and modeling
--   Best practices for reproducible research
--   Custom workshops tailored to your domain
+**Sustainability KPI Dashboards**
+- Real-time tracking of environmental performance metrics
+- Automated data collection from multiple sources
+- Interactive visualizations for stakeholder communication
+- Trend analysis and benchmarking
+
+**Carbon Footprint & Climate Analytics**
+- Greenhouse gas inventory systems
+- Emissions tracking and reduction monitoring
+- Climate risk assessment frameworks
+- Carbon credit verification analytics
+
+**ESG Data Management**
+- Centralized environmental data repositories
+- Data quality and validation workflows
+- Multi-standard reporting (GRI, TCFD, etc.)
+- Stakeholder reporting automation
+
+**Biodiversity & Ecosystem Metrics**
+- Species diversity indices and monitoring
+- Habitat quality assessment
+- Ecosystem services valuation
+- Conservation impact measurement
+
+#### Business Value:
+
+Meet stakeholder expectations, comply with emerging regulations, and demonstrate genuine commitment to sustainability through data-driven reporting.
+
+**Tools & Technologies:** R, Shiny, databases, Quarto, visualization packages
+
+[Explore Solutions →](contact.qmd){.btn .btn-primary}
+:::
 
 ------------------------------------------------------------------------
 
-## Engagement Models
+### 💻 Enterprise R Application Development {#r-development}
 
-### Project-Based
+::: service-detail
+Create professional-grade analytical applications using R and the Rhino framework for scalable, maintainable solutions.
 
-Fixed scope, timeline, and budget for well-defined deliverables. Ideal for specific analysis projects or application development.
+#### Our Development Approach:
 
-### Retainer
+**Modular Shiny Applications**
+- Clean architecture with separated concerns
+- Rhino framework for enterprise scalability
+- Responsive UI/UX with modern design systems
+- Performance optimization for large datasets
 
-Ongoing partnership with dedicated hours per month. Perfect for continuous support, iterative development, or on-call expertise.
+**Quality Assurance**
+- Comprehensive unit and integration testing
+- Code review and best practices enforcement
+- Continuous integration/deployment pipelines
+- Version control and collaboration workflows
 
-### Training
+**Security & Authentication**
+- User authentication and role-based access
+- Data encryption and secure connections
+- Audit trails and logging
+- Compliance with data protection regulations
 
-Customized workshops and training programs for teams. Available as one-time sessions or multi-week courses.
+**Deployment & Support**
+- Cloud deployment (AWS, Azure, Posit Connect)
+- Containerization with Docker
+- Monitoring and error tracking
+- Ongoing maintenance and enhancement
+
+#### Perfect For:
+
+Organizations needing custom analytical tools, interactive dashboards, or data exploration platforms that their teams can rely on daily.
+
+**Tools & Technologies:** rhino, shiny, bslib, testthat, Docker, git
+
+[See What's Possible →](contact.qmd){.btn .btn-primary}
+:::
+
+------------------------------------------------------------------------
+
+### 🎯 Open Data & Transparency Solutions
+
+::: service-detail
+Design and implement open data systems that enhance transparency, accountability, and enable data-driven decision making.
+
+#### Our Services:
+
+**Open Data Portal Development**
+- User-friendly data discovery interfaces
+- Multiple format export capabilities (CSV, JSON, GeoJSON)
+- API development for programmatic access
+- Search and filtering functionality
+
+**Data Quality Frameworks**
+- Metadata standards and documentation
+- Data validation and quality checks
+- Update frequency monitoring
+- Version control and change tracking
+
+**Transparency Systems**
+- Public reporting dashboards
+- Automated data publication workflows
+- Stakeholder engagement platforms
+- Feedback and data request mechanisms
+
+**Capacity Building**
+- Training for data publishers
+- Data literacy programs for users
+- Best practices documentation
+- Community engagement strategies
+
+#### Impact:
+
+Enable evidence-based public participation, support research and innovation, and demonstrate institutional commitment to transparency.
+
+**Tools & Technologies:** R, Shiny, APIs, databases, ArcGIS Hub integration
+
+[Learn More →](contact.qmd){.btn .btn-primary}
+:::
+
+------------------------------------------------------------------------
+
+### 📈 Statistical Consulting & Advanced Analytics
+
+::: service-detail
+Rigorous statistical analysis and modeling to support research, policy decisions, and organizational strategy.
+
+#### Services Include:
+
+- Experimental design and power analysis
+- Predictive modeling and machine learning
+- Time series analysis and forecasting
+- Spatial statistics and geostatistics
+- Survey methodology and sampling
+- Causal inference and impact evaluation
+- Meta-analysis and systematic reviews
+
+#### Specialized Applications:
+
+- Environmental exposure assessment
+- Risk modeling and uncertainty quantification
+- Population dynamics and ecological modeling
+- Climate change impact projections
+
+**Tools & Technologies:** R, tidymodels, Stan, spatial statistics packages
+
+[Discuss Your Project →](contact.qmd){.btn .btn-primary}
+:::
+
+------------------------------------------------------------------------
+
+### 🎓 Training & Capacity Building
+
+::: service-detail
+Empower your team with practical skills in R programming, environmental data analysis, and reproducible research.
+
+#### Training Programs:
+
+**R for Environmental Scientists**
+- Data manipulation with tidyverse
+- Statistical analysis for environmental data
+- Visualization and reporting
+- Reproducible workflows
+
+**ESIA Data Analytics Workshop**
+- Baseline data processing
+- Impact assessment methods
+- Regulatory reporting with R
+- Case studies from real projects
+
+**Enterprise Shiny Development**
+- Modern Shiny architecture
+- Testing and deployment
+- Performance optimization
+- Best practices
+
+**Custom Workshops**
+- Tailored to your team's needs
+- Your own data and use cases
+- Hands-on practical exercises
+- Post-training support
+
+#### Delivery Options:
+- On-site workshops
+- Virtual training sessions
+- Self-paced online materials
+- One-on-one mentoring
+
+[Request Training Info →](contact.qmd){.btn .btn-primary}
+:::
+
+------------------------------------------------------------------------
+
+## How We Work {#engagement-models}
+
+::::::: {.grid .engagement-grid}
+::: {.g-col-12 .g-col-md-4 .engagement-card}
+### 📋 Project-Based
+
+**Best for:** Well-defined deliverables with clear scope and timeline
+
+**What you get:**
+- Fixed price and delivery date
+- Dedicated project team
+- Regular progress updates
+- Complete documentation
+- Knowledge transfer session
+
+**Examples:**
+- ESIA data analysis for specific project
+- Sustainability dashboard development
+- Custom R package creation
+- Training workshop delivery
+
+[Start a Project →](contact.qmd){.btn .btn-outline}
+:::
+
+::: {.g-col-12 .g-col-md-4 .engagement-card}
+### 🤝 Retainer Partnership
+
+**Best for:** Ongoing analytical support and iterative development
+
+**What you get:**
+- Dedicated monthly hours
+- Priority response time
+- Flexible scope adjustments
+- Strategic advisory role
+- Long-term relationship
+
+**Examples:**
+- Monthly environmental data analysis
+- Continuous dashboard enhancement
+- On-call technical expertise
+- Compliance reporting support
+
+[Explore Retainers →](contact.qmd){.btn .btn-outline}
+:::
+
+::: {.g-col-12 .g-col-md-4 .engagement-card}
+### 🎓 Training & Workshops
+
+**Best for:** Building in-house capability and upskilling teams
+
+**What you get:**
+- Customized curriculum
+- Hands-on practical exercises
+- Your own data and examples
+- Post-training materials
+- Follow-up support
+
+**Examples:**
+- R for environmental scientists
+- ESIA analytics workshop
+- Shiny development bootcamp
+- Reproducible research training
+
+[Request Training →](contact.qmd){.btn .btn-outline}
+:::
+:::::::
 
 ------------------------------------------------------------------------
 
 ## Our Process
 
-1.  **Initial Consultation** (Free): Discuss your needs and explore potential solutions
-2.  **Proposal**: Detailed scope, timeline, and cost estimate
-3.  **Agreement**: Clear contract outlining deliverables and expectations
-4.  **Execution**: Regular updates and iterative development
-5.  **Delivery**: Comprehensive documentation and knowledge transfer
-6.  **Support**: Optional ongoing maintenance and enhancement
+We follow a structured yet flexible approach that ensures quality delivery while adapting to your specific needs.
+
+::::::: {.grid .process-grid}
+::: {.g-col-12 .g-col-md-2}
+**1. Discovery**
+
+Free 30-min consultation to understand your needs and challenges
+:::
+
+::: {.g-col-12 .g-col-md-2}
+**2. Proposal**
+
+Detailed scope, approach, timeline, and transparent pricing
+:::
+
+::: {.g-col-12 .g-col-md-2}
+**3. Agreement**
+
+Clear contract with defined deliverables and success criteria
+:::
+
+::: {.g-col-12 .g-col-md-2}
+**4. Execution**
+
+Regular updates, collaboration, and iterative refinement
+:::
+
+::: {.g-col-12 .g-col-md-2}
+**5. Delivery**
+
+Complete solution with documentation and training
+:::
+
+::: {.g-col-12 .g-col-md-2}
+**6. Support**
+
+Optional maintenance and ongoing partnership
+:::
+:::::::
 
 ------------------------------------------------------------------------
 
-::: callout-note
-## Custom Solutions
+## Frequently Asked Questions
 
-Don't see exactly what you need? We're happy to discuss custom solutions tailored to your specific requirements. Every organization has unique challenges, and we excel at crafting bespoke approaches.
+::: faq-section
+**Do you work with clients outside Kenya?**
+
+Yes! While we're based in Kenya with deep expertise in Kenyan environmental regulations, we work with clients globally. Our R programming and analytical expertise is applicable anywhere.
+
+**What size organizations do you work with?**
+
+We work with organizations of all sizes—from individual consultants and NGOs to government agencies and large corporations. Our boutique approach means we provide senior-level attention regardless of project size.
+
+**Can you help with urgent/short-deadline projects?**
+
+We'll always be honest about what's feasible. Contact us to discuss your timeline and we'll let you know if we can help or suggest alternatives.
+
+**Do you provide ongoing support after project completion?**
+
+Yes! We offer maintenance retainers and can provide ongoing support as needed. We want your solutions to remain valuable long-term.
+
+**How do you ensure data confidentiality?**
+
+We treat all client data with strict confidentiality, use secure communication channels, can sign NDAs, and follow data protection best practices.
 :::
 
-[Contact us](contact.qmd) to discuss your project needs.
+------------------------------------------------------------------------
+
+::: services-cta
+## Let's Build Something Together
+
+Every environmental challenge is unique. Whether you're navigating complex ESIA requirements, building transparency systems, or need advanced analytics support, we're here to help craft the right solution.
+
+### What Happens Next?
+
+1. **Schedule a free 30-minute consultation** to discuss your needs
+2. **Receive a tailored proposal** outlining approach and pricing
+3. **Start your project** with clear milestones and deliverables
+
+**No sales pressure. No obligations. Just honest conversation about how we can help.**
+
+[Schedule Your Free Consultation](contact.qmd){.btn .btn-primary .btn-lg}
+
+*Or email us directly: [info@kwizcomputing.com](mailto:info@kwizcomputing.com)*
+:::
+
+```{=html}
+<style>
+/* Services Page Styling */
+.services-intro {
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.05) 0%, white 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #1a5e4a;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.service-detail {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-detail h4 {
+  color: #1a5e4a;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.service-detail strong {
+  color: #1a5e4a;
+  font-size: 1.05rem;
+}
+
+.service-detail ul {
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.service-detail li {
+  margin-bottom: 0.4rem;
+  color: #666;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 2px solid transparent;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background-color: #1a5e4a;
+  color: white;
+  border-color: #1a5e4a;
+}
+
+.btn-primary:hover {
+  background-color: #145240;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 94, 74, 0.3);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #1a5e4a;
+  border-color: #1a5e4a;
+}
+
+.btn-outline:hover {
+  background-color: #1a5e4a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+}
+
+/* Engagement Cards */
+.engagement-grid {
+  margin: 2rem 0;
+}
+
+.engagement-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.engagement-card:hover {
+  border-color: #1a5e4a;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.engagement-card h3 {
+  color: #1a5e4a;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.engagement-card strong {
+  color: #1a5e4a;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Process Grid */
+.process-grid {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.process-grid > div {
+  padding: 1.5rem 1rem;
+}
+
+.process-grid strong {
+  display: block;
+  color: #1a5e4a;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.process-grid p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.faq-section {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.faq-section p strong {
+  color: #1a5e4a;
+  font-size: 1.1rem;
+  display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-section p strong:first-child {
+  margin-top: 0;
+}
+
+/* Services CTA */
+.services-cta {
+  background: linear-gradient(135deg, #1a5e4a 0%, #145240 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.services-cta h2 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.services-cta h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.services-cta p,
+.services-cta ol {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+.services-cta ol {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.services-cta strong {
+  color: white;
+  display: block;
+  margin: 2rem 0 1.5rem 0;
+  font-size: 1.2rem;
+}
+
+.services-cta .btn-primary {
+  background-color: white;
+  color: #1a5e4a;
+  border-color: white;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.services-cta .btn-primary:hover {
+  background-color: #f8f9fa;
+  color: #145240;
+}
+
+.services-cta em {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.services-cta a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-intro {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .service-detail {
+    padding: 1.5rem;
+  }
+
+  .engagement-card {
+    margin-bottom: 1rem;
+  }
+
+  .process-grid > div {
+    padding: 1rem 0.5rem;
+  }
+
+  .services-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>
+```

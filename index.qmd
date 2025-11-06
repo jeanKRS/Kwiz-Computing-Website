@@ -4,91 +4,414 @@ page-layout: full
 ---
 
 ::: hero-section
-# Welcome to Kwiz Computing Technologies
+::: hero-content
+# Transform Environmental Data into Strategic Decisions
 
-### Boutique Data Science Consultancy
+## Expert data science and analytics for environmental impact assessment, sustainability, and regulatory compliance
 
 ![](images/hero_section.png){width="auto" fig-align="center"}
 
-Providing expert technical support for data-driven projects with a focus on R programming, statistical analysis, and enterprise-grade solutions.
+We combine deep expertise in R programming with specialized knowledge in environmental data science to help organizations make evidence-based decisions that matter.
+
+::: hero-cta
+[Start Your Project](contact.qmd){.btn .btn-primary .btn-lg} [View Our Services](services.qmd){.btn .btn-outline .btn-lg}
+:::
+:::
 :::
 
 ------------------------------------------------------------------------
 
-## What We Do
+## Our Expertise
 
-We specialize in transforming complex data challenges into actionable insights through sophisticated analytical solutions and robust software development practices.
+We specialize in environmental data science, delivering reproducible analytics and enterprise-grade solutions for organizations navigating complex regulatory landscapes.
 
-::::::: grid
-::: {.g-col-12 .g-col-md-6}
-### 📊 Data Analytics & Visualization
+::::::: services-grid
+::: {.service-card .featured}
+### 🌍 Environmental Impact Assessment Analytics
 
-Transform raw data into compelling insights with advanced statistical methods and interactive visualizations using R and modern data science tools.
+Transform EIA/ESIA data into reproducible, transparent analyses that meet regulatory standards and support sustainable development decisions.
+
+**Key capabilities:**
+- ESIA data analysis and reproducibility
+- Baseline environmental data processing
+- Impact prediction modeling
+- Regulatory compliance reporting
+
+[Learn More →](services.qmd#environmental-data-science)
 :::
 
-::: {.g-col-12 .g-col-md-6}
-### 💻 Software Development
+::: service-card
+### 📊 Sustainability Data & Reporting
 
-Build enterprise-grade applications following industry best practices, including modular Shiny apps on the Rhino framework with comprehensive testing.
+Build robust systems for tracking, analyzing, and reporting sustainability metrics that demonstrate environmental stewardship.
+
+**What we deliver:**
+- KPI dashboards and automated reporting
+- Carbon footprint analysis
+- Biodiversity metrics and monitoring
+- ESG data management
+
+[Explore Solutions →](services.qmd)
 :::
 
-::: {.g-col-12 .g-col-md-6}
-### 🌍 Environmental Data Science
+::: service-card
+### 💻 R-Based Software Development
 
-Specialized expertise in environmental impact assessments, sustainability metrics, and regulatory compliance analytics.
+Create enterprise-grade analytical applications using R and the Rhino framework for maintainable, tested, and scalable solutions.
+
+**Our approach:**
+- Modular Shiny applications
+- Comprehensive testing & documentation
+- Reproducible workflows
+- Best-practice architecture
+
+[See What's Possible →](services.qmd)
 :::
 
-::: {.g-col-12 .g-col-md-6}
-### 🎓 Training & Consultation
+::: service-card
+### 🎯 Open Data & Transparency Solutions
 
-Empower your team with customized training programs in R programming, statistical methods, and data science workflows.
+Design and implement open data systems that enhance transparency, accountability, and data-driven decision making.
+
+**We help with:**
+- Data portal development
+- Data quality frameworks
+- Metadata standards
+- Public data accessibility
+
+[Discover More →](services.qmd)
 :::
 :::::::
 
 ------------------------------------------------------------------------
 
-## Why Choose Kwiz?
+## Why Organizations Trust Kwiz
 
--   **Expertise**: Deep technical knowledge in R programming and statistical computing
--   **Quality**: Enterprise-grade solutions following software development best practices
--   **Flexibility**: Boutique consultancy offering personalized attention and agile response
--   **Domain Knowledge**: Specialized experience in environmental and sustainability analytics
+::::::: {.grid .why-choose}
+::: {.g-col-12 .g-col-md-3}
+**🎓 Specialized Expertise**
+
+Deep knowledge in environmental data science, ESIA analytics, and sustainability reporting—not generic data science.
+:::
+
+::: {.g-col-12 .g-col-md-3}
+**🔬 Scientific Rigor**
+
+We prioritize reproducibility, transparency, and methodological soundness in every analysis we deliver.
+:::
+
+::: {.g-col-12 .g-col-md-3}
+**⚙️ Enterprise Quality**
+
+Professional software development practices with testing, documentation, and maintainability built in from day one.
+:::
+
+::: {.g-col-12 .g-col-md-3}
+**🤝 Boutique Approach**
+
+Personalized attention, direct access to senior consultants, and solutions tailored to your specific challenges.
+:::
+:::::::
 
 ------------------------------------------------------------------------
 
-## Recent Insights
+## From Our Blog
 
-Visit our [Blog](blog.qmd) to explore our latest thoughts on data science, R programming, and industry trends.
+Explore our latest insights on environmental data science, reproducibility in ESIA, and R programming best practices.
+
+::: blog-preview
+📝 [Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd)
+
+📝 [Kenya's Open Data Initiative: A Promise Unfulfilled?](/blog/kenya-open-data-initiative.qmd)
+
+[View All Articles →](blog.qmd)
+:::
 
 ------------------------------------------------------------------------
 
-::: callout-tip
-## Ready to Start Your Project?
+::: cta-section
+## Ready to Elevate Your Environmental Data Analytics?
 
-Let's discuss how we can help transform your data into strategic advantages. [Get in touch](contact.qmd) to schedule a consultation.
+Whether you're tackling an ESIA project, building a sustainability reporting system, or need expert R programming support, we're here to help.
+
+**Free 30-minute consultation** • **No obligation** • **Tailored solutions**
+
+[Schedule a Consultation](contact.qmd){.btn .btn-primary .btn-lg} [Download Services Overview](services.qmd){.btn .btn-outline .btn-lg}
 :::
 
 ```{=html}
 <style>
+/* Hero Section Styling */
 .hero-section {
   text-align: center;
-  padding: 3rem 0;
-  background: linear-gradient(135deg, #f5e6d3 0%, #ffffff 100%);
-  border-radius: 10px;
-  margin-bottom: 2rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.05) 0%, rgba(26, 94, 74, 0.02) 50%, #ffffff 100%);
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.hero-section h1 {
+.hero-content h1 {
   color: #1a5e4a;
-  margin-top: 1rem;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-section h3 {
-  color: #2d8a6b;
-  margin-top: 0.5rem;
+.hero-content h2 {
+  color: #555;
+  font-size: 1.4rem;
   font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  color: #666;
+  max-width: 700px;
+  margin: 1.5rem auto;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: #1a5e4a;
+  color: white;
+  border-color: #1a5e4a;
+}
+
+.btn-primary:hover {
+  background-color: #145240;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 94, 74, 0.3);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #1a5e4a;
+  border-color: #1a5e4a;
+}
+
+.btn-outline:hover {
+  background-color: #1a5e4a;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 94, 74, 0.2);
+}
+
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #1a5e4a;
+}
+
+.service-card.featured {
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.05) 0%, white 100%);
+  border-color: #1a5e4a;
+  border-width: 2px;
+}
+
+.service-card h3 {
+  color: #1a5e4a;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.service-card p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.service-card ul {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.service-card li {
+  padding: 0.3rem 0;
+  color: #666;
+}
+
+.service-card li:before {
+  content: "✓ ";
+  color: #1a5e4a;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.service-card a {
+  color: #1a5e4a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.service-card a:hover {
+  color: #145240;
+  text-decoration: underline;
+}
+
+/* Why Choose Section */
+.why-choose > div {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.why-choose strong {
+  display: block;
+  color: #1a5e4a;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.why-choose p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Blog Preview */
+.blog-preview {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #1a5e4a;
+}
+
+.blog-preview a {
+  color: #1a5e4a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  line-height: 2;
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.blog-preview a:hover {
+  color: #145240;
+  transform: translateX(5px);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #1a5e4a 0%, #145240 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-section .btn-primary {
+  background-color: white;
+  color: #1a5e4a;
+  border-color: white;
+}
+
+.cta-section .btn-primary:hover {
+  background-color: #f8f9fa;
+  color: #145240;
+}
+
+.cta-section .btn-outline {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.cta-section .btn-outline:hover {
+  background-color: white;
+  color: #1a5e4a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
 }
 </style>
 ```
