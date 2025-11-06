@@ -1,7 +1,7 @@
 ---
 title: "R as a Data Analyst's Essential Tool"
 author: "Kwiz Computing Technologies"
-date: "2025-01-15"
+date: "2025-10-21"
 categories: [R Programming, Data Analysis, Tools]
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
 description: "Why R continues to be the preferred choice for data analysts worldwide, from data wrangling to advanced visualization"

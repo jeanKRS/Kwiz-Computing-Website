@@ -1,7 +1,7 @@
 ---
 title: "Kenya's Open Data Initiative: A Promise Unfulfilled?"
 format: html
-date: "2025-01-28"
+date: "2025-11-01"
 categories: [Decision Making, Sustatainability, Data, ESIA/EA]
 description: "A review of the state of Kenya's Open Data initiative"
 ---

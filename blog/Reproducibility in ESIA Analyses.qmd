@@ -1,7 +1,7 @@
 ---
 title: "Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments"
 format: html
-date: "2025-01-28"
+date: "2025-11-07"
 categories: [ESIA, Data Analysis, Sustainability, R Programming, Business Strategy, Decision Making]
 description: "A non-technical guide for business leaders and decision-makers on why R deserves a seat at the software development table"
 ---
@@ -309,7 +309,7 @@ The choice is clear: Kenya can continue with EIA processes that create the appea
 
 4.  Global Data Barometer. (2022). *Kenya country assessment*. Retrieved from <https://globaldatabarometer.org/>
 
-5.  Government of Kenya. (1999). *Environmental Management and Coordination Act (EMCA)*. Retrieved from <https://new.kenyalaw.org/akn/ke/act/1999/8/eng@2022-12-31>
+5.  Government of Kenya. (1999). *Environmental Management and Coordination Act (EMCA)*. Retrieved from [https://new.kenyalaw.org/akn/ke/act/1999/8/eng\@2022-12-31](https://new.kenyalaw.org/akn/ke/act/1999/8/eng@2022-12-31){.uri}
 
 6.  Government of Kenya. (2003). *Environmental Management and Coordination (Impact Assessment and Audit) Regulations, 2003*. Legal Notice No. 101. Retrieved from <https://www.nema.go.ke/>
 
