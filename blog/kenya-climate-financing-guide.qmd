@@ -12,7 +12,7 @@ Kenya stands at the forefront of Africa's climate action, with over $500 million
 
 ![Climate finance and sustainable development](https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=80)
 
-::: callout-important
+::: callout-tip
 ## Critical Opportunity Window
 
 2025 represents a watershed moment for climate finance in Kenya, with multiple funding windows open and the County Climate Change Funds scaling from 5 to 47 counties. However, accessing these resources requires understanding complex institutional frameworks, meeting rigorous eligibility criteria, and navigating lengthy application processes.
@@ -384,7 +384,7 @@ This table compares key eligibility requirements across major funding sources to
 - Policy influence pathways
 - Replication potential
 
-::: callout-important
+::: callout-warning
 ## Common Proposal Mistakes to Avoid
 
 1. **Generic climate references**: Be specific about climate risks and your area
@@ -506,6 +506,12 @@ This table provides a side-by-side comparison of application processes to help y
 | **Key Milestone** | NDA no-objection letter | Ward community approval | Investment Committee pitch | Board approval |
 
 ### Application Process: Step-by-Step Checklist
+
+::: callout-note
+## 📥 Download This Checklist
+
+**[Download the complete printable checklist here](climate-finance-application-checklist.md)** - A comprehensive, downloadable guide you can use to track your application progress across all funding sources.
+:::
 
 Use this checklist to ensure you complete all necessary steps for your chosen funding source:
 
