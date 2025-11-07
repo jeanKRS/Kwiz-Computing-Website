@@ -10,11 +10,13 @@ body {
         linear-gradient(60deg, rgba(26, 94, 74, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(26, 94, 74, 0.03) 75%, rgba(26, 94, 74, 0.03));
     background-size: 80px 140px;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    background-attachment: fixed;
 }
 
-/* Ensure content area has clean white background */
+/* Ensure content area has subtle background to maintain readability */
 .page-columns {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
