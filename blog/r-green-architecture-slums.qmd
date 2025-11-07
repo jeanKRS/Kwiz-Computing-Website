@@ -519,26 +519,34 @@ interventions <- interventions %>%
   ) %>%
   arrange(desc(cost_effectiveness))
 
-# Create radar chart for multi-benefit comparison
+# Create interactive grouped bar chart for multi-benefit comparison
 library(tidyr)
 
 benefits_long <- interventions %>%
   select(intervention, carbon_benefit, cooling_benefit, water_benefit, social_benefit) %>%
-  pivot_longer(cols = -intervention, names_to = "benefit_type", values_to = "score")
+  pivot_longer(cols = -intervention, names_to = "benefit_type", values_to = "score") %>%
+  mutate(
+    benefit_type = case_when(
+      benefit_type == "carbon_benefit" ~ "Carbon",
+      benefit_type == "cooling_benefit" ~ "Cooling",
+      benefit_type == "water_benefit" ~ "Water",
+      benefit_type == "social_benefit" ~ "Social"
+    )
+  )
 
-p8 <- ggplot(benefits_long, aes(x = benefit_type, y = score, group = intervention,
-                               color = intervention)) +
-  geom_line(size = 1) +
-  geom_point(size = 3) +
-  coord_polar() +
-  labs(title = "Multi-Benefit Comparison of Green Interventions",
-       x = "", y = "Benefit Score") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(size = 10),
-       legend.position = "bottom") +
-  scale_color_brewer(palette = "Dark2")
+p8 <- plot_ly(benefits_long, x = ~benefit_type, y = ~score, color = ~intervention,
+             type = "bar",
+             colors = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#e6ab02"),
+             text = ~paste(intervention, "\n",
+                          benefit_type, "Benefit:", score),
+             hoverinfo = "text") %>%
+  layout(title = "Multi-Benefit Comparison of Green Interventions",
+        xaxis = list(title = "Benefit Type"),
+        yaxis = list(title = "Benefit Score"),
+        barmode = "group",
+        legend = list(title = list(text = "Intervention")))
 
-ggplotly(p8)
+p8
 ```
 
 ### Budget Sensitivity Analysis
