@@ -21,6 +21,39 @@ We deliver sophisticated data science solutions combining rigorous statistical m
 
 ------------------------------------------------------------------------
 
+## By The Numbers
+
+::::::: {.grid .stats-grid}
+::: {.g-col-12 .g-col-md-4 .stat-card}
+::: stat-number
+<span id="projectsCount">0</span>
+:::
+**Projects Delivered**
+
+Successfully completed data science projects across multiple industries
+:::
+
+::: {.g-col-12 .g-col-md-4 .stat-card}
+::: stat-number
+<span id="clientsCount">0</span>
+:::
+**Satisfied Clients**
+
+Organizations trust us with their analytical challenges
+:::
+
+::: {.g-col-12 .g-col-md-4 .stat-card}
+::: stat-number
+<span id="yearsCount">0</span>
+:::
+**Years Experience**
+
+Deep expertise in R programming and statistical analysis
+:::
+:::::::
+
+------------------------------------------------------------------------
+
 ## Core Capabilities
 
 We provide comprehensive data science services built on transferable analytical and technical skills applicable across industries and domains.
@@ -104,6 +137,24 @@ Develop tailored analytical frameworks and methodologies designed specifically f
 **Example applications:** ESIA reproducibility frameworks, clinical trial analysis systems, financial risk models, supply chain analytics
 
 [Discover More →](services.qmd)
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+## Our Expertise at a Glance
+
+::::::: {.grid .charts-grid}
+::: {.g-col-12 .g-col-md-6}
+::: chart-container
+<canvas id="techChart"></canvas>
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: chart-container
+<canvas id="industryChart"></canvas>
+:::
 :::
 :::::::
 
@@ -225,6 +276,75 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
 
 ```{=html}
 <style>
+/* Stats Section */
+.stats-grid {
+  margin: 2rem 0;
+  gap: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(26, 94, 74, 0.15);
+  border-color: #1a5e4a;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1a5e4a;
+  line-height: 1;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.stat-card strong {
+  display: block;
+  color: #1a5e4a;
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.stat-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Charts Section */
+.charts-grid {
+  margin: 2rem 0;
+  gap: 2rem;
+}
+
+.chart-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.chart-container canvas {
+  max-height: 400px;
+}
+
 /* Hero Section Styling */
 .hero-section {
   text-align: center;

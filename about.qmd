@@ -40,6 +40,24 @@ Our expertise extends beyond general data science into specialized domains:
 - **Regulatory Compliance**: Automated reporting, audit trail systems
 - **Business Intelligence**: KPI dashboards, predictive analytics
 
+## Technical Capabilities
+
+::::::: {.grid .about-charts-grid}
+::: {.g-col-12 .g-col-md-6}
+::: chart-container
+<canvas id="skillsRadarChart"></canvas>
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: chart-container
+<canvas id="techEcosystemChart"></canvas>
+:::
+:::
+:::::::
+
+------------------------------------------------------------------------
+
 ## Our Approach
 
 1. **Discovery**: Deep dive into your business context and technical requirements
@@ -61,3 +79,46 @@ Our expertise extends beyond general data science into specialized domains:
 Whether you need a one-time analysis, an ongoing partnership, or specialized training for your team, we're here to help. Our boutique model means you get direct access to expertise without layers of management.
 
 [Contact us](contact.qmd) to discuss your project.
+
+```{=html}
+<style>
+/* About Page Charts */
+.about-charts-grid {
+  margin: 2rem 0;
+  gap: 2rem;
+}
+
+.chart-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.chart-container canvas {
+  max-height: 500px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-container {
+    min-height: 300px;
+  }
+
+  .chart-container canvas {
+    max-height: 350px;
+  }
+}
+</style>
+```

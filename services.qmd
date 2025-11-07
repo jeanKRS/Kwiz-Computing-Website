@@ -552,6 +552,24 @@ Building in-house R capabilities reduces dependence on external consultants, acc
 
 ------------------------------------------------------------------------
 
+## Engagement Insights
+
+::::::: {.grid .services-charts-grid}
+::: {.g-col-12 .g-col-md-6}
+::: chart-container
+<canvas id="engagementChart"></canvas>
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: chart-container
+<canvas id="timelineChart"></canvas>
+:::
+:::
+:::::::
+
+------------------------------------------------------------------------
+
 ## Our Process
 
 We follow a structured yet flexible approach that ensures quality delivery while adapting to your specific needs.
@@ -666,6 +684,31 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 
 ```{=html}
 <style>
+/* Services Charts */
+.services-charts-grid {
+  margin: 2rem 0;
+  gap: 2rem;
+}
+
+.chart-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+.chart-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.chart-container canvas {
+  max-height: 450px;
+}
+
 /* Services Page Styling */
 .services-intro {
   background: linear-gradient(135deg, rgba(26, 94, 74, 0.05) 0%, white 100%);
