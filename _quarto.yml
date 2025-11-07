@@ -39,7 +39,7 @@ format:
       - cosmo
       - styles/custom.scss
     css: styles/styles.css
-    toc: true
+    toc: false
     toc-depth: 3
     code-fold: false
     code-tools: false
