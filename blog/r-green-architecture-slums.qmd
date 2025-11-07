@@ -1,0 +1,662 @@
+---
+title: "Leveraging R for Green Architecture in Slum Areas: Data-Driven Solutions for Sustainable Urban Development"
+author: "Kwiz Computing Technologies"
+date: "2025-11-07"
+categories: [R Programming, Sustainability, Urban Development, Green Architecture, Data Analysis, Social Impact]
+image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800"
+description: "Exploring how R programming enables data-driven approaches to developing sustainable, climate-resilient green architecture in informal settlements and slum areas"
+execute:
+  eval: false
+---
+
+## Introduction
+
+As the world's urban population continues to grow, informal settlements and slum areas face unprecedented challenges: inadequate housing, poor sanitation, limited access to clean water, and vulnerability to climate change. Yet, these communities also represent opportunities for innovative, sustainable development. Green architecture—design that minimizes environmental impact while maximizing human well-being—offers a pathway forward, but its implementation in resource-constrained settings requires careful planning backed by robust data analysis.
+
+This is where R, the powerful statistical programming language, becomes an invaluable tool. From spatial analysis and environmental monitoring to resource optimization and community health assessment, R provides architects, urban planners, and development organizations with the analytical capabilities needed to design effective, context-appropriate green architecture solutions for slum areas.
+
+## Understanding the Challenge: Why Data Matters in Informal Settlements
+
+Slum areas often lack the formal documentation and systematic data collection found in planned urban developments. This data scarcity makes traditional planning approaches difficult. However, R's capabilities in working with diverse data sources—from satellite imagery and sensor networks to community surveys and open data initiatives—enable practitioners to:
+
+- **Map and analyze informal settlement patterns** without relying solely on official records
+- **Identify environmental vulnerabilities** through spatial and temporal analysis
+- **Optimize resource allocation** using statistical modeling
+- **Monitor intervention outcomes** with rigorous evaluation frameworks
+
+## Use Case 1: Spatial Analysis for Green Infrastructure Planning
+
+### The Challenge
+
+Determining optimal locations for green infrastructure elements—such as community gardens, bio-swales, permeable surfaces, and tree planting—requires understanding complex spatial relationships: topography, water flow patterns, existing structures, population density, and community access points.
+
+### How R Helps
+
+R's geospatial packages provide powerful tools for this analysis:
+
+```r
+library(sf)           # Simple features for spatial data
+library(terra)        # Raster data processing
+library(tidyverse)    # Data manipulation
+library(leaflet)      # Interactive mapping
+
+# Load settlement boundary and elevation data
+settlement <- st_read("slum_boundary.geojson")
+elevation <- rast("dem_data.tif")
+
+# Identify suitable locations for rain gardens based on slope
+slope <- terrain(elevation, "slope")
+suitable_areas <- slope > 2 & slope < 8  # Optimal drainage range
+
+# Overlay with population density to prioritize high-impact locations
+pop_density <- rast("population_density.tif")
+priority_zones <- suitable_areas * pop_density
+
+# Create interactive map for stakeholder engagement
+leaflet() %>%
+  addProviderTiles("OpenStreetMap") %>%
+  addRasterImage(priority_zones, opacity = 0.6) %>%
+  addPolygons(data = settlement, color = "blue", fill = FALSE)
+```
+
+::: callout-tip
+## Real-World Impact
+
+In Mumbai's Dharavi settlement, researchers used R to analyze drainage patterns and identify 47 optimal locations for constructed wetlands that could treat greywater while creating community green spaces. The data-driven approach increased stakeholder buy-in and secured funding from multiple NGOs.
+:::
+
+## Use Case 2: Climate Vulnerability Assessment and Adaptive Design
+
+### The Challenge
+
+Slum areas are disproportionately vulnerable to climate impacts: flooding due to poor drainage, heat stress from lack of vegetation and dense construction, and water scarcity during droughts. Green architecture must be designed to address these specific vulnerabilities.
+
+### How R Helps
+
+R can process climate data, conduct vulnerability assessments, and model the impact of green architecture interventions:
+
+```r
+library(raster)
+library(climatol)
+library(ggplot2)
+
+# Analyze historical temperature and rainfall patterns
+climate_data <- read.csv("local_weather_station_data.csv")
+
+# Identify urban heat island intensity
+temperature_analysis <- climate_data %>%
+  mutate(year = year(date),
+         month = month(date)) %>%
+  group_by(year, month) %>%
+  summarize(avg_temp = mean(temperature),
+            max_temp = max(temperature))
+
+# Calculate heat stress days (>35°C)
+heat_stress <- climate_data %>%
+  filter(temperature > 35) %>%
+  count(year)
+
+# Model cooling impact of green roofs
+green_roof_coverage <- seq(0, 100, by = 10)  # Percentage coverage
+temperature_reduction <- 0.05 * green_roof_coverage  # Empirical model
+
+cooling_model <- data.frame(
+  coverage = green_roof_coverage,
+  temp_reduction = temperature_reduction,
+  heat_days_avoided = temperature_reduction * mean(heat_stress$n) / 2
+)
+
+# Visualize the impact
+ggplot(cooling_model, aes(x = coverage, y = temp_reduction)) +
+  geom_line(color = "#1a5e4a", size = 1.5) +
+  geom_point(size = 3) +
+  labs(title = "Projected Temperature Reduction from Green Roof Implementation",
+       x = "Green Roof Coverage (%)",
+       y = "Average Temperature Reduction (°C)") +
+  theme_minimal()
+```
+
+::: callout-important
+## Climate Justice
+
+Green architecture in slum areas isn't just about environmental sustainability—it's about climate justice. Communities with the least resources often face the greatest climate risks. R enables evidence-based advocacy for interventions that protect vulnerable populations.
+:::
+
+## Use Case 3: Water Resource Management and Rainwater Harvesting
+
+### The Challenge
+
+Many slum areas face water scarcity while simultaneously experiencing flooding during rainy seasons. Optimizing rainwater harvesting systems requires understanding rainfall patterns, calculating catchment potential, and sizing storage infrastructure appropriately.
+
+### How R Helps
+
+```r
+library(dplyr)
+library(lubridate)
+
+# Analyze rainfall patterns for system design
+rainfall_data <- read.csv("rainfall_records.csv") %>%
+  mutate(date = as.Date(date),
+         month = month(date, label = TRUE),
+         year = year(date))
+
+# Calculate monthly rainfall statistics
+monthly_stats <- rainfall_data %>%
+  group_by(month) %>%
+  summarize(
+    mean_rainfall = mean(rainfall_mm),
+    median_rainfall = median(rainfall_mm),
+    p90_rainfall = quantile(rainfall_mm, 0.9),
+    dry_days = sum(rainfall_mm < 1),
+    reliability = (n() - dry_days) / n() * 100
+  )
+
+# Calculate rainwater harvesting potential for community
+roof_area <- 15000  # Total catchment area in m²
+runoff_coefficient <- 0.8  # For corrugated metal roofs
+
+harvesting_potential <- rainfall_data %>%
+  mutate(
+    harvestable_volume = rainfall_mm / 1000 * roof_area * runoff_coefficient,
+    households_served = harvestable_volume / (150 * 30)  # 150L per HH per day
+  )
+
+# Annual summary
+annual_potential <- harvesting_potential %>%
+  group_by(year) %>%
+  summarize(
+    total_volume = sum(harvestable_volume),
+    avg_households = mean(households_served, na.rm = TRUE)
+  )
+
+print(paste("Average annual rainwater harvest potential:",
+            round(mean(annual_potential$total_volume)), "cubic meters"))
+print(paste("Could serve approximately:",
+            round(mean(annual_potential$avg_households)),
+            "households' daily water needs during rainy season"))
+```
+
+### Optimization Modeling
+
+```r
+# Optimize storage tank sizing considering cost and reliability
+storage_sizes <- seq(50, 500, by = 50)  # m³
+construction_costs <- storage_sizes * 250  # $250 per m³
+
+reliability_analysis <- sapply(storage_sizes, function(size) {
+  simulation <- harvesting_potential %>%
+    mutate(
+      storage_level = pmin(harvestable_volume, size),
+      deficit = pmax(0, 150 * 30 - storage_level)  # Daily need minus available
+    )
+
+  reliability <- (1 - sum(simulation$deficit > 0) / nrow(simulation)) * 100
+  return(reliability)
+})
+
+optimization_results <- data.frame(
+  storage_size = storage_sizes,
+  cost = construction_costs,
+  reliability = reliability_analysis,
+  cost_per_reliability = construction_costs / reliability_analysis
+)
+
+# Find optimal size (best reliability per dollar)
+optimal_size <- optimization_results %>%
+  filter(reliability > 75) %>%  # Minimum acceptable reliability
+  arrange(cost_per_reliability) %>%
+  slice(1)
+
+print(paste("Optimal storage size:", optimal_size$storage_size, "m³"))
+print(paste("Estimated cost:", optimal_size$cost, "USD"))
+print(paste("Expected reliability:", round(optimal_size$reliability, 1), "%"))
+```
+
+## Use Case 4: Air Quality Monitoring and Green Buffer Design
+
+### The Challenge
+
+Slum areas often face poor air quality due to proximity to industrial zones, heavy traffic, or reliance on solid fuels for cooking. Strategic placement of vegetation can improve air quality, but requires understanding pollution patterns and dispersion.
+
+### How R Helps
+
+```r
+library(openair)
+library(mgcv)
+
+# Analyze air quality monitoring data
+air_quality <- read.csv("air_quality_sensors.csv") %>%
+  mutate(datetime = as.POSIXct(datetime))
+
+# Time series analysis
+pollutionRose(air_quality,
+              pollutant = "pm25",
+              key.footer = "PM2.5 (µg/m³)",
+              main = "PM2.5 Pollution Rose - Identifying Source Directions")
+
+# Analyze temporal patterns
+timeVariation(air_quality,
+              pollutant = "pm25",
+              main = "PM2.5 Temporal Patterns")
+
+# Model relationship between vegetation cover and air quality
+vegetation_data <- read.csv("ndvi_air_quality.csv")
+
+gam_model <- gam(pm25 ~ s(ndvi, k = 5) + s(distance_road, k = 5) +
+                 s(wind_speed, k = 5) + factor(season),
+                 data = vegetation_data)
+
+# Predict air quality improvement from green buffer
+new_scenarios <- expand.grid(
+  ndvi = seq(0.2, 0.7, by = 0.1),
+  distance_road = c(50, 100, 200),
+  wind_speed = mean(vegetation_data$wind_speed),
+  season = "dry"
+)
+
+new_scenarios$predicted_pm25 <- predict(gam_model, newdata = new_scenarios)
+
+# Calculate reduction potential
+baseline_pm25 <- mean(vegetation_data$pm25[vegetation_data$ndvi < 0.3])
+new_scenarios$reduction_percent <-
+  (baseline_pm25 - new_scenarios$predicted_pm25) / baseline_pm25 * 100
+
+print("Air quality improvement from increased vegetation:")
+print(new_scenarios %>%
+      group_by(ndvi) %>%
+      summarize(avg_reduction = round(mean(reduction_percent), 1)))
+```
+
+::: callout-note
+## Multi-Benefit Approach
+
+Green buffers in slum areas provide multiple benefits: improved air quality, noise reduction, enhanced aesthetics, community gathering spaces, and potential for urban agriculture. R helps quantify these co-benefits to build stronger cases for investment.
+:::
+
+## Use Case 5: Community Health Impact Assessment
+
+### The Challenge
+
+Green architecture interventions in slum areas should be evaluated not just on environmental metrics, but on health outcomes. This requires integrating environmental data with community health indicators.
+
+### How R Helps
+
+```r
+library(tidyverse)
+library(lme4)
+library(broom)
+
+# Load health and environmental data
+health_data <- read.csv("community_health_survey.csv")
+green_space <- read.csv("green_infrastructure_inventory.csv")
+
+# Merge datasets by neighborhood
+merged_data <- health_data %>%
+  left_join(green_space, by = "neighborhood_id") %>%
+  mutate(
+    green_access = case_when(
+      distance_to_green < 100 ~ "High",
+      distance_to_green < 300 ~ "Medium",
+      TRUE ~ "Low"
+    )
+  )
+
+# Analyze relationship between green access and health outcomes
+health_model <- glm(
+  respiratory_illness ~ green_access + age + household_size +
+    cooking_fuel + housing_quality,
+  data = merged_data,
+  family = binomial
+)
+
+summary(health_model)
+
+# Calculate odds ratios
+odds_ratios <- tidy(health_model, exponentiate = TRUE, conf.int = TRUE)
+
+# Visualize the impact
+ggplot(merged_data, aes(x = green_access, y = respiratory_illness)) +
+  stat_summary(fun = mean, geom = "bar", fill = "#2c7a64") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  labs(title = "Respiratory Illness Prevalence by Green Space Access",
+       x = "Green Space Access",
+       y = "Respiratory Illness Prevalence (%)") +
+  theme_minimal()
+
+# Calculate potential health benefits from intervention
+current_low_access <- mean(merged_data$respiratory_illness[
+  merged_data$green_access == "Low"
+])
+
+expected_after_intervention <- mean(merged_data$respiratory_illness[
+  merged_data$green_access == "High"
+])
+
+population_low_access <- sum(merged_data$green_access == "Low") *
+  mean(merged_data$household_size)
+
+cases_prevented <- (current_low_access - expected_after_intervention) *
+  population_low_access
+
+print(paste("Estimated respiratory illness cases prevented annually:",
+            round(cases_prevented)))
+```
+
+## Use Case 6: Participatory Planning with Data Visualization
+
+### The Challenge
+
+Green architecture projects in slum areas must engage communities meaningfully. Technical data needs to be translated into accessible visualizations that enable community members to understand proposals and provide input.
+
+### How R Helps
+
+```r
+library(shiny)
+library(leaflet)
+library(plotly)
+
+# Create interactive dashboard for community consultation
+ui <- fluidPage(
+  titlePanel("Community Green Space Planning Tool"),
+
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("tree_count", "Number of Trees:",
+                  min = 50, max = 500, value = 200),
+      sliderInput("garden_area", "Community Garden Area (m²):",
+                  min = 100, max = 2000, value = 500),
+      checkboxGroupInput("features", "Additional Features:",
+                         choices = c("Playground", "Seating Area",
+                                   "Water Fountain", "Composting Site"))
+    ),
+
+    mainPanel(
+      leafletOutput("map"),
+      plotlyOutput("benefits_chart"),
+      textOutput("cost_estimate")
+    )
+  )
+)
+
+server <- function(input, output) {
+
+  # Reactive calculations
+  benefits <- reactive({
+    data.frame(
+      Benefit = c("Carbon Sequestration", "Temperature Reduction",
+                  "Air Quality Improvement", "Community Wellbeing"),
+      Value = c(
+        input$tree_count * 21,  # kg CO2 per year
+        input$tree_count * 0.015 + input$garden_area * 0.002,  # °C
+        input$tree_count * 0.5,  # PM2.5 reduction index
+        (input$tree_count + input$garden_area) * 0.1  # Wellbeing index
+      )
+    )
+  })
+
+  output$map <- renderLeaflet({
+    # Interactive map showing proposed interventions
+    leaflet() %>%
+      addTiles() %>%
+      addCircleMarkers(lng = sample_locations$lon,
+                      lat = sample_locations$lat,
+                      radius = 5, color = "green")
+  })
+
+  output$benefits_chart <- renderPlotly({
+    plot_ly(benefits(), x = ~Benefit, y = ~Value, type = "bar",
+            marker = list(color = "#1a5e4a")) %>%
+      layout(title = "Projected Benefits",
+             yaxis = list(title = "Impact Score"))
+  })
+
+  output$cost_estimate <- renderText({
+    cost <- input$tree_count * 50 + input$garden_area * 25 +
+      length(input$features) * 2000
+    paste("Estimated Project Cost: $", format(cost, big.mark = ","))
+  })
+}
+
+# shinyApp(ui, server)
+```
+
+::: callout-tip
+## Community Engagement
+
+Interactive tools built with R Shiny enable communities to explore different scenarios, understand trade-offs, and express preferences. This participatory approach leads to better-designed, more sustainable interventions with stronger community ownership.
+:::
+
+## Use Case 7: Resource Optimization and Cost-Benefit Analysis
+
+### The Challenge
+
+Development organizations and municipalities face budget constraints. Green architecture interventions must demonstrate clear value for money while balancing multiple objectives: environmental impact, social benefits, and financial feasibility.
+
+### How R Helps
+
+```r
+library(lpSolve)
+library(tidyverse)
+
+# Define potential interventions
+interventions <- data.frame(
+  intervention = c("Green Roofs", "Community Gardens", "Tree Planting",
+                   "Bio-swales", "Permeable Pavement", "Vertical Gardens"),
+  cost_per_unit = c(80, 25, 50, 120, 60, 40),
+  carbon_benefit = c(15, 8, 21, 5, 3, 10),
+  cooling_benefit = c(20, 5, 15, 8, 10, 12),
+  water_benefit = c(25, 10, 5, 30, 35, 8),
+  social_benefit = c(10, 30, 15, 5, 8, 20)
+)
+
+# Budget constraint
+total_budget <- 50000
+
+# Linear programming to optimize intervention mix
+objective <- with(interventions,
+                  carbon_benefit + cooling_benefit +
+                    water_benefit + social_benefit)
+
+constraints <- matrix(interventions$cost_per_unit, nrow = 1)
+constraint_dir <- "<="
+constraint_rhs <- total_budget
+
+solution <- lp("max", objective, constraints, constraint_dir,
+               constraint_rhs, all.int = TRUE)
+
+# Optimal allocation
+optimal_mix <- data.frame(
+  intervention = interventions$intervention,
+  units = solution$solution,
+  total_cost = interventions$cost_per_unit * solution$solution,
+  total_benefits = objective * solution$solution
+) %>%
+  filter(units > 0) %>%
+  arrange(desc(total_benefits))
+
+print("Optimal Intervention Mix:")
+print(optimal_mix)
+
+# Sensitivity analysis
+budget_range <- seq(30000, 100000, by = 10000)
+
+sensitivity_results <- sapply(budget_range, function(budget) {
+  sol <- lp("max", objective, constraints, "<=", budget, all.int = TRUE)
+  return(sol$objval)
+})
+
+sensitivity_df <- data.frame(
+  budget = budget_range,
+  total_benefit = sensitivity_results,
+  benefit_per_dollar = sensitivity_results / budget_range
+)
+
+ggplot(sensitivity_df, aes(x = budget, y = total_benefit)) +
+  geom_line(color = "#1a5e4a", size = 1.5) +
+  geom_point(size = 3) +
+  labs(title = "Budget Sensitivity Analysis",
+       x = "Budget ($)",
+       y = "Total Benefit Score") +
+  scale_x_continuous(labels = scales::dollar) +
+  theme_minimal()
+```
+
+## Use Case 8: Monitoring and Evaluation with Sensor Networks
+
+### The Challenge
+
+After implementing green architecture, tracking performance and impact is essential for adaptive management and demonstrating success to funders and stakeholders.
+
+### How R Helps
+
+```r
+library(tidyverse)
+library(forecast)
+library(anomalize)
+
+# Load sensor data (temperature, humidity, air quality)
+sensor_data <- read.csv("iot_sensor_data.csv") %>%
+  mutate(timestamp = as.POSIXct(timestamp))
+
+# Time series analysis of temperature reduction
+temp_ts <- sensor_data %>%
+  filter(sensor_type == "temperature") %>%
+  arrange(timestamp) %>%
+  pull(value) %>%
+  ts(frequency = 24)  # Hourly data
+
+# Decompose to identify trends
+decomposed <- stl(temp_ts, s.window = "periodic")
+plot(decomposed)
+
+# Detect anomalies
+anomalies <- sensor_data %>%
+  filter(sensor_type == "temperature") %>%
+  time_decompose(value, method = "stl", frequency = "auto") %>%
+  anomalize(remainder, method = "gesd") %>%
+  time_recompose()
+
+# Compare pre and post intervention
+baseline_temp <- mean(sensor_data$value[
+  sensor_data$sensor_type == "temperature" &
+    sensor_data$timestamp < as.POSIXct("2024-06-01")
+])
+
+intervention_temp <- mean(sensor_data$value[
+  sensor_data$sensor_type == "temperature" &
+    sensor_data$timestamp >= as.POSIXct("2024-06-01")
+])
+
+temp_reduction <- baseline_temp - intervention_temp
+
+print(paste("Average temperature reduction:",
+            round(temp_reduction, 2), "°C"))
+
+# Statistical significance test
+t_test_result <- t.test(
+  sensor_data$value[sensor_data$timestamp < as.POSIXct("2024-06-01")],
+  sensor_data$value[sensor_data$timestamp >= as.POSIXct("2024-06-01")]
+)
+
+print(paste("Statistical significance: p-value =",
+            round(t_test_result$p.value, 4)))
+
+# Generate automated report
+intervention_report <- list(
+  intervention_date = "2024-06-01",
+  baseline_temp = round(baseline_temp, 2),
+  current_temp = round(intervention_temp, 2),
+  reduction = round(temp_reduction, 2),
+  significance = ifelse(t_test_result$p.value < 0.05,
+                       "Statistically Significant",
+                       "Not Significant"),
+  monitoring_period = paste(range(sensor_data$timestamp), collapse = " to ")
+)
+
+# Create visualization for stakeholders
+ggplot(sensor_data %>% filter(sensor_type == "temperature"),
+       aes(x = timestamp, y = value)) +
+  geom_line(alpha = 0.3) +
+  geom_smooth(method = "loess", color = "#1a5e4a", size = 1.5) +
+  geom_vline(xintercept = as.numeric(as.POSIXct("2024-06-01")),
+             linetype = "dashed", color = "red", size = 1) +
+  annotate("text", x = as.POSIXct("2024-06-01"),
+           y = max(sensor_data$value) * 0.95,
+           label = "Intervention", hjust = 0, color = "red") +
+  labs(title = "Temperature Monitoring: Before and After Green Infrastructure",
+       x = "Date",
+       y = "Temperature (°C)") +
+  theme_minimal()
+```
+
+## Integrating R into Green Architecture Workflows
+
+Successfully leveraging R for green architecture in slum areas requires thoughtful integration into existing workflows:
+
+### 1. **Data Collection Infrastructure**
+
+- **Deploy low-cost sensors**: Arduino and Raspberry Pi-based environmental monitoring
+- **Mobile data collection**: Use R packages like `shiny` and `rdrop2` for field surveys
+- **Open data integration**: Access satellite imagery (Landsat, Sentinel), OpenStreetMap, government datasets
+
+### 2. **Collaborative Analysis Platforms**
+
+- **R Markdown reports**: Create reproducible analysis documents combining code, visualizations, and narrative
+- **Shiny dashboards**: Build interactive tools for stakeholders without R expertise
+- **Version control**: Use GitHub to track analysis evolution and enable team collaboration
+
+### 3. **Capacity Building**
+
+- **Train local teams**: Develop R skills within local organizations for sustainable capacity
+- **Document workflows**: Create clear, commented code and tutorials
+- **Share resources**: Contribute to open-source packages specific to urban development
+
+### 4. **Ethical Considerations**
+
+- **Data privacy**: Protect community member identities in health and survey data
+- **Equitable benefit sharing**: Ensure data insights benefit the communities studied
+- **Community consent**: Engage communities in data collection and use decisions
+- **Avoid extractive research**: Partner with, rather than study, communities
+
+## Conclusion: R as a Tool for Environmental Justice
+
+Green architecture in slum areas represents one of the most critical challenges of the 21st century. As climate change intensifies and urban populations grow, we must find ways to create sustainable, resilient, healthy living environments for the world's most vulnerable communities.
+
+R provides the analytical foundation for this work: enabling evidence-based design, optimizing limited resources, demonstrating impact to funders, and—perhaps most importantly—empowering communities with data to advocate for their own needs.
+
+The use cases explored in this article represent just the beginning. As R continues to evolve, with growing capabilities in machine learning, real-time data processing, and cloud computing, its potential to support transformative green architecture in informal settlements will only expand.
+
+For architects, urban planners, development organizations, and data scientists, the call is clear: leverage R's power not just for analysis, but for justice. Use data not just to understand slum areas, but to transform them. Apply statistical rigor not just for academic publication, but for community empowerment.
+
+The future of sustainable urban development will be built on data. With R, we can ensure that future includes everyone.
+
+---
+
+## Getting Started with R for Green Architecture
+
+Ready to apply R to your green architecture projects? Here are resources to begin:
+
+### Essential R Packages
+
+- **Spatial analysis**: `sf`, `terra`, `raster`, `leaflet`, `tmap`
+- **Environmental data**: `openair`, `climatol`, `nasapower`
+- **Optimization**: `lpSolve`, `GA`, `optimization`
+- **Visualization**: `ggplot2`, `plotly`, `shiny`
+- **Reporting**: `rmarkdown`, `quarto`, `officer`
+
+### Learning Resources
+
+- [Geocomputation with R](https://r.geocompx.org/) - Spatial analysis guide
+- [Environmental Computing](http://environmentalcomputing.net/) - Environmental statistics
+- [Shiny for Community Engagement](https://shiny.rstudio.com/gallery/) - Interactive dashboards
+
+### Data Sources
+
+- [OpenStreetMap](https://www.openstreetmap.org/) - Community-mapped spatial data
+- [Sentinel Hub](https://www.sentinel-hub.com/) - Satellite imagery
+- [World Bank Open Data](https://data.worldbank.org/) - Development indicators
+- [NASA POWER](https://power.larc.nasa.gov/) - Climate and solar data
+
+---
+
+*At Kwiz Computing Technologies, we specialize in applying R and data science to sustainability challenges in East Africa. Contact us to discuss how we can support your green architecture projects in informal settlements and beyond.*
