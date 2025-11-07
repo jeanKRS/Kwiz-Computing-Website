@@ -27,7 +27,11 @@ We provide comprehensive data science services built on transferable analytical 
 
 ::::::: services-grid
 ::: {.service-card .featured}
-### 📊 Advanced Analytics & Statistical Modeling
+::: service-icon
+![](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=80){.service-img}
+:::
+
+### Advanced Analytics & Statistical Modeling
 
 Turn complex data into actionable insights using sophisticated statistical methods, predictive modeling, and machine learning techniques.
 
@@ -43,7 +47,11 @@ Turn complex data into actionable insights using sophisticated statistical metho
 :::
 
 ::: service-card
-### 💻 Enterprise R Application Development
+::: service-icon
+![](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop&q=80){.service-img}
+:::
+
+### Enterprise R Application Development
 
 Build robust, production-grade analytical applications and interactive dashboards using modern R frameworks and software engineering best practices.
 
@@ -59,7 +67,11 @@ Build robust, production-grade analytical applications and interactive dashboard
 :::
 
 ::: service-card
-### 🗄️ Data Management & Integration
+::: service-icon
+![](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&q=80){.service-img}
+:::
+
+### Data Management & Integration
 
 Design and implement robust data pipelines, quality assurance frameworks, and integration systems that ensure data reliability and accessibility.
 
@@ -75,7 +87,11 @@ Design and implement robust data pipelines, quality assurance frameworks, and in
 :::
 
 ::: service-card
-### 📈 Custom Analytics Solutions
+::: service-icon
+![](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=80){.service-img}
+:::
+
+### Custom Analytics Solutions
 
 Develop tailored analytical frameworks and methodologies designed specifically for your organization's unique challenges and requirements.
 
@@ -293,11 +309,12 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
 
 .service-card {
   background: white;
-  padding: 2rem;
+  padding: 0;
   border-radius: 12px;
   border: 1px solid #e9ecef;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .service-card:hover {
@@ -307,9 +324,46 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
 }
 
 .service-card.featured {
-  background: linear-gradient(135deg, rgba(26, 94, 74, 0.05) 0%, white 100%);
+  background: white;
   border-color: #1a5e4a;
   border-width: 2px;
+}
+
+.service-icon {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+
+.service-card > *:not(.service-icon) {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.service-card > h3 {
+  padding-top: 1.5rem;
+}
+
+.service-card > p:last-of-type,
+.service-card > ul:last-of-type {
+  padding-bottom: 1.5rem;
 }
 
 .service-card h3 {
@@ -325,22 +379,31 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
   margin-bottom: 1rem;
 }
 
+.service-card strong {
+  color: #1a5e4a;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .service-card ul {
-  margin: 1rem 0;
-  padding-left: 0;
+  margin: 0.5rem 0 1rem 0;
+  padding-left: 1.5rem;
   list-style: none;
 }
 
 .service-card li {
   padding: 0.3rem 0;
   color: #666;
+  position: relative;
 }
 
 .service-card li:before {
-  content: "✓ ";
+  content: "✓";
   color: #1a5e4a;
   font-weight: bold;
-  margin-right: 0.5rem;
+  position: absolute;
+  left: -1.5rem;
 }
 
 .service-card a {
@@ -348,6 +411,9 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .service-card a:hover {
