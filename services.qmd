@@ -10,9 +10,13 @@ We deliver comprehensive data science solutions built on transferable technical 
 
 ## Core Services {#core-services}
 
-### 📊 Advanced Analytics & Statistical Consulting {#analytics}
+### Advanced Analytics & Statistical Consulting {#analytics}
 
 ::: service-detail
+::: service-header-img
+![](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=300&fit=crop&q=80){.service-banner}
+:::
+
 Transform complex data into actionable insights using rigorous statistical methods, predictive modeling, and advanced analytical techniques.
 
 #### Core Capabilities:
@@ -79,9 +83,13 @@ Rigorous statistical analysis ensures your decisions are based on evidence, not 
 
 ------------------------------------------------------------------------
 
-### 🗄️ Data Management & Integration
+### Data Management & Integration
 
 ::: service-detail
+::: service-header-img
+![](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=300&fit=crop&q=80){.service-banner}
+:::
+
 Design and implement robust data pipelines, quality assurance frameworks, and integration systems that ensure data reliability, accessibility, and scalability.
 
 #### Core Capabilities:
@@ -146,9 +154,13 @@ Poor data management leads to inconsistent reporting, compliance issues, and mis
 
 ------------------------------------------------------------------------
 
-### 💻 Enterprise R Application Development {#r-development}
+### Enterprise R Application Development {#r-development}
 
 ::: service-detail
+::: service-header-img
+![](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=300&fit=crop&q=80){.service-banner}
+:::
+
 Build production-grade analytical applications and interactive dashboards using modern R frameworks and professional software engineering practices.
 
 #### Core Capabilities:
@@ -218,9 +230,13 @@ R excels at statistical computing and data visualization, making it ideal for an
 
 ------------------------------------------------------------------------
 
-### 📈 Data Visualization & Reporting
+### Data Visualization & Reporting
 
 ::: service-detail
+::: service-header-img
+![](https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=300&fit=crop&q=80){.service-banner}
+:::
+
 Create compelling visualizations, automated reports, and interactive presentations that communicate complex data insights clearly and effectively.
 
 #### Core Capabilities:
@@ -290,9 +306,13 @@ Good visualizations don't just make data pretty—they make it understandable. E
 
 ------------------------------------------------------------------------
 
-### 🔧 R Package Development & Custom Tools
+### R Package Development & Custom Tools
 
 ::: service-detail
+::: service-header-img
+![](https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=300&fit=crop&q=80){.service-banner}
+:::
+
 Build custom R packages and analytical tools to standardize workflows, share methodologies, and increase team productivity across your organization.
 
 #### Core Capabilities:
@@ -361,9 +381,13 @@ Packages codify institutional knowledge, ensure consistency, and accelerate anal
 
 ------------------------------------------------------------------------
 
-### 🎓 Training & Capacity Building
+### Training & Capacity Building
 
 ::: service-detail
+::: service-header-img
+![](https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=300&fit=crop&q=80){.service-banner}
+:::
+
 Empower your team with practical R programming skills, statistical methods, and modern data science workflows tailored to your organization's needs and domain.
 
 #### Core Training Programs:
@@ -632,11 +656,43 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 
 .service-detail {
   background: white;
-  padding: 2rem;
+  padding: 0;
   border-radius: 12px;
   border: 1px solid #e9ecef;
   margin: 1.5rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.service-header-img {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.service-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+}
+
+.service-detail > *:not(.service-header-img) {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.service-detail > p:first-of-type {
+  padding-top: 1.5rem;
+}
+
+.service-detail > *:last-child {
+  padding-bottom: 1.5rem;
 }
 
 .service-detail h4 {
@@ -644,6 +700,8 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-size: 1.3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .service-detail strong {
@@ -653,6 +711,8 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 
 .service-detail ul {
   margin: 0.5rem 0 1.5rem 0;
+  padding-left: 3.5rem;
+  padding-right: 2rem;
 }
 
 .service-detail li {
@@ -670,6 +730,8 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
   display: inline-block;
   border: 2px solid transparent;
   margin-top: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn-primary {
@@ -849,8 +911,30 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
     font-size: 1rem;
   }
 
-  .service-detail {
-    padding: 1.5rem;
+  .service-header-img {
+    height: 180px;
+  }
+
+  .service-detail > *:not(.service-header-img) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .service-detail h4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .service-detail ul {
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+  }
+
+  .btn {
+    width: calc(100% - 2rem);
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .engagement-card {
@@ -863,11 +947,6 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 
   .services-cta h2 {
     font-size: 1.8rem;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
   }
 }
 </style>

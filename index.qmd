@@ -113,25 +113,41 @@ Develop tailored analytical frameworks and methodologies designed specifically f
 
 ::::::: {.grid .why-choose}
 ::: {.g-col-12 .g-col-md-3}
-**🎓 Deep Technical Expertise**
+::: why-icon
+![](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80){.why-img}
+:::
+
+**Deep Technical Expertise**
 
 Rigorous statistical training combined with modern software development practices—not just coding, but proper engineering.
 :::
 
 ::: {.g-col-12 .g-col-md-3}
-**🔬 Scientific Rigor**
+::: why-icon
+![](https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300&h=200&fit=crop&q=80){.why-img}
+:::
+
+**Scientific Rigor**
 
 We prioritize reproducibility, transparency, and methodological soundness in every analysis, ensuring defensible results.
 :::
 
 ::: {.g-col-12 .g-col-md-3}
-**⚙️ Enterprise Quality**
+::: why-icon
+![](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop&q=80){.why-img}
+:::
+
+**Enterprise Quality**
 
 Production-ready solutions with comprehensive testing, documentation, and maintainability built in from the start.
 :::
 
 ::: {.g-col-12 .g-col-md-3}
-**🤝 Boutique Service**
+::: why-icon
+![](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=200&fit=crop&q=80){.why-img}
+:::
+
+**Boutique Service**
 
 Direct access to senior consultants who understand both the technical details and business context of your challenges.
 :::
@@ -424,7 +440,28 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
 /* Why Choose Section */
 .why-choose > div {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1rem;
+}
+
+.why-icon {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.why-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.why-choose > div:hover .why-img {
+  transform: scale(1.05);
 }
 
 .why-choose strong {
