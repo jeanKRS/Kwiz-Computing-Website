@@ -346,7 +346,7 @@ We specialize in helping organizations leverage R for production software develo
 
 ------------------------------------------------------------------------
 
-**Related Articles:** - [R as a Data Analyst's Essential Tool](r-data-analysis.qmd) - [R for Software Development: Beyond Scripts](r-software-development.qmd) (Technical) - [Case Study: Data Science for Environmental Impact Assessments](environmental-eia-case-study.qmd)
+**Related Articles:** - [Kenya's Open Data Initiative: A Promise Unfulfilled?](kenya-open-data-initiatives.qmd) - [Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments](Reproducibility in ESIA Analyses.qmd) (Technical)
 
 ------------------------------------------------------------------------
 
