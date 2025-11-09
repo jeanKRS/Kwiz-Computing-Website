@@ -33,8 +33,10 @@ node_modules/
 # Python virtual environment
 venv/
 .venv/
+.venv
 *.pyc
 __pycache__/
+.python-setup-complete
 
 # Logs
 *.log
