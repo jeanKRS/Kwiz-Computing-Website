@@ -12,7 +12,7 @@ In 2011, Kenya made history as the first sub-Saharan African country to launch a
 
 ![Open data and digital transformation](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
 
-::: callout-important
+::: callout-tip
 ## Critical Question
 
 Can open data initiatives survive without strong legal frameworks, clear institutional ownership, and sustained political commitment? Kenya's experience offers sobering lessons for data transparency advocates worldwide.

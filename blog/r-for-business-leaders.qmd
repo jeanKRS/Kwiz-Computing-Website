@@ -15,7 +15,7 @@ When most business leaders think about software development, they think of langu
 
 If your organization works with data (and which organization doesn't these days?), overlooking [R](https://www.r-project.org/) as a serious software development platform might mean you're leaving significant value on the table. According to the [2023 Stack Overflow Developer Survey](https://survey.stackoverflow.co/2023/), R ranks among the top 20 most used programming languages, with particularly strong adoption in data-intensive industries.
 
-::: callout-important
+::: callout-tip
 ## Key Takeaway
 
 This article makes the business case for why R deserves consideration in your technology strategy, written specifically for non-technical leaders who make decisions about technology investments.
@@ -346,7 +346,7 @@ We specialize in helping organizations leverage R for production software develo
 
 ------------------------------------------------------------------------
 
-**Related Articles:** - [Kenya's Open Data Initiative: A Promise Unfulfilled?](kenya-open-data-initiative.qmd) - [Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments](Reproducibility in ESIA Analyses.qmd) (Technical)
+**Related Articles:** - [Kenya's Open Data Initiative: A Promise Unfulfilled?](kenya-open-data-initiative.qmd) - [Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments](Reproducibility%20in%20ESIA%20Analyses.qmd) (Technical)
 
 ------------------------------------------------------------------------
 

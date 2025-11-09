@@ -12,7 +12,7 @@ Kenya's Environmental Impact Assessment (EIA) system, established under the [Env
 
 ![Environmental protection and conservation](https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80)
 
-::: callout-important
+::: callout-tip
 ## Critical Analysis
 
 This article examines the challenges facing Kenya's EIA system, with particular focus on data transparency, scientific rigor, and reproducibility—critical elements for evidence-based decision-making and accountability.
@@ -44,7 +44,7 @@ According to NEMA's clarifications, high-risk project Study Reports are publishe
 
 The situation reflects broader challenges in Kenya's open data landscape. Despite constitutional guarantees of the right to information ([Article 35 of Kenya's Constitution](http://www.kenyalaw.org/)), the [2022 Global Data Barometer](https://globaldatabarometer.org/) gave Kenya a score of 30 out of 100 for data capability—well below the global average of 49. Kenya received zero ratings for subnational capabilities, open data initiatives, and support for data reuse. These systemic failures in open data infrastructure are explored in detail in our [analysis of Kenya's Open Data Initiative](/blog/kenya-open-data-initiative.qmd).
 
-::: callout-warning
+::: callout-note
 ## Data Accessibility Gap
 
 Despite Kenya's pioneering role in open data initiatives in Africa, environmental assessment data remains largely inaccessible to the public, limiting transparency and accountability. For more on Kenya's open data challenges, see our [dedicated analysis](/blog/kenya-open-data-initiative.qmd).

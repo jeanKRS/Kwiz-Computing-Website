@@ -23,7 +23,7 @@ You've created beautiful Quarto websites, reports, presentations, or books. Now 
 
 This comprehensive guide will walk you through deploying Quarto projects to **popular hosting platforms** and the three major cloud providers. Whether you're a beginner looking for the easiest deployment or an enterprise user needing advanced features, this guide has you covered.
 
-::: callout-important
+::: callout-tip
 ## What You'll Learn
 
 - **Quick Start Options**: Deploy in minutes with Netlify, Vercel, GitHub Pages, Cloudflare Pages, Render, Surge.sh, WordPress hosting, or DigitalOcean
@@ -947,7 +947,7 @@ gcloud compute forwarding-rules create quarto-https-rule \
 
 Your site is now served globally with CDN acceleration! 🚀
 
-::: callout-important
+::: callout-tip
 ## Cloud Storage Costs
 
 Cloud Storage charges for: - **Storage**: \~\$0.020 per GB/month - **Network egress**: \~\$0.12 per GB (after free tier) - **Operations**: Minimal costs for reads/writes
@@ -1403,7 +1403,7 @@ Verify domain ownership by adding DNS records shown in ACM Console.
 
 Your site is now live with HTTPS! 🔒
 
-::: callout-important
+::: callout-tip
 ## Invalidating CloudFront Cache
 
 After updating your site, invalidate CloudFront cache:
@@ -2015,7 +2015,7 @@ fig.show()
     -   Set up billing alerts in all platforms
     -   Review monthly costs and optimize
 
-::: callout-important
+::: callout-tip
 ## Billing Alerts Setup
 
 **AWS:**
