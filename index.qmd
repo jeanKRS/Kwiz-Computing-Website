@@ -10,7 +10,7 @@ page-layout: full
 
 ## Expert R programming, statistical analysis, and enterprise-grade analytics solutions for organizations across all sectors
 
-![Data analytics dashboard showing graphs and statistical insights for strategic business decisions](images/hero_section.png){width="auto" fig-align="center"}
+![Professional team collaborating on data analytics project with modern technology tools for efficient strategic delivery](https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=800&fit=crop&q=80){width="auto" fig-align="center"}
 
 We deliver sophisticated data science solutions combining rigorous statistical methods, modern software development practices, and deep technical expertise in R programming.
 
