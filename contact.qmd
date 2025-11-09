@@ -399,18 +399,12 @@ Or email us at <a href="mailto:othercontent21@gmail.com" style="color: white; te
 ❌ Oops! Something went wrong. Please try again or email us directly.
 :::
 
-<<<<<<< HEAD
-<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-
-<!-- Web3Forms Access Key - Replace with your actual key -->
-=======
 <form id="contactForm" action="https://formsubmit.co/othercontent21@gmail.com" method="POST">
 <!-- FormSubmit Configuration - No API key needed! -->
 <input type="hidden" name="_subject" value="New Contact Form Submission from Kwiz Computing Website">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="false">
->>>>>>> f8dc2991b3675ed0d100367e818df77f46d20e5a
 
 <input type="hidden" name="access_key" value="247c6959-db08-4a3d-ad09-10dd2b0fa1d6"> <input type="hidden" name="subject" value="New Contact Form Submission from Kwiz Computing Website"> <input type="hidden" name="from_name" value="Kwiz Computing Contact Form"> <input type="hidden" name="redirect" value="false">
 
