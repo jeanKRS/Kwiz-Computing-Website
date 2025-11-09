@@ -15,8 +15,8 @@ body {
 
 /* Ensure content area has subtle background to maintain readability */
 .page-columns {
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+    /* backdrop-filter removed for better mobile performance */
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -93,13 +93,15 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    /* Simplify background pattern on mobile for better performance */
     body {
-        background-size: 40px 70px;
-        background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+        background-image: none;
+        background-color: #f8f9fa;
     }
 
     .page-columns {
         margin: 1rem;
         padding: 1rem;
+        background-color: #ffffff;
     }
 }

@@ -10,7 +10,7 @@ page-layout: full
 
 ## Expert R programming, statistical analysis, and enterprise-grade analytics solutions for organizations across all sectors
 
-![Professional team collaborating on data analytics project with modern technology tools for efficient strategic delivery](https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=800&fit=crop&q=80){width="auto" fig-align="center"}
+![Professional team collaborating on data analytics project with modern technology tools for efficient strategic delivery](https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop&q=75&auto=format){width="auto" fig-align="center" loading="eager"}
 
 We deliver sophisticated data science solutions combining rigorous statistical methods, modern software development practices, and deep technical expertise in R programming.
 
@@ -29,7 +29,7 @@ We provide comprehensive data science services built on transferable analytical 
 ::::::: services-grid
 ::: {.service-card .featured}
 ::: service-icon
-![Advanced analytics dashboard with charts, graphs, and data visualizations for statistical modeling](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=80){.service-img}
+![Advanced analytics dashboard with charts, graphs, and data visualizations for statistical modeling](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
 
 ### Advanced Analytics & Statistical Modeling
@@ -49,7 +49,7 @@ Turn complex data into actionable insights using sophisticated statistical metho
 
 ::: service-card
 ::: service-icon
-![Developer coding R Shiny application on laptop showing interactive dashboard development](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop&q=80){.service-img}
+![Developer coding R Shiny application on laptop showing interactive dashboard development](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
 
 ### Enterprise R Application Development
@@ -69,7 +69,7 @@ Build robust, production-grade analytical applications and interactive dashboard
 
 ::: service-card
 ::: service-icon
-![Data pipeline architecture showing ETL processes, database integration, and data flow visualization](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&q=80){.service-img}
+![Data pipeline architecture showing ETL processes, database integration, and data flow visualization](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
 
 ### Data Management & Integration
@@ -89,7 +89,7 @@ Design and implement robust data pipelines, quality assurance frameworks, and in
 
 ::: service-card
 ::: service-icon
-![Custom analytics solution with business intelligence reports and tailored data visualizations](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=80){.service-img}
+![Custom analytics solution with business intelligence reports and tailored data visualizations](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
 
 ### Custom Analytics Solutions
@@ -115,7 +115,7 @@ Develop tailored analytical frameworks and methodologies designed specifically f
 ::::::: {.grid .why-choose}
 ::: {.g-col-12 .g-col-md-3}
 ::: why-icon
-![Team of data scientists collaborating on statistical analysis and software development project](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80){.why-img}
+![Team of data scientists collaborating on statistical analysis and software development project](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=70&auto=format){.why-img loading="lazy"}
 :::
 
 **Deep Technical Expertise**
@@ -125,7 +125,7 @@ Rigorous statistical training combined with modern software development practice
 
 ::: {.g-col-12 .g-col-md-3}
 ::: why-icon
-![Scientist conducting rigorous statistical research with reproducible analytical methods](https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300&h=200&fit=crop&q=80){.why-img}
+![Scientist conducting rigorous statistical research with reproducible analytical methods](https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300&h=200&fit=crop&q=70&auto=format){.why-img loading="lazy"}
 :::
 
 **Scientific Rigor**
@@ -135,7 +135,7 @@ We prioritize reproducibility, transparency, and methodological soundness in eve
 
 ::: {.g-col-12 .g-col-md-3}
 ::: why-icon
-![Enterprise-grade software development with comprehensive testing and documentation practices](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop&q=80){.why-img}
+![Enterprise-grade software development with comprehensive testing and documentation practices](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop&q=70&auto=format){.why-img loading="lazy"}
 :::
 
 **Enterprise Quality**
@@ -145,7 +145,7 @@ Production-ready solutions with comprehensive testing, documentation, and mainta
 
 ::: {.g-col-12 .g-col-md-3}
 ::: why-icon
-![Senior consultant providing personalized data science consulting and strategic advice to client](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=200&fit=crop&q=80){.why-img}
+![Senior consultant providing personalized data science consulting and strategic advice to client](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=200&fit=crop&q=70&auto=format){.why-img loading="lazy"}
 :::
 
 **Boutique Service**
@@ -223,351 +223,3 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
 
 [Schedule a Consultation](contact.qmd){.btn .btn-primary .btn-lg} [Download Capabilities Overview](services.qmd){.btn .btn-outline .btn-lg}
 :::
-
-```{=html}
-<style>
-/* Hero Section Styling */
-.hero-section {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, rgba(26, 94, 74, 0.05) 0%, rgba(26, 94, 74, 0.02) 50%, #ffffff 100%);
-  border-radius: 12px;
-  margin-bottom: 3rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.hero-content h1 {
-  color: #1a5e4a;
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-content h2 {
-  color: #555;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-content p {
-  font-size: 1.15rem;
-  color: #666;
-  max-width: 700px;
-  margin: 1.5rem auto;
-  line-height: 1.7;
-}
-
-.hero-cta {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  display: inline-block;
-  border: 2px solid transparent;
-}
-
-.btn-primary {
-  background-color: #1a5e4a;
-  color: white;
-  border-color: #1a5e4a;
-}
-
-.btn-primary:hover {
-  background-color: #145240;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(26, 94, 74, 0.3);
-  color: white;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: #1a5e4a;
-  border-color: #1a5e4a;
-}
-
-.btn-outline:hover {
-  background-color: #1a5e4a;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(26, 94, 74, 0.2);
-}
-
-.btn-lg {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-}
-
-/* Services Grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.service-card {
-  background: white;
-  padding: 0;
-  border-radius: 12px;
-  border: 1px solid #e9ecef;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  border-color: #1a5e4a;
-}
-
-.service-card.featured {
-  background: white;
-  border-color: #1a5e4a;
-  border-width: 2px;
-}
-
-.service-icon {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-.service-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;
-  box-shadow: none;
-  margin: 0;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover .service-img {
-  transform: scale(1.05);
-}
-
-.service-card > *:not(.service-icon) {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.service-card > h3 {
-  padding-top: 1.5rem;
-}
-
-.service-card > p:last-of-type,
-.service-card > ul:last-of-type {
-  padding-bottom: 1.5rem;
-}
-
-.service-card h3 {
-  color: #1a5e4a;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-}
-
-.service-card p {
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-.service-card strong {
-  color: #1a5e4a;
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.service-card ul {
-  margin: 0.5rem 0 1rem 0;
-  padding-left: 1.5rem;
-  list-style: none;
-}
-
-.service-card li {
-  padding: 0.3rem 0;
-  color: #666;
-  position: relative;
-}
-
-.service-card li:before {
-  content: "✓";
-  color: #1a5e4a;
-  font-weight: bold;
-  position: absolute;
-  left: -1.5rem;
-}
-
-.service-card a {
-  color: #1a5e4a;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  display: inline-block;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.service-card a:hover {
-  color: #145240;
-  text-decoration: underline;
-}
-
-/* Why Choose Section */
-.why-choose > div {
-  text-align: center;
-  padding: 1rem;
-}
-
-.why-icon {
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-}
-
-.why-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.why-choose > div:hover .why-img {
-  transform: scale(1.05);
-}
-
-.why-choose strong {
-  display: block;
-  color: #1a5e4a;
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
-}
-
-.why-choose p {
-  color: #666;
-  line-height: 1.7;
-}
-
-/* Blog Preview */
-.blog-preview {
-  background: #f8f9fa;
-  padding: 2rem;
-  border-radius: 12px;
-  border-left: 4px solid #1a5e4a;
-}
-
-.blog-preview a {
-  color: #1a5e4a;
-  text-decoration: none;
-  font-size: 1.1rem;
-  line-height: 2;
-  display: block;
-  transition: all 0.2s ease;
-}
-
-.blog-preview a:hover {
-  color: #145240;
-  transform: translateX(5px);
-}
-
-/* CTA Section */
-.cta-section {
-  background: linear-gradient(135deg, #1a5e4a 0%, #145240 100%);
-  color: white;
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  text-align: center;
-  margin: 3rem 0;
-}
-
-.cta-section h2 {
-  color: white;
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
-}
-
-.cta-section p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-section .btn-primary {
-  background-color: white;
-  color: #1a5e4a;
-  border-color: white;
-}
-
-.cta-section .btn-primary:hover {
-  background-color: #f8f9fa;
-  color: #145240;
-}
-
-.cta-section .btn-outline {
-  background-color: transparent;
-  color: white;
-  border-color: white;
-}
-
-.cta-section .btn-outline:hover {
-  background-color: white;
-  color: #1a5e4a;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1.2rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .cta-section h2 {
-    font-size: 1.8rem;
-  }
-}
-</style>
-```

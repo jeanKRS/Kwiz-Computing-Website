@@ -47,7 +47,9 @@ format:
     theme:
       - cosmo
       - styles/custom.scss
-    css: styles/styles.css
+    css:
+      - styles/styles.css
+      - styles/homepage.css
     toc: false
     toc-depth: 3
     code-fold: false
