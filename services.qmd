@@ -1,5 +1,6 @@
 ---
 title: "Services"
+description: "Comprehensive R programming and data science services including advanced analytics, statistical modeling, Shiny application development, data management, ETL pipelines, and custom analytics solutions. Enterprise-grade data science consulting for all industries."
 ---
 
 ::: services-intro

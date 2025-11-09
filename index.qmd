@@ -1,5 +1,6 @@
 ---
-title: ""
+title: "Kwiz Computing Technologies - Expert R Programming & Data Science Solutions"
+description: "Transform data into strategic decisions with expert R programming, statistical analysis, and enterprise-grade analytics solutions. Specializing in advanced analytics, Shiny application development, and reproducible data science for environmental, public sector, research, and business organizations."
 page-layout: full
 ---
 
@@ -9,7 +10,7 @@ page-layout: full
 
 ## Expert R programming, statistical analysis, and enterprise-grade analytics solutions for organizations across all sectors
 
-![](images/hero_section.png){width="auto" fig-align="center"}
+![Data analytics dashboard showing graphs and statistical insights for strategic business decisions](images/hero_section.png){width="auto" fig-align="center"}
 
 We deliver sophisticated data science solutions combining rigorous statistical methods, modern software development practices, and deep technical expertise in R programming.
 
@@ -28,7 +29,7 @@ We provide comprehensive data science services built on transferable analytical 
 ::::::: services-grid
 ::: {.service-card .featured}
 ::: service-icon
-![](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=80){.service-img}
+![Advanced analytics dashboard with charts, graphs, and data visualizations for statistical modeling](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=80){.service-img}
 :::
 
 ### Advanced Analytics & Statistical Modeling
@@ -48,7 +49,7 @@ Turn complex data into actionable insights using sophisticated statistical metho
 
 ::: service-card
 ::: service-icon
-![](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop&q=80){.service-img}
+![Developer coding R Shiny application on laptop showing interactive dashboard development](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop&q=80){.service-img}
 :::
 
 ### Enterprise R Application Development
@@ -68,7 +69,7 @@ Build robust, production-grade analytical applications and interactive dashboard
 
 ::: service-card
 ::: service-icon
-![](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&q=80){.service-img}
+![Data pipeline architecture showing ETL processes, database integration, and data flow visualization](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&q=80){.service-img}
 :::
 
 ### Data Management & Integration
@@ -88,7 +89,7 @@ Design and implement robust data pipelines, quality assurance frameworks, and in
 
 ::: service-card
 ::: service-icon
-![](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=80){.service-img}
+![Custom analytics solution with business intelligence reports and tailored data visualizations](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=80){.service-img}
 :::
 
 ### Custom Analytics Solutions
@@ -114,7 +115,7 @@ Develop tailored analytical frameworks and methodologies designed specifically f
 ::::::: {.grid .why-choose}
 ::: {.g-col-12 .g-col-md-3}
 ::: why-icon
-![](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80){.why-img}
+![Team of data scientists collaborating on statistical analysis and software development project](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80){.why-img}
 :::
 
 **Deep Technical Expertise**
@@ -124,7 +125,7 @@ Rigorous statistical training combined with modern software development practice
 
 ::: {.g-col-12 .g-col-md-3}
 ::: why-icon
-![](https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300&h=200&fit=crop&q=80){.why-img}
+![Scientist conducting rigorous statistical research with reproducible analytical methods](https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300&h=200&fit=crop&q=80){.why-img}
 :::
 
 **Scientific Rigor**
@@ -134,7 +135,7 @@ We prioritize reproducibility, transparency, and methodological soundness in eve
 
 ::: {.g-col-12 .g-col-md-3}
 ::: why-icon
-![](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop&q=80){.why-img}
+![Enterprise-grade software development with comprehensive testing and documentation practices](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop&q=80){.why-img}
 :::
 
 **Enterprise Quality**
@@ -144,7 +145,7 @@ Production-ready solutions with comprehensive testing, documentation, and mainta
 
 ::: {.g-col-12 .g-col-md-3}
 ::: why-icon
-![](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=200&fit=crop&q=80){.why-img}
+![Senior consultant providing personalized data science consulting and strategic advice to client](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=200&fit=crop&q=80){.why-img}
 :::
 
 **Boutique Service**

@@ -1,5 +1,6 @@
 ---
 title: "About Us"
+description: "Learn about Kwiz Computing Technologies, a boutique data science consultancy specializing in R programming, statistical analysis, and enterprise-grade analytics. Discover our mission, technical expertise, and commitment to delivering production-ready data science solutions."
 ---
 
 ## Our Story
