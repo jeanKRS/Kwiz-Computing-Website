@@ -1,0 +1,234 @@
+<!-- Accessibility Enhancements -->
+<!-- This file adds ARIA labels and accessible names to improve screen reader support -->
+
+<script>
+// Add accessible names and ARIA labels after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Fix search button accessible name
+  const searchButton = document.querySelector('.aa-DetachedSearchButton');
+  if (searchButton) {
+    searchButton.setAttribute('aria-label', 'Search the website');
+    searchButton.setAttribute('title', 'Search');
+  }
+
+  // Fix search input accessible name
+  const searchAutocomplete = document.querySelector('.aa-Autocomplete');
+  if (searchAutocomplete) {
+    searchAutocomplete.setAttribute('aria-label', 'Search input');
+  }
+
+  // Find and label the actual search input field
+  const searchInput = document.querySelector('.aa-Input');
+  if (searchInput) {
+    searchInput.setAttribute('aria-label', 'Search query');
+    searchInput.setAttribute('placeholder', 'Search...');
+  }
+
+  // Fix navbar brand logo link
+  const navbarBrand = document.querySelector('.navbar-brand-logo');
+  if (navbarBrand) {
+    navbarBrand.setAttribute('aria-label', 'Kwiz Computing Technologies - Home');
+    navbarBrand.setAttribute('title', 'Go to homepage');
+  }
+
+  // Fix social media and contact links in footer
+  const footerLinks = document.querySelectorAll('.nav-footer-right .nav-link');
+  footerLinks.forEach(link => {
+    const href = link.getAttribute('href');
+
+    if (href && href.includes('linkedin.com')) {
+      link.setAttribute('aria-label', 'Visit our LinkedIn profile');
+      link.setAttribute('title', 'LinkedIn');
+      // Add LinkedIn icon if not present
+      if (!link.querySelector('i')) {
+        link.innerHTML = '<i class="bi bi-linkedin" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span>';
+      }
+    } else if (href && href.includes('github.com')) {
+      link.setAttribute('aria-label', 'Visit our GitHub profile');
+      link.setAttribute('title', 'GitHub');
+      // Add GitHub icon if not present
+      if (!link.querySelector('i')) {
+        link.innerHTML = '<i class="bi bi-github" aria-hidden="true"></i><span class="visually-hidden">GitHub</span>';
+      }
+    } else if (href && href.includes('mailto:')) {
+      const email = href.replace('mailto:', '');
+      link.setAttribute('aria-label', 'Send email to ' + email);
+      link.setAttribute('title', 'Email us at ' + email);
+      // Add email icon if not present
+      if (!link.querySelector('i')) {
+        link.innerHTML = '<i class="bi bi-envelope" aria-hidden="true"></i><span class="visually-hidden">Email</span>';
+      }
+    }
+  });
+
+  // Ensure all images have alt attributes (backup check)
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    if (!img.hasAttribute('alt')) {
+      // Get alt text from parent figure's figcaption if available
+      const figure = img.closest('figure');
+      if (figure) {
+        const figcaption = figure.querySelector('figcaption');
+        if (figcaption) {
+          img.setAttribute('alt', figcaption.textContent.trim());
+        } else {
+          // Fallback: use generic alt text based on context
+          const context = getImageContext(img);
+          img.setAttribute('alt', context);
+        }
+      } else {
+        // Fallback: use generic alt text based on context
+        const context = getImageContext(img);
+        img.setAttribute('alt', context);
+      }
+    }
+  });
+
+  // Helper function to determine image context
+  function getImageContext(img) {
+    if (img.classList.contains('service-img')) {
+      return 'Service illustration';
+    } else if (img.classList.contains('why-img')) {
+      return 'Company value illustration';
+    } else if (img.closest('.hero-section')) {
+      return 'Hero section illustration';
+    } else if (img.closest('.navbar-brand')) {
+      return 'Kwiz Computing Technologies logo';
+    }
+    return 'Illustration';
+  }
+
+  // Add skip to main content link for keyboard navigation
+  if (!document.querySelector('.skip-to-main')) {
+    const skipLink = document.createElement('a');
+    skipLink.href = '#quarto-document-content';
+    skipLink.className = 'skip-to-main';
+    skipLink.textContent = 'Skip to main content';
+    skipLink.setAttribute('tabindex', '1');
+    document.body.insertBefore(skipLink, document.body.firstChild);
+  }
+
+  // Enhance form labels if forms exist
+  const inputs = document.querySelectorAll('input, textarea, select');
+  inputs.forEach(input => {
+    if (!input.hasAttribute('aria-label') && !input.hasAttribute('aria-labelledby')) {
+      const label = document.querySelector(`label[for="${input.id}"]`);
+      if (!label && input.placeholder) {
+        input.setAttribute('aria-label', input.placeholder);
+      }
+    }
+  });
+
+});
+</script>
+
+<style>
+/* Visually hidden class for screen reader only text */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #1a5e4a;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 10000;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s ease;
+}
+
+.skip-to-main:focus {
+  top: 0;
+  outline: 3px solid #ffd700;
+  outline-offset: 2px;
+}
+
+/* Ensure focus indicators are visible */
+*:focus {
+  outline: 2px solid #1a5e4a;
+  outline-offset: 2px;
+}
+
+/* Button focus states */
+button:focus,
+.btn:focus,
+a.btn:focus {
+  outline: 3px solid #1a5e4a;
+  outline-offset: 3px;
+}
+
+/* High contrast focus for links */
+a:focus {
+  outline: 2px solid #1a5e4a;
+  outline-offset: 2px;
+  background-color: rgba(26, 94, 74, 0.1);
+}
+
+/* Ensure interactive elements have adequate touch targets (minimum 44x44px) */
+.btn,
+button,
+.nav-link,
+a[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure sufficient color contrast for text */
+.hero-content h2,
+.service-card p,
+.why-choose p {
+  color: #333;
+}
+
+/* Make sure disabled elements are properly indicated */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Improve readability with sufficient line height */
+body {
+  line-height: 1.6;
+}
+
+/* Ensure tables are responsive and accessible */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Print styles for accessibility */
+@media print {
+  .skip-to-main,
+  .navbar,
+  .nav-footer {
+    display: none;
+  }
+}
+</style>

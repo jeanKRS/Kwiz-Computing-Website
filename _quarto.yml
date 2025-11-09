@@ -61,6 +61,7 @@ format:
       - _seo.html
       - _performance.html
       - _analytics.html
+      - _accessibility.html
     # Image optimization
     fig-responsive: true
     fig-dpi: 150
