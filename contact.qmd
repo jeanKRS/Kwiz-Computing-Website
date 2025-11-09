@@ -6,6 +6,7 @@ format:
     page-layout: full
 ---
 
+```{=html}
 <style>
 .contact-container {
     max-width: 1200px;
@@ -322,189 +323,177 @@ format:
     }
 }
 </style>
+```
 
-<div class="contact-container">
-
-<div class="contact-hero">
+::::::::::::::::::::::::::::::::::: contact-container
+::: contact-hero
 <h1>Let's Work Together</h1>
+
 <p>Whether you need data science consulting, R programming expertise, or analytics solutions, we're here to help. Get in touch today!</p>
-</div>
+:::
 
 <!-- Contact Information Cards -->
-<div class="contact-grid">
 
-<div class="contact-card">
-<h3><span class="contact-card-icon">📧</span> Email Us</h3>
-<div class="contact-info-item">
-<strong>General Inquiries</strong>
-<a href="mailto:othercontent21@gmail.com">othercontent21@gmail.com</a>
-</div>
-<div class="contact-info-item">
-<strong>Business Hours</strong>
-Monday - Friday: 9:00 AM - 6:00 PM (EAT)<br>
-Saturday: 10:00 AM - 2:00 PM (EAT)<br>
-Sunday: Closed
-</div>
-</div>
+:::::::::::: contact-grid
+::::: contact-card
+<h3>[📧]{.contact-card-icon} Email Us</h3>
 
-<div class="contact-card">
-<h3><span class="contact-card-icon">📞</span> Call Us</h3>
-<div class="contact-info-item">
-<strong>Phone</strong>
-Available via email for scheduling calls
-</div>
-<div class="contact-info-item">
-<strong>Response Time</strong>
-We typically respond within 24 hours on business days
-</div>
-</div>
+::: contact-info-item
+<strong>General Inquiries</strong> <a href="mailto:othercontent21@gmail.com">othercontent21\@gmail.com</a>
+:::
 
-<div class="contact-card">
-<h3><span class="contact-card-icon">🌍</span> Location</h3>
-<div class="contact-info-item">
-<strong>Service Area</strong>
-Kenya & International Clients
-</div>
-<div class="contact-info-item">
-<strong>Remote Services</strong>
-We offer remote consulting and support worldwide
-</div>
-</div>
+::: contact-info-item
+<strong>Business Hours</strong> Monday - Friday: 9:00 AM - 6:00 PM (EAT)<br> Saturday: 10:00 AM - 2:00 PM (EAT)<br> Sunday: Closed
+:::
+:::::
 
-</div>
+::::: contact-card
+<h3>[📞]{.contact-card-icon} Call Us</h3>
+
+::: contact-info-item
+<strong>Phone</strong> Available via email for scheduling calls
+:::
+
+::: contact-info-item
+<strong>Response Time</strong> We typically respond within 24 hours on business days
+:::
+:::::
+
+::::: contact-card
+<h3>[🌍]{.contact-card-icon} Location</h3>
+
+::: contact-info-item
+<strong>Service Area</strong> Kenya & International Clients
+:::
+
+::: contact-info-item
+<strong>Remote Services</strong> We offer remote consulting and support worldwide
+:::
+:::::
+::::::::::::
 
 <!-- Appointment Scheduling Section -->
-<div class="appointment-section">
+
+:::: appointment-section
 <h2>📅 Schedule a Free Consultation</h2>
+
 <p>Book a 30-minute call to discuss your project needs and how we can help</p>
-<a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3DK7jrGMXbL4kR0n3pnJ8nzkIjKDvjdCPaHh8CeVJnQKxNZYqQXBvwJVXKLJZGJZGJZG?gv=true" target="_blank" class="appointment-btn">Schedule Appointment</a>
-<div style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;">
-Or email us at <a href="mailto:othercontent21@gmail.com" style="color: white; text-decoration: underline;">othercontent21@gmail.com</a> with your preferred dates and times
-</div>
-</div>
+
+<a href="https://calendar.app.google/mTkwMsdirD1QFfHp7" class="appointment-btn">Schedule Appointment</a>
+
+::: {style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;"}
+Or email us at <a href="mailto:othercontent21@gmail.com" style="color: white; text-decoration: underline;">othercontent21\@gmail.com</a> with your preferred dates and times
+:::
+::::
 
 <!-- Contact Form -->
-<div class="form-section">
+
+:::::::::::::: form-section
 <h2>Send Us a Message</h2>
 
-<div class="success-message" id="successMessage">
+::: {#successMessage .success-message}
 ✅ Thank you! Your message has been sent successfully. We'll get back to you soon.
-</div>
+:::
 
-<div class="error-message" id="errorMessage">
+::: {#errorMessage .error-message}
 ❌ Oops! Something went wrong. Please try again or email us directly.
-</div>
+:::
 
 <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+
 <!-- Web3Forms Access Key - Replace with your actual key -->
-<input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-<input type="hidden" name="subject" value="New Contact Form Submission from Kwiz Computing Website">
-<input type="hidden" name="from_name" value="Kwiz Computing Contact Form">
-<input type="hidden" name="redirect" value="false">
 
-<div class="form-row">
-<div class="form-group">
-<label for="name">Full Name *</label>
-<input type="text" id="name" name="name" required placeholder="John Doe">
-</div>
+<input type="hidden" name="access_key" value="247c6959-db08-4a3d-ad09-10dd2b0fa1d6"> <input type="hidden" name="subject" value="New Contact Form Submission from Kwiz Computing Website"> <input type="hidden" name="from_name" value="Kwiz Computing Contact Form"> <input type="hidden" name="redirect" value="false">
 
-<div class="form-group">
-<label for="email">Email Address *</label>
-<input type="email" id="email" name="email" required placeholder="john@example.com">
-</div>
-</div>
+::::: form-row
+::: form-group
+<label for="name">Full Name \*</label> <input type="text" id="name" name="name" required placeholder="John Doe">
+:::
 
-<div class="form-row">
-<div class="form-group">
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" placeholder="+254 700 000 000">
-</div>
+::: form-group
+<label for="email">Email Address \*</label> <input type="email" id="email" name="email" required placeholder="john@example.com">
+:::
+:::::
 
-<div class="form-group">
-<label for="company">Company/Organization</label>
-<input type="text" id="company" name="company" placeholder="Your Company">
-</div>
-</div>
+::::: form-row
+::: form-group
+<label for="phone">Phone Number</label> <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000">
+:::
 
-<div class="form-group">
-<label for="service">Service Interest</label>
-<select id="service" name="service">
-<option value="">Select a service...</option>
-<option value="Data Science Consulting">Data Science Consulting</option>
-<option value="R Programming">R Programming Services</option>
-<option value="Statistical Analysis">Statistical Analysis</option>
-<option value="Data Visualization">Data Visualization</option>
-<option value="Training & Workshops">Training & Workshops</option>
-<option value="Quarto & Reporting">Quarto & Reporting Solutions</option>
-<option value="Other">Other Services</option>
-</select>
-</div>
+::: form-group
+<label for="company">Company/Organization</label> <input type="text" id="company" name="company" placeholder="Your Company">
+:::
+:::::
 
-<div class="form-group">
-<label for="message">Message *</label>
+::: form-group
+<label for="service">Service Interest</label> <select id="service" name="service"> <option value="">Select a service...</option> <option value="Data Science Consulting">Data Science Consulting</option> <option value="R Programming">R Programming Services</option> <option value="Statistical Analysis">Statistical Analysis</option> <option value="Data Visualization">Data Visualization</option> <option value="Training & Workshops">Training & Workshops</option> <option value="Quarto & Reporting">Quarto & Reporting Solutions</option> <option value="Other">Other Services</option> </select>
+:::
+
+::: form-group
+<label for="message">Message \*</label>
+
+```{=html}
 <textarea id="message" name="message" required placeholder="Tell us about your project or inquiry..."></textarea>
-</div>
+```
+:::
 
-<div class="form-group">
-<label for="timeline">Project Timeline</label>
-<select id="timeline" name="timeline">
-<option value="">Select timeline...</option>
-<option value="Urgent (Within 1 week)">Urgent (Within 1 week)</option>
-<option value="Soon (1-4 weeks)">Soon (1-4 weeks)</option>
-<option value="Flexible (1-3 months)">Flexible (1-3 months)</option>
-<option value="Planning (3+ months)">Planning (3+ months)</option>
-</select>
-</div>
+::: form-group
+<label for="timeline">Project Timeline</label> <select id="timeline" name="timeline"> <option value="">Select timeline...</option> <option value="Urgent (Within 1 week)">Urgent (Within 1 week)</option> <option value="Soon (1-4 weeks)">Soon (1-4 weeks)</option> <option value="Flexible (1-3 months)">Flexible (1-3 months)</option> <option value="Planning (3+ months)">Planning (3+ months)</option> </select>
+:::
 
-<button type="submit" class="submit-btn">Send Message</button>
+<button type="submit" class="submit-btn">
+
+Send Message
+
+</button>
+
 </form>
-</div>
+::::::::::::::
 
 <!-- FAQ Section -->
-<div class="faq-section">
+
+:::::::: faq-section
 <h2>Frequently Asked Questions</h2>
 
-<div class="faq-item">
+::: faq-item
 <h4>What is your typical response time?</h4>
+
 <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please indicate "Urgent" in your message subject.</p>
-</div>
+:::
 
-<div class="faq-item">
+::: faq-item
 <h4>Do you offer free consultations?</h4>
+
 <p>Yes! We offer a free 30-minute initial consultation to discuss your project needs and how we can help. Schedule one using the appointment link above.</p>
-</div>
+:::
 
-<div class="faq-item">
+::: faq-item
 <h4>What services do you provide?</h4>
+
 <p>We specialize in data science consulting, R programming, statistical analysis, data visualization, Quarto reporting, and custom analytics solutions. Visit our <a href="services.html">Services page</a> for more details.</p>
-</div>
+:::
 
-<div class="faq-item">
+::: faq-item
 <h4>Do you work with international clients?</h4>
-<p>Absolutely! We work with clients worldwide and offer remote consulting services. We're flexible with time zones and communication methods.</p>
-</div>
 
-<div class="faq-item">
+<p>Absolutely! We work with clients worldwide and offer remote consulting services. We're flexible with time zones and communication methods.</p>
+:::
+
+::: faq-item
 <h4>What is the typical project timeline?</h4>
+
 <p>Project timelines vary based on scope and complexity. Small projects may take 1-2 weeks, while larger engagements can span several months. We'll discuss specific timelines during our initial consultation.</p>
-</div>
-</div>
+:::
+::::::::
 
 <!-- Social Links -->
-<div class="quick-links">
-<a href="https://linkedin.com" target="_blank" class="social-link">
-<span>💼</span> LinkedIn
-</a>
-<a href="https://github.com" target="_blank" class="social-link">
-<span>💻</span> GitHub
-</a>
-<a href="mailto:othercontent21@gmail.com" class="social-link">
-<span>📧</span> Email
-</a>
-</div>
 
-</div>
+::: quick-links
+<a href="https://linkedin.com" target="_blank" class="social-link"> 💼 LinkedIn </a> <a href="https://github.com" target="_blank" class="social-link"> 💻 GitHub </a> <a href="mailto:othercontent21@gmail.com" class="social-link"> 📧 Email </a>
+:::
+:::::::::::::::::::::::::::::::::::
 
+```{=html}
 <script>
 // Form submission handler
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -576,3 +565,4 @@ document.getElementById('phone').addEventListener('input', function(e) {
     e.target.value = value;
 });
 </script>
+```
