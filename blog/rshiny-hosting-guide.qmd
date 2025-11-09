@@ -13,8 +13,7 @@ format:
     toc-depth: 3
 ---
 
-![Deploying R Shiny applications to production](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80)
-*Photo by [Arian Darvishi](https://unsplash.com/@arianismmm) on Unsplash*
+![Deploying R Shiny applications to production](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80) *Photo by [Arian Darvishi](https://unsplash.com/@arianismmm) on Unsplash*
 
 ## Introduction
 
@@ -24,6 +23,7 @@ With options ranging from one-click cloud platforms to self-hosted servers and c
 
 ::: callout-tip
 ## Key Takeaway
+
 The "best" hosting solution depends on your specific needs: budget, technical expertise, scalability requirements, security constraints, and maintenance capacity. This guide will help you make an informed decision based on your unique circumstances.
 :::
 
@@ -32,94 +32,98 @@ The "best" hosting solution depends on your specific needs: budget, technical ex
 Before diving into deployment tutorials, let's understand the landscape of R Shiny hosting solutions:
 
 ### 1. **shinyapps.io** (Managed Cloud Platform)
+
 **Best for:** Beginners, quick prototypes, small to medium applications
 
-- **Pros:** Zero infrastructure management, one-command deployment, automatic scaling, free tier available
-- **Cons:** Cost scales with usage, limited customization, shared infrastructure
-- **Pricing:** Free tier (5 apps, 25 active hours/month) to $299/month for professional plans
+-   **Pros:** Zero infrastructure management, one-command deployment, automatic scaling, free tier available
+-   **Cons:** Cost scales with usage, limited customization, shared infrastructure
+-   **Pricing:** Free tier (5 apps, 25 active hours/month) to \$299/month for professional plans
 
 ### 2. **Posit Connect** (Enterprise Platform)
+
 **Best for:** Organizations with multiple Shiny apps, enterprise requirements
 
-- **Pros:** Comprehensive platform for all R/Python content, advanced security, LDAP/AD integration, scheduled reports
-- **Cons:** Expensive, requires on-premise infrastructure or cloud VM
-- **Pricing:** Starts at ~$20,000/year for standard license
+-   **Pros:** Comprehensive platform for all R/Python content, advanced security, LDAP/AD integration, scheduled reports
+-   **Cons:** Expensive, requires on-premise infrastructure or cloud VM
+-   **Pricing:** Starts at \~\$20,000/year for standard license
 
 ### 3. **Shiny Server Open Source** (Self-Hosted)
+
 **Best for:** Budget-conscious teams with Linux expertise, full control needs
 
-- **Pros:** Free and open source, complete control, unlimited apps
-- **Cons:** No authentication (without additional setup), single R process per app, requires server management
-- **Pricing:** Free (server costs only)
+-   **Pros:** Free and open source, complete control, unlimited apps
+-   **Cons:** No authentication (without additional setup), single R process per app, requires server management
+-   **Pricing:** Free (server costs only)
 
 ### 4. **Shiny Server Pro** (Self-Hosted Commercial)
+
 **Best for:** Organizations needing authentication without full Posit Connect
 
-- **Pros:** Authentication, SSL support, multiple R processes, better performance
-- **Cons:** License costs, still requires server management
-- **Pricing:** Starts at ~$10,000/year
+-   **Pros:** Authentication, SSL support, multiple R processes, better performance
+-   **Cons:** License costs, still requires server management
+-   **Pricing:** Starts at \~\$10,000/year
 
 ### 5. **Docker Containers** (Cloud or Self-Hosted)
+
 **Best for:** DevOps-savvy teams, microservices architecture, reproducibility
 
-- **Pros:** Consistent environments, easy scaling, works with any cloud provider, version control
-- **Cons:** Requires Docker knowledge, container orchestration complexity
-- **Pricing:** Varies by cloud provider
+-   **Pros:** Consistent environments, easy scaling, works with any cloud provider, version control
+-   **Cons:** Requires Docker knowledge, container orchestration complexity
+-   **Pricing:** Varies by cloud provider
 
 ### 6. **Cloud Platforms** (AWS, Azure, Google Cloud, DigitalOcean)
+
 **Best for:** Scalable production apps, custom infrastructure needs
 
-- **Pros:** Full control, scalable, can integrate with other cloud services
-- **Cons:** Requires cloud and DevOps expertise, ongoing management
-- **Pricing:** Pay-as-you-go (typically $5-100+/month depending on resources)
+-   **Pros:** Full control, scalable, can integrate with other cloud services
+-   **Cons:** Requires cloud and DevOps expertise, ongoing management
+-   **Pricing:** Pay-as-you-go (typically \$5-100+/month depending on resources)
 
 ## Decision Matrix: Choosing Your Hosting Platform
 
 Use this matrix to guide your decision:
 
-| Your Priority | Recommended Solution | Alternative |
-|--------------|---------------------|-------------|
-| **Fastest deployment** | shinyapps.io | Heroku |
-| **Lowest cost** | Shiny Server Open Source | DigitalOcean + Docker |
-| **Enterprise security** | Posit Connect | Shiny Server Pro |
-| **Complete control** | Docker + Cloud | Shiny Server |
-| **No maintenance** | shinyapps.io | Posit Cloud |
-| **Multiple apps** | Posit Connect | Shiny Server |
-| **Scalability** | Docker + Kubernetes | AWS Elastic Beanstalk |
-| **Learning opportunity** | Shiny Server on VPS | Docker containers |
+| Your Priority            | Recommended Solution     | Alternative           |
+|--------------------------|--------------------------|-----------------------|
+| **Fastest deployment**   | shinyapps.io             | Heroku                |
+| **Lowest cost**          | Shiny Server Open Source | DigitalOcean + Docker |
+| **Enterprise security**  | Posit Connect            | Shiny Server Pro      |
+| **Complete control**     | Docker + Cloud           | Shiny Server          |
+| **No maintenance**       | shinyapps.io             | Posit Cloud           |
+| **Multiple apps**        | Posit Connect            | Shiny Server          |
+| **Scalability**          | Docker + Kubernetes      | AWS Elastic Beanstalk |
+| **Learning opportunity** | Shiny Server on VPS      | Docker containers     |
 
 ::: callout-note
 ## Budget Considerations
-- **$0/month:** Shinyapps.io free tier, Shiny Server Open Source on existing hardware
-- **$5-20/month:** DigitalOcean/Linode VPS + Shiny Server
-- **$25-100/month:** shinyapps.io standard tier, AWS/Azure VM
-- **$100+/month:** Multiple cloud instances, load balancing
-- **$20,000+/year:** Posit Connect, Shiny Server Pro licenses
+
+-   **\$0/month:** Shinyapps.io free tier, Shiny Server Open Source on existing hardware
+-   **\$5-20/month:** DigitalOcean/Linode VPS + Shiny Server
+-   **\$25-100/month:** shinyapps.io standard tier, AWS/Azure VM
+-   **\$100+/month:** Multiple cloud instances, load balancing
+-   **\$20,000+/year:** Posit Connect, Shiny Server Pro licenses
 :::
 
 ## Step-by-Step Deployment Guides
 
 ### Method 1: Deploy to shinyapps.io (Easiest - 10 minutes)
 
-**Prerequisites:**
-- R and RStudio installed
-- A working Shiny app
-- Free account at [shinyapps.io](https://www.shinyapps.io)
+**Prerequisites:** - R and RStudio installed - A working Shiny app - Free account at [shinyapps.io](https://www.shinyapps.io)
 
 **Step 1: Install Required Packages**
 
-```r
+``` r
 # Install the rsconnect package
 install.packages("rsconnect")
 ```
 
 **Step 2: Configure Your Account**
 
-1. Log in to [shinyapps.io](https://www.shinyapps.io)
-2. Click on your name → Tokens → Show → Copy to clipboard
-3. In RStudio, run the configuration command (paste your token info):
+1.  Log in to [shinyapps.io](https://www.shinyapps.io)
+2.  Click on your name → Tokens → Show → Copy to clipboard
+3.  In RStudio, run the configuration command (paste your token info):
 
-```r
+``` r
 library(rsconnect)
 
 rsconnect::setAccountInfo(
@@ -133,7 +137,7 @@ rsconnect::setAccountInfo(
 
 Navigate to your app directory and deploy:
 
-```r
+``` r
 # Set working directory to your app folder
 setwd("/path/to/your/shiny/app")
 
@@ -143,27 +147,24 @@ rsconnect::deployApp(appName = "my-awesome-app")
 
 **Step 4: Verify Deployment**
 
-Your app will automatically open in a browser at:
-`https://your-account.shinyapps.io/my-awesome-app`
+Your app will automatically open in a browser at: `https://your-account.shinyapps.io/my-awesome-app`
 
 ::: callout-tip
 ## Pro Tips for shinyapps.io
-- Use `.Rbuildignore` to exclude unnecessary files and reduce deployment time
-- Monitor your active hours in the dashboard to avoid hitting limits
-- Set appropriate instance sizes based on your app's memory needs
-- Use `rsconnect::showLogs()` to debug deployment issues
+
+-   Use `.Rbuildignore` to exclude unnecessary files and reduce deployment time
+-   Monitor your active hours in the dashboard to avoid hitting limits
+-   Set appropriate instance sizes based on your app's memory needs
+-   Use `rsconnect::showLogs()` to debug deployment issues
 :::
 
 ### Method 2: Self-Host with Shiny Server (Ubuntu/Debian)
 
-**Prerequisites:**
-- Ubuntu 20.04+ or Debian server (cloud VM or on-premise)
-- SSH access with sudo privileges
-- Domain name (optional but recommended)
+**Prerequisites:** - Ubuntu 20.04+ or Debian server (cloud VM or on-premise) - SSH access with sudo privileges - Domain name (optional but recommended)
 
 **Step 1: Install R**
 
-```bash
+``` bash
 # Update package list
 sudo apt update
 
@@ -177,7 +178,7 @@ sudo apt install -y gdebi-core libcurl4-openssl-dev \
 
 **Step 2: Install Shiny and Required Packages**
 
-```bash
+``` bash
 # Launch R as root
 sudo R
 
@@ -193,7 +194,7 @@ q(save = "no")
 
 **Step 3: Download and Install Shiny Server**
 
-```bash
+``` bash
 # Download Shiny Server (check for latest version at https://posit.co/download/shiny-server/)
 wget https://download3.rstudio.org/ubuntu-18.04/x86_64/shiny-server-1.5.21.1012-amd64.deb
 
@@ -205,13 +206,13 @@ sudo gdebi shiny-server-1.5.21.1012-amd64.deb
 
 Edit the configuration file:
 
-```bash
+``` bash
 sudo nano /etc/shiny-server/shiny-server.conf
 ```
 
 Basic configuration:
 
-```bash
+``` bash
 # Define the user we should use when spawning R Shiny processes
 run_as shiny;
 
@@ -237,7 +238,7 @@ server {
 
 **Step 5: Deploy Your App**
 
-```bash
+``` bash
 # Create your app directory
 sudo mkdir -p /srv/shiny-server/myapp
 
@@ -255,7 +256,7 @@ sudo chmod -R 755 /srv/shiny-server/myapp
 
 **Step 6: Restart Shiny Server and Access Your App**
 
-```bash
+``` bash
 # Restart Shiny Server
 sudo systemctl restart shiny-server
 
@@ -270,7 +271,7 @@ Access your app at: `http://your-server-ip:3838/myapp`
 
 **Step 7: (Optional) Set Up Nginx Reverse Proxy with SSL**
 
-```bash
+``` bash
 # Install Nginx and Certbot
 sudo apt install -y nginx certbot python3-certbot-nginx
 
@@ -280,7 +281,7 @@ sudo nano /etc/nginx/sites-available/shiny
 
 Nginx configuration:
 
-```nginx
+``` nginx
 server {
     listen 80;
     server_name your-domain.com;
@@ -299,7 +300,7 @@ server {
 
 Enable the site and get SSL:
 
-```bash
+``` bash
 # Enable site
 sudo ln -s /etc/nginx/sites-available/shiny /etc/nginx/sites-enabled/
 sudo nginx -t
@@ -311,25 +312,19 @@ sudo certbot --nginx -d your-domain.com
 
 ::: callout-warning
 ## Security Considerations
-Shiny Server Open Source does **not** include built-in authentication. For production apps with sensitive data, consider:
-- Using Nginx with HTTP basic authentication
-- Implementing ShinyProxy for container-based authentication
-- Upgrading to Shiny Server Pro or Posit Connect
-- Using OAuth proxy like oauth2-proxy
+
+Shiny Server Open Source does **not** include built-in authentication. For production apps with sensitive data, consider: - Using Nginx with HTTP basic authentication - Implementing ShinyProxy for container-based authentication - Upgrading to Shiny Server Pro or Posit Connect - Using OAuth proxy like oauth2-proxy
 :::
 
 ### Method 3: Docker Deployment (Portable and Reproducible)
 
-**Prerequisites:**
-- Docker installed on your local machine or server
-- Basic understanding of Docker concepts
-- Your Shiny app ready
+**Prerequisites:** - Docker installed on your local machine or server - Basic understanding of Docker concepts - Your Shiny app ready
 
 **Step 1: Create a Dockerfile**
 
 In your app directory, create a file named `Dockerfile`:
 
-```dockerfile
+``` dockerfile
 # Use the Rocker Shiny image
 FROM rocker/shiny:4.3.2
 
@@ -360,7 +355,7 @@ CMD ["/usr/bin/shiny-server"]
 
 Exclude unnecessary files:
 
-```bash
+``` bash
 .git
 .Rproj.user
 .Rhistory
@@ -370,7 +365,7 @@ Exclude unnecessary files:
 
 **Step 3: Build the Docker Image**
 
-```bash
+``` bash
 # Build the image
 docker build -t my-shiny-app .
 
@@ -380,7 +375,7 @@ docker images
 
 **Step 4: Run the Container Locally**
 
-```bash
+``` bash
 # Run the container
 docker run -d -p 3838:3838 --name shiny-app my-shiny-app
 
@@ -397,7 +392,7 @@ Access your app at: `http://localhost:3838/myapp`
 
 **Option A: Deploy to DigitalOcean**
 
-```bash
+``` bash
 # Install doctl (DigitalOcean CLI)
 # Create a DigitalOcean account and API token
 
@@ -412,7 +407,7 @@ docker push registry.digitalocean.com/your-registry/my-shiny-app
 
 **Option B: Deploy to AWS Elastic Container Service (ECS)**
 
-```bash
+``` bash
 # Install AWS CLI and configure credentials
 aws configure
 
@@ -432,7 +427,7 @@ docker push YOUR_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/my-shiny-app:latest
 
 **Option C: Deploy to Google Cloud Run (Serverless)**
 
-```bash
+``` bash
 # Install gcloud CLI and authenticate
 gcloud auth login
 
@@ -449,32 +444,33 @@ gcloud run deploy my-shiny-app \
 
 ::: callout-tip
 ## Docker Best Practices
-- Use specific version tags (e.g., `rocker/shiny:4.3.2`) instead of `latest`
-- Create a `renv.lock` file for reproducible package management
-- Use multi-stage builds to reduce image size
-- Set resource limits in production (`docker run -m 512m --cpus=1`)
-- Implement health checks in your Dockerfile
+
+-   Use specific version tags (e.g., `rocker/shiny:4.3.2`) instead of `latest`
+-   Create a `renv.lock` file for reproducible package management
+-   Use multi-stage builds to reduce image size
+-   Set resource limits in production (`docker run -m 512m --cpus=1`)
+-   Implement health checks in your Dockerfile
 :::
 
 ### Method 4: AWS EC2 with Shiny Server (Scalable Cloud)
 
 **Step 1: Launch EC2 Instance**
 
-1. Log in to AWS Console → EC2
-2. Click "Launch Instance"
-3. Choose Ubuntu Server 22.04 LTS (Free tier eligible)
-4. Select instance type (t2.micro for testing, t2.small+ for production)
-5. Configure security group:
-   - SSH (port 22) - Your IP only
-   - HTTP (port 80) - Anywhere
-   - HTTPS (port 443) - Anywhere
-   - Custom TCP (port 3838) - Anywhere (temporarily)
-6. Create or select a key pair
-7. Launch instance
+1.  Log in to AWS Console → EC2
+2.  Click "Launch Instance"
+3.  Choose Ubuntu Server 22.04 LTS (Free tier eligible)
+4.  Select instance type (t2.micro for testing, t2.small+ for production)
+5.  Configure security group:
+    -   SSH (port 22) - Your IP only
+    -   HTTP (port 80) - Anywhere
+    -   HTTPS (port 443) - Anywhere
+    -   Custom TCP (port 3838) - Anywhere (temporarily)
+6.  Create or select a key pair
+7.  Launch instance
 
 **Step 2: Connect and Install**
 
-```bash
+``` bash
 # Connect via SSH
 ssh -i your-key.pem ubuntu@your-ec2-public-ip
 
@@ -486,32 +482,33 @@ sudo apt update && sudo apt upgrade -y
 
 **Step 3: Configure Elastic IP (Optional but Recommended)**
 
-1. In EC2 Console → Elastic IPs
-2. Allocate new address
-3. Associate with your instance
-4. Update DNS records to point to Elastic IP
+1.  In EC2 Console → Elastic IPs
+2.  Allocate new address
+3.  Associate with your instance
+4.  Update DNS records to point to Elastic IP
 
 **Step 4: Set Up Application Load Balancer (For High Traffic)**
 
-1. Create Target Group pointing to your EC2 instance(s)
-2. Create Application Load Balancer
-3. Configure SSL certificate using AWS Certificate Manager
-4. Point your domain to the load balancer
+1.  Create Target Group pointing to your EC2 instance(s)
+2.  Create Application Load Balancer
+3.  Configure SSL certificate using AWS Certificate Manager
+4.  Point your domain to the load balancer
 
 **Step 5: Enable Auto Scaling (Optional)**
 
-1. Create AMI from your configured instance
-2. Create Launch Template
-3. Create Auto Scaling Group
-4. Set scaling policies based on CPU or memory utilization
+1.  Create AMI from your configured instance
+2.  Create Launch Template
+3.  Create Auto Scaling Group
+4.  Set scaling policies based on CPU or memory utilization
 
 ::: callout-note
 ## AWS Cost Optimization
-- Use Reserved Instances for predictable workloads (save up to 72%)
-- Consider Spot Instances for non-critical apps (save up to 90%)
-- Set up billing alerts
-- Use AWS Cost Explorer to monitor spending
-- Implement auto-shutdown for development instances
+
+-   Use Reserved Instances for predictable workloads (save up to 72%)
+-   Consider Spot Instances for non-critical apps (save up to 90%)
+-   Set up billing alerts
+-   Use AWS Cost Explorer to monitor spending
+-   Implement auto-shutdown for development instances
 :::
 
 ## Advanced Topics
@@ -520,7 +517,7 @@ sudo apt update && sudo apt upgrade -y
 
 **Option 1: Basic Authentication with Nginx**
 
-```nginx
+``` nginx
 # Install apache2-utils
 sudo apt install apache2-utils
 
@@ -539,7 +536,7 @@ location / {
 
 ShinyProxy runs each Shiny app in a separate Docker container and provides authentication.
 
-```yaml
+``` yaml
 # application.yml
 proxy:
   port: 8080
@@ -559,19 +556,19 @@ proxy:
 
 ### Performance Optimization
 
-1. **Enable caching** for expensive computations
-2. **Use async processing** with `promises` and `future` packages
-3. **Optimize reactive expressions** - use `reactive()` vs `observe()` appropriately
-4. **Database connection pooling** with `pool` package
-5. **Implement CDN** for static assets
-6. **Use profiling tools**: `profvis` package
-7. **Consider load balancing** for multiple instances
+1.  **Enable caching** for expensive computations
+2.  **Use async processing** with `promises` and `future` packages
+3.  **Optimize reactive expressions** - use `reactive()` vs `observe()` appropriately
+4.  **Database connection pooling** with `pool` package
+5.  **Implement CDN** for static assets
+6.  **Use profiling tools**: `profvis` package
+7.  **Consider load balancing** for multiple instances
 
 ### Monitoring and Logging
 
 **Application Monitoring:**
 
-```r
+``` r
 # Add to your server.R
 library(shinyjs)
 library(futile.logger)
@@ -587,16 +584,16 @@ observeEvent(input$button, {
 
 **Server Monitoring:**
 
-- **Uptime monitoring**: UptimeRobot, Pingdom
-- **Application monitoring**: Google Analytics, Plausible
-- **Server metrics**: CloudWatch (AWS), Prometheus + Grafana
-- **Log aggregation**: ELK Stack, Papertrail
+-   **Uptime monitoring**: UptimeRobot, Pingdom
+-   **Application monitoring**: Google Analytics, Plausible
+-   **Server metrics**: CloudWatch (AWS), Prometheus + Grafana
+-   **Log aggregation**: ELK Stack, Papertrail
 
 ### Continuous Deployment
 
 **GitHub Actions Example:**
 
-```yaml
+``` yaml
 # .github/workflows/deploy.yml
 name: Deploy to shinyapps.io
 
@@ -641,7 +638,8 @@ jobs:
 **Problem:** Deployment fails due to missing system dependencies
 
 **Solution:**
-```bash
+
+``` bash
 # For Ubuntu/Debian - install common dependencies
 sudo apt install -y \
   libcurl4-openssl-dev \
@@ -661,7 +659,8 @@ sudo apt install -y \
 **Problem:** Server fails to start or apps show errors
 
 **Solution:**
-```bash
+
+``` bash
 # Check Shiny Server status
 sudo systemctl status shiny-server
 
@@ -679,71 +678,58 @@ sudo su - shiny -c "R -e \"library(your_package)\""
 
 **Problem:** App loads but doesn't respond to interactions
 
-**Solution:**
-- Ensure your proxy supports WebSocket connections
-- Add WebSocket headers to Nginx/Apache config (shown in Method 2)
-- Check firewall isn't blocking WebSocket traffic
-- Verify `proxy_read_timeout` is set appropriately
+**Solution:** - Ensure your proxy supports WebSocket connections - Add WebSocket headers to Nginx/Apache config (shown in Method 2) - Check firewall isn't blocking WebSocket traffic - Verify `proxy_read_timeout` is set appropriately
 
 ### Issue 4: Memory Errors
 
 **Problem:** App crashes with "cannot allocate vector" errors
 
-**Solution:**
-- Increase instance/server memory
-- Optimize R code to use less memory
-- Implement data pagination
-- Use database queries instead of loading full datasets
-- Consider using `data.table` instead of `data.frame`
+**Solution:** - Increase instance/server memory - Optimize R code to use less memory - Implement data pagination - Use database queries instead of loading full datasets - Consider using `data.table` instead of `data.frame`
 
 ## Best Practices Checklist
 
 Before deploying to production, ensure you've addressed:
 
-- [ ] **Security**
-  - [ ] Implement authentication if handling sensitive data
-  - [ ] Use HTTPS/SSL certificates
-  - [ ] Sanitize user inputs to prevent code injection
-  - [ ] Keep R and packages updated
-  - [ ] Follow the principle of least privilege for server access
-
-- [ ] **Performance**
-  - [ ] Profile app with `profvis` to identify bottlenecks
-  - [ ] Implement caching for expensive operations
-  - [ ] Optimize database queries
-  - [ ] Use reactive expressions efficiently
-  - [ ] Set appropriate timeout values
-
-- [ ] **Reliability**
-  - [ ] Implement error handling with `tryCatch()`
-  - [ ] Add graceful fallbacks for external services
-  - [ ] Set up monitoring and alerting
-  - [ ] Create automated backups
-  - [ ] Test app under expected load
-
-- [ ] **Maintainability**
-  - [ ] Document code and deployment process
-  - [ ] Use version control (Git)
-  - [ ] Create `renv.lock` for package reproducibility
-  - [ ] Set up CI/CD pipeline
-  - [ ] Keep deployment credentials secure (use environment variables)
-
-- [ ] **User Experience**
-  - [ ] Add loading indicators for long operations
-  - [ ] Provide clear error messages
-  - [ ] Test on multiple browsers and devices
-  - [ ] Optimize for mobile if relevant
-  - [ ] Add usage analytics
+-   [ ] **Security**
+    -   [ ] Implement authentication if handling sensitive data
+    -   [ ] Use HTTPS/SSL certificates
+    -   [ ] Sanitize user inputs to prevent code injection
+    -   [ ] Keep R and packages updated
+    -   [ ] Follow the principle of least privilege for server access
+-   [ ] **Performance**
+    -   [ ] Profile app with `profvis` to identify bottlenecks
+    -   [ ] Implement caching for expensive operations
+    -   [ ] Optimize database queries
+    -   [ ] Use reactive expressions efficiently
+    -   [ ] Set appropriate timeout values
+-   [ ] **Reliability**
+    -   [ ] Implement error handling with `tryCatch()`
+    -   [ ] Add graceful fallbacks for external services
+    -   [ ] Set up monitoring and alerting
+    -   [ ] Create automated backups
+    -   [ ] Test app under expected load
+-   [ ] **Maintainability**
+    -   [ ] Document code and deployment process
+    -   [ ] Use version control (Git)
+    -   [ ] Create `renv.lock` for package reproducibility
+    -   [ ] Set up CI/CD pipeline
+    -   [ ] Keep deployment credentials secure (use environment variables)
+-   [ ] **User Experience**
+    -   [ ] Add loading indicators for long operations
+    -   [ ] Provide clear error messages
+    -   [ ] Test on multiple browsers and devices
+    -   [ ] Optimize for mobile if relevant
+    -   [ ] Add usage analytics
 
 ## Conclusion
 
 Hosting R Shiny applications has never been more accessible, with options ranging from zero-configuration cloud platforms to fully customizable containerized deployments. Your choice should be driven by your specific requirements:
 
-- **Just getting started?** Use shinyapps.io's free tier
-- **Building internal tools?** Consider Shiny Server on a VPS
-- **Need enterprise features?** Evaluate Posit Connect
-- **Want modern DevOps?** Go with Docker containers
-- **Scaling globally?** Use cloud platforms with CDN
+-   **Just getting started?** Use shinyapps.io's free tier
+-   **Building internal tools?** Consider Shiny Server on a VPS
+-   **Need enterprise features?** Evaluate Posit Connect
+-   **Want modern DevOps?** Go with Docker containers
+-   **Scaling globally?** Use cloud platforms with CDN
 
 Remember that your hosting solution can evolve with your needs. Many organizations start with shinyapps.io for prototypes, move to self-hosted Shiny Server for internal tools, and eventually adopt containerized deployments with orchestration for production applications.
 
@@ -751,22 +737,23 @@ The most important step is to get your app deployed and in front of users. Start
 
 ::: callout-tip
 ## Next Steps
-- Deploy your first app using Method 1 (shinyapps.io)
-- Set up local testing with Docker (Method 3)
-- Experiment with Shiny Server on a $5/month VPS
-- Learn about app performance optimization
-- Join the [Shiny community](https://community.rstudio.com/c/shiny) for support
+
+-   Deploy your first app using Method 1 (shinyapps.io)
+-   Set up local testing with Docker (Method 3)
+-   Experiment with Shiny Server on a \$5/month VPS
+-   Learn about app performance optimization
+-   Join the [Shiny community](https://community.rstudio.com/c/shiny) for support
 :::
 
 ## Additional Resources
 
-- [Official Shiny Documentation](https://shiny.posit.co/)
-- [Shiny Server Administration Guide](https://docs.posit.co/shiny-server/)
-- [Awesome Shiny Extensions](https://github.com/nanxstats/awesome-shiny-extensions)
-- [Mastering Shiny (book)](https://mastering-shiny.org/)
-- [Shiny Contest Gallery](https://shiny.posit.co/blog/posts/shiny-contest-2023/) - for inspiration
-- [R-bloggers Shiny Tutorials](https://www.r-bloggers.com/search/shiny/)
+-   [Official Shiny Documentation](https://shiny.posit.co/)
+-   [Shiny Server Administration Guide](https://docs.posit.co/shiny-server/)
+-   [Awesome Shiny Extensions](https://github.com/nanxstats/awesome-shiny-extensions)
+-   [Mastering Shiny (book)](https://mastering-shiny.org/)
+-   [Shiny Gallery](https://shiny.posit.co/r/gallery/) - for inspiration
+-   [R-bloggers Shiny Tutorials](https://www.r-bloggers.com/search/shiny/)
 
----
+------------------------------------------------------------------------
 
 *Have questions about deploying your Shiny app or need help with a specific hosting scenario? [Contact Kwiz Computing Technologies](/contact.html) for expert consulting and custom deployment solutions.*
