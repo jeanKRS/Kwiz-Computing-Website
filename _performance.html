@@ -1,0 +1,65 @@
+<!-- Performance Optimization Headers -->
+
+<!-- DNS Prefetch and Preconnect for external resources -->
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+<!-- Viewport meta for proper mobile rendering -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- Disable automatic telephone number detection -->
+<meta name="format-detection" content="telephone=no">
+
+<!-- Resource Hints for Better Performance -->
+<link rel="prefetch" as="image" href="/images/icon.png">
+
+<!-- Security Headers -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Performance: Defer non-critical CSS -->
+<script>
+  // Load non-critical CSS asynchronously
+  function loadCSS(href){
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    link.media = "print";
+    link.onload = function(){this.media="all";};
+    document.head.appendChild(link);
+  }
+</script>
+
+<!-- Image Lazy Loading Polyfill for older browsers -->
+<script>
+  // Enable native lazy loading
+  if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+      img.src = img.dataset.src || img.src;
+    });
+  } else {
+    // Fallback for browsers that don't support lazy loading
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js';
+    script.integrity = 'sha512-4lVPANdLvJyX/FZCRKXbQX1lOH/eIPQPLZ8Cw7hpqCs9LqpxDPZ3LfKqO4rJLlzgKPLEVDITkVQ8RJPqVlALg==';
+    script.crossOrigin = 'anonymous';
+    script.onload = function() {
+      const observer = lozad();
+      observer.observe();
+    };
+    document.head.appendChild(script);
+  }
+</script>
+
+<!-- Optimize third-party scripts loading -->
+<script>
+  // Defer Google Analytics until page is interactive
+  window.addEventListener('load', function() {
+    // Google Analytics is loaded in _analytics.html
+  });
+</script>

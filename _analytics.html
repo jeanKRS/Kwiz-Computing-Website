@@ -1,9 +1,23 @@
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8JBYS53Y46"></script>
+<!-- Google Analytics - Optimized Loading -->
 <script>
+  // Initialize gtag early but load script later
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8JBYS53Y46');
+
+  // Delay loading GA script until page is interactive
+  function loadGA() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PS2N78W9WD';
+    document.head.appendChild(script);
+  }
+
+  // Load GA after page is interactive
+  if (document.readyState === 'complete') {
+    loadGA();
+  } else {
+    window.addEventListener('load', loadGA);
+  }
 </script>

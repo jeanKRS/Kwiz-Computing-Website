@@ -54,6 +54,16 @@ format:
     code-tools: false
     smooth-scroll: true
     link-external-newwindow: true
-    include-in-header: _analytics.html
+    # Performance optimizations
+    minimal-dependencies: true
+    anchor-sections: true
+    include-in-header:
+      - _performance.html
+      - _analytics.html
+    # Image optimization
+    fig-responsive: true
+    fig-dpi: 150
+    # Code highlighting - use minimal theme for better performance
+    highlight-style: github
 
 editor: visual
