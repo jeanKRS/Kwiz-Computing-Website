@@ -6,6 +6,10 @@ project:
     - "!SETUP.md"
     - "!requirements.txt"
 
+# Python configuration for Jupyter code execution
+jupyter: python3
+engine: jupyter
+
 website:
   title: "Kwiz Computing Technologies"
   favicon: images/icon.png

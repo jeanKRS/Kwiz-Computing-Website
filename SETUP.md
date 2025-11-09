@@ -14,27 +14,34 @@ This is the source code for the Kwiz Computing Technologies website, built with 
 
 Download and install Quarto from [quarto.org](https://quarto.org/docs/get-started/)
 
-### 2. Install Python Dependencies
+### 2. Python Dependencies
 
-The blog posts use Python for interactive visualizations (Plotly charts, pandas tables). Install the required packages:
+The blog posts use Python for interactive visualizations (Plotly charts, pandas tables).
+
+**A virtual environment is already configured for this project!** The `venv/` directory contains all required Python packages.
+
+**Quarto automatically detects and uses this environment**, so you can directly run:
 
 ```bash
-pip install -r requirements.txt
+quarto render
+# or
+quarto preview
 ```
 
-Or using a virtual environment (recommended):
+If you need to manually use the virtual environment:
 
 ```bash
-# Create virtual environment
-python3 -m venv venv
-
-# Activate it
+# Activate the venv (optional, for manual testing)
 source venv/bin/activate  # On macOS/Linux
 # or
 venv\Scripts\activate  # On Windows
+```
 
-# Install dependencies
-pip install -r requirements.txt
+To reinstall or update packages:
+
+```bash
+venv/bin/pip install -r requirements.txt
+# or activate venv first and then: pip install -r requirements.txt
 ```
 
 ### 3. Install R Dependencies (Optional)
