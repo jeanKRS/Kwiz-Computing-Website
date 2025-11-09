@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "!SETUP.md"
+    - "!requirements.txt"
 
 website:
   title: "Kwiz Computing Technologies"
