@@ -9,6 +9,7 @@ project:
 website:
   title: "Kwiz Computing Technologies"
   favicon: images/icon.png
+  google-analytics: "G-8JBYS53Y46"
   navbar:
     logo: images/logo.jpg
     background: "#1a5e4a"
