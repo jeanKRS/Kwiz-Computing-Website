@@ -1,7 +1,8 @@
 ---
 title: "Blog & Insights"
+description: "Expert insights on data science methodology, R programming best practices, reproducible analytics, statistical modeling, and real-world case studies. Learn from our experience in environmental analytics, open data, and enterprise R development."
 listing:
-  contents: 
+  contents:
     - "blog/*.qmd"
     - "!blog.qmd"
   sort: "date desc"

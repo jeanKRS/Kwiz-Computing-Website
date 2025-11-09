@@ -57,6 +57,7 @@ format:
     minimal-dependencies: true
     anchor-sections: true
     include-in-header:
+      - _seo.html
       - _performance.html
       - _analytics.html
     # Image optimization

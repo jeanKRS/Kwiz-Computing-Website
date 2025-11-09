@@ -1,5 +1,6 @@
 ---
-title: "contact"
+title: "Contact Us"
+description: "Get in touch with Kwiz Computing Technologies for data science consulting, R programming services, and analytics solutions. Schedule a free 30-minute consultation to discuss your project needs. Email: info@kwiztech.com"
 format: html
 ---
 
