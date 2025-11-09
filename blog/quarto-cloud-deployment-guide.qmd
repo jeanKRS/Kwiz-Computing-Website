@@ -1,0 +1,1806 @@
+---
+title: "The Complete Guide to Deploying Quarto Projects to the Cloud"
+author: "Kwiz Computing Technologies"
+date: "2025-11-09"
+categories: [Quarto, Cloud Deployment, AWS, Azure, Google Cloud, DevOps, Tutorial]
+image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"
+description: "An interactive, comprehensive step-by-step guide to deploying Quarto websites, documents, and other artifacts on Google Cloud, Azure, and AWS. Choose your platform and deploy with confidence."
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    toc: true
+    toc-depth: 3
+---
+
+## Introduction: Publishing Your Quarto Work to the World
+
+![Cloud deployment concept. Photo by [NASA](https://unsplash.com/@nasa) on [Unsplash](https://unsplash.com/photos/Q1p7bh3SHj8)](https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80)
+
+You've created beautiful Quarto websites, reports, presentations, or books. Now comes the crucial question: **How do I share this with the world?**
+
+[Quarto](https://quarto.org/) is an incredibly powerful open-source scientific and technical publishing system that can create websites, blogs, books, presentations, and more. But having a great Quarto project locally is only half the battle—you need to deploy it where others can access it.
+
+This comprehensive guide will walk you through deploying Quarto projects to the three major cloud platforms: **Google Cloud Platform (GCP)**, **Microsoft Azure**, and **Amazon Web Services (AWS)**. Whether you're deploying a simple website, a complex dashboard, or a full documentation site, this guide has you covered.
+
+::: {.callout-important}
+## What You'll Learn
+
+- How to **choose** the right cloud platform for your needs
+- **Step-by-step deployment** instructions for GCP, Azure, and AWS
+- **Cost comparisons** to help you make informed decisions
+- **Best practices** for CI/CD and automated deployments
+- **Troubleshooting tips** for common deployment issues
+
+:::
+
+## Understanding Quarto Outputs
+
+Before we dive into cloud platforms, let's understand what we're deploying. Quarto can generate several types of outputs:
+
+### Static Websites
+The most common Quarto output—HTML files, CSS, JavaScript, and images that can be served by any web server. This includes:
+
+- **Quarto websites** (`quarto create website`)
+- **Quarto blogs** (`quarto create blog`)
+- **Quarto books** (`quarto create book`)
+- **Single documents** rendered to HTML
+
+**Deployment requirement:** Simple static web hosting
+
+### Interactive Documents
+Documents with interactive elements like [Shiny](https://shiny.posit.co/), [Observable JS](https://observablehq.com/@observablehq/observable-javascript), or [Plotly](https://plotly.com/):
+
+- **Shiny applications** (require server-side R/Python)
+- **Observable JS** (client-side, works as static files)
+- **Plotly/interactive visualizations** (client-side)
+
+**Deployment requirement:** Static hosting for Observable/Plotly; server hosting for Shiny
+
+### Documents (PDF, Word, etc.)
+Non-web outputs that you may want to share:
+
+- PDF reports
+- Word documents
+- PowerPoint presentations
+
+**Deployment requirement:** File storage or download hosting
+
+::: {.callout-note}
+## Focus of This Guide
+
+This guide primarily focuses on deploying **static Quarto websites** (the most common use case). We'll also cover deploying Shiny-enabled Quarto documents, which require server-side computation.
+:::
+
+## Platform Comparison: Choosing Your Cloud Provider
+
+Each cloud platform has strengths and weaknesses. Here's a comprehensive comparison to help you decide:
+
+```{python}
+#| echo: false
+#| warning: false
+
+import pandas as pd
+import plotly.graph_objects as go
+
+# Create comparison data
+comparison_data = {
+    'Feature': [
+        'Ease of Setup',
+        'Cost (Small Site)',
+        'Scalability',
+        'Documentation',
+        'Integration with R/Python',
+        'Free Tier Generosity',
+        'Global CDN',
+        'Custom Domains',
+        'CI/CD Integration',
+        'Support Quality'
+    ],
+    'Google Cloud': [9, 8, 9, 9, 8, 7, 9, 9, 9, 8],
+    'Azure': [7, 7, 9, 8, 9, 8, 9, 9, 9, 9],
+    'AWS': [6, 7, 10, 9, 7, 9, 10, 9, 10, 8]
+}
+
+df = pd.DataFrame(comparison_data)
+
+# Create radar chart
+fig = go.Figure()
+
+for platform in ['Google Cloud', 'Azure', 'AWS']:
+    fig.add_trace(go.Scatterpolar(
+        r=df[platform].tolist(),
+        theta=df['Feature'].tolist(),
+        fill='toself',
+        name=platform,
+        line=dict(width=2)
+    ))
+
+fig.update_layout(
+    polar=dict(
+        radialaxis=dict(
+            visible=True,
+            range=[0, 10]
+        )
+    ),
+    showlegend=True,
+    title="Cloud Platform Comparison for Quarto Deployment",
+    height=500
+)
+
+fig.show()
+```
+
+### Quick Comparison Table
+
+```{python}
+#| echo: false
+#| warning: false
+
+import pandas as pd
+
+comparison_table = pd.DataFrame({
+    'Criteria': [
+        'Monthly Cost (Small Site)',
+        'Monthly Cost (Medium Site)',
+        'Free Tier',
+        'Setup Complexity',
+        'Best For',
+        'Custom Domain Cost',
+        'SSL Certificate',
+        'Global CDN'
+    ],
+    'Google Cloud Platform': [
+        '$0-5',
+        '$10-30',
+        '1GB free egress/month',
+        'Low (Firebase) / Medium (Cloud Storage)',
+        'Quick deploys, Firebase users',
+        'Free',
+        'Free (auto)',
+        'Included'
+    ],
+    'Microsoft Azure': [
+        '$0-5',
+        '$15-40',
+        'Limited (12 months)',
+        'Medium',
+        'Enterprise, .NET developers',
+        'Free',
+        'Free (auto)',
+        'Included'
+    ],
+    'Amazon AWS': [
+        '$0-3',
+        '$10-25',
+        '5GB free storage, 15GB transfer',
+        'Medium-High',
+        'Scalability, enterprise',
+        'Free',
+        'Free (ACM)',
+        'Via CloudFront'
+    ]
+})
+
+comparison_table.to_html(index=False, classes='table table-striped', escape=False)
+```
+
+### Decision Guide
+
+Choose **Google Cloud Platform** if:
+- ✅ You want the **easiest setup** (especially with Firebase)
+- ✅ You're already using Google services (Analytics, etc.)
+- ✅ You want excellent documentation and tutorials
+- ✅ You prefer simplicity over advanced features
+
+Choose **Microsoft Azure** if:
+- ✅ Your organization uses Microsoft 365 or Azure services
+- ✅ You need **strong enterprise integration**
+- ✅ You work primarily with .NET or Microsoft technologies
+- ✅ You want excellent technical support
+
+Choose **Amazon AWS** if:
+- ✅ You need **maximum scalability** and control
+- ✅ You're building complex architectures
+- ✅ You want the most comprehensive cloud services
+- ✅ You're comfortable with more complex configurations
+
+::: {.callout-tip}
+## First Time Deploying to Cloud?
+
+If you're new to cloud deployment, we recommend starting with **Google Cloud Platform (Firebase Hosting)**. It offers the smoothest learning curve and excellent free tier for experimentation.
+:::
+
+---
+
+## Part 1: Deploying to Google Cloud Platform
+
+Google Cloud offers two main options for hosting static sites: **Firebase Hosting** (easiest) and **Cloud Storage** (more control). We'll cover both.
+
+### Option A: Firebase Hosting (Recommended)
+
+Firebase Hosting is Google's streamlined hosting solution, perfect for Quarto sites.
+
+#### Prerequisites
+
+1. A [Google account](https://accounts.google.com/)
+2. [Node.js and npm](https://nodejs.org/) installed
+3. Your Quarto project rendered locally
+
+#### Step 1: Install Firebase CLI
+
+Open your terminal and install the Firebase CLI globally:
+
+```bash
+npm install -g firebase-tools
+```
+
+Verify installation:
+
+```bash
+firebase --version
+```
+
+#### Step 2: Login to Firebase
+
+Authenticate with your Google account:
+
+```bash
+firebase login
+```
+
+This will open your browser for authentication. Sign in with your Google account.
+
+#### Step 3: Initialize Firebase in Your Project
+
+Navigate to your Quarto project directory:
+
+```bash
+cd /path/to/your/quarto-project
+```
+
+Initialize Firebase:
+
+```bash
+firebase init hosting
+```
+
+You'll be prompted with several questions:
+
+1. **"Please select an option"**: Choose "Create a new project" or select an existing one
+2. **"What do you want to use as your public directory?"**: Enter `_site` (Quarto's default output directory)
+3. **"Configure as a single-page app?"**: Choose `No` (unless you have specific SPA requirements)
+4. **"Set up automatic builds and deploys with GitHub?"**: Choose `Yes` if you want CI/CD, `No` for manual deploys
+
+#### Step 4: Render Your Quarto Project
+
+Before deploying, render your Quarto site:
+
+```bash
+quarto render
+```
+
+This creates the `_site` directory with your built website.
+
+#### Step 5: Deploy to Firebase
+
+Deploy your site:
+
+```bash
+firebase deploy --only hosting
+```
+
+You'll see output like:
+
+```
+✔  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/your-project/overview
+Hosting URL: https://your-project.web.app
+```
+
+🎉 **Your site is live!** Visit the Hosting URL to see it.
+
+#### Step 6: Custom Domain (Optional)
+
+To use a custom domain like `www.yoursite.com`:
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Select your project → Hosting
+3. Click "Add custom domain"
+4. Follow the instructions to verify ownership (add DNS records)
+
+::: {.callout-note}
+## Updating Your Site
+
+Whenever you make changes:
+
+1. Edit your Quarto files
+2. Run `quarto render`
+3. Run `firebase deploy --only hosting`
+
+Your site updates in seconds!
+:::
+
+### Option B: Google Cloud Storage + Cloud CDN
+
+For more control, use Cloud Storage with a load balancer and CDN.
+
+#### Step 1: Install and Configure gcloud CLI
+
+Download and install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install):
+
+```bash
+# For macOS/Linux (using script)
+curl https://sdk.cloud.google.com | bash
+
+# Initialize gcloud
+gcloud init
+```
+
+#### Step 2: Create a Cloud Storage Bucket
+
+Create a bucket with your domain name (or any unique name):
+
+```bash
+# Replace with your domain or project name
+export BUCKET_NAME="my-quarto-site.com"
+export PROJECT_ID="your-project-id"
+
+# Create bucket
+gcloud storage buckets create gs://$BUCKET_NAME \
+    --project=$PROJECT_ID \
+    --location=US \
+    --uniform-bucket-level-access
+```
+
+#### Step 3: Configure Bucket for Web Hosting
+
+Make the bucket public and set index/error pages:
+
+```bash
+# Make bucket publicly readable
+gcloud storage buckets add-iam-policy-binding gs://$BUCKET_NAME \
+    --member=allUsers \
+    --role=roles/storage.objectViewer
+
+# Set main page and error page
+gcloud storage buckets update gs://$BUCKET_NAME \
+    --web-main-page-suffix=index.html \
+    --web-error-page=404.html
+```
+
+#### Step 4: Upload Your Quarto Site
+
+Render and upload:
+
+```bash
+# Render your site
+quarto render
+
+# Upload to Cloud Storage
+gcloud storage rsync _site/ gs://$BUCKET_NAME --recursive --delete-unmatched-destination-objects
+```
+
+#### Step 5: Set Up Cloud CDN (Optional but Recommended)
+
+For global performance, set up a load balancer with Cloud CDN:
+
+```bash
+# Create backend bucket
+gcloud compute backend-buckets create quarto-backend \
+    --gcs-bucket-name=$BUCKET_NAME \
+    --enable-cdn
+
+# Create URL map
+gcloud compute url-maps create quarto-url-map \
+    --default-backend-bucket=quarto-backend
+
+# Create SSL certificate (for HTTPS)
+gcloud compute ssl-certificates create quarto-ssl-cert \
+    --domains=$BUCKET_NAME
+
+# Create HTTPS proxy
+gcloud compute target-https-proxies create quarto-https-proxy \
+    --url-map=quarto-url-map \
+    --ssl-certificates=quarto-ssl-cert
+
+# Create forwarding rule
+gcloud compute forwarding-rules create quarto-https-rule \
+    --global \
+    --target-https-proxy=quarto-https-proxy \
+    --ports=443
+```
+
+Your site is now served globally with CDN acceleration! 🚀
+
+::: {.callout-important}
+## Cloud Storage Costs
+
+Cloud Storage charges for:
+- **Storage**: ~$0.020 per GB/month
+- **Network egress**: ~$0.12 per GB (after free tier)
+- **Operations**: Minimal costs for reads/writes
+
+A typical small Quarto site (100MB, 10,000 visits/month) costs **$1-3/month**.
+:::
+
+---
+
+## Part 2: Deploying to Microsoft Azure
+
+Azure offers **Azure Static Web Apps** (easiest) and **Azure Storage** (traditional). We'll cover both.
+
+### Option A: Azure Static Web Apps (Recommended)
+
+Azure Static Web Apps is purpose-built for static sites with built-in CI/CD.
+
+#### Prerequisites
+
+1. An [Azure account](https://azure.microsoft.com/free/) (free tier available)
+2. [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) installed
+3. Your Quarto project in a GitHub repository (for CI/CD)
+
+#### Step 1: Install Azure CLI
+
+```bash
+# macOS
+brew install azure-cli
+
+# Windows (using winget)
+winget install Microsoft.AzureCLI
+
+# Linux
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+```
+
+Verify installation:
+
+```bash
+az --version
+```
+
+#### Step 2: Login to Azure
+
+```bash
+az login
+```
+
+This opens your browser for authentication.
+
+#### Step 3: Create a Static Web App via Azure Portal
+
+1. Go to [Azure Portal](https://portal.azure.com/)
+2. Click "Create a resource" → Search for "Static Web Apps"
+3. Click "Create"
+
+Configure your app:
+
+- **Subscription**: Choose your subscription
+- **Resource Group**: Create new or select existing
+- **Name**: Your app name (e.g., `my-quarto-site`)
+- **Plan type**: Free (for small sites)
+- **Region**: Choose closest to your audience
+- **Source**: Select "GitHub" and authorize
+- **Organization**: Your GitHub username/org
+- **Repository**: Your Quarto project repo
+- **Branch**: `main` or your deployment branch
+
+Build configuration:
+
+- **Build Presets**: Select "Custom"
+- **App location**: `/` (root of repo)
+- **Api location**: Leave empty (unless using Azure Functions)
+- **Output location**: `_site`
+
+Click "Review + create" → "Create"
+
+#### Step 4: Configure GitHub Actions Workflow
+
+Azure automatically creates a GitHub Actions workflow. Update it for Quarto:
+
+In your repo, edit `.github/workflows/azure-static-web-apps-xxx.yml`:
+
+```yaml
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      # Install Quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.4.549  # or latest
+
+      # Install R (if using R)
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3.0'
+
+      # Install Python (if using Python)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # Install dependencies
+      - name: Install R dependencies
+        run: |
+          Rscript -e 'install.packages(c("rmarkdown", "knitr"))'
+
+      # Render Quarto project
+      - name: Render Quarto Project
+        run: quarto render
+
+      # Deploy to Azure
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_XXX }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "_site"
+          skip_app_build: true
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_XXX }}
+          action: "close"
+```
+
+Commit and push this file. Every push to `main` will now automatically deploy!
+
+#### Step 5: Access Your Site
+
+Your site is available at: `https://<app-name>.azurestaticapps.net`
+
+Find your URL in Azure Portal → Your Static Web App → Overview
+
+#### Step 6: Custom Domain (Optional)
+
+1. In Azure Portal, go to your Static Web App
+2. Click "Custom domains" in the left menu
+3. Click "Add"
+4. Enter your domain (e.g., `www.yoursite.com`)
+5. Add the provided CNAME record to your DNS provider
+6. Wait for DNS propagation (can take up to 48 hours)
+
+Azure automatically provisions and manages SSL certificates! 🔒
+
+### Option B: Azure Blob Storage
+
+For a traditional static hosting approach:
+
+#### Step 1: Create a Storage Account
+
+```bash
+# Set variables
+RESOURCE_GROUP="quarto-rg"
+LOCATION="eastus"
+STORAGE_ACCOUNT="quartositestorage"  # must be globally unique
+
+# Create resource group
+az group create --name $RESOURCE_GROUP --location $LOCATION
+
+# Create storage account
+az storage account create \
+    --name $STORAGE_ACCOUNT \
+    --resource-group $RESOURCE_GROUP \
+    --location $LOCATION \
+    --sku Standard_LRS \
+    --kind StorageV2
+```
+
+#### Step 2: Enable Static Website Hosting
+
+```bash
+az storage blob service-properties update \
+    --account-name $STORAGE_ACCOUNT \
+    --static-website \
+    --index-document index.html \
+    --404-document 404.html
+```
+
+#### Step 3: Upload Your Quarto Site
+
+```bash
+# Render site
+quarto render
+
+# Upload files
+az storage blob upload-batch \
+    --account-name $STORAGE_ACCOUNT \
+    --source _site \
+    --destination '$web' \
+    --overwrite
+```
+
+#### Step 4: Get Your Website URL
+
+```bash
+az storage account show \
+    --name $STORAGE_ACCOUNT \
+    --resource-group $RESOURCE_GROUP \
+    --query "primaryEndpoints.web" \
+    --output tsv
+```
+
+Your site is live at the URL provided! 🎉
+
+::: {.callout-tip}
+## Azure Costs
+
+Azure Static Web Apps Free tier includes:
+- **100 GB bandwidth/month**
+- **2 custom domains**
+- **Free SSL certificates**
+
+Perfect for most Quarto sites!
+:::
+
+---
+
+## Part 3: Deploying to Amazon AWS
+
+AWS offers several options: **S3 + CloudFront** (most popular) and **AWS Amplify** (easiest). We'll cover both.
+
+### Option A: AWS Amplify (Recommended for Beginners)
+
+AWS Amplify provides streamlined hosting with CI/CD integration.
+
+#### Prerequisites
+
+1. An [AWS account](https://aws.amazon.com/free/)
+2. Your Quarto project in a GitHub repository
+3. [AWS CLI](https://aws.amazon.com/cli/) installed (optional)
+
+#### Step 1: Deploy via AWS Console
+
+1. Go to [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
+2. Click "Get Started" under "Amplify Hosting"
+3. Select "GitHub" (or GitLab, Bitbucket)
+4. Authorize AWS Amplify with your GitHub account
+5. Select your repository and branch
+
+#### Step 2: Configure Build Settings
+
+Amplify will try to detect your build settings. Update the `amplify.yml`:
+
+```yaml
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Install Quarto
+        - wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.549/quarto-1.4.549-linux-amd64.deb
+        - dpkg -i quarto-1.4.549-linux-amd64.deb
+
+        # Install R (if needed)
+        - apt-get update
+        - apt-get install -y r-base
+
+        # Install R packages (if needed)
+        - Rscript -e 'install.packages(c("rmarkdown", "knitr", "ggplot2"), repos="https://cran.rstudio.com/")'
+
+    build:
+      commands:
+        - quarto render
+
+  artifacts:
+    baseDirectory: _site
+    files:
+      - '**/*'
+
+  cache:
+    paths: []
+```
+
+Save this as `amplify.yml` in your repository root.
+
+#### Step 3: Deploy
+
+Click "Save and Deploy". Amplify will:
+
+1. Clone your repository
+2. Install Quarto and dependencies
+3. Render your site
+4. Deploy to CloudFront CDN
+
+You'll get a URL like: `https://main.d1234abcd.amplifyapp.com`
+
+#### Step 4: Custom Domain (Optional)
+
+1. In Amplify Console, select your app
+2. Click "Domain management" → "Add domain"
+3. Enter your domain
+4. Amplify provides DNS records to add
+5. Add records to your DNS provider
+6. SSL certificate is automatically provisioned
+
+::: {.callout-note}
+## Continuous Deployment
+
+Every push to your repository automatically triggers a new build and deployment. Check build status in the Amplify Console.
+:::
+
+### Option B: S3 + CloudFront (Production Setup)
+
+For maximum control and cost optimization:
+
+#### Step 1: Install AWS CLI
+
+```bash
+# macOS
+brew install awscli
+
+# Windows
+# Download installer from https://aws.amazon.com/cli/
+
+# Linux
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+
+Configure AWS CLI:
+
+```bash
+aws configure
+```
+
+Enter your AWS Access Key ID, Secret Access Key, region, and output format.
+
+#### Step 2: Create an S3 Bucket
+
+```bash
+# Set variables
+BUCKET_NAME="my-quarto-site.com"  # Use your domain
+REGION="us-east-1"
+
+# Create bucket
+aws s3 mb s3://$BUCKET_NAME --region $REGION
+
+# Configure for website hosting
+aws s3 website s3://$BUCKET_NAME \
+    --index-document index.html \
+    --error-document 404.html
+```
+
+#### Step 3: Create Bucket Policy for Public Access
+
+Create a file `bucket-policy.json`:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::my-quarto-site.com/*"
+        }
+    ]
+}
+```
+
+Apply the policy:
+
+```bash
+aws s3api put-bucket-policy \
+    --bucket $BUCKET_NAME \
+    --policy file://bucket-policy.json
+```
+
+#### Step 4: Upload Your Quarto Site
+
+```bash
+# Render site
+quarto render
+
+# Upload to S3 (sync keeps it up-to-date)
+aws s3 sync _site/ s3://$BUCKET_NAME --delete
+```
+
+Your site is now available at: `http://my-quarto-site.com.s3-website-us-east-1.amazonaws.com`
+
+#### Step 5: Set Up CloudFront CDN (Recommended)
+
+For HTTPS and global performance:
+
+1. **Create CloudFront Distribution**:
+
+```bash
+aws cloudfront create-distribution \
+    --origin-domain-name $BUCKET_NAME.s3-website-$REGION.amazonaws.com \
+    --default-root-object index.html
+```
+
+2. **Or use AWS Console**:
+   - Go to [CloudFront Console](https://console.aws.amazon.com/cloudfront/)
+   - Click "Create Distribution"
+   - **Origin Domain**: Select your S3 bucket website endpoint
+   - **Viewer Protocol Policy**: "Redirect HTTP to HTTPS"
+   - **Default Root Object**: `index.html`
+   - Click "Create Distribution"
+
+Wait 10-20 minutes for deployment.
+
+#### Step 6: Request SSL Certificate (for Custom Domain)
+
+```bash
+# Request certificate (must be in us-east-1 for CloudFront)
+aws acm request-certificate \
+    --domain-name yourdomain.com \
+    --domain-name www.yourdomain.com \
+    --validation-method DNS \
+    --region us-east-1
+```
+
+Verify domain ownership by adding DNS records shown in ACM Console.
+
+#### Step 7: Configure Custom Domain
+
+1. In CloudFront distribution settings:
+   - **Alternate Domain Names (CNAMEs)**: Add `yourdomain.com` and `www.yourdomain.com`
+   - **SSL Certificate**: Select your ACM certificate
+
+2. In your DNS provider, create a CNAME record:
+   - **Name**: `www` or `@`
+   - **Value**: Your CloudFront distribution domain (e.g., `d123abc.cloudfront.net`)
+
+Your site is now live with HTTPS! 🔒
+
+::: {.callout-important}
+## Invalidating CloudFront Cache
+
+After updating your site, invalidate CloudFront cache:
+
+```bash
+# Get distribution ID
+DISTRIBUTION_ID=$(aws cloudfront list-distributions \
+    --query "DistributionList.Items[?Origins.Items[?DomainName=='$BUCKET_NAME.s3-website-$REGION.amazonaws.com']].Id" \
+    --output text)
+
+# Create invalidation
+aws cloudfront create-invalidation \
+    --distribution-id $DISTRIBUTION_ID \
+    --paths "/*"
+```
+
+This ensures visitors see the latest version.
+:::
+
+### AWS Costs Breakdown
+
+```{python}
+#| echo: false
+#| warning: false
+
+import pandas as pd
+
+cost_data = pd.DataFrame({
+    'Service': [
+        'S3 Storage (1 GB)',
+        'S3 Requests (10k/mo)',
+        'CloudFront Data Transfer (10 GB)',
+        'CloudFront Requests (100k)',
+        'Route 53 Hosted Zone',
+        'Total (Small Site)'
+    ],
+    'Monthly Cost': [
+        '$0.023',
+        '$0.005',
+        '$0.85',
+        '$0.01',
+        '$0.50',
+        '**$1.38**'
+    ],
+    'Notes': [
+        'First 5 GB free (12 months)',
+        'Minimal cost',
+        'First 1 TB: $0.085/GB',
+        'First 10M: $0.0075/10k',
+        'Per hosted zone',
+        'With free tier'
+    ]
+})
+
+cost_data.to_html(index=False, classes='table table-striped', escape=False)
+```
+
+A typical small Quarto site costs **$1-3/month** on AWS.
+
+---
+
+## Part 4: Deploying Shiny-Enabled Quarto Documents
+
+If your Quarto document includes Shiny interactive elements, you need server-side hosting.
+
+### Prerequisites
+
+Your Quarto document with Shiny runtime:
+
+```yaml
+---
+title: "My Interactive Document"
+format: html
+server: shiny
+---
+```
+
+### Option 1: Deploy to Posit Connect (Easiest)
+
+[Posit Connect](https://posit.co/products/enterprise/connect/) (formerly RStudio Connect) is purpose-built for R/Python content.
+
+```r
+# Install rsconnect
+install.packages("rsconnect")
+
+# Configure your account (get credentials from Posit Connect)
+rsconnect::setAccountInfo(
+  name = "your-server",
+  url = "https://connect.yourcompany.com",
+  token = "YOUR_TOKEN",
+  secret = "YOUR_SECRET"
+)
+
+# Deploy
+rsconnect::deployDoc("your-document.qmd")
+```
+
+### Option 2: Deploy to ShinyApps.io
+
+[ShinyApps.io](https://www.shinyapps.io/) is Posit's hosted Shiny service.
+
+```r
+# Install rsconnect
+install.packages("rsconnect")
+
+# Configure account
+rsconnect::setAccountInfo(
+  name = "your-account",
+  token = "YOUR_TOKEN",
+  secret = "YOUR_SECRET"
+)
+
+# Deploy
+rsconnect::deployDoc("your-document.qmd")
+```
+
+**Pricing**: Free tier allows 5 apps, 25 active hours/month.
+
+### Option 3: Self-Host on Cloud VMs
+
+For full control, deploy to a cloud VM running Shiny Server.
+
+#### AWS EC2 Example
+
+```bash
+# Launch EC2 instance (Ubuntu 22.04, t2.micro)
+# Install R and Shiny Server
+sudo apt-get update
+sudo apt-get install -y r-base gdebi-core
+
+# Download and install Shiny Server
+wget https://download3.rstudio.org/ubuntu-18.04/x86_64/shiny-server-1.5.20.1002-amd64.deb
+sudo gdebi shiny-server-1.5.20.1002-amd64.deb
+
+# Install Quarto
+wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.549/quarto-1.4.549-linux-amd64.deb
+sudo dpkg -i quarto-1.4.549-linux-amd64.deb
+
+# Copy your Quarto doc to Shiny Server directory
+sudo cp your-document.qmd /srv/shiny-server/
+
+# Restart Shiny Server
+sudo systemctl restart shiny-server
+```
+
+Access your app at: `http://your-ec2-ip:3838/your-document.qmd`
+
+::: {.callout-tip}
+## Production Tips for Shiny
+
+- Use **NGINX** as a reverse proxy for HTTPS
+- Set up **automatic backups** of your content
+- Monitor resource usage with CloudWatch/Azure Monitor/Google Cloud Monitoring
+- Consider **autoscaling** for high-traffic apps
+:::
+
+---
+
+## Part 5: CI/CD and Automation
+
+Automating your deployment ensures your site stays up-to-date with minimal effort.
+
+### GitHub Actions for Multi-Platform Deployment
+
+Here's a comprehensive GitHub Actions workflow that renders your Quarto site and deploys to your chosen platform:
+
+`.github/workflows/deploy-quarto.yml`:
+
+```yaml
+name: Deploy Quarto Site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.4.549
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3.0'
+
+      - name: Install R dependencies
+        run: |
+          Rscript -e 'install.packages(c("rmarkdown", "knitr", "ggplot2", "dplyr"))'
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install jupyter matplotlib pandas plotly
+
+      - name: Render Quarto Project
+        run: quarto render
+
+      # Deploy to Firebase
+      - name: Deploy to Firebase
+        if: github.ref == 'refs/heads/main'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          channelId: live
+          projectId: your-firebase-project
+
+      # OR Deploy to AWS S3 + CloudFront
+      # - name: Configure AWS credentials
+      #   if: github.ref == 'refs/heads/main'
+      #   uses: aws-actions/configure-aws-credentials@v2
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: us-east-1
+      #
+      # - name: Deploy to S3
+      #   if: github.ref == 'refs/heads/main'
+      #   run: |
+      #     aws s3 sync _site/ s3://your-bucket-name --delete
+      #     aws cloudfront create-invalidation --distribution-id YOUR_DIST_ID --paths "/*"
+
+      # OR Deploy to Azure
+      # - name: Deploy to Azure Static Web Apps
+      #   if: github.ref == 'refs/heads/main'
+      #   uses: Azure/static-web-apps-deploy@v1
+      #   with:
+      #     azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+      #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+      #     action: "upload"
+      #     app_location: "_site"
+      #     skip_app_build: true
+```
+
+### Setting Up Secrets
+
+For each platform, add secrets to your GitHub repository:
+
+1. Go to your repo → Settings → Secrets and variables → Actions
+2. Click "New repository secret"
+
+**For Firebase:**
+- `FIREBASE_SERVICE_ACCOUNT`: Generate in Firebase Console → Project Settings → Service Accounts
+
+**For AWS:**
+- `AWS_ACCESS_KEY_ID`: From IAM user
+- `AWS_SECRET_ACCESS_KEY`: From IAM user
+
+**For Azure:**
+- `AZURE_STATIC_WEB_APPS_API_TOKEN`: Automatically created when you set up Static Web Apps
+
+::: {.callout-note}
+## CI/CD Best Practices
+
+1. **Test before deploying**: Add a test job that renders the site and checks for errors
+2. **Deploy on branch merge**: Only deploy from `main` branch
+3. **Use environment variables**: Store sensitive data in GitHub Secrets
+4. **Monitor builds**: Set up notifications for failed deployments
+5. **Implement staging**: Deploy PRs to preview URLs for testing
+:::
+
+---
+
+## Part 6: Performance Optimization
+
+Once deployed, optimize your site for speed and user experience.
+
+### 1. Image Optimization
+
+Large images slow down your site. Optimize them:
+
+```bash
+# Install tools
+brew install imagemagick jpegoptim pngquant
+
+# Optimize JPEGs
+jpegoptim --max=85 --strip-all images/*.jpg
+
+# Optimize PNGs
+pngquant --quality=65-80 images/*.png
+```
+
+Or use Quarto's built-in optimization in `_quarto.yml`:
+
+```yaml
+format:
+  html:
+    fig-width: 8
+    fig-height: 6
+    fig-format: retina
+```
+
+### 2. Enable Compression
+
+Ensure your web server serves compressed files:
+
+**For CloudFront (AWS):**
+- In CloudFront distribution settings → Behaviors
+- Edit behavior → Compress Objects Automatically: Yes
+
+**For Firebase:**
+Automatically enabled ✓
+
+**For Azure Static Web Apps:**
+Automatically enabled ✓
+
+### 3. Minimize Asset Size
+
+Remove unused CSS/JS and minify code:
+
+```yaml
+# _quarto.yml
+format:
+  html:
+    minimal: true
+    theme: cosmo
+```
+
+### 4. Implement Caching
+
+Set cache headers for static assets:
+
+**For S3:**
+
+```bash
+# Cache images for 1 year
+aws s3 sync _site/images/ s3://$BUCKET_NAME/images/ \
+    --cache-control "max-age=31536000,public"
+
+# Cache HTML for 1 hour
+aws s3 sync _site/ s3://$BUCKET_NAME/ \
+    --exclude "images/*" \
+    --cache-control "max-age=3600,public"
+```
+
+### 5. Use a CDN
+
+All three platforms support CDN:
+
+- **GCP**: Cloud CDN (automatic with Firebase)
+- **Azure**: Azure CDN (built into Static Web Apps)
+- **AWS**: CloudFront (covered in deployment section)
+
+::: {.callout-tip}
+## Performance Testing
+
+Test your site's performance:
+
+- [Google PageSpeed Insights](https://pagespeed.web.dev/)
+- [GTmetrix](https://gtmetrix.com/)
+- [WebPageTest](https://www.webpagetest.org/)
+
+Aim for:
+- **Load time** < 3 seconds
+- **PageSpeed score** > 90
+- **First Contentful Paint** < 1.5s
+:::
+
+---
+
+## Part 7: Monitoring and Analytics
+
+Track your site's performance and visitor behavior.
+
+### Google Analytics Integration
+
+Add to your `_quarto.yml`:
+
+```yaml
+website:
+  google-analytics: "G-XXXXXXXXXX"
+```
+
+Replace with your Google Analytics 4 measurement ID.
+
+### Platform-Specific Monitoring
+
+**Google Cloud Platform:**
+- Use [Cloud Monitoring](https://cloud.google.com/monitoring)
+- Track uptime, latency, and errors
+
+**Microsoft Azure:**
+- Use [Application Insights](https://azure.microsoft.com/services/monitor/)
+- Track page views, performance, and exceptions
+
+**Amazon AWS:**
+- Use [CloudWatch](https://aws.amazon.com/cloudwatch/)
+- Monitor S3 bucket metrics and CloudFront analytics
+
+### Uptime Monitoring
+
+Free tools to monitor site availability:
+
+- [UptimeRobot](https://uptimerobot.com/) - Free for 50 monitors
+- [Pingdom](https://www.pingdom.com/) - Free trial
+- [StatusCake](https://www.statuscake.com/) - Free plan available
+
+---
+
+## Part 8: Troubleshooting Common Issues
+
+### Issue 1: 404 Errors on Page Refresh (SPAs)
+
+**Problem:** Refreshing a page shows 404 error.
+
+**Solution:**
+
+**For Firebase:**
+```json
+// firebase.json
+{
+  "hosting": {
+    "public": "_site",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+```
+
+**For Azure Static Web Apps:**
+```json
+// staticwebapp.config.json
+{
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  }
+}
+```
+
+**For AWS CloudFront:**
+- Create a Custom Error Response for 404 → Return index.html with 200 status
+
+### Issue 2: Slow Build Times in CI/CD
+
+**Problem:** GitHub Actions takes >10 minutes to build.
+
+**Solutions:**
+
+1. **Cache dependencies:**
+
+```yaml
+- name: Cache R packages
+  uses: actions/cache@v3
+  with:
+    path: ${{ env.R_LIBS_USER }}
+    key: ${{ runner.os }}-r-${{ hashFiles('DESCRIPTION') }}
+
+- name: Cache Quarto
+  uses: actions/cache@v3
+  with:
+    path: ~/.quarto
+    key: ${{ runner.os }}-quarto-${{ hashFiles('_quarto.yml') }}
+```
+
+2. **Use `freeze: auto` in `_quarto.yml`:**
+
+```yaml
+execute:
+  freeze: auto  # Only re-run changed code
+```
+
+### Issue 3: Large Files Exceeding Limits
+
+**Problem:** Deployment fails due to file size limits.
+
+**Solutions:**
+
+1. **Use Git LFS for large files:**
+
+```bash
+git lfs install
+git lfs track "*.pdf"
+git lfs track "*.mp4"
+```
+
+2. **Store large files externally:**
+   - Upload videos to YouTube/Vimeo
+   - Use cloud storage for large datasets
+   - Reference via URLs in your Quarto documents
+
+### Issue 4: Environment Variables Not Working
+
+**Problem:** API keys or secrets not accessible.
+
+**Solution:**
+
+Add environment variables to your build:
+
+**GitHub Actions:**
+```yaml
+- name: Render Quarto Project
+  env:
+    API_KEY: ${{ secrets.API_KEY }}
+  run: quarto render
+```
+
+**In Quarto document:**
+```r
+api_key <- Sys.getenv("API_KEY")
+```
+
+### Issue 5: CORS Errors with APIs
+
+**Problem:** Browser blocks API requests from your deployed site.
+
+**Solution:**
+
+Configure CORS headers:
+
+**For Firebase:**
+```json
+// firebase.json
+{
+  "hosting": {
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+**For S3 + CloudFront:**
+
+Add CORS configuration to S3 bucket:
+
+```json
+[
+    {
+        "AllowedHeaders": ["*"],
+        "AllowedMethods": ["GET", "HEAD"],
+        "AllowedOrigins": ["*"],
+        "ExposeHeaders": []
+    }
+]
+```
+
+---
+
+## Part 9: Cost Optimization Strategies
+
+### Multi-Cloud Cost Comparison
+
+```{python}
+#| echo: false
+#| warning: false
+
+import pandas as pd
+import plotly.express as px
+
+# Cost data for different traffic levels
+cost_data = pd.DataFrame({
+    'Traffic Level': ['Small (1k visits/mo)', 'Small (1k visits/mo)', 'Small (1k visits/mo)',
+                      'Medium (10k visits/mo)', 'Medium (10k visits/mo)', 'Medium (10k visits/mo)',
+                      'Large (100k visits/mo)', 'Large (100k visits/mo)', 'Large (100k visits/mo)'],
+    'Platform': ['Google Cloud', 'Azure', 'AWS',
+                 'Google Cloud', 'Azure', 'AWS',
+                 'Google Cloud', 'Azure', 'AWS'],
+    'Monthly Cost ($)': [0.5, 0, 1,
+                         3, 2, 2.5,
+                         15, 10, 12]
+})
+
+fig = px.bar(cost_data, x='Traffic Level', y='Monthly Cost ($)',
+             color='Platform', barmode='group',
+             title='Cloud Platform Costs by Traffic Level',
+             labels={'Monthly Cost ($)': 'Estimated Monthly Cost (USD)'},
+             color_discrete_map={
+                 'Google Cloud': '#4285F4',
+                 'Azure': '#00A4EF',
+                 'AWS': '#FF9900'
+             })
+
+fig.update_layout(height=400)
+fig.show()
+```
+
+### Cost-Saving Tips
+
+1. **Use Free Tiers Wisely**
+   - **GCP Firebase**: 1GB storage, 10GB transfer/month free
+   - **Azure Static Web Apps**: 100GB bandwidth/month free
+   - **AWS**: 5GB S3, 1TB CloudFront transfer (12 months)
+
+2. **Optimize Images and Assets**
+   - Compress images to reduce storage and bandwidth
+   - Use WebP format (smaller than JPEG/PNG)
+   - Lazy-load images with `loading="lazy"`
+
+3. **Implement Aggressive Caching**
+   - Cache static assets for long periods (1 year)
+   - Use CDN to reduce origin requests
+
+4. **Clean Up Old Versions**
+   - Delete old build artifacts
+   - Remove unused files from storage
+
+5. **Monitor and Alert**
+   - Set up billing alerts in all platforms
+   - Review monthly costs and optimize
+
+::: {.callout-important}
+## Billing Alerts Setup
+
+**AWS:**
+```bash
+aws budgets create-budget \
+    --account-id YOUR_ACCOUNT_ID \
+    --budget file://budget.json \
+    --notifications-with-subscribers file://notifications.json
+```
+
+**GCP:**
+```bash
+gcloud billing budgets create \
+    --billing-account=BILLING_ACCOUNT_ID \
+    --display-name="Quarto Site Budget" \
+    --budget-amount=10USD
+```
+
+**Azure:**
+Set up in Azure Portal → Cost Management → Budgets
+:::
+
+---
+
+## Part 10: Advanced Topics
+
+### Custom Build Processes
+
+For complex projects, create custom build scripts:
+
+**`build.sh`:**
+```bash
+#!/bin/bash
+set -e
+
+echo "Installing dependencies..."
+Rscript -e 'renv::restore()'
+
+echo "Pre-processing data..."
+Rscript scripts/preprocess.R
+
+echo "Rendering Quarto site..."
+quarto render
+
+echo "Post-processing..."
+python scripts/optimize_images.py _site/
+
+echo "Build complete!"
+```
+
+Make executable and use in CI/CD:
+
+```bash
+chmod +x build.sh
+./build.sh
+```
+
+### Multi-Language Projects
+
+Deploy sites in multiple languages:
+
+```yaml
+# _quarto.yml
+website:
+  title: "My Site"
+
+project:
+  output-dir: _site
+
+format:
+  html:
+    toc: true
+
+# Create language-specific folders
+# /en/ for English
+# /fr/ for French
+# /es/ for Spanish
+```
+
+Use Firebase redirects or CloudFront functions to detect user language.
+
+### A/B Testing
+
+Implement A/B testing with CloudFront Functions:
+
+```javascript
+// CloudFront Function for A/B testing
+function handler(event) {
+    var request = event.request;
+    var uri = request.uri;
+
+    // 50% traffic split
+    var bucket = Math.random() < 0.5 ? 'a' : 'b';
+
+    if (uri === '/') {
+        request.uri = '/index-' + bucket + '.html';
+    }
+
+    return request;
+}
+```
+
+### Progressive Web Apps (PWA)
+
+Turn your Quarto site into a PWA:
+
+1. Create `manifest.json`:
+
+```json
+{
+  "name": "My Quarto Site",
+  "short_name": "QuartoSite",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066cc",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+```
+
+2. Create `service-worker.js`:
+
+```javascript
+const CACHE_NAME = 'quarto-site-v1';
+const urlsToCache = [
+  '/',
+  '/styles.css',
+  '/index.html'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(urlsToCache))
+  );
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => response || fetch(event.request))
+  );
+});
+```
+
+3. Reference in your HTML:
+
+```html
+<link rel="manifest" href="/manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+```
+
+---
+
+## Conclusion: Your Deployment Journey
+
+Congratulations! You now have comprehensive knowledge of deploying Quarto projects to the cloud. Let's recap:
+
+### Key Takeaways
+
+1. **Platform Selection Matters**
+   - Firebase/GCP: Easiest for beginners
+   - Azure: Best for Microsoft ecosystem
+   - AWS: Maximum flexibility and scale
+
+2. **Automation is Essential**
+   - Set up CI/CD early
+   - Use GitHub Actions or platform-specific tools
+   - Test before deploying
+
+3. **Optimize from Day One**
+   - Compress images
+   - Enable CDN
+   - Implement caching
+   - Monitor performance
+
+4. **Security First**
+   - Always use HTTPS
+   - Keep secrets in environment variables
+   - Regularly update dependencies
+   - Set up billing alerts
+
+5. **Monitor and Iterate**
+   - Track analytics
+   - Monitor uptime
+   - Review costs monthly
+   - Optimize based on data
+
+### Next Steps
+
+1. **Choose your platform** based on your needs and existing infrastructure
+2. **Follow the step-by-step guide** for your chosen platform
+3. **Set up CI/CD** to automate future deployments
+4. **Optimize** for performance and cost
+5. **Monitor** and iterate based on real-world usage
+
+### Resources
+
+**Quarto Documentation:**
+- [Quarto Publishing Guide](https://quarto.org/docs/publishing/)
+- [Quarto Websites](https://quarto.org/docs/websites/)
+- [Quarto Books](https://quarto.org/docs/books/)
+
+**Cloud Platform Docs:**
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
+- [Azure Static Web Apps](https://learn.microsoft.com/azure/static-web-apps/)
+- [AWS Amplify](https://docs.aws.amazon.com/amplify/)
+- [AWS S3 Static Hosting](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)
+
+**Community:**
+- [Quarto GitHub Discussions](https://github.com/quarto-dev/quarto-cli/discussions)
+- [RStudio Community](https://community.rstudio.com/)
+- [Stack Overflow - Quarto Tag](https://stackoverflow.com/questions/tagged/quarto)
+
+::: {.callout-tip}
+## Need Help?
+
+If you're deploying a complex Quarto project and need expert assistance, [Kwiz Computing Technologies](/) specializes in:
+
+- **Custom Quarto Deployments**: Complex multi-site projects, authenticated content, custom domains
+- **CI/CD Pipeline Setup**: Automated testing, preview environments, staging/production workflows
+- **Performance Optimization**: Page speed optimization, CDN configuration, cost reduction
+- **Enterprise Quarto Solutions**: Scalable architectures, high-traffic sites, custom integrations
+
+[Contact us](mailto:info@kwizcomputing.com) for a consultation.
+:::
+
+---
+
+## Quick Reference: Deployment Commands
+
+### Google Cloud (Firebase)
+
+```bash
+# Setup
+npm install -g firebase-tools
+firebase login
+firebase init hosting
+
+# Deploy
+quarto render
+firebase deploy --only hosting
+```
+
+### Azure (Static Web Apps)
+
+```bash
+# Setup
+az login
+# Use Azure Portal to create Static Web App
+
+# Deploy (automatic via GitHub Actions)
+git push origin main
+```
+
+### AWS (S3 + CloudFront)
+
+```bash
+# Setup
+aws configure
+aws s3 mb s3://your-bucket-name
+aws s3 website s3://your-bucket-name --index-document index.html
+
+# Deploy
+quarto render
+aws s3 sync _site/ s3://your-bucket-name --delete
+
+# Invalidate cache
+aws cloudfront create-invalidation --distribution-id DIST_ID --paths "/*"
+```
+
+---
+
+**Happy deploying!** 🚀
+
+Your Quarto projects deserve to be shared with the world. Now you have the knowledge to make that happen—efficiently, securely, and cost-effectively.
+
+------------------------------------------------------------------------
+
+*This guide was created by [Kwiz Computing Technologies](/), specialists in R programming, Quarto publishing, and cloud deployment solutions.*
+
+*Last updated: November 9, 2025*
