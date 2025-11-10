@@ -4,8 +4,8 @@ description: "Transform data into strategic decisions with expert R programming,
 page-layout: full
 ---
 
-::: hero-section
-::: hero-content
+::::: hero-section
+:::: hero-content
 # Transform Data into Strategic Decisions
 
 ## Expert R programming, statistical analysis, and enterprise-grade analytics solutions for organizations across all sectors
@@ -17,8 +17,8 @@ We deliver sophisticated data science solutions combining rigorous statistical m
 ::: hero-cta
 [Start Your Project](contact.qmd){.btn .btn-primary .btn-lg} [View Our Capabilities](services.qmd){.btn .btn-outline .btn-lg}
 :::
-:::
-:::
+::::
+:::::
 
 ------------------------------------------------------------------------
 
@@ -26,8 +26,8 @@ We deliver sophisticated data science solutions combining rigorous statistical m
 
 We provide comprehensive data science services built on transferable analytical and technical skills applicable across industries and domains.
 
-::::::: services-grid
-::: {.service-card .featured}
+::::::::::: services-grid
+:::: {.service-card .featured}
 ::: service-icon
 ![Advanced analytics dashboard with charts, graphs, and data visualizations for statistical modeling](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
@@ -36,18 +36,14 @@ We provide comprehensive data science services built on transferable analytical 
 
 Turn complex data into actionable insights using sophisticated statistical methods, predictive modeling, and machine learning techniques.
 
-**Core capabilities:**
-- Exploratory data analysis and pattern detection
-- Predictive modeling and forecasting
-- Statistical inference and hypothesis testing
-- Machine learning and classification
+**Core capabilities:** - Exploratory data analysis and pattern detection - Predictive modeling and forecasting - Statistical inference and hypothesis testing - Machine learning and classification
 
 **Example applications:** Environmental impact prediction modeling, financial forecasting, customer behavior analysis, operational efficiency optimization
 
 [Learn More →](services.qmd#analytics)
-:::
+::::
 
-::: service-card
+:::: service-card
 ::: service-icon
 ![Developer coding R Shiny application on laptop showing interactive dashboard development](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
@@ -56,18 +52,14 @@ Turn complex data into actionable insights using sophisticated statistical metho
 
 Build robust, production-grade analytical applications and interactive dashboards using modern R frameworks and software engineering best practices.
 
-**What we deliver:**
-- Modular Shiny applications (Rhino framework)
-- Automated reporting systems
-- Data visualization platforms
-- Custom analytical tools
+**What we deliver:** - Modular Shiny applications (Rhino framework) - Automated reporting systems - Data visualization platforms - Custom analytical tools
 
 **Example applications:** Environmental monitoring dashboards, business intelligence platforms, research data portals, compliance reporting systems
 
 [See What's Possible →](services.qmd#r-development)
-:::
+::::
 
-::: service-card
+:::: service-card
 ::: service-icon
 ![Data pipeline architecture showing ETL processes, database integration, and data flow visualization](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
@@ -76,18 +68,14 @@ Build robust, production-grade analytical applications and interactive dashboard
 
 Design and implement robust data pipelines, quality assurance frameworks, and integration systems that ensure data reliability and accessibility.
 
-**Our approach:**
-- ETL pipeline development
-- Data validation and quality control
-- Database design and optimization
-- API development and integration
+**Our approach:** - ETL pipeline development - Data validation and quality control - Database design and optimization - API development and integration
 
 **Example applications:** Multi-source environmental data integration, customer data platforms, research data repositories, regulatory reporting systems
 
 [Explore Solutions →](services.qmd)
-:::
+::::
 
-::: service-card
+:::: service-card
 ::: service-icon
 ![Custom analytics solution with business intelligence reports and tailored data visualizations](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
@@ -96,24 +84,20 @@ Design and implement robust data pipelines, quality assurance frameworks, and in
 
 Develop tailored analytical frameworks and methodologies designed specifically for your organization's unique challenges and requirements.
 
-**We specialize in:**
-- Reproducible analytical workflows
-- Automated data processing
-- Custom statistical methodologies
-- Domain-specific analytics packages
+**We specialize in:** - Reproducible analytical workflows - Automated data processing - Custom statistical methodologies - Domain-specific analytics packages
 
 **Example applications:** ESIA reproducibility frameworks, clinical trial analysis systems, financial risk models, supply chain analytics
 
 [Discover More →](services.qmd)
-:::
-:::::::
+::::
+:::::::::::
 
 ------------------------------------------------------------------------
 
 ## Why Organizations Choose Kwiz
 
-::::::: {.grid .why-choose}
-::: {.g-col-12 .g-col-md-3}
+::::::::::: {.grid .why-choose}
+:::: {.g-col-12 .g-col-md-3}
 ::: why-icon
 ![Team of data scientists collaborating on statistical analysis and software development project](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=70&auto=format){.why-img loading="lazy"}
 :::
@@ -121,9 +105,9 @@ Develop tailored analytical frameworks and methodologies designed specifically f
 **Deep Technical Expertise**
 
 Rigorous statistical training combined with modern software development practices—not just coding, but proper engineering.
-:::
+::::
 
-::: {.g-col-12 .g-col-md-3}
+:::: {.g-col-12 .g-col-md-3}
 ::: why-icon
 ![Scientist conducting rigorous statistical research with reproducible analytical methods](https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300&h=200&fit=crop&q=70&auto=format){.why-img loading="lazy"}
 :::
@@ -131,9 +115,9 @@ Rigorous statistical training combined with modern software development practice
 **Scientific Rigor**
 
 We prioritize reproducibility, transparency, and methodological soundness in every analysis, ensuring defensible results.
-:::
+::::
 
-::: {.g-col-12 .g-col-md-3}
+:::: {.g-col-12 .g-col-md-3}
 ::: why-icon
 ![Enterprise-grade software development with comprehensive testing and documentation practices](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop&q=70&auto=format){.why-img loading="lazy"}
 :::
@@ -141,9 +125,9 @@ We prioritize reproducibility, transparency, and methodological soundness in eve
 **Enterprise Quality**
 
 Production-ready solutions with comprehensive testing, documentation, and maintainability built in from the start.
-:::
+::::
 
-::: {.g-col-12 .g-col-md-3}
+:::: {.g-col-12 .g-col-md-3}
 ::: why-icon
 ![Senior consultant providing personalized data science consulting and strategic advice to client](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=200&fit=crop&q=70&auto=format){.why-img loading="lazy"}
 :::
@@ -151,8 +135,8 @@ Production-ready solutions with comprehensive testing, documentation, and mainta
 **Boutique Service**
 
 Direct access to senior consultants who understand both the technical details and business context of your challenges.
-:::
-:::::::
+::::
+:::::::::::
 
 ------------------------------------------------------------------------
 
@@ -160,41 +144,25 @@ Direct access to senior consultants who understand both the technical details an
 
 Our transferable data science capabilities serve diverse sectors:
 
-::::::: {.grid}
+::::::: grid
 ::: {.g-col-12 .g-col-md-6}
-**Environmental & Sustainability**
-- Environmental impact assessments
-- Sustainability metrics and ESG reporting
-- Regulatory compliance analytics
-- Geospatial environmental analysis
+**Environmental & Sustainability** - Environmental impact assessments - Sustainability metrics and ESG reporting - Regulatory compliance analytics - Geospatial environmental analysis
 
 *Featured work: [Reproducibility in ESIA Analyses](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd)*
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-**Public Sector & Governance**
-- Open data portal development
-- Performance monitoring systems
-- Policy analysis and evaluation
-- Transparency and accountability platforms
+**Public Sector & Governance** - Open data portal development - Performance monitoring systems - Policy analysis and evaluation - Transparency and accountability platforms
 
 *Featured work: [Kenya's Open Data Initiative](/blog/kenya-open-data-initiative.qmd)*
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-**Research & Academia**
-- Statistical consulting for research projects
-- Reproducible research workflows
-- Data management systems
-- Publication-ready visualizations
+**Research & Academia** - Statistical consulting for research projects - Reproducible research workflows - Data management systems - Publication-ready visualizations
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-**Business & Finance**
-- Predictive analytics and forecasting
-- Risk modeling and assessment
-- Customer analytics
-- Process optimization
+**Business & Finance** - Predictive analytics and forecasting - Risk modeling and assessment - Customer analytics - Process optimization
 :::
 :::::::
 
