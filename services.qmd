@@ -979,7 +979,7 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 
 [Schedule Your Free Consultation](contact.qmd){.btn .btn-primary .btn-lg}
 
-*Or email us directly: [info\@kwizcomputing.com](mailto:jeankwizera@kwizresearch.com)*
+*Or email us directly: [jeankwizera\@kwizresearch.com](mailto:jeankwizera@kwizresearch.com)*
 :::
 
 ```{=html}
