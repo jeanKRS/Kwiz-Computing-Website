@@ -339,7 +339,7 @@ format:
 <h3>[📧]{.contact-card-icon} Email Us</h3>
 
 ::: contact-info-item
-<strong>General Inquiries</strong> <a href="mailto:jeankwizera@kwizresearch.com">othercontent21\@gmail.com</a>
+<strong>General Inquiries</strong> <a href="mailto:jeankwizera@kwizresearch.com">jeankwizera\@kwizresearch.com</a>
 :::
 
 ::: contact-info-item
@@ -379,10 +379,10 @@ format:
 
 <p>Book a 30-minute call to discuss your project needs and how we can help</p>
 
-<a href="https://calendar.app.google/2oFm25LukYdk5jAd8" class="appointment-btn">Schedule Appointment</a>
+<a href="https://calendar.app.google/FbizwrJWM4394KYJ7" class="appointment-btn">Schedule Appointment</a>
 
 ::: {style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;"}
-Or email us at <a href="mailto:jeankwizera@kwizresearch.com" style="color: white; text-decoration: underline;">othercontent21\@gmail.com</a> with your preferred dates and times
+Or email us at <a href="mailto:jeankwizera@kwizresearch.com" style="color: white; text-decoration: underline;">jeankwizera\@kwizresearch.com</a> with your preferred dates and times
 :::
 ::::
 
