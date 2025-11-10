@@ -13,12 +13,12 @@ execute:
 
 ![Environmental monitoring. Photo by [Noah Buscher](https://unsplash.com/@noahbuscher) on [Unsplash](https://unsplash.com/photos/x8ZStukS2PM)](https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=1200&q=80)
 
-This case study examines how modern data science techniques, implemented in [R](https://www.r-project.org/), transformed the environmental impact assessment (EIA) process for a major infrastructure development project in East Africa. By applying systematic data collection, rigorous statistical analysis, and interactive visualization tools, we delivered actionable insights that informed both environmental management plans and regulatory compliance (Pinho et al., 2007).
+This case study examines how modern data science techniques, implemented in [R](https://www.r-project.org/), transformed the environmental impact assessment (EIA) process for a major infrastructure development project in East Africa. By applying systematic data collection, rigorous statistical analysis and interactive visualization tools, we delivered actionable insights that informed both environmental management plans and regulatory compliance (Pinho et al., 2007).
 
 ::: callout-note
 ## Case Study Context
 
-This case study presents a real-world application demonstrating how data science can enhance environmental assessment quality, efficiency, and transparency while meeting regulatory requirements.
+This case study presents a real-world application demonstrating how data science can enhance environmental assessment quality, efficiency and transparency while meeting regulatory requirements.
 :::
 
 **Key Outcomes:**
@@ -32,7 +32,7 @@ This case study presents a real-world application demonstrating how data science
 
 ### The Challenge
 
-A regional transport authority planned to construct a 45km highway corridor through an ecologically diverse area spanning agricultural land, wetlands, and fragments of indigenous forest. The Environmental Impact Assessment needed to:
+A regional transport authority planned to construct a 45km highway corridor through an ecologically diverse area spanning agricultural land, wetlands and fragments of indigenous forest. The Environmental Impact Assessment needed to:
 
 1.  Establish baseline conditions across multiple environmental indicators
 2.  Predict impacts of the proposed development
@@ -431,7 +431,7 @@ We developed a [Shiny](https://shiny.posit.co/) dashboard using the [Rhino frame
 ::: callout-tip
 ## Interactive Dashboards
 
-Interactive dashboards transform environmental monitoring from static reports to dynamic tools that enable stakeholders to explore data, identify trends, and make informed decisions in real-time.
+Interactive dashboards transform environmental monitoring from static reports to dynamic tools that enable stakeholders to explore data, identify trends and make informed decisions in real-time.
 :::
 
 ```{r}
@@ -783,7 +783,7 @@ This approach is transferable to other EIA contexts:
 
 This case study demonstrates how modern data science methodologies, implemented in R, can transform environmental impact assessment from a compliance exercise into a strategic tool for sustainable development.
 
-The integration of automated data processing, rigorous statistical analysis, spatial analysis, and interactive visualization delivered outcomes superior to traditional approaches in terms of analytical depth, efficiency, stakeholder value, and environmental protection.
+The integration of automated data processing, rigorous statistical analysis, spatial analysis and interactive visualization delivered outcomes superior to traditional approaches in terms of analytical depth, efficiency, stakeholder value and environmental protection.
 
 As environmental regulations become more stringent and stakeholders demand greater transparency, data science capabilities will become essential rather than optional for environmental consultancies and project developers.
 
@@ -825,7 +825,7 @@ R -e "source('run_analysis.R')"
 
 ## About This Case Study
 
-This case study presents a real-world application of data science methodologies to environmental assessment. While specific project details have been modified for confidentiality, the technical approaches, outcomes, and lessons learned are accurate representations of our work.
+This case study presents a real-world application of data science methodologies to environmental assessment. While specific project details have been modified for confidentiality, the technical approaches, outcomes and lessons learned are accurate representations of our work.
 
 *Interested in applying similar approaches to your environmental projects? [Contact Kwiz Computing Technologies](mailto:info@kwizcomputing.com) to discuss your needs.*
 

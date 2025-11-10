@@ -4,7 +4,7 @@ author: "Kwiz Computing Technologies"
 date: "2025-10-20"
 categories: [R Programming, Shiny, Cloud Deployment, DevOps, Tutorial, Web Applications]
 image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80"
-description: "A comprehensive guide to choosing the right hosting platform for your R Shiny applications, with step-by-step deployment tutorials for shinyapps.io, Shiny Server, Docker, and cloud platforms"
+description: "A comprehensive guide to choosing the right hosting platform for your R Shiny applications, with step-by-step deployment tutorials for shinyapps.io, Shiny Server, Docker and cloud platforms"
 format:
   html:
     code-fold: false
@@ -19,12 +19,12 @@ format:
 
 R Shiny has revolutionized how data scientists and analysts share interactive data visualizations and analytical tools. But creating a brilliant Shiny app is only half the battle—getting it in front of your users requires choosing the right hosting solution and deploying it effectively.
 
-With options ranging from one-click cloud platforms to self-hosted servers and containerized deployments, the landscape can be overwhelming. This guide will help you navigate the hosting ecosystem, understand the trade-offs between different approaches, and provide step-by-step instructions for the most popular deployment methods.
+With options ranging from one-click cloud platforms to self-hosted servers and containerized deployments, the landscape can be overwhelming. This guide will help you navigate the hosting ecosystem, understand the trade-offs between different approaches and provide step-by-step instructions for the most popular deployment methods.
 
 ::: callout-tip
 ## Key Takeaway
 
-The "best" hosting solution depends on your specific needs: budget, technical expertise, scalability requirements, security constraints, and maintenance capacity. This guide will help you make an informed decision based on your unique circumstances.
+The "best" hosting solution depends on your specific needs: budget, technical expertise, scalability requirements, security constraints and maintenance capacity. This guide will help you make an informed decision based on your unique circumstances.
 :::
 
 ## Understanding Your Hosting Options
@@ -731,7 +731,7 @@ Hosting R Shiny applications has never been more accessible, with options rangin
 -   **Want modern DevOps?** Go with Docker containers
 -   **Scaling globally?** Use cloud platforms with CDN
 
-Remember that your hosting solution can evolve with your needs. Many organizations start with shinyapps.io for prototypes, move to self-hosted Shiny Server for internal tools, and eventually adopt containerized deployments with orchestration for production applications.
+Remember that your hosting solution can evolve with your needs. Many organizations start with shinyapps.io for prototypes, move to self-hosted Shiny Server for internal tools and eventually adopt containerized deployments with orchestration for production applications.
 
 The most important step is to get your app deployed and in front of users. Start with the simplest solution that meets your current needs, then iterate as you learn and grow.
 

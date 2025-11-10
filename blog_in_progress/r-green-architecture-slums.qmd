@@ -16,24 +16,24 @@ execute:
 
 ## Introduction
 
-As the world's urban population continues to grow, informal settlements and slum areas face unprecedented challenges: inadequate housing, poor sanitation, limited access to clean water, and vulnerability to climate change. Yet, these communities also represent opportunities for innovative, sustainable development. Green architecture—design that minimizes environmental impact while maximizing human well-being—offers a pathway forward, but its implementation in resource-constrained settings requires careful planning backed by robust data analysis.
+As the world's urban population continues to grow, informal settlements and slum areas face unprecedented challenges: inadequate housing, poor sanitation, limited access to clean water and vulnerability to climate change. Yet, these communities also represent opportunities for innovative, sustainable development. Green architecture—design that minimizes environmental impact while maximizing human well-being—offers a pathway forward, but its implementation in resource-constrained settings requires careful planning backed by robust data analysis.
 
-This is where R, the powerful statistical programming language, becomes an invaluable tool. From spatial analysis and environmental monitoring to resource optimization and community health assessment, R provides architects, urban planners, and development organizations with the analytical capabilities needed to design effective, context-appropriate green architecture solutions for slum areas.
+This is where R, the powerful statistical programming language, becomes an invaluable tool. From spatial analysis and environmental monitoring to resource optimization and community health assessment, R provides architects, urban planners and development organizations with the analytical capabilities needed to design effective, context-appropriate green architecture solutions for slum areas.
 
 ## Understanding the Challenge: Why Data Matters in Informal Settlements
 
 Slum areas often lack the formal documentation and systematic data collection found in planned urban developments. This data scarcity makes traditional planning approaches difficult. However, R's capabilities in working with diverse data sources—from satellite imagery and sensor networks to community surveys and open data initiatives—enable practitioners to:
 
-- **Map and analyze informal settlement patterns** without relying solely on official records
-- **Identify environmental vulnerabilities** through spatial and temporal analysis
-- **Optimize resource allocation** using statistical modeling
-- **Monitor intervention outcomes** with rigorous evaluation frameworks
+-   **Map and analyze informal settlement patterns** without relying solely on official records
+-   **Identify environmental vulnerabilities** through spatial and temporal analysis
+-   **Optimize resource allocation** using statistical modeling
+-   **Monitor intervention outcomes** with rigorous evaluation frameworks
 
 ## Use Case 1: Spatial Analysis for Green Infrastructure Planning
 
 ### The Challenge
 
-Determining optimal locations for green infrastructure elements—such as community gardens, bio-swales, permeable surfaces, and tree planting—requires understanding complex spatial relationships: topography, water flow patterns, existing structures, population density, and community access points.
+Determining optimal locations for green infrastructure elements—such as community gardens, bio-swales, permeable surfaces and tree planting—requires understanding complex spatial relationships: topography, water flow patterns, existing structures, population density and community access points.
 
 ### Interactive Map: Potential Green Space Locations
 
@@ -98,7 +98,7 @@ In Mumbai's Dharavi settlement, researchers used R to analyze drainage patterns 
 
 ### The Challenge
 
-Slum areas are disproportionately vulnerable to climate impacts: flooding due to poor drainage, heat stress from lack of vegetation and dense construction, and water scarcity during droughts. Green architecture must be designed to address these specific vulnerabilities.
+Slum areas are disproportionately vulnerable to climate impacts: flooding due to poor drainage, heat stress from lack of vegetation and dense construction and water scarcity during droughts. Green architecture must be designed to address these specific vulnerabilities.
 
 ### Interactive Visualization: Green Roof Cooling Impact
 
@@ -170,7 +170,7 @@ Green architecture in slum areas isn't just about environmental sustainability�
 
 ### The Challenge
 
-Many slum areas face water scarcity while simultaneously experiencing flooding during rainy seasons. Optimizing rainwater harvesting systems requires understanding rainfall patterns, calculating catchment potential, and sizing storage infrastructure appropriately.
+Many slum areas face water scarcity while simultaneously experiencing flooding during rainy seasons. Optimizing rainwater harvesting systems requires understanding rainfall patterns, calculating catchment potential and sizing storage infrastructure appropriately.
 
 ### Interactive Analysis: Rainwater Harvesting Potential
 
@@ -383,7 +383,7 @@ p6
 ::: callout-note
 ## Multi-Benefit Approach
 
-Green buffers in slum areas provide multiple benefits: improved air quality, noise reduction, enhanced aesthetics, community gathering spaces, and potential for urban agriculture. R helps quantify these co-benefits to build stronger cases for investment.
+Green buffers in slum areas provide multiple benefits: improved air quality, noise reduction, enhanced aesthetics, community gathering spaces and potential for urban agriculture. R helps quantify these co-benefits to build stronger cases for investment.
 :::
 
 ## Use Case 5: Community Health Impact Assessment
@@ -492,7 +492,7 @@ knitr::kable(impact_summary, col.names = c("Impact Metric", "Value"),
 
 ### The Challenge
 
-Development organizations and municipalities face budget constraints. Green architecture interventions must demonstrate clear value for money while balancing multiple objectives: environmental impact, social benefits, and financial feasibility.
+Development organizations and municipalities face budget constraints. Green architecture interventions must demonstrate clear value for money while balancing multiple objectives: environmental impact, social benefits and financial feasibility.
 
 ### Interactive Optimization: Intervention Portfolio
 
@@ -732,42 +732,42 @@ Successfully leveraging R for green architecture in slum areas requires thoughtf
 
 ### 1. **Data Collection Infrastructure**
 
-- **Deploy low-cost sensors**: Arduino and Raspberry Pi-based environmental monitoring
-- **Mobile data collection**: Use R packages like `shiny` and `rdrop2` for field surveys
-- **Open data integration**: Access satellite imagery (Landsat, Sentinel), OpenStreetMap, government datasets
+-   **Deploy low-cost sensors**: Arduino and Raspberry Pi-based environmental monitoring
+-   **Mobile data collection**: Use R packages like `shiny` and `rdrop2` for field surveys
+-   **Open data integration**: Access satellite imagery (Landsat, Sentinel), OpenStreetMap, government datasets
 
 ### 2. **Collaborative Analysis Platforms**
 
-- **R Markdown reports**: Create reproducible analysis documents combining code, visualizations, and narrative
-- **Shiny dashboards**: Build interactive tools for stakeholders without R expertise
-- **Version control**: Use GitHub to track analysis evolution and enable team collaboration
+-   **R Markdown reports**: Create reproducible analysis documents combining code, visualizations and narrative
+-   **Shiny dashboards**: Build interactive tools for stakeholders without R expertise
+-   **Version control**: Use GitHub to track analysis evolution and enable team collaboration
 
 ### 3. **Capacity Building**
 
-- **Train local teams**: Develop R skills within local organizations for sustainable capacity
-- **Document workflows**: Create clear, commented code and tutorials
-- **Share resources**: Contribute to open-source packages specific to urban development
+-   **Train local teams**: Develop R skills within local organizations for sustainable capacity
+-   **Document workflows**: Create clear, commented code and tutorials
+-   **Share resources**: Contribute to open-source packages specific to urban development
 
 ### 4. **Ethical Considerations**
 
-- **Data privacy**: Protect community member identities in health and survey data
-- **Equitable benefit sharing**: Ensure data insights benefit the communities studied
-- **Community consent**: Engage communities in data collection and use decisions
-- **Avoid extractive research**: Partner with, rather than study, communities
+-   **Data privacy**: Protect community member identities in health and survey data
+-   **Equitable benefit sharing**: Ensure data insights benefit the communities studied
+-   **Community consent**: Engage communities in data collection and use decisions
+-   **Avoid extractive research**: Partner with, rather than study, communities
 
 ## Conclusion: R as a Tool for Environmental Justice
 
 Green architecture in slum areas represents one of the most critical challenges of the 21st century. As climate change intensifies and urban populations grow, we must find ways to create sustainable, resilient, healthy living environments for the world's most vulnerable communities.
 
-R provides the analytical foundation for this work: enabling evidence-based design, optimizing limited resources, demonstrating impact to funders, and—perhaps most importantly—empowering communities with data to advocate for their own needs.
+R provides the analytical foundation for this work: enabling evidence-based design, optimizing limited resources, demonstrating impact to funders and—perhaps most importantly—empowering communities with data to advocate for their own needs.
 
-The use cases explored in this article represent just the beginning. As R continues to evolve, with growing capabilities in machine learning, real-time data processing, and cloud computing, its potential to support transformative green architecture in informal settlements will only expand.
+The use cases explored in this article represent just the beginning. As R continues to evolve, with growing capabilities in machine learning, real-time data processing and cloud computing, its potential to support transformative green architecture in informal settlements will only expand.
 
-For architects, urban planners, development organizations, and data scientists, the call is clear: leverage R's power not just for analysis, but for justice. Use data not just to understand slum areas, but to transform them. Apply statistical rigor not just for academic publication, but for community empowerment.
+For architects, urban planners, development organizations and data scientists, the call is clear: leverage R's power not just for analysis, but for justice. Use data not just to understand slum areas, but to transform them. Apply statistical rigor not just for academic publication, but for community empowerment.
 
 The future of sustainable urban development will be built on data. With R, we can ensure that future includes everyone.
 
----
+------------------------------------------------------------------------
 
 ## Getting Started with R for Green Architecture
 
@@ -775,25 +775,25 @@ Ready to apply R to your green architecture projects? Here are resources to begi
 
 ### Essential R Packages
 
-- **Spatial analysis**: `sf`, `terra`, `raster`, `leaflet`, `tmap`
-- **Environmental data**: `openair`, `climatol`, `nasapower`
-- **Optimization**: `lpSolve`, `GA`, `optimization`
-- **Visualization**: `ggplot2`, `plotly`, `shiny`
-- **Reporting**: `rmarkdown`, `quarto`, `officer`
+-   **Spatial analysis**: `sf`, `terra`, `raster`, `leaflet`, `tmap`
+-   **Environmental data**: `openair`, `climatol`, `nasapower`
+-   **Optimization**: `lpSolve`, `GA`, `optimization`
+-   **Visualization**: `ggplot2`, `plotly`, `shiny`
+-   **Reporting**: `rmarkdown`, `quarto`, `officer`
 
 ### Learning Resources
 
-- [Geocomputation with R](https://r.geocompx.org/) - Spatial analysis guide
-- [Environmental Computing](http://environmentalcomputing.net/) - Environmental statistics
-- [Shiny for Community Engagement](https://shiny.rstudio.com/gallery/) - Interactive dashboards
+-   [Geocomputation with R](https://r.geocompx.org/) - Spatial analysis guide
+-   [Environmental Computing](http://environmentalcomputing.net/) - Environmental statistics
+-   [Shiny for Community Engagement](https://shiny.rstudio.com/gallery/) - Interactive dashboards
 
 ### Data Sources
 
-- [OpenStreetMap](https://www.openstreetmap.org/) - Community-mapped spatial data
-- [Sentinel Hub](https://www.sentinel-hub.com/) - Satellite imagery
-- [World Bank Open Data](https://data.worldbank.org/) - Development indicators
-- [NASA POWER](https://power.larc.nasa.gov/) - Climate and solar data
+-   [OpenStreetMap](https://www.openstreetmap.org/) - Community-mapped spatial data
+-   [Sentinel Hub](https://www.sentinel-hub.com/) - Satellite imagery
+-   [World Bank Open Data](https://data.worldbank.org/) - Development indicators
+-   [NASA POWER](https://power.larc.nasa.gov/) - Climate and solar data
 
----
+------------------------------------------------------------------------
 
 *At Kwiz Computing Technologies, we specialize in applying R and data science to sustainability challenges in East Africa. Contact us to discuss how we can support your green architecture projects in informal settlements and beyond.*

@@ -1,6 +1,6 @@
 ---
 title: "Contact Us"
-description: "Get in touch with Kwiz Computing Technologies for data science consulting, R programming services, and analytics solutions. Schedule a free 30-minute consultation to discuss your project needs. Email: jeankwizera@kwizresearch.com"
+description: "Get in touch with Kwiz Computing Technologies for data science consulting, R programming services and analytics solutions. Schedule a free 30-minute consultation to discuss your project needs. Email: jeankwizera@kwizresearch.com"
 format:
   html:
     page-layout: full
@@ -472,7 +472,7 @@ Send Message
 ::: faq-item
 <h4>What services do you provide?</h4>
 
-<p>We specialize in data science consulting, R programming, statistical analysis, data visualization, Quarto reporting, and custom analytics solutions. Visit our <a href="services.html">Services page</a> for more details.</p>
+<p>We specialize in data science consulting, R programming, statistical analysis, data visualization, Quarto reporting and custom analytics solutions. Visit our <a href="services.html">Services page</a> for more details.</p>
 :::
 
 ::: faq-item

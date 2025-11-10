@@ -16,10 +16,10 @@ For many, [R](https://www.r-project.org/) is synonymous with statistical analysi
 ::: callout-important
 ## From Scripts to Software
 
-This post explores how R has evolved from a scripting language into a comprehensive software development platform, complete with modern tooling, testing frameworks, and deployment strategies.
+This post explores how R has evolved from a scripting language into a comprehensive software development platform, complete with modern tooling, testing frameworks and deployment strategies.
 :::
 
-In this post, we'll explore how R can be used as a full-fledged software development platform, focusing on the tools, techniques, and frameworks that enable enterprise-grade applications.
+In this post, we'll explore how R can be used as a full-fledged software development platform, focusing on the tools, techniques and frameworks that enable enterprise-grade applications.
 
 ## The Evolution of R as a Development Platform
 
@@ -70,7 +70,7 @@ Modern R development revolves around packages, even for internal projects. The [
 ::: callout-tip
 ## Package-Based Development
 
-Even if you're not publishing to CRAN, organizing your R code as a package provides automatic documentation, testing infrastructure, and dependency management—all essential for professional software development.
+Even if you're not publishing to CRAN, organizing your R code as a package provides automatic documentation, testing infrastructure and dependency management—all essential for professional software development.
 :::
 
 ```{r}
@@ -113,7 +113,7 @@ use_github_action("check-standard")
 ::: callout-note
 ## Why Rhino?
 
-Rhino addresses common Shiny development challenges: unclear project structure, difficulty testing UI components, and lack of standardization across teams. It's particularly valuable for organizations building multiple Shiny applications.
+Rhino addresses common Shiny development challenges: unclear project structure, difficulty testing UI components and lack of standardization across teams. It's particularly valuable for organizations building multiple Shiny applications.
 :::
 
 ```{r}
@@ -854,9 +854,9 @@ spec:
 
 ## Conclusion
 
-R has evolved far beyond its origins as a statistical scripting language. With modern development tools and frameworks like Rhino, comprehensive testing with testthat, robust dependency management with renv, and professional deployment strategies, R is a legitimate choice for serious software development.
+R has evolved far beyond its origins as a statistical scripting language. With modern development tools and frameworks like Rhino, comprehensive testing with testthat, robust dependency management with renv and professional deployment strategies, R is a legitimate choice for serious software development.
 
-The key to successful R software development is embracing the full software engineering toolkit: version control, automated testing, continuous integration, proper documentation, and thoughtful architecture. When these practices are applied consistently, R applications can be as maintainable, reliable, and professional as those built with any other technology.
+The key to successful R software development is embracing the full software engineering toolkit: version control, automated testing, continuous integration, proper documentation and thoughtful architecture. When these practices are applied consistently, R applications can be as maintainable, reliable and professional as those built with any other technology.
 
 For organizations looking to build data-centric applications, R offers a unique combination: the statistical and analytical power that made it famous, combined with the software engineering practices that make applications production-ready.
 
@@ -876,7 +876,7 @@ For organizations looking to build data-centric applications, R offers a unique 
 
 -   R Core Team. (2024). *R: A language and environment for statistical computing*. R Foundation for Statistical Computing. <https://www.R-project.org/>
 
--   Wickham, H. (2015). *R packages: Organize, test, document, and share your code*. O'Reilly Media. <https://r-pkgs.org/>
+-   Wickham, H. (2015). *R packages: Organize, test, document and share your code*. O'Reilly Media. <https://r-pkgs.org/>
 
 -   Wickham, H., & Bryan, J. (2023). *R packages* (2nd ed.). O'Reilly Media. <https://r-pkgs.org/>
 

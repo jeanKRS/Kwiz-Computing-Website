@@ -4,7 +4,7 @@ author: "Kwiz Computing Technologies"
 date: "2025-10-13"
 categories: [Quarto, Cloud Deployment, Netlify, Vercel, GitHub Pages, AWS, Azure, Google Cloud, WordPress, DevOps, Tutorial]
 image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"
-description: "An interactive, comprehensive step-by-step guide to deploying Quarto websites on popular platforms: Netlify, Vercel, GitHub Pages, WordPress, Cloudflare Pages, and major cloud providers (GCP, Azure, AWS). Choose your platform and deploy with confidence."
+description: "An interactive, comprehensive step-by-step guide to deploying Quarto websites on popular platforms: Netlify, Vercel, GitHub Pages, WordPress, Cloudflare Pages and major cloud providers (GCP, Azure, AWS). Choose your platform and deploy with confidence."
 format:
   html:
     code-fold: false
@@ -19,19 +19,19 @@ format:
 
 You've created beautiful Quarto websites, reports, presentations, or books. Now comes the crucial question: **How do I share this with the world?**
 
-[Quarto](https://quarto.org/) is an incredibly powerful open-source scientific and technical publishing system that can create websites, blogs, books, presentations, and more. But having a great Quarto project locally is only half the battle—you need to deploy it where others can access it.
+[Quarto](https://quarto.org/) is an incredibly powerful open-source scientific and technical publishing system that can create websites, blogs, books, presentations and more. But having a great Quarto project locally is only half the battle—you need to deploy it where others can access it.
 
 This comprehensive guide will walk you through deploying Quarto projects to **popular hosting platforms** and the three major cloud providers. Whether you're a beginner looking for the easiest deployment or an enterprise user needing advanced features, this guide has you covered.
 
 ::: callout-tip
 ## What You'll Learn
 
-- **Quick Start Options**: Deploy in minutes with Netlify, Vercel, GitHub Pages, Cloudflare Pages, Render, Surge.sh, WordPress hosting, or DigitalOcean
-- **Enterprise Cloud Platforms**: In-depth guides for Google Cloud (GCP), Microsoft Azure, and Amazon AWS
-- **Cost comparisons** across all platforms to help you make informed decisions
-- **Best practices** for CI/CD and automated deployments
-- **Troubleshooting tips** for common deployment issues
-- **Platform selection guide** to choose the right hosting for your needs
+-   **Quick Start Options**: Deploy in minutes with Netlify, Vercel, GitHub Pages, Cloudflare Pages, Render, Surge.sh, WordPress hosting, or DigitalOcean
+-   **Enterprise Cloud Platforms**: In-depth guides for Google Cloud (GCP), Microsoft Azure and Amazon AWS
+-   **Cost comparisons** across all platforms to help you make informed decisions
+-   **Best practices** for CI/CD and automated deployments
+-   **Troubleshooting tips** for common deployment issues
+-   **Platform selection guide** to choose the right hosting for your needs
 :::
 
 ## Understanding Quarto Outputs
@@ -40,7 +40,7 @@ Before we dive into cloud platforms, let's understand what we're deploying. Quar
 
 ### Static Websites
 
-The most common Quarto output—HTML files, CSS, JavaScript, and images that can be served by any web server. This includes:
+The most common Quarto output—HTML files, CSS, JavaScript and images that can be served by any web server. This includes:
 
 -   **Quarto websites** (`quarto create website`)
 -   **Quarto blogs** (`quarto create blog`)
@@ -208,18 +208,18 @@ For enterprise needs or advanced features, jump to the major cloud platforms (GC
 
 ## Quick Start: Easiest Deployment Options
 
-Before diving into enterprise cloud platforms, let's cover the **simplest and fastest** ways to deploy your Quarto site. These platforms are perfect for personal blogs, documentation sites, portfolios, and small business websites.
+Before diving into enterprise cloud platforms, let's cover the **simplest and fastest** ways to deploy your Quarto site. These platforms are perfect for personal blogs, documentation sites, portfolios and small business websites.
 
 ### Why Start Here?
 
-- ⚡ **Deploy in minutes**, not hours
-- 💰 **Free tiers** that are genuinely generous
-- 🔄 **Automatic CI/CD** from Git commits
-- 🌍 **Global CDN** included by default
-- 🔒 **Free SSL certificates** automatically provisioned
-- 🎯 **No infrastructure** knowledge required
+-   ⚡ **Deploy in minutes**, not hours
+-   💰 **Free tiers** that are genuinely generous
+-   🔄 **Automatic CI/CD** from Git commits
+-   🌍 **Global CDN** included by default
+-   🔒 **Free SSL certificates** automatically provisioned
+-   🎯 **No infrastructure** knowledge required
 
----
+------------------------------------------------------------------------
 
 ### Platform 1: Netlify (Recommended for Beginners)
 
@@ -227,62 +227,62 @@ Before diving into enterprise cloud platforms, let's cover the **simplest and fa
 
 #### Why Choose Netlify?
 
-- ✅ **Zero configuration** for static sites
-- ✅ **100 GB bandwidth/month** free
-- ✅ **Deploy previews** for every pull request
-- ✅ **Instant rollbacks** if something breaks
-- ✅ **Form handling** built-in (useful for contact forms)
+-   ✅ **Zero configuration** for static sites
+-   ✅ **100 GB bandwidth/month** free
+-   ✅ **Deploy previews** for every pull request
+-   ✅ **Instant rollbacks** if something breaks
+-   ✅ **Form handling** built-in (useful for contact forms)
 
 #### Step-by-Step Deployment
 
 **Method 1: Drag and Drop (Fastest)**
 
-1. **Render your site locally:**
+1.  **Render your site locally:**
 
-   ```bash
-   quarto render
-   ```
+    ``` bash
+    quarto render
+    ```
 
-2. **Go to [Netlify Drop](https://app.netlify.com/drop)**
+2.  **Go to [Netlify Drop](https://app.netlify.com/drop)**
 
-3. **Drag the `_site` folder** onto the page
+3.  **Drag the `_site` folder** onto the page
 
-4. **Done!** Your site is live at `https://random-name.netlify.app`
+4.  **Done!** Your site is live at `https://random-name.netlify.app`
 
 **Method 2: Git-Based Deployment (Recommended)**
 
-1. **Push your Quarto project to GitHub/GitLab**
+1.  **Push your Quarto project to GitHub/GitLab**
 
-2. **Sign in to [Netlify](https://app.netlify.com/)** with your Git provider
+2.  **Sign in to [Netlify](https://app.netlify.com/)** with your Git provider
 
-3. **Click "Add new site" → "Import an existing project"**
+3.  **Click "Add new site" → "Import an existing project"**
 
-4. **Select your repository**
+4.  **Select your repository**
 
-5. **Configure build settings:**
+5.  **Configure build settings:**
 
-   - **Build command:** `quarto render`
-   - **Publish directory:** `_site`
-   - **Environment variables** (click "Show advanced"):
-     - Add `PYTHON_VERSION`: `3.11`
+    -   **Build command:** `quarto render`
+    -   **Publish directory:** `_site`
+    -   **Environment variables** (click "Show advanced"):
+        -   Add `PYTHON_VERSION`: `3.11`
 
-6. **Click "Deploy site"**
+6.  **Click "Deploy site"**
 
 That's it! Every push to your main branch automatically deploys.
 
 #### Custom Domain Setup
 
-1. In Netlify dashboard → **Domain settings**
-2. Click **"Add custom domain"**
-3. Enter your domain (e.g., `www.yoursite.com`)
-4. Add the DNS records shown (usually a CNAME)
-5. SSL certificate auto-provisions in minutes
+1.  In Netlify dashboard → **Domain settings**
+2.  Click **"Add custom domain"**
+3.  Enter your domain (e.g., `www.yoursite.com`)
+4.  Add the DNS records shown (usually a CNAME)
+5.  SSL certificate auto-provisions in minutes
 
 #### Example `netlify.toml` (Optional but Recommended)
 
 Create this file in your project root for better control:
 
-```toml
+``` toml
 [build]
   command = "quarto render"
   publish = "_site"
@@ -306,9 +306,9 @@ Create this file in your project root for better control:
     X-XSS-Protection = "1; mode=block"
 ```
 
-**Cost:** Free for 100 GB/month, $19/month for 1 TB.
+**Cost:** Free for 100 GB/month, \$19/month for 1 TB.
 
----
+------------------------------------------------------------------------
 
 ### Platform 2: Vercel (Best Developer Experience)
 
@@ -316,43 +316,44 @@ Create this file in your project root for better control:
 
 #### Why Choose Vercel?
 
-- ✅ **Lightning-fast CDN** (often faster than Netlify)
-- ✅ **100 GB bandwidth/month** free
-- ✅ **Preview deployments** for every PR
-- ✅ **Zero-config** for most frameworks
-- ✅ **Excellent analytics** (free tier)
+-   ✅ **Lightning-fast CDN** (often faster than Netlify)
+-   ✅ **100 GB bandwidth/month** free
+-   ✅ **Preview deployments** for every PR
+-   ✅ **Zero-config** for most frameworks
+-   ✅ **Excellent analytics** (free tier)
 
 #### Deployment Steps
 
-1. **Push your project to GitHub**
+1.  **Push your project to GitHub**
 
-2. **Go to [Vercel](https://vercel.com/) and sign in**
+2.  **Go to [Vercel](https://vercel.com/) and sign in**
 
-3. **Click "Add New Project"**
+3.  **Click "Add New Project"**
 
-4. **Import your repository**
+4.  **Import your repository**
 
-5. **Vercel auto-detects settings** (or configure):
+5.  **Vercel auto-detects settings** (or configure):
 
-   - **Framework Preset:** Other
-   - **Build Command:** `quarto render`
-   - **Output Directory:** `_site`
+    -   **Framework Preset:** Other
+    -   **Build Command:** `quarto render`
+    -   **Output Directory:** `_site`
 
-6. **Add environment variable** (if using Python):
-   - `PYTHON_VERSION`: `3.11`
+6.  **Add environment variable** (if using Python):
 
-7. **Deploy!**
+    -   `PYTHON_VERSION`: `3.11`
+
+7.  **Deploy!**
 
 #### Custom Domain
 
-1. Go to **Project Settings → Domains**
-2. Add your domain
-3. Update DNS as instructed
-4. Vercel handles SSL automatically
+1.  Go to **Project Settings → Domains**
+2.  Add your domain
+3.  Update DNS as instructed
+4.  Vercel handles SSL automatically
 
 #### Example `vercel.json` (Optional)
 
-```json
+``` json
 {
   "buildCommand": "quarto render",
   "outputDirectory": "_site",
@@ -379,9 +380,9 @@ Create this file in your project root for better control:
 }
 ```
 
-**Cost:** Free for personal/hobby projects, $20/month for teams.
+**Cost:** Free for personal/hobby projects, \$20/month for teams.
 
----
+------------------------------------------------------------------------
 
 ### Platform 3: GitHub Pages (100% Free Forever)
 
@@ -389,19 +390,19 @@ Create this file in your project root for better control:
 
 #### Why Choose GitHub Pages?
 
-- ✅ **Completely free** with unlimited bandwidth
-- ✅ **No signup needed** if you use GitHub
-- ✅ **Custom domains** supported
-- ✅ **Perfect for open source** documentation
-- ✅ **GitHub Actions** for CI/CD
+-   ✅ **Completely free** with unlimited bandwidth
+-   ✅ **No signup needed** if you use GitHub
+-   ✅ **Custom domains** supported
+-   ✅ **Perfect for open source** documentation
+-   ✅ **GitHub Actions** for CI/CD
 
 #### Deployment Steps
 
 **Method 1: Using GitHub Actions (Recommended)**
 
-1. **Create `.github/workflows/publish.yml`** in your repo:
+1.  **Create `.github/workflows/publish.yml`** in your repo:
 
-```yaml
+``` yaml
 name: Publish Quarto Site
 
 on:
@@ -444,17 +445,16 @@ jobs:
           publish_dir: ./_site
 ```
 
-2. **Enable GitHub Pages:**
-   - Go to repo **Settings → Pages**
-   - **Source:** Deploy from a branch
-   - **Branch:** `gh-pages` / `root`
-   - Click **Save**
-
-3. **Push to main** and watch the action deploy!
+2.  **Enable GitHub Pages:**
+    -   Go to repo **Settings → Pages**
+    -   **Source:** Deploy from a branch
+    -   **Branch:** `gh-pages` / `root`
+    -   Click **Save**
+3.  **Push to main** and watch the action deploy!
 
 **Method 2: Using Quarto's Built-in Command**
 
-```bash
+``` bash
 # Render and publish in one command
 quarto publish gh-pages
 
@@ -465,21 +465,22 @@ Your site will be live at `https://username.github.io/repo-name/`
 
 #### Custom Domain
 
-1. Add a file called `CNAME` to your project root:
+1.  Add a file called `CNAME` to your project root:
 
-   ```
-   www.yoursite.com
-   ```
+    ```         
+    www.yoursite.com
+    ```
 
-2. In your repo **Settings → Pages → Custom domain**, enter your domain
+2.  In your repo **Settings → Pages → Custom domain**, enter your domain
 
-3. Add DNS records at your domain registrar:
-   - **CNAME** record: `www` → `username.github.io`
-   - **A** records for apex domain pointing to GitHub's IPs
+3.  Add DNS records at your domain registrar:
 
-**Cost:** $0 forever!
+    -   **CNAME** record: `www` → `username.github.io`
+    -   **A** records for apex domain pointing to GitHub's IPs
 
----
+**Cost:** \$0 forever!
+
+------------------------------------------------------------------------
 
 ### Platform 4: Render (Modern & Simple)
 
@@ -487,43 +488,44 @@ Your site will be live at `https://username.github.io/repo-name/`
 
 #### Why Choose Render?
 
-- ✅ **Free tier** with 100 GB bandwidth
-- ✅ **Auto-deploys** from Git
-- ✅ **Easy custom domains**
-- ✅ **DDoS protection** included
-- ✅ **Great for full-stack** (if you later add APIs)
+-   ✅ **Free tier** with 100 GB bandwidth
+-   ✅ **Auto-deploys** from Git
+-   ✅ **Easy custom domains**
+-   ✅ **DDoS protection** included
+-   ✅ **Great for full-stack** (if you later add APIs)
 
 #### Deployment Steps
 
-1. **Sign up at [Render](https://render.com/)**
+1.  **Sign up at [Render](https://render.com/)**
 
-2. **Click "New +" → "Static Site"**
+2.  **Click "New +" → "Static Site"**
 
-3. **Connect your Git repository**
+3.  **Connect your Git repository**
 
-4. **Configure:**
+4.  **Configure:**
 
-   - **Name:** Your site name
-   - **Build Command:** `quarto render`
-   - **Publish Directory:** `_site`
+    -   **Name:** Your site name
+    -   **Build Command:** `quarto render`
+    -   **Publish Directory:** `_site`
 
-5. **Add environment variable** (if needed):
-   - `PYTHON_VERSION`: `3.11`
+5.  **Add environment variable** (if needed):
 
-6. **Create Static Site**
+    -   `PYTHON_VERSION`: `3.11`
+
+6.  **Create Static Site**
 
 Render auto-deploys on every push to main!
 
 #### Custom Domain
 
-1. Go to **Settings → Custom Domain**
-2. Add your domain
-3. Update DNS as shown
-4. SSL auto-provisions
+1.  Go to **Settings → Custom Domain**
+2.  Add your domain
+3.  Update DNS as shown
+4.  SSL auto-provisions
 
-**Cost:** Free tier, $7/month for priority builds.
+**Cost:** Free tier, \$7/month for priority builds.
 
----
+------------------------------------------------------------------------
 
 ### Platform 5: Surge.sh (Ultra-Simple CLI)
 
@@ -531,50 +533,51 @@ Render auto-deploys on every push to main!
 
 #### Why Choose Surge?
 
-- ✅ **Instant deployment** from command line
-- ✅ **No account** needed upfront
-- ✅ **Free subdomain** (`.surge.sh`)
-- ✅ **Custom domains** supported
-- ✅ **Perfect for demos** and quick shares
+-   ✅ **Instant deployment** from command line
+-   ✅ **No account** needed upfront
+-   ✅ **Free subdomain** (`.surge.sh`)
+-   ✅ **Custom domains** supported
+-   ✅ **Perfect for demos** and quick shares
 
 #### Deployment Steps
 
-1. **Install Surge:**
+1.  **Install Surge:**
 
-   ```bash
-   npm install -g surge
-   ```
+    ``` bash
+    npm install -g surge
+    ```
 
-2. **Render your Quarto site:**
+2.  **Render your Quarto site:**
 
-   ```bash
-   quarto render
-   ```
+    ``` bash
+    quarto render
+    ```
 
-3. **Deploy:**
+3.  **Deploy:**
 
-   ```bash
-   cd _site
-   surge
-   ```
+    ``` bash
+    cd _site
+    surge
+    ```
 
-4. **Follow prompts:**
-   - First time: enter email and password
-   - Choose domain (e.g., `my-quarto-site.surge.sh`)
+4.  **Follow prompts:**
+
+    -   First time: enter email and password
+    -   Choose domain (e.g., `my-quarto-site.surge.sh`)
 
 **That's it!** Your site is live in seconds.
 
 #### Custom Domain
 
-```bash
+``` bash
 surge _site yourdomain.com
 ```
 
 Then add a CNAME record in DNS pointing to `na-west1.surge.sh`
 
-**Cost:** Free for basic use, $30/month for Pro (SSL + custom features).
+**Cost:** Free for basic use, \$30/month for Pro (SSL + custom features).
 
----
+------------------------------------------------------------------------
 
 ### Platform 6: Cloudflare Pages (Fast & Free CDN)
 
@@ -582,31 +585,31 @@ Then add a CNAME record in DNS pointing to `na-west1.surge.sh`
 
 #### Why Choose Cloudflare Pages?
 
-- ✅ **Unlimited bandwidth** on free tier
-- ✅ **500 builds/month** free
-- ✅ **Fastest CDN** globally (Cloudflare's network)
-- ✅ **Great analytics** built-in
-- ✅ **Web3/IPFS** support if needed
+-   ✅ **Unlimited bandwidth** on free tier
+-   ✅ **500 builds/month** free
+-   ✅ **Fastest CDN** globally (Cloudflare's network)
+-   ✅ **Great analytics** built-in
+-   ✅ **Web3/IPFS** support if needed
 
 #### Deployment Steps
 
-1. **Sign in to [Cloudflare Pages](https://pages.cloudflare.com/)**
+1.  **Sign in to [Cloudflare Pages](https://pages.cloudflare.com/)**
 
-2. **Create a project** and connect your Git repo
+2.  **Create a project** and connect your Git repo
 
-3. **Configure build:**
+3.  **Configure build:**
 
-   - **Build command:** `quarto render`
-   - **Build output directory:** `_site`
-   - **Environment variables:** `PYTHON_VERSION=3.11`
+    -   **Build command:** `quarto render`
+    -   **Build output directory:** `_site`
+    -   **Environment variables:** `PYTHON_VERSION=3.11`
 
-4. **Save and Deploy**
+4.  **Save and Deploy**
 
 Auto-deploys on every commit!
 
-**Cost:** Free unlimited, $20/month for additional features.
+**Cost:** Free unlimited, \$20/month for additional features.
 
----
+------------------------------------------------------------------------
 
 ### Platform 7: WordPress (For Existing WordPress Users)
 
@@ -614,41 +617,41 @@ If you already have WordPress hosting, you can deploy your Quarto site as **stat
 
 #### Why Use WordPress Hosting?
 
-- ✅ You **already pay** for it
-- ✅ **Familiar cPanel/FTP** interface
-- ✅ Can **integrate** with WordPress blog
-- ✅ **No extra cost**
+-   ✅ You **already pay** for it
+-   ✅ **Familiar cPanel/FTP** interface
+-   ✅ Can **integrate** with WordPress blog
+-   ✅ **No extra cost**
 
 #### Deployment via FTP
 
-1. **Render your site:**
+1.  **Render your site:**
 
-   ```bash
-   quarto render
-   ```
+    ``` bash
+    quarto render
+    ```
 
-2. **Connect via FTP** (use FileZilla or similar):
+2.  **Connect via FTP** (use FileZilla or similar):
 
-   - Host: Your WordPress site's FTP address
-   - Username: Your FTP username
-   - Password: Your FTP password
+    -   Host: Your WordPress site's FTP address
+    -   Username: Your FTP username
+    -   Password: Your FTP password
 
-3. **Upload `_site/` contents** to one of these locations:
+3.  **Upload `_site/` contents** to one of these locations:
 
-   - **Subdomain:** `/public_html/docs/` (accessible at `yoursite.com/docs`)
-   - **Subdomain:** Create `docs.yoursite.com` in cPanel, upload to its folder
-   - **Subfolder:** `/public_html/quarto/` (accessible at `yoursite.com/quarto`)
+    -   **Subdomain:** `/public_html/docs/` (accessible at `yoursite.com/docs`)
+    -   **Subdomain:** Create `docs.yoursite.com` in cPanel, upload to its folder
+    -   **Subfolder:** `/public_html/quarto/` (accessible at `yoursite.com/quarto`)
 
-4. **Set permissions:** Ensure files are readable (644 for files, 755 for directories)
+4.  **Set permissions:** Ensure files are readable (644 for files, 755 for directories)
 
 #### Deployment via cPanel File Manager
 
-1. Log in to **cPanel**
-2. Go to **File Manager**
-3. Navigate to `public_html` or your subfolder
-4. Click **Upload**
-5. Zip your `_site/` folder locally and upload
-6. Extract in cPanel
+1.  Log in to **cPanel**
+2.  Go to **File Manager**
+3.  Navigate to `public_html` or your subfolder
+4.  Click **Upload**
+5.  Zip your `_site/` folder locally and upload
+6.  Extract in cPanel
 
 #### WordPress Subdirectory Setup
 
@@ -656,7 +659,7 @@ Create a subdirectory `/quarto/` in your WordPress installation and upload there
 
 Add to `.htaccess` for cleaner URLs:
 
-```apache
+``` apache
 # In /public_html/quarto/.htaccess
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -664,10 +667,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ $1.html [L]
 ```
 
-**Pros:** No extra cost, simple for WordPress users
-**Cons:** Manual upload process (no auto-deploy from Git)
+**Pros:** No extra cost, simple for WordPress users **Cons:** Manual upload process (no auto-deploy from Git)
 
----
+------------------------------------------------------------------------
 
 ### Platform 8: DigitalOcean App Platform
 
@@ -675,33 +677,33 @@ RewriteRule ^(.*)$ $1.html [L]
 
 #### Why Choose DigitalOcean?
 
-- ✅ **$0/month** for static sites (3 free sites)
-- ✅ **1 GB bandwidth/month** free
-- ✅ **Great docs** and tutorials
-- ✅ **Easy to scale** to full apps later
-- ✅ **Integrated** with DO ecosystem
+-   ✅ **\$0/month** for static sites (3 free sites)
+-   ✅ **1 GB bandwidth/month** free
+-   ✅ **Great docs** and tutorials
+-   ✅ **Easy to scale** to full apps later
+-   ✅ **Integrated** with DO ecosystem
 
 #### Deployment Steps
 
-1. **Sign in to [DigitalOcean](https://cloud.digitalocean.com/)**
+1.  **Sign in to [DigitalOcean](https://cloud.digitalocean.com/)**
 
-2. **Go to Apps → Create App**
+2.  **Go to Apps → Create App**
 
-3. **Connect your GitHub/GitLab repo**
+3.  **Connect your GitHub/GitLab repo**
 
-4. **Configure build:**
+4.  **Configure build:**
 
-   - **Type:** Static Site
-   - **Build Command:** `quarto render`
-   - **Output Directory:** `_site`
+    -   **Type:** Static Site
+    -   **Build Command:** `quarto render`
+    -   **Output Directory:** `_site`
 
-5. **Select free plan** (Static Site - $0/mo)
+5.  **Select free plan** (Static Site - \$0/mo)
 
-6. **Launch App**
+6.  **Launch App**
 
-**Cost:** Free for static sites (up to 3 sites), $5/month for additional.
+**Cost:** Free for static sites (up to 3 sites), \$5/month for additional.
 
----
+------------------------------------------------------------------------
 
 ### Quick Comparison: Which Platform to Choose?
 
@@ -744,7 +746,7 @@ hosting_comparison.to_html(index=False, classes='table table-striped', escape=Fa
 
 **For DigitalOcean users:** Use **DO App Platform** (free tier)
 
----
+------------------------------------------------------------------------
 
 ## Part 1: Deploying to Google Cloud Platform
 
@@ -1300,7 +1302,7 @@ Configure AWS CLI:
 aws configure
 ```
 
-Enter your AWS Access Key ID, Secret Access Key, region, and output format.
+Enter your AWS Access Key ID, Secret Access Key, region and output format.
 
 #### Step 2: Create an S3 Bucket
 
@@ -1786,9 +1788,9 @@ Replace with your Google Analytics 4 measurement ID.
 
 ### Platform-Specific Monitoring
 
-**Google Cloud Platform:** - Use [Cloud Monitoring](https://cloud.google.com/monitoring) - Track uptime, latency, and errors
+**Google Cloud Platform:** - Use [Cloud Monitoring](https://cloud.google.com/monitoring) - Track uptime, latency and errors
 
-**Microsoft Azure:** - Use [Application Insights](https://azure.microsoft.com/services/monitor/) - Track page views, performance, and exceptions
+**Microsoft Azure:** - Use [Application Insights](https://azure.microsoft.com/services/monitor/) - Track page views, performance and exceptions
 
 **Amazon AWS:** - Use [CloudWatch](https://aws.amazon.com/cloudwatch/) - Monitor S3 bucket metrics and CloudFront analytics
 
@@ -2294,10 +2296,10 @@ aws cloudfront create-invalidation --distribution-id DIST_ID --paths "/*"
 
 **Happy deploying!** 🚀
 
-Your Quarto projects deserve to be shared with the world. Now you have the knowledge to make that happen—efficiently, securely, and cost-effectively.
+Your Quarto projects deserve to be shared with the world. Now you have the knowledge to make that happen—efficiently, securely and cost-effectively.
 
 ------------------------------------------------------------------------
 
-*This guide was created by [Kwiz Computing Technologies](/), specialists in R programming, Quarto publishing, and cloud deployment solutions.*
+*This guide was created by [Kwiz Computing Technologies](/), specialists in R programming, Quarto publishing and cloud deployment solutions.*
 
 *Last updated: November 9, 2025*

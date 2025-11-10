@@ -1,6 +1,6 @@
 ---
 title: "Kwiz Computing Technologies - Expert R Programming & Data Science Solutions"
-description: "Transform data into strategic decisions with expert R programming, statistical analysis, and enterprise-grade analytics solutions. Specializing in advanced analytics, Shiny application development, and reproducible data science for environmental, public sector, research, and business organizations."
+description: "Transform data into strategic decisions with expert R programming, statistical analysis and enterprise-grade analytics solutions. Specializing in advanced analytics, Shiny application development and reproducible data science for environmental, public sector, research and business organizations."
 page-layout: full
 ---
 
@@ -8,11 +8,11 @@ page-layout: full
 :::: hero-content
 # Transform Data into Strategic Decisions
 
-## Expert R programming, statistical analysis, and enterprise-grade analytics solutions for organizations across all sectors
+## Expert R programming, statistical analysis and enterprise-grade analytics solutions for organizations across all sectors
 
 ![Professional team collaborating on data analytics project with modern technology tools for efficient strategic delivery](https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop&q=75&auto=format){width="auto" fig-align="center" loading="eager"}
 
-We deliver sophisticated data science solutions combining rigorous statistical methods, modern software development practices, and deep technical expertise in R programming.
+We deliver sophisticated data science solutions combining rigorous statistical methods, modern software development practices and deep technical expertise in R programming.
 
 ::: hero-cta
 [Start Your Project](contact.qmd){.btn .btn-primary .btn-lg} [View Our Capabilities](services.qmd){.btn .btn-outline .btn-lg}
@@ -29,12 +29,12 @@ We provide comprehensive data science services built on transferable analytical 
 ::::::::::: services-grid
 :::: {.service-card .featured}
 ::: service-icon
-![Advanced analytics dashboard with charts, graphs, and data visualizations for statistical modeling](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
+![Advanced analytics dashboard with charts, graphs and data visualizations for statistical modeling](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
 
 ### Advanced Analytics & Statistical Modeling
 
-Turn complex data into actionable insights using sophisticated statistical methods, predictive modeling, and machine learning techniques.
+Turn complex data into actionable insights using sophisticated statistical methods, predictive modeling and machine learning techniques.
 
 **Core capabilities:** - Exploratory data analysis and pattern detection - Predictive modeling and forecasting - Statistical inference and hypothesis testing - Machine learning and classification
 
@@ -61,12 +61,12 @@ Build robust, production-grade analytical applications and interactive dashboard
 
 :::: service-card
 ::: service-icon
-![Data pipeline architecture showing ETL processes, database integration, and data flow visualization](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
+![Data pipeline architecture showing ETL processes, database integration and data flow visualization](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
 :::
 
 ### Data Management & Integration
 
-Design and implement robust data pipelines, quality assurance frameworks, and integration systems that ensure data reliability and accessibility.
+Design and implement robust data pipelines, quality assurance frameworks and integration systems that ensure data reliability and accessibility.
 
 **Our approach:** - ETL pipeline development - Data validation and quality control - Database design and optimization - API development and integration
 
@@ -114,7 +114,7 @@ Rigorous statistical training combined with modern software development practice
 
 **Scientific Rigor**
 
-We prioritize reproducibility, transparency, and methodological soundness in every analysis, ensuring defensible results.
+We prioritize reproducibility, transparency and methodological soundness in every analysis, ensuring defensible results.
 ::::
 
 :::: {.g-col-12 .g-col-md-3}
@@ -124,7 +124,7 @@ We prioritize reproducibility, transparency, and methodological soundness in eve
 
 **Enterprise Quality**
 
-Production-ready solutions with comprehensive testing, documentation, and maintainability built in from the start.
+Production-ready solutions with comprehensive testing, documentation and maintainability built in from the start.
 ::::
 
 :::: {.g-col-12 .g-col-md-3}
@@ -170,7 +170,7 @@ Our transferable data science capabilities serve diverse sectors:
 
 ## From Our Blog
 
-Insights on data science methodology, reproducible analytics, and R programming best practices.
+Insights on data science methodology, reproducible analytics and R programming best practices.
 
 ::: blog-preview
 📝 [Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments](/blog/Reproducibility%20in%20ESIA%20Analyses.qmd)

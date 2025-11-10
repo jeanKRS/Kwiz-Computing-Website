@@ -15,7 +15,7 @@ In the ever-expanding universe of data analysis tools, [R](https://www.r-project
 
 ![Data analysis workflow visualization. Photo by [Luke Chesser](https://unsplash.com/@lukechesser) on [Unsplash](https://unsplash.com/photos/JKUTrJ4vK00)](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80)
 
-But what makes R particularly suited for data analysis work? In this post, we'll explore the features, ecosystem, and practical advantages that make R an essential tool in any data analyst's toolkit.
+But what makes R particularly suited for data analysis work? In this post, we'll explore the features, ecosystem and practical advantages that make R an essential tool in any data analyst's toolkit.
 
 ## The R Advantage for Data Analysis
 
@@ -26,7 +26,7 @@ Unlike general-purpose programming languages that were later adapted for data wo
 ::: callout-tip
 ## Did You Know?
 
-R is named partly after the first names of its two creators, Ross Ihaka and Robert Gentleman, and partly as a play on the name of S.
+R is named partly after the first names of its two creators, Ross Ihaka and Robert Gentleman and partly as a play on the name of S.
 :::
 
 ```{r}
@@ -72,7 +72,7 @@ This pipe-based workflow mirrors how analysts think about data transformations: 
 ::: callout-note
 ## Grammar of Graphics
 
-The grammar of graphics is a systematic framework for building statistical graphics by combining independent components like data, coordinate systems, and geometric objects.
+The grammar of graphics is a systematic framework for building statistical graphics by combining independent components like data, coordinate systems and geometric objects.
 :::
 
 ```{r}
@@ -406,7 +406,7 @@ One of R's greatest strengths is its welcoming and helpful community (Tippmann, 
 
 -   [**Stack Overflow**](https://stackoverflow.com/questions/tagged/r): Active R community with over 400,000+ questions answered
 -   [**RStudio Community**](https://community.rstudio.com/): Supportive forum for all skill levels maintained by Posit
--   [**Twitter/X #rstats**](https://twitter.com/search?q=%23rstats): Daily tips, package announcements, and help
+-   [**Twitter/X #rstats**](https://twitter.com/search?q=%23rstats): Daily tips, package announcements and help
 -   [**R-Ladies**](https://rladies.org/): Global organization promoting gender diversity in R with 200+ chapters worldwide
 -   [**Local R User Groups**](https://www.meetup.com/topics/r-project-for-statistical-computing/): In-person networking and learning opportunities
 -   [**Posit Community**](https://posit.co/community/): Official support and resources from the makers of RStudio
@@ -419,11 +419,11 @@ The R community follows a "pay it forward" culture. As you learn, consider answe
 
 ## Conclusion
 
-R remains an essential tool for data analysts because it combines statistical rigor with practical usability. Its comprehensive ecosystem, active community, and continual evolution ensure that it will remain relevant for years to come.
+R remains an essential tool for data analysts because it combines statistical rigor with practical usability. Its comprehensive ecosystem, active community and continual evolution ensure that it will remain relevant for years to come.
 
 Whether you're performing exploratory data analysis, building statistical models, creating compelling visualizations, or sharing insights through reports and dashboards, R provides the tools and flexibility to accomplish your goals efficiently and reproducibly.
 
-For organizations investing in their data analysis capabilities, R represents not just a tool but an ecosystem of best practices, packages, and community support that accelerates analytical maturity.
+For organizations investing in their data analysis capabilities, R represents not just a tool but an ecosystem of best practices, packages and community support that accelerates analytical maturity.
 
 ## Resources for Further Learning
 

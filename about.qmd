@@ -1,6 +1,6 @@
 ---
 title: "About Us"
-description: "Learn about Kwiz Computing Technologies, a boutique data science consultancy specializing in R programming, statistical analysis, and enterprise-grade analytics. Discover our mission, technical expertise, and commitment to delivering production-ready data science solutions."
+description: "Learn about Kwiz Computing Technologies, a boutique data science consultancy specializing in R programming, statistical analysis and enterprise-grade analytics. Discover our mission, technical expertise and commitment to delivering production-ready data science solutions."
 ---
 
 ## Our Story
@@ -25,9 +25,9 @@ We don't just analyze data—we build production-ready systems. Every solution f
 
 ### Deep R Expertise
 
-R is our primary tool, and we leverage its full ecosystem:
+R is our primary tool and we leverage its full ecosystem:
 
--   Data manipulation with `dplyr`, `data.table`, and `tidyverse`
+-   Data manipulation with `dplyr`, `data.table` and `tidyverse`
 -   Statistical modeling and machine learning
 -   Interactive dashboards with `shiny` and `bslib`
 -   Reproducible reporting with Quarto and R Markdown
@@ -53,7 +53,7 @@ Our expertise extends beyond general data science into specialized domains:
 ## Values
 
 -   **Quality Over Quantity**: We prioritize robust, well-tested solutions over quick fixes
--   **Transparency**: Clear communication about capabilities, timelines, and costs
+-   **Transparency**: Clear communication about capabilities, timelines and costs
 -   **Continuous Learning**: Staying current with the latest R packages and data science methodologies
 -   **Ethical Practice**: Responsible data handling and privacy-first approaches
 
