@@ -22,27 +22,108 @@ Transform complex data into actionable insights using rigorous statistical metho
 
 #### Core Capabilities:
 
-**Exploratory Data Analysis** - Comprehensive data profiling and pattern detection - Multivariate analysis and dimensionality reduction - Outlier detection and anomaly identification - Data visualization and insight communication
+::::::: {.capabilities-grid}
+:::: {.capability-card}
+::: {.capability-icon}
+📊
+:::
+**Exploratory Data Analysis**
 
-**Statistical Modeling & Inference** - Regression analysis (linear, logistic, GLM, mixed effects) - Time series analysis and forecasting - Survival analysis and event history modeling - Bayesian inference and hierarchical modeling
+- Comprehensive data profiling and pattern detection
+- Multivariate analysis and dimensionality reduction
+- Outlier detection and anomaly identification
+- Data visualization and insight communication
+::::
 
-**Predictive Analytics & Machine Learning** - Classification and regression models - Ensemble methods and model stacking - Feature engineering and selection - Model validation and performance evaluation - Uncertainty quantification
+:::: {.capability-card}
+::: {.capability-icon}
+📈
+:::
+**Statistical Modeling & Inference**
 
-**Experimental Design & Causal Inference** - A/B testing and experimental design - Power analysis and sample size determination - Propensity score matching - Difference-in-differences analysis - Instrumental variables and causal DAGs
+- Regression analysis (linear, logistic, GLM, mixed effects)
+- Time series analysis and forecasting
+- Survival analysis and event history modeling
+- Bayesian inference and hierarchical modeling
+::::
 
-**Spatial & Geospatial Analysis** - Spatial statistics and geostatistics - Point pattern analysis - Spatial interpolation and kriging - Geographic information systems integration
+:::: {.capability-card}
+::: {.capability-icon}
+🤖
+:::
+**Predictive Analytics & Machine Learning**
+
+- Classification and regression models
+- Ensemble methods and model stacking
+- Feature engineering and selection
+- Model validation and performance evaluation
+- Uncertainty quantification
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🔬
+:::
+**Experimental Design & Causal Inference**
+
+- A/B testing and experimental design
+- Power analysis and sample size determination
+- Propensity score matching
+- Difference-in-differences analysis
+- Instrumental variables and causal DAGs
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🗺️
+:::
+**Spatial & Geospatial Analysis**
+
+- Spatial statistics and geostatistics
+- Point pattern analysis
+- Spatial interpolation and kriging
+- Geographic information systems integration
+::::
+:::::::
 
 #### Example Applications:
 
+::::::: {.applications-grid}
+:::: {.application-item}
+::: {.application-icon}
+🌿
+:::
 **Environmental:** Impact prediction modeling, baseline environmental data analysis, biodiversity metrics, regulatory compliance analytics (ESIA/EIA frameworks)
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+⚕️
+:::
 **Healthcare:** Clinical trial analysis, epidemiological modeling, patient outcome prediction, health services research
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+💼
+:::
 **Business:** Customer churn prediction, demand forecasting, pricing optimization, market segmentation
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+💰
+:::
 **Finance:** Risk modeling, credit scoring, portfolio optimization, fraud detection
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🔍
+:::
 **Research:** Survey analysis, meta-analysis, publication-quality statistical reporting
+::::
+:::::::
 
 #### Why This Matters:
 
@@ -74,27 +155,106 @@ Design and implement robust data pipelines, quality assurance frameworks and int
 
 #### Core Capabilities:
 
-**Data Pipeline Development** - ETL (Extract, Transform, Load) process design - Automated data ingestion from multiple sources - Real-time and batch processing workflows - Scalable data processing architectures
+::::::: {.capabilities-grid}
+:::: {.capability-card}
+::: {.capability-icon}
+⚙️
+:::
+**Data Pipeline Development**
 
-**Data Quality & Validation** - Comprehensive data validation frameworks - Automated quality checks and anomaly detection - Data cleansing and standardization - Metadata management and documentation
+- ETL (Extract, Transform, Load) process design
+- Automated data ingestion from multiple sources
+- Real-time and batch processing workflows
+- Scalable data processing architectures
+::::
 
-**Database Design & Optimization** - Relational and NoSQL database design - Query optimization and performance tuning - Data warehousing and dimensional modeling - Version control and change tracking
+:::: {.capability-card}
+::: {.capability-icon}
+✅
+:::
+**Data Quality & Validation**
 
-**API Development & Integration** - RESTful API design and implementation - Third-party API integration - Authentication and security protocols - Rate limiting and error handling
+- Comprehensive data validation frameworks
+- Automated quality checks and anomaly detection
+- Data cleansing and standardization
+- Metadata management and documentation
+::::
 
-**Reporting & Dashboard Automation** - Automated report generation systems - Scheduled data refreshes and distribution - Multi-format output (PDF, Excel, HTML, interactive) - Email notifications and alerting
+:::: {.capability-card}
+::: {.capability-icon}
+🗄️
+:::
+**Database Design & Optimization**
+
+- Relational and NoSQL database design
+- Query optimization and performance tuning
+- Data warehousing and dimensional modeling
+- Version control and change tracking
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🔌
+:::
+**API Development & Integration**
+
+- RESTful API design and implementation
+- Third-party API integration
+- Authentication and security protocols
+- Rate limiting and error handling
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+📋
+:::
+**Reporting & Dashboard Automation**
+
+- Automated report generation systems
+- Scheduled data refreshes and distribution
+- Multi-format output (PDF, Excel, HTML, interactive)
+- Email notifications and alerting
+::::
+:::::::
 
 #### Example Applications:
 
+::::::: {.applications-grid}
+:::: {.application-item}
+::: {.application-icon}
+🌿
+:::
 **Environmental:** Multi-source environmental monitoring integration, ESIA data repositories, sustainability KPI tracking, ESG reporting systems, biodiversity databases
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+⚕️
+:::
 **Healthcare:** Electronic health records integration, clinical data warehouses, patient monitoring systems, regulatory reporting
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+💼
+:::
 **Business:** Customer data platforms, sales and marketing analytics, inventory management, financial reporting automation
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🔍
+:::
 **Research:** Multi-study data integration, longitudinal research databases, publication data management, open data repositories
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🏛️
+:::
 **Public Sector:** Open data portals, performance monitoring systems, citizen feedback platforms, transparency dashboards
+::::
+:::::::
 
 #### Why This Matters:
 
@@ -126,27 +286,111 @@ Build production-grade analytical applications and interactive dashboards using 
 
 #### Core Capabilities:
 
-**Interactive Shiny Applications** - Modular architecture using Rhino framework - Clean separation of concerns (UI, server, business logic) - Responsive design with bslib and Bootstrap - Performance optimization for large datasets - Real-time data updates and reactivity
+::::::: {.capabilities-grid}
+:::: {.capability-card}
+::: {.capability-icon}
+✨
+:::
+**Interactive Shiny Applications**
 
-**Data Visualization & Dashboards** - Interactive plots with plotly and highcharter - Geographic visualizations with leaflet - Custom ggplot2 themes and extensions - Executive dashboards and KPI tracking - Multi-page applications with navigation
+- Modular architecture using Rhino framework
+- Clean separation of concerns (UI, server, business logic)
+- Responsive design with bslib and Bootstrap
+- Performance optimization for large datasets
+- Real-time data updates and reactivity
+::::
 
-**Software Engineering Best Practices** - Comprehensive unit and integration testing (testthat, shinytest2) - Code review and quality standards - Version control with git - Continuous integration/deployment (CI/CD) - Documentation with roxygen2 and pkgdown
+:::: {.capability-card}
+::: {.capability-icon}
+📊
+:::
+**Data Visualization & Dashboards**
 
-**Security & Authentication** - User authentication (OAuth, LDAP, database) - Role-based access control (RBAC) - Session management and security headers - Data encryption in transit and at rest - Audit logging and compliance
+- Interactive plots with plotly and highcharter
+- Geographic visualizations with leaflet
+- Custom ggplot2 themes and extensions
+- Executive dashboards and KPI tracking
+- Multi-page applications with navigation
+::::
 
-**Deployment & DevOps** - Cloud deployment (AWS, Azure, Google Cloud) - Posit Connect and Shiny Server - Containerization with Docker - Load balancing and scaling strategies - Monitoring, logging and error tracking
+:::: {.capability-card}
+::: {.capability-icon}
+🛠️
+:::
+**Software Engineering Best Practices**
+
+- Comprehensive unit and integration testing (testthat, shinytest2)
+- Code review and quality standards
+- Version control with git
+- Continuous integration/deployment (CI/CD)
+- Documentation with roxygen2 and pkgdown
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🔒
+:::
+**Security & Authentication**
+
+- User authentication (OAuth, LDAP, database)
+- Role-based access control (RBAC)
+- Session management and security headers
+- Data encryption in transit and at rest
+- Audit logging and compliance
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+☁️
+:::
+**Deployment & DevOps**
+
+- Cloud deployment (AWS, Azure, Google Cloud)
+- Posit Connect and Shiny Server
+- Containerization with Docker
+- Load balancing and scaling strategies
+- Monitoring, logging and error tracking
+::::
+:::::::
 
 #### Example Applications:
 
+::::::: {.applications-grid}
+:::: {.application-item}
+::: {.application-icon}
+🌿
+:::
 **Environmental:** Real-time environmental monitoring dashboards, ESIA data exploration platforms, sustainability reporting systems, compliance tracking tools
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+⚕️
+:::
 **Healthcare:** Clinical trial dashboards, patient outcome trackers, hospital performance monitoring, epidemiological visualization tools
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+💼
+:::
 **Business:** Sales analytics dashboards, customer segmentation tools, inventory management systems, financial reporting platforms
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🔍
+:::
 **Research:** Interactive data explorers for publications, research collaboration platforms, grant portfolio tracking, lab management systems
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🏛️
+:::
 **Public Sector:** Citizen feedback portals, budget transparency dashboards, performance monitoring systems, open data exploration tools
+::::
+:::::::
 
 #### Why Choose R for Applications:
 
@@ -178,27 +422,111 @@ Create compelling visualizations, automated reports and interactive presentation
 
 #### Core Capabilities:
 
-**Publication-Quality Visualizations** - Custom ggplot2 graphics with professional themes - Statistical plots (distributions, correlations, regressions) - Network diagrams and relationship visualizations - Infographics and explanatory graphics - Print-ready figures for publications
+::::::: {.capabilities-grid}
+:::: {.capability-card}
+::: {.capability-icon}
+🎨
+:::
+**Publication-Quality Visualizations**
 
-**Interactive Visualizations** - Dynamic plotly and highcharter graphics - Geographic maps with leaflet - Interactive tables with DT and reactable - Drill-down and filtering capabilities - Export and sharing functionality
+- Custom ggplot2 graphics with professional themes
+- Statistical plots (distributions, correlations, regressions)
+- Network diagrams and relationship visualizations
+- Infographics and explanatory graphics
+- Print-ready figures for publications
+::::
 
-**Automated Reporting** - Parameterized Quarto/R Markdown reports - Scheduled report generation and distribution - Multi-format output (PDF, Word, HTML, PowerPoint) - Template-based report systems - Version-controlled documentation
+:::: {.capability-card}
+::: {.capability-icon}
+🖱️
+:::
+**Interactive Visualizations**
 
-**Dashboards & Communication Platforms** - Executive summary dashboards - Real-time KPI monitoring - Stakeholder-facing data portals - Internal analytics platforms - Mobile-responsive designs
+- Dynamic plotly and highcharter graphics
+- Geographic maps with leaflet
+- Interactive tables with DT and reactable
+- Drill-down and filtering capabilities
+- Export and sharing functionality
+::::
 
-**Data Storytelling** - Narrative-driven presentations - Guided data exploration - Contextual annotations and insights - Audience-specific communication strategies - Clear, jargon-free explanations
+:::: {.capability-card}
+::: {.capability-icon}
+🤖
+:::
+**Automated Reporting**
+
+- Parameterized Quarto/R Markdown reports
+- Scheduled report generation and distribution
+- Multi-format output (PDF, Word, HTML, PowerPoint)
+- Template-based report systems
+- Version-controlled documentation
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+📱
+:::
+**Dashboards & Communication Platforms**
+
+- Executive summary dashboards
+- Real-time KPI monitoring
+- Stakeholder-facing data portals
+- Internal analytics platforms
+- Mobile-responsive designs
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+📖
+:::
+**Data Storytelling**
+
+- Narrative-driven presentations
+- Guided data exploration
+- Contextual annotations and insights
+- Audience-specific communication strategies
+- Clear, jargon-free explanations
+::::
+:::::::
 
 #### Example Applications:
 
+::::::: {.applications-grid}
+:::: {.application-item}
+::: {.application-icon}
+🔍
+:::
 **Research:** Publication figures, supplementary materials, research summaries, grant reporting, conference presentations
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+💼
+:::
 **Business:** Executive dashboards, quarterly reports, customer insights, market analysis, performance tracking
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🏛️
+:::
 **Public Sector:** Transparency portals, performance monitoring, citizen engagement, budget visualization, open data platforms
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+⚕️
+:::
 **Healthcare:** Clinical trial results, patient outcomes, epidemiological reports, hospital dashboards, public health communication
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🌿
+:::
 **Environmental:** Environmental monitoring reports, impact assessments, sustainability dashboards, compliance reporting, stakeholder communication
+::::
+:::::::
 
 #### Why Visualization Matters:
 
@@ -230,27 +558,110 @@ Build custom R packages and analytical tools to standardize workflows, share met
 
 #### Core Capabilities:
 
-**Package Architecture & Design** - Clean, modular package structure - Well-defined APIs and interfaces - Dependency management and version control - Namespace management and exports - S3/S4/R6 object systems as appropriate
+::::::: {.capabilities-grid}
+:::: {.capability-card}
+::: {.capability-icon}
+📦
+:::
+**Package Architecture & Design**
 
-**Documentation & User Experience** - Comprehensive roxygen2 documentation - Vignettes and tutorials - pkgdown websites for package documentation - Function examples and use cases - README and Getting Started guides
+- Clean, modular package structure
+- Well-defined APIs and interfaces
+- Dependency management and version control
+- Namespace management and exports
+- S3/S4/R6 object systems as appropriate
+::::
 
-**Testing & Quality Assurance** - Unit tests with testthat - Code coverage analysis - Continuous integration setup - Error handling and input validation - Edge case testing
+:::: {.capability-card}
+::: {.capability-icon}
+📚
+:::
+**Documentation & User Experience**
 
-**Distribution & Deployment** - Internal package repositories - CRAN submission preparation - GitHub releases and versioning - Docker containers with pre-installed packages - Installation guides and troubleshooting
+- Comprehensive roxygen2 documentation
+- Vignettes and tutorials
+- pkgdown websites for package documentation
+- Function examples and use cases
+- README and Getting Started guides
+::::
 
-**Maintenance & Support** - Bug tracking and issue management - Version updates and changelog - Backward compatibility considerations - User support and documentation updates
+:::: {.capability-card}
+::: {.capability-icon}
+✅
+:::
+**Testing & Quality Assurance**
+
+- Unit tests with testthat
+- Code coverage analysis
+- Continuous integration setup
+- Error handling and input validation
+- Edge case testing
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🚀
+:::
+**Distribution & Deployment**
+
+- Internal package repositories
+- CRAN submission preparation
+- GitHub releases and versioning
+- Docker containers with pre-installed packages
+- Installation guides and troubleshooting
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🔧
+:::
+**Maintenance & Support**
+
+- Bug tracking and issue management
+- Version updates and changelog
+- Backward compatibility considerations
+- User support and documentation updates
+::::
+:::::::
 
 #### Example Applications:
 
+::::::: {.applications-grid}
+:::: {.application-item}
+::: {.application-icon}
+🔍
+:::
 **Research:** Standardized analysis workflows, reproducible research tools, discipline-specific statistical methods, publication automation
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+💼
+:::
 **Business:** Internal analytics frameworks, reporting templates, data validation rules, company-specific calculations
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🌿
+:::
 **Environmental:** ESIA analysis frameworks, environmental data processing tools, regulatory compliance helpers, sustainability metrics calculators
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+⚕️
+:::
 **Healthcare:** Clinical trial analysis packages, patient data processing, regulatory reporting tools, epidemiological methods
+::::
 
+:::: {.application-item}
+::: {.application-icon}
+🔨
+:::
 **General:** Data quality checking tools, visualization themes, API wrappers, workflow automation
+::::
+:::::::
 
 #### Why Build Custom Packages:
 
@@ -282,27 +693,122 @@ Empower your team with practical R programming skills, statistical methods and m
 
 #### Core Training Programs:
 
-**Introduction to R for Data Analysis** - R fundamentals and RStudio workflow - Data manipulation with tidyverse (dplyr, tidyr) - Data visualization with ggplot2 - Importing and exporting data - Basic statistical analysis - Reproducible workflows with R Markdown
+::::::: {.capabilities-grid}
+:::: {.capability-card}
+::: {.capability-icon}
+📚
+:::
+**Introduction to R for Data Analysis**
 
-**Advanced R Programming** - Functional programming concepts - Writing efficient R code - Package development basics - Debugging and profiling - Working with APIs - Best practices and code style
+- R fundamentals and RStudio workflow
+- Data manipulation with tidyverse (dplyr, tidyr)
+- Data visualization with ggplot2
+- Importing and exporting data
+- Basic statistical analysis
+- Reproducible workflows with R Markdown
+::::
 
-**Statistical Analysis with R** - Exploratory data analysis - Regression modeling (linear, logistic, GLM) - Hypothesis testing and inference - Time series analysis - Spatial statistics - Model validation and diagnostics
+:::: {.capability-card}
+::: {.capability-icon}
+💻
+:::
+**Advanced R Programming**
 
-**Shiny Application Development** - Shiny fundamentals and reactivity - UI design with bslib - Modular Shiny with Rhino framework - Testing Shiny applications - Deployment strategies - Performance optimization
+- Functional programming concepts
+- Writing efficient R code
+- Package development basics
+- Debugging and profiling
+- Working with APIs
+- Best practices and code style
+::::
 
-**Reproducible Research & Reporting** - Quarto and R Markdown - Version control with git and GitHub - Project organization best practices - Automated reporting workflows - Literate programming - Publication-ready outputs
+:::: {.capability-card}
+::: {.capability-icon}
+📊
+:::
+**Statistical Analysis with R**
 
-**Domain-Specific Workshops** - **Environmental:** ESIA data analysis, environmental monitoring, sustainability metrics, geospatial analysis - **Healthcare:** Clinical trial analysis, epidemiological methods, patient data workflows - **Business:** Customer analytics, forecasting, marketing analysis, financial modeling - **Research:** Survey analysis, experimental design, meta-analysis, research data management - **Public Sector:** Performance metrics, transparency reporting, policy analysis
+- Exploratory data analysis
+- Regression modeling (linear, logistic, GLM)
+- Hypothesis testing and inference
+- Time series analysis
+- Spatial statistics
+- Model validation and diagnostics
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+✨
+:::
+**Shiny Application Development**
+
+- Shiny fundamentals and reactivity
+- UI design with bslib
+- Modular Shiny with Rhino framework
+- Testing Shiny applications
+- Deployment strategies
+- Performance optimization
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+📝
+:::
+**Reproducible Research & Reporting**
+
+- Quarto and R Markdown
+- Version control with git and GitHub
+- Project organization best practices
+- Automated reporting workflows
+- Literate programming
+- Publication-ready outputs
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🎯
+:::
+**Domain-Specific Workshops**
+
+- **Environmental:** ESIA data analysis, environmental monitoring, sustainability metrics, geospatial analysis
+- **Healthcare:** Clinical trial analysis, epidemiological methods, patient data workflows
+- **Business:** Customer analytics, forecasting, marketing analysis, financial modeling
+- **Research:** Survey analysis, experimental design, meta-analysis, research data management
+- **Public Sector:** Performance metrics, transparency reporting, policy analysis
+::::
+:::::::
 
 #### Delivery Options:
 
-**In-Person Workshops** - On-site training at your organization - Hands-on exercises with your data - Direct interaction and Q&A - Team building and collaboration
+::::::: {.applications-grid}
+:::: {.application-item}
+::: {.application-icon}
+👥
+:::
+**In-Person Workshops:** On-site training at your organization, hands-on exercises with your data, direct interaction and Q&A, team building and collaboration
+::::
 
-**Virtual Training** - Live online sessions via Zoom/Teams - Interactive coding exercises - Recorded sessions for review - Flexible scheduling
+:::: {.application-item}
+::: {.application-icon}
+💻
+:::
+**Virtual Training:** Live online sessions via Zoom/Teams, interactive coding exercises, recorded sessions for review, flexible scheduling
+::::
 
-**Hybrid Programs** - Combination of live sessions and self-paced learning - Online resources and exercises - Regular check-ins and support - Project-based assessments
+:::: {.application-item}
+::: {.application-icon}
+🔄
+:::
+**Hybrid Programs:** Combination of live sessions and self-paced learning, online resources and exercises, regular check-ins and support, project-based assessments
+::::
 
-**Custom Curriculum Development** - Designed for your specific use cases - Incorporates your organization's data and workflows - Aligned with your team's skill levels - Ongoing support and mentoring
+:::: {.application-item}
+::: {.application-icon}
+🎓
+:::
+**Custom Curriculum Development:** Designed for your specific use cases, incorporates your organization's data and workflows, aligned with your team's skill levels, ongoing support and mentoring
+::::
+:::::::
 
 #### What You Get:
 
@@ -820,6 +1326,124 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 
   .services-cta h2 {
     font-size: 1.8rem;
+  }
+}
+
+/* Capabilities Grid Styling */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.capability-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.capability-card:hover {
+  border-color: #1a5e4a;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(26, 94, 74, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.capability-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.capability-card strong {
+  color: #1a5e4a;
+  font-size: 1.15rem;
+  display: block;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.capability-card ul {
+  text-align: left;
+  padding-left: 1.5rem;
+  margin: 1rem 0 0 0;
+}
+
+.capability-card li {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* Applications Grid Styling */
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.application-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.application-item:hover {
+  border-color: #1a5e4a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(26, 94, 74, 0.12);
+}
+
+.application-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.application-item strong {
+  color: #1a5e4a;
+  font-size: 1.05rem;
+  display: inline;
+}
+
+.application-item {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .capabilities-grid,
+  .applications-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .capability-card,
+  .application-item {
+    padding: 1.5rem;
+  }
+
+  .capability-icon {
+    font-size: 2.5rem;
+  }
+
+  .application-icon {
+    font-size: 2rem;
   }
 }
 </style>
