@@ -15,7 +15,7 @@ FormSubmit is a free service that handles form submissions with ZERO configurati
 1.  **Create a Free Web3Forms Account:**
     -   Visit: https://web3forms.com/
     -   Click "Get Started for Free"
-    -   Sign up with your email (othercontent21\@gmail.com)
+    -   Sign up with your email (jeankwizera\@gmail.com)
 2.  **Get Your Access Key:**
     -   After signing up, you'll receive an Access Key
     -   It looks like: `abcd1234-5678-90ef-ghij-klmnopqrstuv`
@@ -26,7 +26,7 @@ FormSubmit is a free service that handles form submissions with ZERO configurati
     -   Example: `<input type="hidden" name="access_key" value="abcd1234-5678-90ef-ghij-klmnopqrstuv">`
 4.  **Configure Email Settings in Web3Forms Dashboard:**
     -   Login to https://web3forms.com/
-    -   Set **Recipient Email**: `othercontent21@gmail.com`
+    -   Set **Recipient Email**: `jeankwizera@gmail.com`
     -   Enable **Email Notifications**
     -   Optional: Customize email template
     -   Optional: Enable spam filtering
@@ -40,7 +40,7 @@ FormSubmit is a free service that handles form submissions with ZERO configurati
    - Click "Send Message"
 
 2. **Verify Your Email:**
-   - Check `othercontent21@gmail.com` inbox
+   - Check `jeankwizera@gmail.com` inbox
    - You'll receive a verification email from FormSubmit
    - Click the activation link
    - **That's it!** The form is now active
@@ -50,9 +50,9 @@ FormSubmit is a free service that handles form submissions with ZERO configurati
    - No further verification needed
 
 ### Features Included:
-- ✅ Automatic email delivery to othercontent21\@gmail.com
+- ✅ Automatic email delivery to jeankwizera\@gmail.com
 - ✅ Spam protection (honeypot + reCAPTCHA optional)
-- ✅ Automatic email delivery to othercontent21@gmail.com
+- ✅ Automatic email delivery to jeankwizera@gmail.com
 - ✅ No API keys or registration required
 - ✅ Form validation
 - ✅ Success/error messages
@@ -70,7 +70,7 @@ The page includes a placeholder link for appointment scheduling. You have two op
 
 1.  **Create an Appointment Schedule:**
     -   Go to: https://calendar.google.com/
-    -   Login with: othercontent21\@gmail.com
+    -   Login with: jeankwizera\@gmail.com
     -   Click the "+" next to "Other calendars"
     -   Select "Create new calendar" or use your existing calendar
     -   Go to Settings → Appointment schedules
@@ -97,7 +97,7 @@ The page includes a placeholder link for appointment scheduling. You have two op
 If you prefer Calendly:
 
 1.  Create free account at https://calendly.com/
-2.  Connect your Google Calendar (othercontent21\@gmail.com)
+2.  Connect your Google Calendar (jeankwizera\@gmail.com)
 3.  Create a "30-minute Consultation" event type
 4.  Copy your Calendly link
 5.  Replace the URL in contact.qmd line 380
@@ -125,7 +125,7 @@ If you want to display a phone number, edit line 353:
 
 ### Update Social Links
 
-Update the social media links at the bottom (lines 495-503): - LinkedIn: Replace `https://linkedin.com` with your profile - GitHub: Replace `https://github.com` with your profile - Email: Already set to `othercontent21@gmail.com`
+Update the social media links at the bottom (lines 495-503): - LinkedIn: Replace `https://linkedin.com` with your profile - GitHub: Replace `https://github.com` with your profile - Email: Already set to `jeankwizera@gmail.com`
 
 ### Customize Form Fields
 
@@ -152,7 +152,7 @@ firebase deploy
     -   Run `quarto preview`
     -   Visit the contact page
     -   Fill out and submit the form
-    -   Check othercontent21\@gmail.com for the test message
+    -   Check jeankwizera\@gmail.com for the test message
 2.  **Test Live:**
     -   After deploying, visit your live site
     -   Test the form again
@@ -189,7 +189,7 @@ With FormSubmit, you'll receive emails with:
 3.  Check spam folder
 4.  Verify Web3Forms account is active
 =======
-1. **First submission?** Check `othercontent21@gmail.com` for verification email
+1. **First submission?** Check `jeankwizera@gmail.com` for verification email
 2. Click the activation link in the verification email
 3. Check spam/junk folder for both verification and form submissions
 4. Try submitting the form again after verification
@@ -232,7 +232,7 @@ To add custom tracking for form submissions, you can enhance the JavaScript in c
 6.  ✅ Send a test submission
 7.  ✅ Monitor emails and appointments
 
-1. ✅ Form is already configured for othercontent21@gmail.com
+1. ✅ Form is already configured for jeankwizera@gmail.com
 2. ⏳ Submit test form to activate FormSubmit (one-time)
 3. ⏳ Verify email address via activation link
 4. ⏳ Create Google Calendar appointment schedule
