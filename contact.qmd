@@ -343,7 +343,7 @@ format:
 :::
 
 ::: contact-info-item
-<strong>Business Hours</strong> Monday - Friday: 9:00 AM - 6:00 PM (EAT)<br> Saturday: 10:00 AM - 2:00 PM (EAT)<br> Sunday: Closed
+<strong>Business Hours</strong> Monday - Friday: 9:00 AM - 11:00 PM (EAT)<br> Saturday: 9:00 AM - 2:00 PM (EAT)<br> Sunday: Closed
 :::
 :::::
 
