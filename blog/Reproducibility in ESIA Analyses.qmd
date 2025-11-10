@@ -3,6 +3,7 @@ title: "Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Envir
 format: html
 date: "2025-11-03"
 categories: [ESIA, Data Analysis, Sustainability, R Programming, Business Strategy, Decision Making]
+image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800"
 description: "A non-technical guide for business leaders and decision-makers on why R deserves a seat at the software development table"
 ---
 
