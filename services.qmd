@@ -1329,13 +1329,35 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
   }
 }
 
-/* Capabilities Grid Styling */
+/* Capabilities Grid Styling - Horizontal Sliding */
 .capabilities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
   gap: 1.5rem;
   margin: 2rem 0;
-  padding: 0;
+  padding: 0 0 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar for capabilities */
+.capabilities-grid::-webkit-scrollbar {
+  height: 10px;
+}
+
+.capabilities-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.capabilities-grid::-webkit-scrollbar-thumb {
+  background: #1a5e4a;
+  border-radius: 10px;
+}
+
+.capabilities-grid::-webkit-scrollbar-thumb:hover {
+  background: #145240;
 }
 
 .capability-card {
@@ -1346,6 +1368,9 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
   transition: all 0.3s ease;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 300px;
+  max-width: 350px;
+  flex-shrink: 0;
 }
 
 .capability-card:hover {
@@ -1383,13 +1408,35 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
   margin-bottom: 0.5rem;
 }
 
-/* Applications Grid Styling */
+/* Applications Grid Styling - Horizontal Sliding */
 .applications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
   gap: 1.25rem;
   margin: 2rem 0;
-  padding: 0;
+  padding: 0 0 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar for applications */
+.applications-grid::-webkit-scrollbar {
+  height: 10px;
+}
+
+.applications-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.applications-grid::-webkit-scrollbar-thumb {
+  background: #1a5e4a;
+  border-radius: 10px;
+}
+
+.applications-grid::-webkit-scrollbar-thumb:hover {
+  background: #145240;
 }
 
 .application-item {
@@ -1399,6 +1446,9 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
   border: 2px solid #e9ecef;
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  min-width: 280px;
+  max-width: 320px;
+  flex-shrink: 0;
 }
 
 .application-item:hover {
@@ -1429,12 +1479,18 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 @media (max-width: 768px) {
   .capabilities-grid,
   .applications-grid {
-    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .capability-card,
+  .capability-card {
+    min-width: 260px;
+    max-width: 300px;
+    padding: 1.5rem;
+  }
+
   .application-item {
+    min-width: 240px;
+    max-width: 280px;
     padding: 1.5rem;
   }
 

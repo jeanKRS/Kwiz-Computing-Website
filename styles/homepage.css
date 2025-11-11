@@ -90,12 +90,35 @@
   font-size: 1.1rem;
 }
 
-/* Services Grid */
+/* Services Grid - Horizontal Sliding */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
   gap: 2rem;
   margin: 2rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar styling */
+.services-grid::-webkit-scrollbar {
+  height: 10px;
+}
+
+.services-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.services-grid::-webkit-scrollbar-thumb {
+  background: #1a5e4a;
+  border-radius: 10px;
+}
+
+.services-grid::-webkit-scrollbar-thumb:hover {
+  background: #145240;
 }
 
 .service-card {
@@ -106,6 +129,9 @@
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  min-width: 320px;
+  max-width: 380px;
+  flex-shrink: 0;
 }
 
 .service-card:hover {
@@ -331,7 +357,12 @@
   }
 
   .services-grid {
-    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-card {
+    min-width: 280px;
+    max-width: 320px;
   }
 
   .btn {
