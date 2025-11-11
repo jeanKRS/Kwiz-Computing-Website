@@ -99,7 +99,58 @@
   overflow-y: hidden;
   scroll-behavior: smooth;
   padding-bottom: 1rem;
+  padding-right: 2rem;
   -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+/* Gradient fade indicator on right edge */
+.services-grid::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 1rem;
+  width: 100px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide gradient when scrolled to the end */
+.services-grid.scrolled-end::after {
+  opacity: 0;
+}
+
+/* Scroll hint indicator */
+.services-grid::before {
+  content: '→';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #1a5e4a;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 10;
+  animation: slideHint 2s ease-in-out infinite;
+}
+
+@keyframes slideHint {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-50%) translateX(10px);
+    opacity: 0.3;
+  }
+}
+
+/* Hide hint when user starts scrolling */
+.services-grid.user-scrolled::before {
+  opacity: 0;
 }
 
 /* Custom scrollbar styling */
@@ -387,3 +438,5 @@
     height: 120px;
   }
 }
+
+/* JavaScript for scroll indicators will be added inline */

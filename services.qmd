@@ -983,6 +983,30 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 :::
 
 ```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollContainers = document.querySelectorAll('.capabilities-grid, .applications-grid');
+
+  scrollContainers.forEach(container => {
+    // Handle scroll event
+    container.addEventListener('scroll', function() {
+      // Mark as user-scrolled to hide hint
+      if (!this.classList.contains('user-scrolled')) {
+        this.classList.add('user-scrolled');
+      }
+
+      // Check if scrolled to end
+      const isScrolledToEnd = this.scrollLeft + this.clientWidth >= this.scrollWidth - 10;
+      if (isScrolledToEnd) {
+        this.classList.add('scrolled-end');
+      } else {
+        this.classList.remove('scrolled-end');
+      }
+    });
+  });
+});
+</script>
+
 <style>
 /* Services Page Styling */
 .services-intro {
@@ -1334,11 +1358,59 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
   display: flex;
   gap: 1.5rem;
   margin: 2rem 0;
-  padding: 0 0 1rem 0;
+  padding: 0 2rem 1rem 0;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+/* Gradient fade indicator on right edge */
+.capabilities-grid::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 1rem;
+  width: 100px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.capabilities-grid.scrolled-end::after {
+  opacity: 0;
+}
+
+/* Scroll hint indicator */
+.capabilities-grid::before {
+  content: '→';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #1a5e4a;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 10;
+  animation: slideHint 2s ease-in-out infinite;
+}
+
+@keyframes slideHint {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-50%) translateX(10px);
+    opacity: 0.3;
+  }
+}
+
+.capabilities-grid.user-scrolled::before {
+  opacity: 0;
 }
 
 /* Custom scrollbar for capabilities */
@@ -1413,11 +1485,48 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
   display: flex;
   gap: 1.25rem;
   margin: 2rem 0;
-  padding: 0 0 1rem 0;
+  padding: 0 2rem 1rem 0;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+/* Gradient fade indicator on right edge */
+.applications-grid::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 1rem;
+  width: 100px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.applications-grid.scrolled-end::after {
+  opacity: 0;
+}
+
+/* Scroll hint indicator */
+.applications-grid::before {
+  content: '→';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #1a5e4a;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 10;
+  animation: slideHint 2s ease-in-out infinite;
+}
+
+.applications-grid.user-scrolled::before {
+  opacity: 0;
 }
 
 /* Custom scrollbar for applications */

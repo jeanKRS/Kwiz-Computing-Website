@@ -191,3 +191,29 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
 
 [Schedule a Consultation](contact.qmd){.btn .btn-primary .btn-lg} [Download Capabilities Overview](services.qmd){.btn .btn-outline .btn-lg}
 :::
+
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollContainers = document.querySelectorAll('.services-grid');
+
+  scrollContainers.forEach(container => {
+    // Handle scroll event
+    container.addEventListener('scroll', function() {
+      // Mark as user-scrolled to hide hint
+      if (!this.classList.contains('user-scrolled')) {
+        this.classList.add('user-scrolled');
+      }
+
+      // Check if scrolled to end
+      const isScrolledToEnd = this.scrollLeft + this.clientWidth >= this.scrollWidth - 10;
+      if (isScrolledToEnd) {
+        this.classList.add('scrolled-end');
+      } else {
+        this.classList.remove('scrolled-end');
+      }
+    });
+  });
+});
+</script>
+```
