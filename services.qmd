@@ -987,39 +987,82 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 document.addEventListener('DOMContentLoaded', function() {
   const scrollContainers = document.querySelectorAll('.capabilities-grid, .applications-grid');
 
-  function updateScrollArrows(container) {
-    const scrollLeft = container.scrollLeft;
-    const scrollWidth = container.scrollWidth;
-    const clientWidth = container.clientWidth;
-
-    // Show left arrow if scrolled right (content hidden on left)
-    if (scrollLeft > 1) {
-      container.classList.add('has-scroll-left');
-    } else {
-      container.classList.remove('has-scroll-left');
-    }
-
-    // Show right arrow if there's more content on the right
-    if (scrollLeft + clientWidth < scrollWidth - 10) {
-      container.classList.add('has-scroll-right');
-    } else {
-      container.classList.remove('has-scroll-right');
-    }
-  }
-
   scrollContainers.forEach(container => {
-    // Initial check on page load
-    updateScrollArrows(container);
+    // Determine wrapper class based on container class
+    const wrapperClass = container.classList.contains('capabilities-grid')
+      ? 'capabilities-grid-wrapper'
+      : 'applications-grid-wrapper';
 
-    // Update on scroll
-    container.addEventListener('scroll', function() {
-      updateScrollArrows(this);
+    // Wrap container if not already wrapped
+    if (!container.parentElement.classList.contains(wrapperClass)) {
+      const wrapper = document.createElement('div');
+      wrapper.className = wrapperClass;
+      container.parentNode.insertBefore(wrapper, container);
+      wrapper.appendChild(container);
+    }
+
+    const wrapper = container.parentElement;
+
+    // Create arrow elements
+    const leftArrow = document.createElement('div');
+    leftArrow.className = 'scroll-arrow left';
+    leftArrow.textContent = '←';
+    leftArrow.setAttribute('aria-hidden', 'true');
+
+    const rightArrow = document.createElement('div');
+    rightArrow.className = 'scroll-arrow right';
+    rightArrow.textContent = '→';
+    rightArrow.setAttribute('aria-hidden', 'true');
+
+    wrapper.appendChild(leftArrow);
+    wrapper.appendChild(rightArrow);
+
+    // Function to update arrow visibility based on scroll position
+    function updateScrollArrows() {
+      const scrollLeft = container.scrollLeft;
+      const scrollWidth = container.scrollWidth;
+      const clientWidth = container.clientWidth;
+
+      // Show left arrow if scrolled right (content hidden on left)
+      if (scrollLeft > 1) {
+        leftArrow.classList.add('visible');
+      } else {
+        leftArrow.classList.remove('visible');
+      }
+
+      // Show right arrow if there's more content on the right
+      if (scrollLeft + clientWidth < scrollWidth - 1) {
+        rightArrow.classList.add('visible');
+      } else {
+        rightArrow.classList.remove('visible');
+      }
+    }
+
+    // Use Intersection Observer to only show arrows when container is in viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateScrollArrows();
+        } else {
+          // Hide arrows when container is not in viewport
+          leftArrow.classList.remove('visible');
+          rightArrow.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.1 // Trigger when at least 10% of container is visible
     });
 
-    // Update on window resize
-    window.addEventListener('resize', function() {
-      updateScrollArrows(container);
-    });
+    observer.observe(container);
+
+    // Update arrows on scroll
+    container.addEventListener('scroll', updateScrollArrows);
+
+    // Update arrows on window resize
+    window.addEventListener('resize', updateScrollArrows);
+
+    // Initial check
+    updateScrollArrows();
   });
 });
 </script>
@@ -1383,11 +1426,9 @@ document.addEventListener('DOMContentLoaded', function() {
   position: relative;
 }
 
-/* Right scroll arrow indicator */
-.capabilities-grid::before {
-  content: '→';
-  position: fixed;
-  right: 40px;
+/* Scroll arrow indicators - using real DOM elements */
+.scroll-arrow {
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 2.5rem;
@@ -1395,32 +1436,27 @@ document.addEventListener('DOMContentLoaded', function() {
   opacity: 0;
   pointer-events: none;
   z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-arrow.visible {
+  opacity: 0.7;
+}
+
+.scroll-arrow.right {
+  right: 10px;
   animation: slideRightHint 2s ease-in-out infinite;
-  transition: opacity 0.3s ease;
 }
 
-.capabilities-grid.has-scroll-right::before {
-  opacity: 0.7;
-}
-
-/* Left scroll arrow indicator */
-.capabilities-grid::after {
-  content: '←';
-  position: fixed;
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.5rem;
-  color: #1a5e4a;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 10;
+.scroll-arrow.left {
+  left: 10px;
   animation: slideLeftHint 2s ease-in-out infinite;
-  transition: opacity 0.3s ease;
 }
 
-.capabilities-grid.has-scroll-left::after {
-  opacity: 0.7;
+/* Container wrapper for positioning arrows */
+.capabilities-grid-wrapper,
+.applications-grid-wrapper {
+  position: relative;
 }
 
 @keyframes slideRightHint {
@@ -1521,45 +1557,7 @@ document.addEventListener('DOMContentLoaded', function() {
   position: relative;
 }
 
-/* Right scroll arrow indicator */
-.applications-grid::before {
-  content: '→';
-  position: fixed;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.5rem;
-  color: #1a5e4a;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 10;
-  animation: slideRightHint 2s ease-in-out infinite;
-  transition: opacity 0.3s ease;
-}
-
-.applications-grid.has-scroll-right::before {
-  opacity: 0.7;
-}
-
-/* Left scroll arrow indicator */
-.applications-grid::after {
-  content: '←';
-  position: fixed;
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.5rem;
-  color: #1a5e4a;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 10;
-  animation: slideLeftHint 2s ease-in-out infinite;
-  transition: opacity 0.3s ease;
-}
-
-.applications-grid.has-scroll-left::after {
-  opacity: 0.7;
-}
+/* Arrow styles already defined above - shared between capabilities and applications grids */
 
 /* Custom scrollbar for applications */
 .applications-grid::-webkit-scrollbar {
