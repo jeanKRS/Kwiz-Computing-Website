@@ -34,6 +34,7 @@ website:
     foreground: "#ffffff"
     center: |
       © 2025 Kwiz Computing Technologies. All rights reserved.
+      Built with [Quarto](https://quarto.org)
     right:
       - icon: linkedin
         href: https://linkedin.com

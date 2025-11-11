@@ -1,6 +1,6 @@
 ---
-title: "Kwiz Computing Technologies - Expert R Programming & Data Science Solutions"
-description: "Transform data into strategic decisions with expert R programming, statistical analysis and enterprise-grade analytics solutions. Specializing in advanced analytics, Shiny application development and reproducible data science for environmental, public sector, research and business organizations."
+title: "Kwiz Computing Technologies - Expert R Programming, Data Science & Web Development"
+description: "Transform data into strategic decisions with expert R programming, statistical analysis, modern web development and cloud solutions. Specializing in advanced analytics, Shiny applications, responsive web development and enterprise-grade technology solutions for environmental, public sector, research and business organizations."
 page-layout: full
 ---
 
@@ -24,7 +24,7 @@ We deliver sophisticated data science solutions combining rigorous statistical m
 
 ## Core Capabilities
 
-We provide comprehensive data science services built on transferable analytical and technical skills applicable across industries and domains.
+We provide comprehensive data science, web development and cloud solutions built on transferable analytical and technical skills applicable across industries and domains.
 
 ::::::::::: services-grid
 :::: {.service-card .featured}
@@ -89,6 +89,22 @@ Develop tailored analytical frameworks and methodologies designed specifically f
 **Example applications:** ESIA reproducibility frameworks, clinical trial analysis systems, financial risk models, supply chain analytics
 
 [Discover More →](services.qmd)
+::::
+
+:::: service-card
+::: service-icon
+![Modern web development with cloud infrastructure and responsive design](https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop&q=70&auto=format){.service-img loading="lazy"}
+:::
+
+### Web Development & Cloud Solutions
+
+Build modern, scalable web applications and cloud infrastructure with professional development practices, responsive design and enterprise-grade security.
+
+**What we build:** - Responsive web applications - Cloud-native solutions - CI/CD pipelines - API development and integration
+
+**Example applications:** Corporate websites, data portals, SaaS platforms, interactive dashboards, open data systems
+
+[Explore Technologies →](services.qmd)
 ::::
 :::::::::::
 

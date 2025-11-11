@@ -1,10 +1,10 @@
 ---
 title: "Services"
-description: "Comprehensive R programming and data science services including advanced analytics, statistical modeling, Shiny application development, data management, ETL pipelines and custom analytics solutions. Enterprise-grade data science consulting for all industries."
+description: "Comprehensive data science, web development and cloud solutions including advanced analytics, statistical modeling, Shiny application development, data management, modern web applications and cloud infrastructure. Enterprise-grade technology consulting for all industries."
 ---
 
 ::: services-intro
-We deliver comprehensive data science solutions built on transferable technical capabilities. Our expertise in R programming, statistical analysis and software engineering enables us to solve complex analytical challenges across diverse industries and domains.
+We deliver comprehensive data science and technology solutions built on transferable technical capabilities. Our expertise spans R programming, statistical analysis, modern web development, cloud infrastructure and software engineering, enabling us to solve complex analytical and technical challenges across diverse industries and domains.
 :::
 
 ------------------------------------------------------------------------
@@ -678,6 +678,149 @@ Packages codify institutional knowledge, ensure consistency and accelerate analy
 **Tools & Technologies:** devtools, usethis, roxygen2, testthat, pkgdown, R CMD check, GitHub Actions
 
 [Discuss Your Project →](contact.qmd){.btn .btn-primary}
+::::
+
+------------------------------------------------------------------------
+
+### Web Development & Cloud Solutions
+
+:::: service-detail
+::: service-header-img
+![](https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=300&fit=crop&q=80){.service-banner}
+:::
+
+Build modern, scalable web applications and cloud-native solutions with professional development practices, responsive design and enterprise-grade infrastructure.
+
+#### Core Capabilities:
+
+::::::: {.capabilities-grid}
+:::: {.capability-card}
+::: {.capability-icon}
+🌐
+:::
+**Modern Web Development**
+
+- Responsive web design and development
+- Progressive web applications (PWAs)
+- Single-page applications (SPAs)
+- RESTful API development
+- Frontend frameworks (React, Vue)
+- Backend development (Node.js, Python)
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+☁️
+:::
+**Cloud Infrastructure & DevOps**
+
+- AWS, Azure, and Google Cloud Platform
+- Infrastructure as Code (Terraform, CloudFormation)
+- Container orchestration (Docker, Kubernetes)
+- CI/CD pipeline setup and automation
+- Serverless architectures (Lambda, Cloud Functions)
+- Monitoring and logging solutions
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🚀
+:::
+**Application Deployment & Hosting**
+
+- Cloud-native application deployment
+- Load balancing and auto-scaling
+- CDN configuration and optimization
+- SSL/TLS certificate management
+- Database hosting and management
+- Backup and disaster recovery
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+🔐
+:::
+**Security & Compliance**
+
+- Web application security best practices
+- Authentication and authorization (OAuth, JWT)
+- Data encryption and privacy
+- GDPR and compliance requirements
+- Security audits and penetration testing
+- DDoS protection and WAF configuration
+::::
+
+:::: {.capability-card}
+::: {.capability-icon}
+⚡
+:::
+**Performance Optimization**
+
+- Website speed optimization
+- Database query optimization
+- Caching strategies (Redis, CDN)
+- Asset minification and bundling
+- Performance monitoring and analytics
+- Core Web Vitals optimization
+::::
+:::::::
+
+#### Example Applications:
+
+::::::: {.applications-grid}
+:::: {.application-item}
+::: {.application-icon}
+💼
+:::
+**Business:** Corporate websites, customer portals, e-commerce platforms, SaaS applications, CRM systems
+::::
+
+:::: {.application-item}
+::: {.application-icon}
+🌿
+:::
+**Environmental:** Environmental data portals, ESIA reporting platforms, sustainability dashboards, monitoring systems
+::::
+
+:::: {.application-item}
+::: {.application-icon}
+📊
+:::
+**Analytics:** Interactive dashboards, data visualization platforms, reporting systems, business intelligence tools
+::::
+
+:::: {.application-item}
+::: {.application-icon}
+🏛️
+:::
+**Public Sector:** Government portals, open data platforms, citizen services, transparency websites
+::::
+
+:::: {.application-item}
+::: {.application-icon}
+🎓
+:::
+**Education:** Learning management systems, research portals, collaboration platforms, academic websites
+::::
+:::::::
+
+#### Why Choose Our Approach:
+
+Modern web development requires balancing user experience, performance, security and maintainability. We build solutions that are fast, secure, scalable and easy to maintain, using industry best practices and proven technologies.
+
+#### Typical Deliverables:
+
+-   Production-ready web applications with responsive design
+-   Cloud infrastructure setup and configuration
+-   CI/CD pipelines for automated deployment
+-   Comprehensive documentation and user guides
+-   Security audits and compliance reports
+-   Performance optimization reports
+-   Ongoing maintenance and support plans
+
+**Tools & Technologies:** HTML5, CSS3, JavaScript/TypeScript, React, Vue, Node.js, Python, Docker, Kubernetes, AWS, Azure, GCP, Terraform, GitHub Actions, Nginx
+
+[Start Your Project →](contact.qmd){.btn .btn-primary}
 ::::
 
 ------------------------------------------------------------------------
