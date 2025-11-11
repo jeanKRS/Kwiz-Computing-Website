@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const clientWidth = container.clientWidth;
 
     // Show left arrow if scrolled right (content hidden on left)
-    if (scrollLeft > 10) {
+    if (scrollLeft > 1) {
       container.classList.add('has-scroll-left');
     } else {
       container.classList.remove('has-scroll-left');
