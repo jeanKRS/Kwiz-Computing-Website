@@ -100,57 +100,69 @@
   scroll-behavior: smooth;
   padding-bottom: 1rem;
   padding-right: 2rem;
+  padding-left: 2rem;
   -webkit-overflow-scrolling: touch;
   position: relative;
 }
 
-/* Gradient fade indicator on right edge */
-.services-grid::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 1rem;
-  width: 100px;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-/* Hide gradient when scrolled to the end */
-.services-grid.scrolled-end::after {
-  opacity: 0;
-}
-
-/* Scroll hint indicator */
+/* Right scroll arrow indicator */
 .services-grid::before {
   content: '→';
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #1a5e4a;
-  opacity: 0.6;
+  opacity: 0;
   pointer-events: none;
   z-index: 10;
-  animation: slideHint 2s ease-in-out infinite;
+  animation: slideRightHint 2s ease-in-out infinite;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes slideHint {
+/* Show right arrow when there's content to scroll */
+.services-grid.has-scroll-right::before {
+  opacity: 0.7;
+}
+
+/* Left scroll arrow indicator */
+.services-grid::after {
+  content: '←';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #1a5e4a;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  animation: slideLeftHint 2s ease-in-out infinite;
+  transition: opacity 0.3s ease;
+}
+
+/* Show left arrow when scrolled right */
+.services-grid.has-scroll-left::after {
+  opacity: 0.7;
+}
+
+@keyframes slideRightHint {
   0%, 100% {
     transform: translateY(-50%) translateX(0);
-    opacity: 0.6;
   }
   50% {
     transform: translateY(-50%) translateX(10px);
-    opacity: 0.3;
   }
 }
 
-/* Hide hint when user starts scrolling */
-.services-grid.user-scrolled::before {
-  opacity: 0;
+@keyframes slideLeftHint {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(-10px);
+  }
 }
 
 /* Custom scrollbar styling */

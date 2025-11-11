@@ -987,21 +987,38 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 document.addEventListener('DOMContentLoaded', function() {
   const scrollContainers = document.querySelectorAll('.capabilities-grid, .applications-grid');
 
-  scrollContainers.forEach(container => {
-    // Handle scroll event
-    container.addEventListener('scroll', function() {
-      // Mark as user-scrolled to hide hint
-      if (!this.classList.contains('user-scrolled')) {
-        this.classList.add('user-scrolled');
-      }
+  function updateScrollArrows(container) {
+    const scrollLeft = container.scrollLeft;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
 
-      // Check if scrolled to end
-      const isScrolledToEnd = this.scrollLeft + this.clientWidth >= this.scrollWidth - 10;
-      if (isScrolledToEnd) {
-        this.classList.add('scrolled-end');
-      } else {
-        this.classList.remove('scrolled-end');
-      }
+    // Show left arrow if scrolled right (content hidden on left)
+    if (scrollLeft > 10) {
+      container.classList.add('has-scroll-left');
+    } else {
+      container.classList.remove('has-scroll-left');
+    }
+
+    // Show right arrow if there's more content on the right
+    if (scrollLeft + clientWidth < scrollWidth - 10) {
+      container.classList.add('has-scroll-right');
+    } else {
+      container.classList.remove('has-scroll-right');
+    }
+  }
+
+  scrollContainers.forEach(container => {
+    // Initial check on page load
+    updateScrollArrows(container);
+
+    // Update on scroll
+    container.addEventListener('scroll', function() {
+      updateScrollArrows(this);
+    });
+
+    // Update on window resize
+    window.addEventListener('resize', function() {
+      updateScrollArrows(container);
     });
   });
 });
@@ -1358,7 +1375,7 @@ document.addEventListener('DOMContentLoaded', function() {
   display: flex;
   gap: 1.5rem;
   margin: 2rem 0;
-  padding: 0 2rem 1rem 0;
+  padding: 0 2rem 1rem 2rem;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -1366,51 +1383,62 @@ document.addEventListener('DOMContentLoaded', function() {
   position: relative;
 }
 
-/* Gradient fade indicator on right edge */
-.capabilities-grid::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 1rem;
-  width: 100px;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.capabilities-grid.scrolled-end::after {
-  opacity: 0;
-}
-
-/* Scroll hint indicator */
+/* Right scroll arrow indicator */
 .capabilities-grid::before {
   content: '→';
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #1a5e4a;
-  opacity: 0.6;
+  opacity: 0;
   pointer-events: none;
   z-index: 10;
-  animation: slideHint 2s ease-in-out infinite;
+  animation: slideRightHint 2s ease-in-out infinite;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes slideHint {
+.capabilities-grid.has-scroll-right::before {
+  opacity: 0.7;
+}
+
+/* Left scroll arrow indicator */
+.capabilities-grid::after {
+  content: '←';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #1a5e4a;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  animation: slideLeftHint 2s ease-in-out infinite;
+  transition: opacity 0.3s ease;
+}
+
+.capabilities-grid.has-scroll-left::after {
+  opacity: 0.7;
+}
+
+@keyframes slideRightHint {
   0%, 100% {
     transform: translateY(-50%) translateX(0);
-    opacity: 0.6;
   }
   50% {
     transform: translateY(-50%) translateX(10px);
-    opacity: 0.3;
   }
 }
 
-.capabilities-grid.user-scrolled::before {
-  opacity: 0;
+@keyframes slideLeftHint {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(-10px);
+  }
 }
 
 /* Custom scrollbar for capabilities */
@@ -1485,7 +1513,7 @@ document.addEventListener('DOMContentLoaded', function() {
   display: flex;
   gap: 1.25rem;
   margin: 2rem 0;
-  padding: 0 2rem 1rem 0;
+  padding: 0 2rem 1rem 2rem;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -1493,40 +1521,44 @@ document.addEventListener('DOMContentLoaded', function() {
   position: relative;
 }
 
-/* Gradient fade indicator on right edge */
-.applications-grid::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 1rem;
-  width: 100px;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.applications-grid.scrolled-end::after {
-  opacity: 0;
-}
-
-/* Scroll hint indicator */
+/* Right scroll arrow indicator */
 .applications-grid::before {
   content: '→';
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #1a5e4a;
-  opacity: 0.6;
+  opacity: 0;
   pointer-events: none;
   z-index: 10;
-  animation: slideHint 2s ease-in-out infinite;
+  animation: slideRightHint 2s ease-in-out infinite;
+  transition: opacity 0.3s ease;
 }
 
-.applications-grid.user-scrolled::before {
+.applications-grid.has-scroll-right::before {
+  opacity: 0.7;
+}
+
+/* Left scroll arrow indicator */
+.applications-grid::after {
+  content: '←';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #1a5e4a;
   opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  animation: slideLeftHint 2s ease-in-out infinite;
+  transition: opacity 0.3s ease;
+}
+
+.applications-grid.has-scroll-left::after {
+  opacity: 0.7;
 }
 
 /* Custom scrollbar for applications */

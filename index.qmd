@@ -197,21 +197,38 @@ Whether you need advanced statistical analysis, custom R applications, or reprod
 document.addEventListener('DOMContentLoaded', function() {
   const scrollContainers = document.querySelectorAll('.services-grid');
 
-  scrollContainers.forEach(container => {
-    // Handle scroll event
-    container.addEventListener('scroll', function() {
-      // Mark as user-scrolled to hide hint
-      if (!this.classList.contains('user-scrolled')) {
-        this.classList.add('user-scrolled');
-      }
+  function updateScrollArrows(container) {
+    const scrollLeft = container.scrollLeft;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
 
-      // Check if scrolled to end
-      const isScrolledToEnd = this.scrollLeft + this.clientWidth >= this.scrollWidth - 10;
-      if (isScrolledToEnd) {
-        this.classList.add('scrolled-end');
-      } else {
-        this.classList.remove('scrolled-end');
-      }
+    // Show left arrow if scrolled right (content hidden on left)
+    if (scrollLeft > 10) {
+      container.classList.add('has-scroll-left');
+    } else {
+      container.classList.remove('has-scroll-left');
+    }
+
+    // Show right arrow if there's more content on the right
+    if (scrollLeft + clientWidth < scrollWidth - 10) {
+      container.classList.add('has-scroll-right');
+    } else {
+      container.classList.remove('has-scroll-right');
+    }
+  }
+
+  scrollContainers.forEach(container => {
+    // Initial check on page load
+    updateScrollArrows(container);
+
+    // Update on scroll
+    container.addEventListener('scroll', function() {
+      updateScrollArrows(this);
+    });
+
+    // Update on window resize
+    window.addEventListener('resize', function() {
+      updateScrollArrows(container);
     });
   });
 });
