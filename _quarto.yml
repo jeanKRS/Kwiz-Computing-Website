@@ -64,6 +64,9 @@ format:
       - _seo.html
       - _performance.html
       - _analytics.html
+    include-after-body:
+      - text: |
+          <script src="/js/blog-cards.js"></script>
     # Image optimization
     fig-responsive: true
     fig-dpi: 150
