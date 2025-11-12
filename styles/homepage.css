@@ -594,6 +594,47 @@
   color: #555;
 }
 
+/* Process Section on Services Page */
+.process-grid {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.process-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.process-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.process-grid > div:hover .process-img {
+  transform: scale(1.1);
+}
+
+.process-grid strong {
+  color: #1a5e4a;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.process-grid p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 .service-detail {
   margin-bottom: 4rem;
 }
@@ -914,6 +955,19 @@
     padding: 1.5rem;
     font-size: 1rem;
   }
+
+  .process-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .process-grid strong {
+    font-size: 1rem;
+  }
+
+  .process-grid p {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -939,6 +993,19 @@
 
   .process-card {
     padding: 1rem;
+  }
+
+  .process-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .process-grid strong {
+    font-size: 0.95rem;
+  }
+
+  .process-grid p {
+    font-size: 0.85rem;
   }
 }
 
