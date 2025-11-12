@@ -1128,15 +1128,11 @@ Every analytical challenge is unique. Whether you need rigorous statistical anal
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const scrollContainers = document.querySelectorAll('.capabilities-grid, .applications-grid');
+  const scrollContainers = document.querySelectorAll('.applications-grid');
 
   scrollContainers.forEach(container => {
-    // Determine wrapper class based on container class
-    const wrapperClass = container.classList.contains('capabilities-grid')
-      ? 'capabilities-grid-wrapper'
-      : 'applications-grid-wrapper';
-
     // Wrap container if not already wrapped
+    const wrapperClass = 'applications-grid-wrapper';
     if (!container.parentElement.classList.contains(wrapperClass)) {
       const wrapper = document.createElement('div');
       wrapper.className = wrapperClass;
@@ -1640,16 +1636,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 }
 
-/* Capabilities Grid Styling - Horizontal Sliding */
+/* Capabilities Grid Styling - 2 Column Grid */
 .capabilities-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin: 2rem 0;
   padding: 0 2rem 1rem 2rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   position: relative;
 }
 
@@ -1701,7 +1694,6 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 /* Container wrapper for positioning arrows */
-.capabilities-grid-wrapper,
 .applications-grid-wrapper {
   position: relative;
 }
@@ -1724,24 +1716,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 }
 
-/* Custom scrollbar for capabilities */
-.capabilities-grid::-webkit-scrollbar {
-  height: 10px;
-}
-
-.capabilities-grid::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.capabilities-grid::-webkit-scrollbar-thumb {
-  background: #1a5e4a;
-  border-radius: 10px;
-}
-
-.capabilities-grid::-webkit-scrollbar-thumb:hover {
-  background: #145240;
-}
 
 .capability-card {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -1751,9 +1725,7 @@ document.addEventListener('DOMContentLoaded', function() {
   transition: all 0.3s ease;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  min-width: 300px;
-  max-width: 350px;
-  flex-shrink: 0;
+  width: 100%;
 }
 
 .capability-card:hover {
@@ -1863,14 +1835,17 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 @media (max-width: 768px) {
-  .capabilities-grid,
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem 1rem 1rem;
+  }
+
   .applications-grid {
     gap: 1rem;
   }
 
   .capability-card {
-    min-width: 260px;
-    max-width: 300px;
     padding: 1.5rem;
   }
 
