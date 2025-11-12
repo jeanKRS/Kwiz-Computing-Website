@@ -64,7 +64,13 @@ R is our primary tool and we leverage its full capabilities:
 
 ### Environmental Analytics
 
-Impact assessments, sustainability metrics, and ecological data analysis with spatial modeling.
+Specialized expertise in environmental data science and impact assessment:
+
+-   Environmental Impact Assessment (ESIA/EIA) analysis
+-   Spatial statistics and geospatial modeling
+-   Biodiversity metrics and ecological monitoring
+-   Sustainability reporting and ESG analytics
+-   Climate data analysis and environmental indicators
 :::
 
 ::: {.info-card}
@@ -72,7 +78,13 @@ Impact assessments, sustainability metrics, and ecological data analysis with sp
 
 ### Regulatory Compliance
 
-Automated reporting systems and audit trail solutions that ensure regulatory adherence.
+Building systems that meet regulatory requirements with confidence:
+
+-   Automated compliance reporting workflows
+-   Audit trail and documentation systems
+-   Data validation and quality assurance
+-   Regulatory framework integration (NEMA, KRA, etc.)
+-   Transparent, reproducible analytical processes
 :::
 
 ::: {.info-card}
@@ -80,7 +92,13 @@ Automated reporting systems and audit trail solutions that ensure regulatory adh
 
 ### Business Intelligence
 
-KPI dashboards and predictive analytics that drive data-informed decision making.
+Transform data into strategic insights for better decision making:
+
+-   Executive dashboards and KPI tracking
+-   Predictive analytics and forecasting models
+-   Customer behavior and market analysis
+-   Performance metrics and operational analytics
+-   Real-time monitoring and alerting systems
 :::
 
 :::
