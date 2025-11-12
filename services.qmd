@@ -1227,7 +1227,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Scroll to next card
           scrollByCard('right');
         }
-      }, 4000); // Auto-scroll every 4 seconds
+      }, 8000); // Auto-scroll every 8 seconds
     }
 
     function stopAutoScroll() {
@@ -1240,7 +1240,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetAutoScroll() {
       stopAutoScroll();
       if (isInViewport) {
-        setTimeout(startAutoScroll, 2000); // Resume after 2 seconds of inactivity
+        setTimeout(startAutoScroll, 4000); // Resume after 4 seconds of inactivity
       }
     }
 
@@ -1285,7 +1285,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     container.addEventListener('touchstart', stopAutoScroll);
     container.addEventListener('touchend', () => {
-      if (isInViewport) setTimeout(startAutoScroll, 2000);
+      if (isInViewport) setTimeout(startAutoScroll, 4000);
     });
 
     // Initial check
