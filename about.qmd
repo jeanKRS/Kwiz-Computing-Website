@@ -61,19 +61,15 @@ Our expertise extends beyond general data science into specialized domains:
 
 ### Jean Victor Kwizera, MEIK
 
-Jean Victor is a cofounder and data scientist at Kwiz Computing Technologies, bringing together expertise in actuarial science, environmental analytics, and full-stack software development. With a strong foundation in statistical modeling and spatial analysis, he leads our technical operations and drives innovation in data-driven environmental solutions.
+Kwizera is a cofounder and data scientist at Kwiz Computing Technologies, bringing together expertise in actuarial science, environmental analytics and full-stack software development. With a strong foundation in statistical modeling and spatial analysis, he leads our technical operations and drives innovation in data-driven solutions. His journey began with a BS in Actuarial Science from the University of Kabianga, where he distinguished himself by among others, winning the 2020 Inter-University Actuarial Innovation Challenge organized by Kenya's Insurance Regulatory Authority. 
 
-His journey began with a BS in Actuarial Science from the University of Kabianga, where he distinguished himself by winning the 2020 Inter-University Actuarial Innovation Challenge organized by Kenya's Insurance Regulatory Authority. This early recognition of his analytical capabilities set the stage for a career focused on solving complex problems with data.
+As an Associate Member of the Environment Institute of Kenya (MEIK) and a registered Environmental Impact Assessment expert with NEMA, Kwizera bridges the gap between rigorous data science and environmental compliance. Since 2016, he has contributed to research on invasive plant population dynamics, forest inventory modeling and environmental impact assessments, with his work acknowledged in peer-reviewed publications. 
 
-As an Associate Member of the Environment Institute of Kenya (MEIK) and a registered Environmental Impact Assessment expert with NEMA, Jean Victor bridges the gap between rigorous data science and environmental compliance. He specializes in developing enterprise-grade analytics dashboards and R Shiny applications that transform complex environmental data into actionable insights.
+He specializes in the R ecosystem, developing enterprise-grade analytics dashboards and R Shiny applications that transform complex data into actionable insights. His technical expertise spans the full stack of modern data science tools—from R programming and AWS cloud infrastructure to spatial data modeling. At Kwiz Computing, Jean Victor oversees web development initiatives, leads data science engagements, manages our technology infrastructure and ensures our solutions meet the highest standards of software engineering while remaining accessible and user-friendly. 
 
-His technical expertise spans the full stack of modern data science tools—from R programming and AWS cloud infrastructure to spatial data modeling with ArcGIS Pro. Since 2016, he has contributed to research on invasive plant population dynamics, forest inventory modeling, and environmental impact assessments, with his work appearing in peer-reviewed publications.
+He is passionate about data and technology for resilient ecosystems, knowledge sharing, having guided PhD students through practical applications of simulation and modeling in R. Jean is based in Kericho and Nairobi, Kenya. When he's not developing analytics solutions, you might find him cycling through nature.
 
-At Kwiz Computing, Jean Victor oversees web development initiatives, manages our cloud infrastructure, and ensures our solutions meet the highest standards of software engineering while remaining accessible and user-friendly. He's also passionate about knowledge sharing, having guided PhD students through practical applications of simulation and modeling in R.
-
-Based in Kericho, Kenya, Jean Victor is fluent in Swahili and conversational in French and Kinyarwanda. When he's not developing analytics solutions, you might find him cycling through nature or practicing Wing Chun.
-
-[Connect with Jean Victor on LinkedIn](https://www.linkedin.com/in/jean-victor-kwizera) | [Email: jeankwizera@kwizresearch.com](mailto:jeankwizera@kwizresearch.com)
+[Connect with Jean Victor on LinkedIn](https://www.linkedin.com/in/jean-victor-kwizera) \| [Email: jeankwizera\@kwizresearch.com](mailto:jeankwizera@kwizresearch.com)
 
 ## Let's Work Together
 
