@@ -14,6 +14,8 @@ format:
     toc-depth: 3
 ---
 
+*By Kwiz Computing Technologies • October 20, 2025 • 33 min read*
+
 ## Introduction: Publishing Your Quarto Work to the World
 
 ![Cloud deployment concept. Photo by [NASA](https://unsplash.com/@nasa) on [Unsplash](https://unsplash.com/photos/Q1p7bh3SHj8)](https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80)

@@ -15,6 +15,8 @@ execute:
   message: false
 ---
 
+*By Kwiz Computing Technologies • November 7, 2025 • 17 min read*
+
 ## Introduction
 
 As the world's urban population continues to grow, informal settlements and slum areas face unprecedented challenges: inadequate housing, poor sanitation, limited access to clean water and vulnerability to climate change. Yet, these communities also represent opportunities for innovative, sustainable development. Green architecture—design that minimizes environmental impact while maximizing human well-being—offers a pathway forward, but its implementation in resource-constrained settings requires careful planning backed by robust data analysis.

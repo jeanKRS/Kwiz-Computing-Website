@@ -14,6 +14,8 @@ format:
     toc-depth: 3
 ---
 
+*By Kwiz Computing Technologies • October 27, 2025 • 14 min read*
+
 ![Deploying R Shiny applications to production](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80) *Photo by [Arian Darvishi](https://unsplash.com/@arianismmm) on Unsplash*
 
 ## Introduction

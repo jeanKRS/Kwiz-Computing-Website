@@ -1,5 +1,6 @@
 ---
 title: "Kenya's Open Data Initiative: A Promise Unfulfilled?"
+author: "Kwiz Computing Technologies"
 format: html
 date: "2025-11-03"
 categories: [Decision Making, Sustatainability, Data, ESIA/EA]
@@ -7,6 +8,8 @@ image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
 description: "A review of the state of Kenya's Open Data initiative"
 reading-time: "12 min read"
 ---
+
+*By Kwiz Computing Technologies • November 3, 2025 • 12 min read*
 
 **Executive Summary**
 
