@@ -664,6 +664,9 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .capability-card {
@@ -674,6 +677,9 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .capability-card:hover {
@@ -728,6 +734,9 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .application-item {
@@ -736,6 +745,9 @@
   border-radius: 8px;
   border-left: 4px solid #1a5e4a;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .application-item img {
@@ -764,6 +776,9 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   margin: 2rem 0;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .team-profile img {
@@ -787,6 +802,9 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .info-card {
@@ -797,6 +815,9 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .info-card:hover {
@@ -881,6 +902,9 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-card:hover {
@@ -941,16 +965,22 @@
   .capabilities-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .applications-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .card-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .profile-image {
@@ -963,21 +993,29 @@
 
   .team-profile {
     padding: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .info-card,
   .capability-card {
     padding: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .services-intro {
     padding: 1.5rem;
     font-size: 1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .process-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .process-icon {
@@ -1017,6 +1055,22 @@
 
   .process-card {
     padding: 1rem;
+  }
+
+  .info-card,
+  .capability-card,
+  .contact-card {
+    padding: 1rem;
+  }
+
+  .team-profile {
+    padding: 1rem;
+  }
+
+  .card-grid,
+  .capabilities-grid,
+  .applications-grid {
+    gap: 0.75rem;
   }
 
   .process-grid {
