@@ -623,12 +623,19 @@
   border: 1px solid #e9ecef;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .capability-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-color: #1a5e4a;
+}
+
+.capability-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .capability-icon {
@@ -678,6 +685,13 @@
   padding: 1.5rem;
   border-radius: 8px;
   border-left: 4px solid #1a5e4a;
+  overflow: hidden;
+}
+
+.application-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .application-icon {
@@ -699,6 +713,12 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   margin: 2rem 0;
+  overflow: hidden;
+}
+
+.team-profile img {
+  max-width: 100%;
+  height: auto;
 }
 
 .profile-image {
@@ -726,11 +746,18 @@
   border: 1px solid #e9ecef;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .info-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.info-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .card-icon {
@@ -772,6 +799,13 @@
   display: flex;
   gap: 1rem;
   align-items: start;
+  overflow: hidden;
+}
+
+.process-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .step-number {
@@ -796,11 +830,18 @@
   border: 1px solid #e9ecef;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .contact-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* Responsive adjustments for services and about pages */
