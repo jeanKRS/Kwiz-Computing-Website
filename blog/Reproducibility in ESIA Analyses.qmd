@@ -300,6 +300,14 @@ The choice is clear: Kenya can continue with EIA processes that create the appea
 
 ------------------------------------------------------------------------
 
+## About Kwiz Computing Technologies
+
+We specialize in helping organizations leverage R for production software development, particularly in data-intensive domains. Our expertise includes enterprise-grade Shiny application development using the Rhino framework, R package development and analytical systems that go from prototype to production seamlessly.
+
+*Interested in exploring whether R makes sense for your organization? [Contact us](mailto:info@kwizcomputing.com) for a no-obligation consultation where we can discuss your specific challenges and whether R might be part of the solution.*
+
+------------------------------------------------------------------------
+
 ::: {.related-posts}
 ## More from Our Blog
 
