@@ -1636,10 +1636,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 }
 
-/* Capabilities Grid Styling - 2 Column Grid */
+/* Capabilities Grid Styling - Auto-Responsive Grid */
 .capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
   padding: 0 2rem 1rem 2rem;
@@ -1836,7 +1836,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 @media (max-width: 768px) {
   .capabilities-grid {
-    grid-template-columns: 1fr;
     gap: 1rem;
     padding: 0 1rem 1rem 1rem;
   }
