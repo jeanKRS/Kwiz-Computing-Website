@@ -3,61 +3,13 @@ title: "About Us"
 description: "Learn about Kwiz Computing Technologies, a boutique data science consultancy specializing in R programming, statistical analysis and enterprise-grade analytics. Discover our mission, technical expertise and commitment to delivering production-ready data science solutions."
 ---
 
-## Our Story
+## Who We Are
 
 Kwiz Computing Technologies is a boutique data science consultancy founded on the principle that exceptional technical expertise should be accessible and personalized. As a small focused operation, we deliver enterprise-grade solutions with the agility and attention to detail that only a dedicated specialist can provide.
 
-## Our Mission
+**Our Mission**: To empower organizations with data-driven insights and robust analytical solutions that drive meaningful business outcomes, while maintaining the highest standards of software engineering excellence.
 
-To empower organizations with data-driven insights and robust analytical solutions that drive meaningful business outcomes, while maintaining the highest standards of software engineering excellence.
-
-## What Sets Us Apart
-
-### Technical Excellence
-
-We don't just analyze data—we build production-ready systems. Every solution follows software development best practices, including:
-
--   Modular, maintainable code architecture
--   Comprehensive unit and integration testing
--   Version control and continuous integration
--   Documentation and reproducibility
--   Enterprise-grade frameworks (e.g Rhino for Shiny applications)
-
-### Deep R Expertise
-
-R is our primary tool and we leverage its full ecosystem:
-
--   Data manipulation with `dplyr`, `data.table` and `tidyverse`
--   Statistical modeling and machine learning
--   Interactive dashboards with `shiny` and `bslib`
--   Reproducible reporting with Quarto and R Markdown
--   Package development and deployment
-
-### Domain Specialization
-
-Our expertise extends beyond general data science into specialized domains:
-
--   **Environmental Analytics**: Impact assessments, sustainability metrics, ecological data analysis
--   **Regulatory Compliance**: Automated reporting, audit trail systems
--   **Business Intelligence**: KPI dashboards, predictive analytics
-
-## Our Approach
-
-1.  **Discovery**: Deep dive into your business context and technical requirements
-2.  **Design**: Architecture planning with scalability and maintainability in mind
-3.  **Development**: Iterative building with regular client feedback
-4.  **Testing**: Rigorous validation and quality assurance
-5.  **Deployment**: Smooth transition to production with documentation
-6.  **Support**: Ongoing maintenance and enhancement options
-
-## Values
-
--   **Quality Over Quantity**: We prioritize robust, well-tested solutions over quick fixes
--   **Transparency**: Clear communication about capabilities, timelines and costs
--   **Continuous Learning**: Staying current with the latest R packages and data science methodologies
--   **Ethical Practice**: Responsible data handling and privacy-first approaches
-
-## Our Team
+## Meet the Team
 
 ::: {.team-profile}
 ![Jean Victor Kwizera](images/profile-placeholder.svg){.profile-image fig-alt="Jean Victor Kwizera profile photo"}
@@ -74,6 +26,55 @@ He is passionate about data and technology for resilient ecosystems, knowledge s
 
 [Connect with Jean Victor on LinkedIn](https://www.linkedin.com/in/jean-victor-kwizera) \| [Email: jeankwizera\@kwizresearch.com](mailto:jeankwizera@kwizresearch.com)
 :::
+
+## Our Expertise
+
+### Technical Excellence
+
+We don't just analyze data—we build production-ready systems. Every solution follows software development best practices:
+
+-   Modular, maintainable code architecture
+-   Comprehensive unit and integration testing
+-   Version control and continuous integration
+-   Documentation and reproducibility
+-   Enterprise-grade frameworks (e.g Rhino for Shiny applications)
+
+### Deep R Ecosystem
+
+R is our primary tool and we leverage its full capabilities:
+
+-   Data manipulation with `dplyr`, `data.table` and `tidyverse`
+-   Statistical modeling and machine learning
+-   Interactive dashboards with `shiny` and `bslib`
+-   Reproducible reporting with Quarto and R Markdown
+-   Package development and deployment
+-   AWS cloud integration and spatial analysis with ArcGIS Pro
+
+### Specialized Domains
+
+Our expertise extends into specialized areas where data science meets domain knowledge:
+
+-   **Environmental Analytics**: Impact assessments, sustainability metrics, ecological data analysis
+-   **Regulatory Compliance**: Automated reporting, audit trail systems
+-   **Business Intelligence**: KPI dashboards, predictive analytics
+
+## How We Work
+
+We follow a proven methodology that prioritizes quality, transparency and collaboration:
+
+1.  **Discovery**: Deep dive into your business context and technical requirements
+2.  **Design**: Architecture planning with scalability and maintainability in mind
+3.  **Development**: Iterative building with regular client feedback
+4.  **Testing**: Rigorous validation and quality assurance
+5.  **Deployment**: Smooth transition to production with documentation
+6.  **Support**: Ongoing maintenance and enhancement options
+
+### Our Principles
+
+-   **Quality Over Quantity**: We prioritize robust, well-tested solutions over quick fixes
+-   **Transparency**: Clear communication about capabilities, timelines and costs
+-   **Continuous Learning**: Staying current with the latest R packages and data science methodologies
+-   **Ethical Practice**: Responsible data handling and privacy-first approaches
 
 ## Let's Work Together
 
