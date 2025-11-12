@@ -745,6 +745,64 @@ The most important step is to get your app deployed and in front of users. Start
 -   Join the [Shiny community](https://community.rstudio.com/c/shiny) for support
 :::
 
+::: {.related-posts}
+## More from Our Blog
+
+::: {.blog-cards-container}
+
+<a href="r-for-business-leaders.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Why R for Business" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Why R? Making the Business Case for R in Software Development</h3>
+<p class="blog-card-description">A non-technical guide for business leaders on why R deserves consideration in your technology strategy.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-10-13</span>
+<span class="blog-card-category">R Programming</span>
+</div>
+</div>
+</a>
+
+<a href="quarto-cloud-deployment-guide.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Quarto Cloud Deployment" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Deploying Quarto Projects to the Cloud: A Complete Guide</h3>
+<p class="blog-card-description">Learn how to deploy your Quarto websites and documents to various cloud platforms with this comprehensive guide.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-10-15</span>
+<span class="blog-card-category">Cloud</span>
+</div>
+</div>
+</a>
+
+<a href="kenya-open-data-initiative.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="Kenya Open Data" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Kenya's Open Data Initiative: A Promise Unfulfilled?</h3>
+<p class="blog-card-description">A review of the state of Kenya's Open Data initiative and lessons for transparency advocates worldwide.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-11-03</span>
+<span class="blog-card-category">Data</span>
+</div>
+</div>
+</a>
+
+<a href="r-green-architecture-slums.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800" alt="Green Architecture" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">R and Green Architecture in Urban Slums</h3>
+<p class="blog-card-description">Leveraging R programming for sustainable development and green architecture initiatives in informal settlements.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-10-18</span>
+<span class="blog-card-category">Sustainability</span>
+</div>
+</div>
+</a>
+
+:::
+:::
+
+------------------------------------------------------------------------
+
 ## Additional Resources
 
 -   [Official Shiny Documentation](https://shiny.posit.co/)

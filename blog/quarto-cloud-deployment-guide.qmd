@@ -2250,6 +2250,64 @@ If you're deploying a complex Quarto project and need expert assistance, [Kwiz C
 
 ------------------------------------------------------------------------
 
+::: {.related-posts}
+## More from Our Blog
+
+::: {.blog-cards-container}
+
+<a href="rshiny-hosting-guide.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800" alt="R Shiny Hosting" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Complete Guide to R Shiny Application Hosting</h3>
+<p class="blog-card-description">Explore different options for hosting R Shiny applications, from free solutions to enterprise deployments.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-10-20</span>
+<span class="blog-card-category">R Shiny</span>
+</div>
+</div>
+</a>
+
+<a href="r-for-business-leaders.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Why R for Business" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Why R? Making the Business Case for R in Software Development</h3>
+<p class="blog-card-description">A non-technical guide for business leaders on why R deserves consideration in your technology strategy.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-10-13</span>
+<span class="blog-card-category">R Programming</span>
+</div>
+</div>
+</a>
+
+<a href="kenya-open-data-initiative.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="Kenya Open Data" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Kenya's Open Data Initiative: A Promise Unfulfilled?</h3>
+<p class="blog-card-description">A review of the state of Kenya's Open Data initiative and lessons for transparency advocates worldwide.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-11-03</span>
+<span class="blog-card-category">Data</span>
+</div>
+</div>
+</a>
+
+<a href="Reproducibility%20in%20ESIA%20Analyses.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Reproducibility in ESIA" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Reproducibility in ESIA Analyses: A Critical Evaluation</h3>
+<p class="blog-card-description">A comprehensive analysis of reproducibility challenges in Kenya's Environmental Impact Assessments.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-11-02</span>
+<span class="blog-card-category">ESIA/EA</span>
+</div>
+</div>
+</a>
+
+:::
+:::
+
+------------------------------------------------------------------------
+
 ## Quick Reference: Deployment Commands
 
 ### Google Cloud (Firebase)

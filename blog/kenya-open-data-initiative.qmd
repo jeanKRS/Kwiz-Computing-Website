@@ -309,6 +309,64 @@ As we monitor whether opendata.go.ke remains accessible and functional in the co
 
 ------------------------------------------------------------------------
 
+::: {.related-posts}
+## More from Our Blog
+
+::: {.blog-cards-container}
+
+<a href="Reproducibility%20in%20ESIA%20Analyses.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Reproducibility in ESIA Analyses" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Reproducibility in ESIA Analyses: A Critical Evaluation</h3>
+<p class="blog-card-description">A comprehensive analysis of reproducibility challenges in Kenya's Environmental Impact Assessments and their implications for sustainable development.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-11-02</span>
+<span class="blog-card-category">ESIA/EA</span>
+</div>
+</div>
+</a>
+
+<a href="r-for-business-leaders.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Why R for Business" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Why R? Making the Business Case for R in Software Development</h3>
+<p class="blog-card-description">A non-technical guide for business leaders on why R deserves consideration in your technology strategy.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-10-13</span>
+<span class="blog-card-category">R Programming</span>
+</div>
+</div>
+</a>
+
+<a href="quarto-cloud-deployment-guide.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Quarto Cloud Deployment" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Deploying Quarto Projects to the Cloud: A Complete Guide</h3>
+<p class="blog-card-description">Learn how to deploy your Quarto websites and documents to various cloud platforms with this comprehensive guide.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-10-15</span>
+<span class="blog-card-category">Cloud</span>
+</div>
+</div>
+</a>
+
+<a href="rshiny-hosting-guide.qmd" class="blog-card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800" alt="R Shiny Hosting" class="blog-card-image">
+<div class="blog-card-content">
+<h3 class="blog-card-title">Complete Guide to R Shiny Application Hosting</h3>
+<p class="blog-card-description">Explore different options for hosting R Shiny applications, from free solutions to enterprise deployments.</p>
+<div class="blog-card-meta">
+<span class="blog-card-date">2025-10-20</span>
+<span class="blog-card-category">R Shiny</span>
+</div>
+</div>
+</a>
+
+:::
+:::
+
+------------------------------------------------------------------------
+
 ## References and Sources
 
 1.  Centre for Public Impact. (2024). *The Kenya Open Data Initiative*. Retrieved from <https://www.centreforpublicimpact.org/case-study/open-data-kenya>
