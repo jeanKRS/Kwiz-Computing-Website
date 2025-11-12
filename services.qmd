@@ -1836,8 +1836,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 @media (max-width: 768px) {
   .capabilities-grid {
+    grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 0.5rem 1rem 0.5rem;
   }
 
   .applications-grid {
@@ -1845,7 +1846,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   .capability-card {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .application-item {
