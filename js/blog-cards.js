@@ -9,135 +9,159 @@ document.addEventListener('DOMContentLoaded', function() {
         const cards = container.querySelectorAll('.blog-card');
         if (cards.length === 0) return;
 
-        // Create wrapper and arrows
-        const wrapper = document.createElement('div');
-        wrapper.className = 'blog-cards-wrapper';
-        container.parentNode.insertBefore(wrapper, container);
-        wrapper.appendChild(container);
+        // Wrap container if not already wrapped
+        if (!container.parentElement.classList.contains('blog-cards-wrapper')) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'blog-cards-wrapper';
+            container.parentNode.insertBefore(wrapper, container);
+            wrapper.appendChild(container);
+        }
 
-        const leftArrow = document.createElement('button');
-        leftArrow.className = 'scroll-arrow scroll-left';
-        leftArrow.innerHTML = '‹';
+        const wrapper = container.parentElement;
+
+        // Create arrow elements
+        const leftArrow = document.createElement('div');
+        leftArrow.className = 'scroll-arrow left';
+        leftArrow.textContent = '←';
+        leftArrow.setAttribute('aria-hidden', 'true');
+        leftArrow.setAttribute('role', 'button');
         leftArrow.setAttribute('aria-label', 'Scroll left');
 
-        const rightArrow = document.createElement('button');
-        rightArrow.className = 'scroll-arrow scroll-right';
-        rightArrow.innerHTML = '›';
+        const rightArrow = document.createElement('div');
+        rightArrow.className = 'scroll-arrow right';
+        rightArrow.textContent = '→';
+        rightArrow.setAttribute('aria-hidden', 'true');
+        rightArrow.setAttribute('role', 'button');
         rightArrow.setAttribute('aria-label', 'Scroll right');
 
-        wrapper.insertBefore(leftArrow, container);
+        wrapper.appendChild(leftArrow);
         wrapper.appendChild(rightArrow);
 
-        // Scroll amount (one card width + gap)
-        const scrollAmount = 320 + 24; // card width + gap
+        // Auto-scroll state
+        let autoScrollInterval = null;
+        let isInViewport = false;
 
-        // Auto-scroll settings
-        let autoScrollInterval;
-        let isAutoScrolling = true;
-        const autoScrollDelay = 4000; // 4 seconds
-
-        // Update arrow states based on scroll position
-        function updateArrows() {
-            const scrollLeft = container.scrollLeft;
-            const maxScroll = container.scrollWidth - container.clientWidth;
-
-            leftArrow.disabled = scrollLeft <= 0;
-            rightArrow.disabled = scrollLeft >= maxScroll - 1;
+        // Calculate card width for scrolling
+        function getCardWidth() {
+            const card = container.querySelector('.blog-card');
+            if (card) {
+                const cardWidth = card.offsetWidth;
+                const gap = parseFloat(window.getComputedStyle(container).gap) || 24; // 1.5rem default
+                return cardWidth + gap;
+            }
+            return container.clientWidth * 0.8; // Fallback
         }
 
-        // Scroll left
-        leftArrow.addEventListener('click', () => {
-            container.scrollBy({
-                left: -scrollAmount,
-                behavior: 'smooth'
-            });
-            stopAutoScroll();
-        });
+        // Scroll by one card
+        function scrollByCard(direction) {
+            const cardWidth = getCardWidth();
+            const scrollAmount = direction === 'right' ? cardWidth : -cardWidth;
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            resetAutoScroll();
+        }
 
-        // Scroll right
-        rightArrow.addEventListener('click', () => {
-            container.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-            stopAutoScroll();
-        });
-
-        // Auto-scroll function
-        function autoScroll() {
+        // Function to update arrow visibility based on scroll position
+        function updateScrollArrows() {
             const scrollLeft = container.scrollLeft;
-            const maxScroll = container.scrollWidth - container.clientWidth;
+            const scrollWidth = container.scrollWidth;
+            const clientWidth = container.clientWidth;
 
-            if (scrollLeft >= maxScroll - 1) {
-                // Reset to beginning
-                container.scrollTo({
-                    left: 0,
-                    behavior: 'smooth'
-                });
+            // Show left arrow if scrolled right (content hidden on left)
+            if (scrollLeft > 1) {
+                leftArrow.classList.add('visible');
             } else {
-                // Scroll to next card
-                container.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
+                leftArrow.classList.remove('visible');
+            }
+
+            // Show right arrow if there's more content on the right
+            if (scrollLeft + clientWidth < scrollWidth - 1) {
+                rightArrow.classList.add('visible');
+            } else {
+                rightArrow.classList.remove('visible');
             }
         }
 
-        // Start auto-scroll
+        // Auto-scroll functionality
         function startAutoScroll() {
-            if (isAutoScrolling && cards.length > 1) {
-                autoScrollInterval = setInterval(autoScroll, autoScrollDelay);
-            }
+            if (autoScrollInterval) return;
+
+            autoScrollInterval = setInterval(() => {
+                if (!isInViewport) return;
+
+                const scrollLeft = container.scrollLeft;
+                const scrollWidth = container.scrollWidth;
+                const clientWidth = container.clientWidth;
+
+                // Check if at the end
+                if (scrollLeft + clientWidth >= scrollWidth - 1) {
+                    // Reset to start
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    // Scroll to next card
+                    scrollByCard('right');
+                }
+            }, 8000); // Auto-scroll every 8 seconds (matching services page)
         }
 
-        // Stop auto-scroll
         function stopAutoScroll() {
-            isAutoScrolling = false;
             if (autoScrollInterval) {
                 clearInterval(autoScrollInterval);
+                autoScrollInterval = null;
             }
         }
 
-        // Resume auto-scroll
-        function resumeAutoScroll() {
-            isAutoScrolling = true;
-            startAutoScroll();
+        function resetAutoScroll() {
+            stopAutoScroll();
+            if (isInViewport) {
+                setTimeout(startAutoScroll, 4000); // Resume after 4 seconds of inactivity
+            }
         }
 
-        // Pause auto-scroll on hover
-        wrapper.addEventListener('mouseenter', stopAutoScroll);
-        wrapper.addEventListener('mouseleave', resumeAutoScroll);
+        // Click handlers for arrows
+        leftArrow.addEventListener('click', () => scrollByCard('left'));
+        rightArrow.addEventListener('click', () => scrollByCard('right'));
 
-        // Update arrows on scroll
-        container.addEventListener('scroll', updateArrows);
+        // Use Intersection Observer to only show arrows when container is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isInViewport = entry.isIntersecting;
 
-        // Initialize
-        updateArrows();
-        startAutoScroll();
+                if (entry.isIntersecting) {
+                    updateScrollArrows();
+                    startAutoScroll();
+                } else {
+                    // Hide arrows when container is not in viewport
+                    leftArrow.classList.remove('visible');
+                    rightArrow.classList.remove('visible');
+                    stopAutoScroll();
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when at least 10% of container is visible
+        });
 
-        // Stop auto-scroll when user manually scrolls
-        let isUserScrolling = false;
-        let scrollTimeout;
+        observer.observe(container);
 
+        // Update arrows on scroll and reset auto-scroll
         container.addEventListener('scroll', () => {
-            if (!isUserScrolling) {
-                isUserScrolling = true;
-                stopAutoScroll();
-            }
-
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                isUserScrolling = false;
-            }, 1000);
+            updateScrollArrows();
+            resetAutoScroll();
         });
 
-        // Handle window resize
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                updateArrows();
-            }, 250);
+        // Update arrows on window resize
+        window.addEventListener('resize', updateScrollArrows);
+
+        // Pause auto-scroll on user interaction
+        container.addEventListener('mouseenter', stopAutoScroll);
+        container.addEventListener('mouseleave', () => {
+            if (isInViewport) startAutoScroll();
         });
+        container.addEventListener('touchstart', stopAutoScroll);
+        container.addEventListener('touchend', () => {
+            if (isInViewport) setTimeout(startAutoScroll, 4000);
+        });
+
+        // Initial check
+        updateScrollArrows();
     });
 });
