@@ -29,6 +29,11 @@ He is passionate about data and technology for resilient ecosystems, knowledge s
 
 ## Our Expertise
 
+::: {.card-grid}
+
+::: {.info-card}
+<div class="card-icon">⚙️</div>
+
 ### Technical Excellence
 
 We don't just analyze data—we build production-ready systems. Every solution follows software development best practices:
@@ -37,7 +42,11 @@ We don't just analyze data—we build production-ready systems. Every solution f
 -   Comprehensive unit and integration testing
 -   Version control and continuous integration
 -   Documentation and reproducibility
--   Enterprise-grade frameworks (e.g Rhino for Shiny applications)
+-   Enterprise-grade frameworks
+:::
+
+::: {.info-card}
+<div class="card-icon">📊</div>
 
 ### Deep R Ecosystem
 
@@ -47,34 +56,106 @@ R is our primary tool and we leverage its full capabilities:
 -   Statistical modeling and machine learning
 -   Interactive dashboards with `shiny` and `bslib`
 -   Reproducible reporting with Quarto and R Markdown
--   Package development and deployment
--   AWS cloud integration and spatial analysis with ArcGIS Pro
+-   Package development and AWS cloud integration
+:::
 
-### Specialized Domains
+::: {.info-card}
+<div class="card-icon">🌱</div>
 
-Our expertise extends into specialized areas where data science meets domain knowledge:
+### Environmental Analytics
 
--   **Environmental Analytics**: Impact assessments, sustainability metrics, ecological data analysis
--   **Regulatory Compliance**: Automated reporting, audit trail systems
--   **Business Intelligence**: KPI dashboards, predictive analytics
+Impact assessments, sustainability metrics, and ecological data analysis with spatial modeling.
+:::
+
+::: {.info-card}
+<div class="card-icon">📋</div>
+
+### Regulatory Compliance
+
+Automated reporting systems and audit trail solutions that ensure regulatory adherence.
+:::
+
+::: {.info-card}
+<div class="card-icon">💼</div>
+
+### Business Intelligence
+
+KPI dashboards and predictive analytics that drive data-informed decision making.
+:::
+
+:::
 
 ## How We Work
 
 We follow a proven methodology that prioritizes quality, transparency and collaboration:
 
-1.  **Discovery**: Deep dive into your business context and technical requirements
-2.  **Design**: Architecture planning with scalability and maintainability in mind
-3.  **Development**: Iterative building with regular client feedback
-4.  **Testing**: Rigorous validation and quality assurance
-5.  **Deployment**: Smooth transition to production with documentation
-6.  **Support**: Ongoing maintenance and enhancement options
+::: {.process-card}
+<div class="step-number">1</div>
+**Discovery**: Deep dive into your business context and technical requirements
+:::
+
+::: {.process-card}
+<div class="step-number">2</div>
+**Design**: Architecture planning with scalability and maintainability in mind
+:::
+
+::: {.process-card}
+<div class="step-number">3</div>
+**Development**: Iterative building with regular client feedback
+:::
+
+::: {.process-card}
+<div class="step-number">4</div>
+**Testing**: Rigorous validation and quality assurance
+:::
+
+::: {.process-card}
+<div class="step-number">5</div>
+**Deployment**: Smooth transition to production with documentation
+:::
+
+::: {.process-card}
+<div class="step-number">6</div>
+**Support**: Ongoing maintenance and enhancement options
+:::
 
 ### Our Principles
 
--   **Quality Over Quantity**: We prioritize robust, well-tested solutions over quick fixes
--   **Transparency**: Clear communication about capabilities, timelines and costs
--   **Continuous Learning**: Staying current with the latest R packages and data science methodologies
--   **Ethical Practice**: Responsible data handling and privacy-first approaches
+::: {.card-grid}
+
+::: {.info-card}
+<div class="card-icon">✓</div>
+
+#### Quality Over Quantity
+
+We prioritize robust, well-tested solutions over quick fixes
+:::
+
+::: {.info-card}
+<div class="card-icon">💬</div>
+
+#### Transparency
+
+Clear communication about capabilities, timelines and costs
+:::
+
+::: {.info-card}
+<div class="card-icon">📚</div>
+
+#### Continuous Learning
+
+Staying current with the latest R packages and data science methodologies
+:::
+
+::: {.info-card}
+<div class="card-icon">🔒</div>
+
+#### Ethical Practice
+
+Responsible data handling and privacy-first approaches
+:::
+
+:::
 
 ## Let's Work Together
 
