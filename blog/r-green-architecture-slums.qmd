@@ -5,6 +5,7 @@ date: "2025-11-07"
 categories: [R Programming, Sustainability, Urban Development, Green Architecture, Data Analysis, Social Impact]
 image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800"
 description: "Exploring how R programming enables data-driven approaches to developing sustainable, climate-resilient green architecture in informal settlements and slum areas"
+reading-time: "17 min read"
 format:
   html:
     code-fold: true

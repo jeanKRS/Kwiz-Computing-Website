@@ -5,6 +5,7 @@ date: "2025-10-20"
 categories: [Quarto, Cloud Deployment, Netlify, Vercel, GitHub Pages, AWS, Azure, Google Cloud, WordPress, DevOps, Tutorial]
 image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"
 description: "An interactive, comprehensive step-by-step guide to deploying Quarto websites on popular platforms: Netlify, Vercel, GitHub Pages, WordPress, Cloudflare Pages and major cloud providers (GCP, Azure, AWS). Choose your platform and deploy with confidence."
+reading-time: "33 min read"
 format:
   html:
     code-fold: false
