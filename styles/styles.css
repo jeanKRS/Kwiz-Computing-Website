@@ -92,7 +92,57 @@ footer {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+    .page-columns {
+        max-width: 1400px;
+        padding: 2.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop (1024px to 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .page-columns {
+        max-width: 1200px;
+        padding: 2rem;
+    }
+}
+
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-columns {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    #title-block-header {
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile and Small Tablets (below 768px) */
+@media (max-width: 767px) {
     /* Simplify background pattern on mobile for better performance */
     body {
         background-image: none;
@@ -103,5 +153,50 @@ footer {
         margin: 1rem;
         padding: 1rem;
         background-color: #ffffff;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    #title-block-header {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Small Mobile (below 576px) */
+@media (max-width: 576px) {
+    .page-columns {
+        margin: 0.5rem;
+        padding: 0.75rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .navbar {
+        padding: 0.5rem;
     }
 }

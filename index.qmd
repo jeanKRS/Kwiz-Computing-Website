@@ -214,6 +214,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const scrollContainers = document.querySelectorAll('.services-grid');
 
   scrollContainers.forEach(container => {
+    // Only enable scroll functionality on mobile (below 768px)
+    function isMobile() {
+      return window.innerWidth < 768;
+    }
+
+    // Only setup scroll functionality if on mobile
+    if (!isMobile()) {
+      // On desktop, disable any scroll functionality
+      return;
+    }
+
     // Wrap container if not already wrapped
     if (!container.parentElement.classList.contains('services-grid-wrapper')) {
       const wrapper = document.createElement('div');
@@ -252,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (card) {
         const cardStyle = window.getComputedStyle(card);
         const cardWidth = card.offsetWidth;
-        const gap = parseFloat(window.getComputedStyle(container).gap) || 32; // 2rem default
+        const gap = parseFloat(window.getComputedStyle(container).gap) || 24; // 1.5rem default on mobile
         return cardWidth + gap;
       }
       return container.clientWidth * 0.8; // Fallback
@@ -268,6 +279,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to update arrow visibility based on scroll position
     function updateScrollArrows() {
+      if (!isMobile()) {
+        leftArrow.classList.remove('visible');
+        rightArrow.classList.remove('visible');
+        return;
+      }
+
       const scrollLeft = container.scrollLeft;
       const scrollWidth = container.scrollWidth;
       const clientWidth = container.clientWidth;
@@ -287,12 +304,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    // Auto-scroll functionality
+    // Auto-scroll functionality (only on mobile)
     function startAutoScroll() {
-      if (autoScrollInterval) return;
+      if (!isMobile() || autoScrollInterval) return;
 
       autoScrollInterval = setInterval(() => {
-        if (!isInViewport) return;
+        if (!isInViewport || !isMobile()) return;
 
         const scrollLeft = container.scrollLeft;
         const scrollWidth = container.scrollWidth;
@@ -318,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function resetAutoScroll() {
       stopAutoScroll();
-      if (isInViewport) {
+      if (isInViewport && isMobile()) {
         setTimeout(startAutoScroll, 4000); // Resume after 4 seconds of inactivity
       }
     }
@@ -332,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
       entries.forEach(entry => {
         isInViewport = entry.isIntersecting;
 
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && isMobile()) {
           updateScrollArrows();
           startAutoScroll();
         } else {
@@ -355,16 +372,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Update arrows on window resize
-    window.addEventListener('resize', updateScrollArrows);
+    window.addEventListener('resize', () => {
+      updateScrollArrows();
+      // Stop auto-scroll if resized to desktop
+      if (!isMobile()) {
+        stopAutoScroll();
+        leftArrow.classList.remove('visible');
+        rightArrow.classList.remove('visible');
+      }
+    });
 
-    // Pause auto-scroll on user interaction
+    // Pause auto-scroll on user interaction (mobile only)
     container.addEventListener('mouseenter', stopAutoScroll);
     container.addEventListener('mouseleave', () => {
-      if (isInViewport) startAutoScroll();
+      if (isInViewport && isMobile()) startAutoScroll();
     });
     container.addEventListener('touchstart', stopAutoScroll);
     container.addEventListener('touchend', () => {
-      if (isInViewport) setTimeout(startAutoScroll, 4000);
+      if (isInViewport && isMobile()) setTimeout(startAutoScroll, 4000);
     });
 
     // Initial check
