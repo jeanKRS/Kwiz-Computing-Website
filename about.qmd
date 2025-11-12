@@ -59,6 +59,9 @@ Our expertise extends beyond general data science into specialized domains:
 
 ## Our Team
 
+::: {.team-profile}
+![Jean Victor Kwizera](images/profile-placeholder.svg){.profile-image fig-alt="Jean Victor Kwizera profile photo"}
+
 ### Jean Victor Kwizera, MEIK
 
 Kwizera is a cofounder and data scientist at Kwiz Computing Technologies, bringing together expertise in actuarial science, environmental analytics and full-stack software development. With a strong foundation in statistical modeling and spatial analysis, he leads our technical operations and drives innovation in data-driven solutions. His journey began with a BS in Actuarial Science from the University of Kabianga, where he distinguished himself by among others, winning the 2020 Inter-University Actuarial Innovation Challenge organized by Kenya's Insurance Regulatory Authority. 
@@ -70,6 +73,7 @@ He specializes in the R ecosystem, developing enterprise-grade analytics dashboa
 He is passionate about data and technology for resilient ecosystems, knowledge sharing, having guided PhD students through practical applications of simulation and modeling in R. Jean is based in Kericho and Nairobi, Kenya. When he's not developing analytics solutions, you might find him cycling through nature.
 
 [Connect with Jean Victor on LinkedIn](https://www.linkedin.com/in/jean-victor-kwizera) \| [Email: jeankwizera\@kwizresearch.com](mailto:jeankwizera@kwizresearch.com)
+:::
 
 ## Let's Work Together
 
