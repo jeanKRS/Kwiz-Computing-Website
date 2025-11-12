@@ -59,41 +59,21 @@ Our expertise extends beyond general data science into specialized domains:
 
 ## Our Team
 
-### KWIZERA JEAN VICTOR (MEIK)
+### Jean Victor Kwizera, MEIK
 
-**Contact**: [jeankwizera@kwizresearch.com](mailto:jeankwizera@kwizresearch.com) | (254) 712 288 923 | [LinkedIn](https://www.linkedin.com/in/jean-victor-kwizera) | Kericho, 20200
+Jean Victor is a cofounder and data scientist at Kwiz Computing Technologies, bringing together expertise in actuarial science, environmental analytics, and full-stack software development. With a strong foundation in statistical modeling and spatial analysis, he leads our technical operations and drives innovation in data-driven environmental solutions.
 
-**Education**
+His journey began with a BS in Actuarial Science from the University of Kabianga, where he distinguished himself by winning the 2020 Inter-University Actuarial Innovation Challenge organized by Kenya's Insurance Regulatory Authority. This early recognition of his analytical capabilities set the stage for a career focused on solving complex problems with data.
 
--   **BS Actuarial Science**, University of Kabianga (UOK), Second Class Honours (Lower Division), March 2021
-    -   Won the 2020 Inter-University Actuarial Innovation Challenge organized by the Insurance Regulatory Authority (IRA)
--   **Certificate in Environmental Impact Assessment and Audit**, School of Agricultural Sciences and Natural Resource Management, November 2021
--   **Short Courses**: ESG (Environment Institute of Kenya), Career Essentials in Sustainable Tech (Microsoft and LinkedIn), Going Places with Spatial Analysis (ESRI), GIS for Climate Action (ESRI), Data Science Certificates (John Hopkins University on Coursera)
+As an Associate Member of the Environment Institute of Kenya (MEIK) and a registered Environmental Impact Assessment expert with NEMA, Jean Victor bridges the gap between rigorous data science and environmental compliance. He specializes in developing enterprise-grade analytics dashboards and R Shiny applications that transform complex environmental data into actionable insights.
 
-**Experience**
+His technical expertise spans the full stack of modern data science tools—from R programming and AWS cloud infrastructure to spatial data modeling with ArcGIS Pro. Since 2016, he has contributed to research on invasive plant population dynamics, forest inventory modeling, and environmental impact assessments, with his work appearing in peer-reviewed publications.
 
--   **Cofounder, Data Science** at Kwiz Computing Technologies Limited (February 2022 - Present)
-    -   Develops and provides technical support for Data Science Products including Analytics Dashboards and Enterprise Applications (R Shiny products) and Dynamic Websites for Data Communication
-    -   Advises on and implements Data Analysis for Environmental Studies including Impact Assessments and Audits using Spatial Data modeling
-    -   Leads web development and hosting initiatives, manages company's online platforms and oversees branding efforts
-    -   Manages Google Workspaces, mail configurations and project management tools
-    -   Spearheads compliance with legal and regulatory requirements
+At Kwiz Computing, Jean Victor oversees web development initiatives, manages our cloud infrastructure, and ensures our solutions meet the highest standards of software engineering while remaining accessible and user-friendly. He's also passionate about knowledge sharing, having guided PhD students through practical applications of simulation and modeling in R.
 
--   **Freelance Data Science Consulting** (July 2016 - Present)
-    -   Research assistance on simulations and assessments for invasive plant populations
-    -   Guided practicals on simulations and modeling in R to PhD students
-    -   Statistical modeling for Forest Sampling Methods and Inventory Models
+Based in Kericho, Kenya, Jean Victor is fluent in Swahili and conversational in French and Kinyarwanda. When he's not developing analytics solutions, you might find him cycling through nature or practicing Wing Chun.
 
-**Professional Credentials**
-
--   Associate Member of the Environment Institute of Kenya (MEIK)
--   Registered Environmental Impact Assessment/Environmental Audit Associate Expert (NEMA)
-
-**Technical Skills**
-
--   Full Stack Software Development with R, AWS Cloud (S3, DynamoDB, postgres, EC2, Athena, Glue, Appstream 2.0, IAM, CloudWatch, Amplify), Python in R (with Reticulate), ArcGIS Pro
-
-**Languages**: Swahili (Fluent), French and Kinyarwanda (Conversational)
+[Connect with Jean Victor on LinkedIn](https://www.linkedin.com/in/jean-victor-kwizera) | [Email: jeankwizera@kwizresearch.com](mailto:jeankwizera@kwizresearch.com)
 
 ## Let's Work Together
 
