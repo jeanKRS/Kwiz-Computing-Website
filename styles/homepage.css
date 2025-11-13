@@ -310,6 +310,16 @@
 .why-choose > div {
   text-align: center;
   padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.why-choose > div:hover {
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.03) 0%, #ffffff 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .why-icon {
@@ -802,6 +812,8 @@
 .info-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.03) 0%, #ffffff 100%);
+  border-color: #1a5e4a;
 }
 
 .info-card img {
@@ -850,6 +862,14 @@
   gap: 1rem;
   align-items: start;
   overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.process-card:hover {
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.08) 0%, rgba(26, 94, 74, 0.03) 100%);
+  transform: translateX(5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .process-card img {
@@ -886,6 +906,8 @@
 .contact-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.03) 0%, #ffffff 100%);
+  border-color: #1a5e4a;
 }
 
 .contact-card img {
@@ -1039,3 +1061,114 @@
 }
 
 /* JavaScript for scroll indicators will be added inline */
+
+/* ============================================
+   Dark Mode Support for Homepage
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  /* Hero Section Text Visibility Fix */
+  .hero-content p {
+    color: #e8e8e8;
+  }
+
+  .hero-content h2 {
+    color: #d0d0d0;
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, rgba(26, 94, 74, 0.2) 0%, rgba(26, 94, 74, 0.1) 50%, #1a1a1a 100%);
+  }
+
+  /* Service Cards */
+  .service-card {
+    background: #252525;
+    border-color: #404040;
+  }
+
+  .service-card:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
+    border-color: #4ade80;
+  }
+
+  .service-card.featured {
+    background: #2a2a2a;
+    border-color: #4ade80;
+  }
+
+  /* Why Choose Cards */
+  .why-choose > div {
+    background: #252525;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .why-choose > div:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Info Cards */
+  .info-card {
+    background: #252525;
+    border-color: #404040;
+  }
+
+  .info-card:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
+    border-color: #4ade80;
+  }
+
+  /* Process Cards */
+  .process-card {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(74, 222, 128, 0.08) 100%);
+    border-left-color: #4ade80;
+  }
+
+  .process-card:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.2) 0%, rgba(74, 222, 128, 0.1) 100%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Contact Cards */
+  .contact-card {
+    background: #252525;
+    border-color: #404040;
+  }
+
+  .contact-card:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
+    border-color: #4ade80;
+  }
+
+  /* Capability Cards */
+  .capability-card {
+    background: #252525;
+    border-color: #404040;
+  }
+
+  .capability-card:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
+    border-color: #4ade80;
+  }
+
+  /* Application Items */
+  .application-item {
+    background: #252525;
+    border-color: #404040;
+  }
+
+  .application-item:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
+    border-color: #4ade80;
+  }
+
+  /* Team Profile */
+  .team-profile {
+    background: #252525;
+  }
+
+  /* Blog Preview */
+  .blog-preview {
+    background: #202020;
+    border-left-color: #4ade80;
+  }
+}
