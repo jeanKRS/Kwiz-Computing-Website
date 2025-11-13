@@ -1422,14 +1422,16 @@ document.addEventListener('DOMContentLoaded', function() {
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  border: 2px solid #e9ecef;
+  border: 1px solid #e9ecef;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .engagement-card:hover {
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.03) 0%, #ffffff 100%);
   border-color: #1a5e4a;
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .engagement-card h3 {
@@ -2002,9 +2004,11 @@ document.addEventListener('DOMContentLoaded', function() {
   .engagement-card {
     background: #252525;
     border-color: #404040;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
 
   .engagement-card:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
     border-color: #4ade80;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   }
