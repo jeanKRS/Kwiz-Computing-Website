@@ -1101,6 +1101,27 @@
   .process-grid p {
     font-size: 0.9rem;
   }
+
+  .mission-vision-section {
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 1.25rem;
+    margin: 0;
+  }
+
+  .mission-card h3,
+  .vision-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .mission-card p,
+  .vision-card p {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1131,6 +1152,21 @@
   .process-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 1rem;
+  }
+
+  .mission-card h3,
+  .vision-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .mission-card p,
+  .vision-card p {
+    font-size: 0.9rem;
   }
 
   .process-icon {
