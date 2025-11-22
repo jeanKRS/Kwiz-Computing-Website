@@ -4,7 +4,7 @@
 .hero-section {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, rgba(233, 148, 91, 0.12) 0%, rgba(0, 250, 240, 0.08) 50%, rgba(255, 255, 255, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(233, 148, 91, 0.12) 0%, rgba(244, 235, 228, 0.3) 50%, rgba(255, 255, 255, 0.95) 100%);
   border-radius: 12px;
   margin-bottom: 3rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -303,7 +303,7 @@
 }
 
 .service-card a:hover {
-  color: #00faf0;
+  color: #d97d42;
   text-decoration: underline;
 }
 
@@ -336,7 +336,7 @@
   bottom: 0;
   background-image:
     linear-gradient(30deg, rgba(233, 148, 91, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(233, 148, 91, 0.04) 87.5%),
-    linear-gradient(150deg, rgba(0, 250, 240, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(0, 250, 240, 0.04) 87.5%);
+    linear-gradient(150deg, rgba(6, 95, 70, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(6, 95, 70, 0.03) 87.5%);
   background-size: 80px 140px;
   background-position: 0 0, 40px 70px;
   opacity: 0.5;
@@ -353,9 +353,9 @@
 .mission-card:hover,
 .vision-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 250, 240, 0.2);
-  border-color: #00faf0;
-  background: linear-gradient(135deg, rgba(0, 250, 240, 0.12) 0%, rgba(233, 148, 91, 0.08) 100%);
+  box-shadow: 0 8px 24px rgba(233, 148, 91, 0.2);
+  border-color: #e9945b;
+  background: linear-gradient(135deg, rgba(233, 148, 91, 0.12) 0%, rgba(6, 95, 70, 0.05) 100%);
 }
 
 .mission-card h3,
@@ -383,9 +383,9 @@
 }
 
 .why-choose > div:hover {
-  background: linear-gradient(135deg, rgba(0, 250, 240, 0.12) 0%, rgba(233, 148, 91, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(233, 148, 91, 0.12) 0%, rgba(6, 95, 70, 0.05) 100%);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 250, 240, 0.2);
+  box-shadow: 0 8px 24px rgba(233, 148, 91, 0.2);
 }
 
 .why-icon {
@@ -432,7 +432,7 @@
 }
 
 .grid > div[class*="g-col"]:hover {
-  background: linear-gradient(135deg, rgba(233, 148, 91, 0.08) 0%, rgba(0, 250, 240, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(233, 148, 91, 0.08) 0%, rgba(6, 95, 70, 0.03) 100%);
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(233, 148, 91, 0.2);
   border-color: #e9945b;
@@ -486,15 +486,16 @@
 }
 
 .cta-section .btn-primary {
-  background: linear-gradient(135deg, #00faf0 0%, #00d9cc 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f4ebe4 100%);
   color: #065f46;
-  border-color: #00faf0;
+  border-color: #e9945b;
 }
 
 .cta-section .btn-primary:hover {
-  background: linear-gradient(135deg, #00d9cc 0%, #00c4b8 100%);
-  color: #054d38;
+  background: linear-gradient(135deg, #f4ebe4 0%, #e9945b 100%);
+  color: #ffffff;
   transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(233, 148, 91, 0.4);
 }
 
 .cta-section .btn-outline {
@@ -772,8 +773,8 @@
 
 .capability-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 250, 240, 0.2);
-  border-color: #00faf0;
+  box-shadow: 0 8px 24px rgba(233, 148, 91, 0.2);
+  border-color: #e9945b;
 }
 
 .capability-card img {
@@ -825,10 +826,10 @@
 }
 
 .application-item {
-  background: linear-gradient(135deg, rgba(0, 250, 240, 0.08) 0%, rgba(244, 235, 228, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(6, 95, 70, 0.08) 0%, rgba(244, 235, 228, 0.9) 100%);
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #00faf0;
+  border-left: 4px solid #065f46;
   overflow: hidden;
 }
 
@@ -896,7 +897,7 @@
 .info-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(233, 148, 91, 0.25);
-  background: linear-gradient(135deg, rgba(233, 148, 91, 0.1) 0%, rgba(0, 250, 240, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(233, 148, 91, 0.1) 0%, rgba(6, 95, 70, 0.03) 100%);
   border-color: #e9945b;
 }
 
@@ -989,9 +990,9 @@
 
 .contact-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 250, 240, 0.3);
-  background: linear-gradient(135deg, rgba(0, 250, 240, 0.08) 0%, #ffffff 100%);
-  border-color: #00faf0;
+  box-shadow: 0 4px 12px rgba(6, 95, 70, 0.3);
+  background: linear-gradient(135deg, rgba(6, 95, 70, 0.08) 0%, #ffffff 100%);
+  border-color: #065f46;
 }
 
 .contact-card img {
@@ -1164,7 +1165,7 @@
   }
 
   .hero-section {
-    background: linear-gradient(135deg, rgba(233, 148, 91, 0.15) 0%, rgba(0, 250, 240, 0.08) 50%, #1f1f1f 100%);
+    background: linear-gradient(135deg, rgba(233, 148, 91, 0.15) 0%, rgba(6, 95, 70, 0.08) 50%, #1f1f1f 100%);
   }
 
   /* Mission & Vision Cards - Brand Identity Colors */
@@ -1178,20 +1179,20 @@
   .vision-card::before {
     background-image:
       linear-gradient(30deg, rgba(233, 148, 91, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(233, 148, 91, 0.08) 87.5%),
-      linear-gradient(150deg, rgba(0, 250, 240, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(0, 250, 240, 0.08) 87.5%);
+      linear-gradient(150deg, rgba(6, 95, 70, 0.06) 12%, transparent 12.5%, transparent 87%, rgba(6, 95, 70, 0.06) 87.5%);
     opacity: 0.6;
   }
 
   .mission-card:hover,
   .vision-card:hover {
-    background: linear-gradient(135deg, rgba(0, 250, 240, 0.25) 0%, rgba(233, 148, 91, 0.15) 100%);
-    border-color: #00faf0;
-    box-shadow: 0 8px 24px rgba(0, 250, 240, 0.3);
+    background: linear-gradient(135deg, rgba(233, 148, 91, 0.25) 0%, rgba(6, 95, 70, 0.15) 100%);
+    border-color: #e9945b;
+    box-shadow: 0 8px 24px rgba(233, 148, 91, 0.3);
   }
 
   .mission-card h3,
   .vision-card h3 {
-    color: #00faf0;
+    color: #e9945b;
   }
 
   .mission-card p,
@@ -1212,7 +1213,7 @@
 
   .service-card.featured {
     background: #2a2a2a;
-    border-color: #00faf0;
+    border-color: #e9945b;
   }
 
   /* Why Choose Cards */
@@ -1222,8 +1223,8 @@
   }
 
   .why-choose > div:hover {
-    background: linear-gradient(135deg, rgba(0, 250, 240, 0.12) 0%, #2a2a2a 100%);
-    box-shadow: 0 8px 24px rgba(0, 250, 240, 0.2);
+    background: linear-gradient(135deg, rgba(233, 148, 91, 0.12) 0%, #2a2a2a 100%);
+    box-shadow: 0 8px 24px rgba(233, 148, 91, 0.2);
   }
 
   /* Info Cards */
@@ -1244,8 +1245,8 @@
   }
 
   .process-card:hover {
-    background: linear-gradient(135deg, rgba(0, 250, 240, 0.2) 0%, rgba(233, 148, 91, 0.15) 100%);
-    box-shadow: 0 4px 16px rgba(0, 250, 240, 0.3);
+    background: linear-gradient(135deg, rgba(233, 148, 91, 0.2) 0%, rgba(6, 95, 70, 0.12) 100%);
+    box-shadow: 0 4px 16px rgba(233, 148, 91, 0.3);
   }
 
   /* Contact Cards */
@@ -1255,8 +1256,8 @@
   }
 
   .contact-card:hover {
-    background: linear-gradient(135deg, rgba(0, 250, 240, 0.12) 0%, #2a2a2a 100%);
-    border-color: #00faf0;
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.12) 0%, #2a2a2a 100%);
+    border-color: #065f46;
   }
 
   /* Capability Cards */
@@ -1266,8 +1267,8 @@
   }
 
   .capability-card:hover {
-    background: linear-gradient(135deg, rgba(0, 250, 240, 0.12) 0%, #2a2a2a 100%);
-    border-color: #00faf0;
+    background: linear-gradient(135deg, rgba(233, 148, 91, 0.12) 0%, #2a2a2a 100%);
+    border-color: #e9945b;
   }
 
   /* Application Items */
@@ -1277,8 +1278,8 @@
   }
 
   .application-item:hover {
-    background: linear-gradient(135deg, rgba(0, 250, 240, 0.12) 0%, #2a2a2a 100%);
-    border-color: #00faf0;
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.12) 0%, #2a2a2a 100%);
+    border-color: #065f46;
   }
 
   /* Team Profile */
@@ -1300,7 +1301,7 @@
   }
 
   .grid > div[class*="g-col"]:hover {
-    background: linear-gradient(135deg, rgba(233, 148, 91, 0.1) 0%, rgba(0, 250, 240, 0.05) 50%, #2a2a2a 100%);
+    background: linear-gradient(135deg, rgba(233, 148, 91, 0.1) 0%, rgba(6, 95, 70, 0.05) 50%, #2a2a2a 100%);
     box-shadow: 0 8px 24px rgba(233, 148, 91, 0.3);
     border-color: #e9945b;
   }
