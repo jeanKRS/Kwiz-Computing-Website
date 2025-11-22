@@ -6,8 +6,8 @@ body {
         linear-gradient(150deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
         linear-gradient(30deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
         linear-gradient(150deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
-        linear-gradient(60deg, rgba(26, 94, 74, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(26, 94, 74, 0.03) 75%, rgba(26, 94, 74, 0.03)),
-        linear-gradient(60deg, rgba(26, 94, 74, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(26, 94, 74, 0.03) 75%, rgba(26, 94, 74, 0.03));
+        linear-gradient(60deg, rgba(6, 95, 70, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(6, 95, 70, 0.03) 75%, rgba(6, 95, 70, 0.03)),
+        linear-gradient(60deg, rgba(6, 95, 70, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(6, 95, 70, 0.03) 75%, rgba(6, 95, 70, 0.03));
     background-size: 80px 140px;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     background-attachment: fixed;
@@ -26,7 +26,7 @@ body {
 
 /* Smooth gradient overlay for header sections */
 #title-block-header {
-    background: linear-gradient(135deg, rgba(26, 94, 74, 0.05) 0%, rgba(26, 94, 74, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.05) 0%, rgba(6, 95, 70, 0.02) 100%);
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -67,7 +67,7 @@ h2::after {
     left: 0;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #1a5e4a 0%, transparent 100%);
+    background: linear-gradient(90deg, #065f46 0%, transparent 100%);
 }
 
 /* Callout boxes enhancement */
@@ -90,7 +90,7 @@ img {
 
 /* Footer enhancement */
 footer {
-    background: linear-gradient(135deg, #1a5e4a 0%, #145240 100%);
+    background: linear-gradient(135deg, #065f46 0%, #054d38 100%);
 }
 
 /* Navigation bar enhancement */
@@ -253,8 +253,8 @@ footer {
             linear-gradient(150deg, #2a2a2a 12%, transparent 12.5%, transparent 87%, #2a2a2a 87.5%, #2a2a2a),
             linear-gradient(30deg, #2a2a2a 12%, transparent 12.5%, transparent 87%, #2a2a2a 87.5%, #2a2a2a),
             linear-gradient(150deg, #2a2a2a 12%, transparent 12.5%, transparent 87%, #2a2a2a 87.5%, #2a2a2a),
-            linear-gradient(60deg, rgba(26, 94, 74, 0.15) 25%, transparent 25.5%, transparent 75%, rgba(26, 94, 74, 0.15) 75%, rgba(26, 94, 74, 0.15)),
-            linear-gradient(60deg, rgba(26, 94, 74, 0.15) 25%, transparent 25.5%, transparent 75%, rgba(26, 94, 74, 0.15) 75%, rgba(26, 94, 74, 0.15));
+            linear-gradient(60deg, rgba(6, 95, 70, 0.15) 25%, transparent 25.5%, transparent 75%, rgba(6, 95, 70, 0.15) 75%, rgba(6, 95, 70, 0.15)),
+            linear-gradient(60deg, rgba(6, 95, 70, 0.15) 25%, transparent 25.5%, transparent 75%, rgba(6, 95, 70, 0.15) 75%, rgba(6, 95, 70, 0.15));
         color: #e0e0e0;
     }
 
@@ -266,7 +266,7 @@ footer {
 
     /* Header */
     #title-block-header {
-        background: linear-gradient(135deg, rgba(26, 94, 74, 0.2) 0%, rgba(26, 94, 74, 0.1) 100%);
+        background: linear-gradient(135deg, rgba(6, 95, 70, 0.2) 0%, rgba(6, 95, 70, 0.1) 100%);
     }
 
     /* Headings */
@@ -355,7 +355,7 @@ footer {
 
     /* Blockquotes */
     blockquote {
-        background-color: rgba(26, 94, 74, 0.2);
+        background-color: rgba(6, 95, 70, 0.2);
         border-left-color: #4ade80;
         color: #e8e8e8;
     }
@@ -376,7 +376,7 @@ footer {
     }
 
     table tbody tr:hover {
-        background-color: rgba(26, 94, 74, 0.25);
+        background-color: rgba(6, 95, 70, 0.25);
     }
 
     /* Mobile Dark Mode Adjustments */

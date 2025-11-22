@@ -1,8 +1,10 @@
 /*-- scss:defaults --*/
 
-// Brand colors
-$primary: #1a5e4a;
-$secondary: #2c7a64;
+// Brand colors - Aligned with brand identity
+$primary: #065f46; // Auxiliary 1 - Dark green (main brand color)
+$secondary: #e9945b; // Main - Orange (accent color)
+$accent: #00faf0; // Auxiliary 2 - Cyan (highlight color)
+$background: #f4ebe4; // Background - Beige/cream
 $success: #28a745;
 $info: #17a2b8;
 $light: #f8f9fa;
@@ -45,7 +47,7 @@ blockquote {
     margin: 1.5rem 0;
     font-style: italic;
     color: #555;
-    background-color: rgba(26, 94, 74, 0.05);
+    background-color: rgba(6, 95, 70, 0.05);
     padding: 1rem 1rem 1rem 1.5rem;
     border-radius: 0 8px 8px 0;
 }
@@ -73,7 +75,7 @@ table {
             transition: background-color 0.2s ease;
 
             &:hover {
-                background-color: rgba(26, 94, 74, 0.05);
+                background-color: rgba(6, 95, 70, 0.05);
             }
 
             &:nth-child(even) {
@@ -204,7 +206,7 @@ p {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(26, 94, 74, 0.1);
+        background: rgba(6, 95, 70, 0.1);
         border-radius: 8px;
         font-size: 24px;
     }
@@ -381,7 +383,7 @@ p {
 
     &:hover {
         transform: translateY(-4px);
-        background: rgba(26, 94, 74, 0.02);
+        background: rgba(6, 95, 70, 0.02);
     }
 }
 
@@ -394,7 +396,7 @@ p {
         transition: all 0.3s ease;
 
         &:hover {
-            background: rgba(26, 94, 74, 0.05);
+            background: rgba(6, 95, 70, 0.05);
             padding-left: 1rem;
         }
     }
@@ -457,7 +459,7 @@ p {
     &:hover {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         transform: translateY(-3px);
-        border-color: rgba(26, 94, 74, 0.3);
+        border-color: rgba(6, 95, 70, 0.3);
     }
 
     strong {
@@ -493,7 +495,7 @@ p {
 .related-posts {
     margin: 3rem 0 2rem;
     padding: 2rem 0;
-    border-top: 2px solid rgba(26, 94, 74, 0.1);
+    border-top: 2px solid rgba(6, 95, 70, 0.1);
 
     h2 {
         color: $primary;
@@ -533,7 +535,7 @@ p {
             &:hover {
                 opacity: 1;
                 transform: translateY(-50%) scale(1.1);
-                box-shadow: 0 4px 12px rgba(26, 94, 74, 0.3);
+                box-shadow: 0 4px 12px rgba(6, 95, 70, 0.3);
             }
 
             &:active {
@@ -584,16 +586,16 @@ p {
         }
 
         &::-webkit-scrollbar-track {
-            background: rgba(26, 94, 74, 0.05);
+            background: rgba(6, 95, 70, 0.05);
             border-radius: 4px;
         }
 
         &::-webkit-scrollbar-thumb {
-            background: rgba(26, 94, 74, 0.3);
+            background: rgba(6, 95, 70, 0.3);
             border-radius: 4px;
 
             &:hover {
-                background: rgba(26, 94, 74, 0.5);
+                background: rgba(6, 95, 70, 0.5);
             }
         }
     }
@@ -669,7 +671,7 @@ p {
                 }
 
                 .blog-card-category {
-                    background: rgba(26, 94, 74, 0.1);
+                    background: rgba(6, 95, 70, 0.1);
                     padding: 0.25rem 0.6rem;
                     border-radius: 4px;
                     color: $primary;

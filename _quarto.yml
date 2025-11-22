@@ -15,8 +15,8 @@ website:
   favicon: images/icon.png
   google-analytics: "G-8JBYS53Y46"
   navbar:
-    logo: images/logo.jpg
-    background: "#1a5e4a"
+    logo: images/logo.svg
+    background: "#065f46"
     foreground: "#ffffff"
     left:
       - text: "Home"
@@ -30,7 +30,7 @@ website:
       - text: "Contact"
         href: contact.qmd
   page-footer:
-    background: "#1a5e4a"
+    background: "#065f46"
     foreground: "#ffffff"
     center: |
       © 2025 Kwiz Computing Technologies. All rights reserved.
