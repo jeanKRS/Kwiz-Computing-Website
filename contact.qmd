@@ -18,13 +18,13 @@ format:
     text-align: center;
     margin-bottom: 3rem;
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, rgba(233, 148, 91, 0.12) 0%, rgba(244, 235, 228, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.08) 0%, rgba(233, 148, 91, 0.05) 50%, rgba(244, 235, 228, 0.5) 100%);
     border-radius: 12px;
-    border: 2px solid rgba(233, 148, 91, 0.2);
+    border: 2px solid rgba(6, 95, 70, 0.15);
 }
 
 .contact-hero h1 {
-    color: #e9945b;
+    color: #065f46;
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
@@ -44,23 +44,24 @@ format:
 }
 
 .contact-card {
-    background: linear-gradient(135deg, #e9945b 0%, #d97d42 100%);
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.05) 0%, rgba(233, 148, 91, 0.08) 50%, #ffffff 100%);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(233, 148, 91, 0.3);
+    box-shadow: 0 4px 6px rgba(6, 95, 70, 0.15);
     transition: all 0.3s ease;
-    border-top: 4px solid #ffa873;
+    border-top: 4px solid #065f46;
+    border-right: 2px solid rgba(233, 148, 91, 0.3);
 }
 
 .contact-card:hover {
-    background: linear-gradient(135deg, #d97d42 0%, #c66d32 100%);
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.08) 0%, rgba(233, 148, 91, 0.12) 50%, #ffffff 100%);
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(233, 148, 91, 0.4);
-    border-top-color: #ffb894;
+    box-shadow: 0 8px 20px rgba(6, 95, 70, 0.2);
+    border-top-color: #0a6b51;
 }
 
 .contact-card h3 {
-    color: #ffffff;
+    color: #065f46;
     margin-bottom: 1rem;
     font-size: 1.5rem;
     display: flex;
@@ -75,30 +76,30 @@ format:
 .contact-info-item {
     margin-bottom: 1rem;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(6, 95, 70, 0.04);
     border-radius: 8px;
     transition: background 0.2s ease;
-    color: #f0f0f0;
+    color: #555;
 }
 
 .contact-info-item:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(233, 148, 91, 0.08);
 }
 
 .contact-info-item strong {
-    color: #ffffff;
+    color: #065f46;
     display: block;
     margin-bottom: 0.25rem;
 }
 
 .contact-info-item a {
-    color: #ffe8d6;
+    color: #e9945b;
     text-decoration: none;
     font-weight: 500;
 }
 
 .contact-info-item a:hover {
-    color: #ffffff;
+    color: #d97d42;
     text-decoration: underline;
 }
 
@@ -111,7 +112,7 @@ format:
 }
 
 .form-section h2 {
-    color: #e9945b;
+    color: #065f46;
     margin-bottom: 1.5rem;
     font-size: 2rem;
 }
@@ -191,7 +192,7 @@ format:
 }
 
 .appointment-section {
-    background: linear-gradient(135deg, #e9945b 0%, #d97d42 100%);
+    background: linear-gradient(135deg, #065f46 0%, #0a6b51 40%, #c67d4a 100%);
     padding: 3rem 2rem;
     border-radius: 12px;
     color: white;
@@ -213,7 +214,7 @@ format:
 
 .appointment-btn {
     background: white;
-    color: #e9945b;
+    color: #065f46;
     padding: 1rem 2.5rem;
     border: 2px solid white;
     border-radius: 8px;
@@ -229,7 +230,7 @@ format:
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: #f4ebe4;
-    color: #d97d42;
+    color: #e9945b;
 }
 
 .faq-section {
@@ -237,7 +238,7 @@ format:
 }
 
 .faq-section h2 {
-    color: #e9945b;
+    color: #065f46;
     margin-bottom: 2rem;
     font-size: 2rem;
     text-align: center;
@@ -248,12 +249,13 @@ format:
     padding: 1.5rem;
     margin-bottom: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(233, 148, 91, 0.12);
-    border-left: 4px solid #e9945b;
+    box-shadow: 0 2px 4px rgba(6, 95, 70, 0.12);
+    border-left: 4px solid #065f46;
+    border-right: 2px solid rgba(233, 148, 91, 0.2);
 }
 
 .faq-item h4 {
-    color: #e9945b;
+    color: #065f46;
     margin-bottom: 0.5rem;
 }
 
@@ -296,8 +298,8 @@ format:
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     background: white;
-    border: 2px solid #e9945b;
-    color: #e9945b;
+    border: 2px solid #065f46;
+    color: #065f46;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
@@ -305,10 +307,10 @@ format:
 }
 
 .social-link:hover {
-    background: #e9945b;
+    background: linear-gradient(135deg, #065f46 0%, #0a6b51 50%, #e9945b 100%);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(233, 148, 91, 0.3);
+    box-shadow: 0 4px 12px rgba(6, 95, 70, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -332,12 +334,12 @@ format:
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
     .contact-hero {
-        background: linear-gradient(135deg, rgba(233, 148, 91, 0.2) 0%, rgba(6, 95, 70, 0.1) 100%);
-        border-color: rgba(233, 148, 91, 0.3);
+        background: linear-gradient(135deg, rgba(6, 95, 70, 0.2) 0%, rgba(233, 148, 91, 0.12) 100%);
+        border-color: rgba(6, 95, 70, 0.4);
     }
 
     .contact-hero h1 {
-        color: #e9945b;
+        color: #0a8c66;
     }
 
     .contact-hero p {
@@ -345,13 +347,38 @@ format:
     }
 
     .contact-card {
-        background: linear-gradient(135deg, #e9945b 0%, #d97d42 100%);
-        box-shadow: 0 4px 6px rgba(233, 148, 91, 0.3);
+        background: linear-gradient(135deg, rgba(6, 95, 70, 0.15) 0%, rgba(233, 148, 91, 0.15) 50%, rgba(30, 30, 30, 0.9) 100%);
+        box-shadow: 0 4px 6px rgba(6, 95, 70, 0.3);
     }
 
     .contact-card:hover {
-        background: linear-gradient(135deg, #d97d42 0%, #c66d32 100%);
-        box-shadow: 0 8px 20px rgba(233, 148, 91, 0.4);
+        background: linear-gradient(135deg, rgba(6, 95, 70, 0.2) 0%, rgba(233, 148, 91, 0.2) 50%, rgba(30, 30, 30, 0.9) 100%);
+        box-shadow: 0 8px 20px rgba(6, 95, 70, 0.4);
+    }
+
+    .contact-card h3 {
+        color: #0a8c66;
+    }
+
+    .contact-info-item {
+        background: rgba(6, 95, 70, 0.1);
+        color: #e0e0e0;
+    }
+
+    .contact-info-item:hover {
+        background: rgba(233, 148, 91, 0.15);
+    }
+
+    .contact-info-item strong {
+        color: #0a8c66;
+    }
+
+    .contact-info-item a {
+        color: #ffa873;
+    }
+
+    .contact-info-item a:hover {
+        color: #ffb894;
     }
 
     .form-section {
@@ -360,7 +387,7 @@ format:
     }
 
     .form-section h2 {
-        color: #e9945b;
+        color: #0a8c66;
     }
 
     .form-group label {
@@ -392,16 +419,17 @@ format:
     }
 
     .appointment-section {
-        background: linear-gradient(135deg, #e9945b 0%, #d97d42 100%);
+        background: linear-gradient(135deg, #0d4d3a 0%, #1a4a3a 40%, #8b5a32 100%);
     }
 
     .faq-item {
         background: #252525;
-        border-left-color: #e9945b;
+        border-left-color: #0a8c66;
+        border-right-color: rgba(233, 148, 91, 0.3);
     }
 
     .faq-item h4 {
-        color: #e9945b;
+        color: #0a8c66;
     }
 
     .faq-item p {
@@ -410,12 +438,12 @@ format:
 
     .social-link {
         background: #252525;
-        border-color: #e9945b;
-        color: #e9945b;
+        border-color: #0a8c66;
+        color: #0a8c66;
     }
 
     .social-link:hover {
-        background: #e9945b;
+        background: linear-gradient(135deg, #0d4d3a 0%, #1a4a3a 50%, #8b5a32 100%);
         color: white;
     }
 }
