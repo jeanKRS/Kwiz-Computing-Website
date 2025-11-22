@@ -90,6 +90,71 @@
   font-size: 1.1rem;
 }
 
+/* Mission and Vision Section */
+.mission-vision-section {
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.mission-card,
+.vision-card {
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.08) 0%, rgba(26, 94, 74, 0.03) 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle geometric pattern to mission/vision cards */
+.mission-card::before,
+.vision-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(30deg, rgba(26, 94, 74, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(26, 94, 74, 0.02) 87.5%),
+    linear-gradient(150deg, rgba(26, 94, 74, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(26, 94, 74, 0.02) 87.5%);
+  background-size: 80px 140px;
+  background-position: 0 0, 40px 70px;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mission-card > *,
+.vision-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #1a5e4a;
+  background: linear-gradient(135deg, rgba(26, 94, 74, 0.12) 0%, rgba(26, 94, 74, 0.05) 100%);
+}
+
+.mission-card h3,
+.vision-card h3 {
+  color: #1a5e4a;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.mission-card p,
+.vision-card p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
 /* Services Grid - Responsive Layout */
 .services-grid {
   display: grid;
@@ -1080,125 +1145,280 @@
 /* JavaScript for scroll indicators will be added inline */
 
 /* ============================================
-   Dark Mode Support for Homepage
+   Dark Mode Support for Homepage - Enhanced Visibility
    ============================================ */
 @media (prefers-color-scheme: dark) {
-  /* Hero Section Text Visibility Fix */
+  /* Hero Section - Improved Text Visibility */
   .hero-content p {
-    color: #e8e8e8;
+    color: #f5f5f5;
   }
 
   .hero-content h2 {
-    color: #d0d0d0;
+    color: #e8e8e8;
+  }
+
+  .hero-content h1 {
+    color: #ffffff;
   }
 
   .hero-section {
-    background: linear-gradient(135deg, rgba(26, 94, 74, 0.2) 0%, rgba(26, 94, 74, 0.1) 50%, #1a1a1a 100%);
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, rgba(52, 211, 153, 0.08) 50%, #1f1f1f 100%);
   }
 
-  /* Service Cards */
-  .service-card {
-    background: #252525;
-    border-color: #404040;
+  /* Mission & Vision Cards - Enhanced Visibility */
+  .mission-card,
+  .vision-card {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.2) 0%, rgba(52, 211, 153, 0.1) 100%);
+    border-color: #3d3d3d;
   }
 
-  .service-card:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
-    border-color: #4ade80;
+  .mission-card::before,
+  .vision-card::before {
+    background-image:
+      linear-gradient(30deg, rgba(52, 211, 153, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(52, 211, 153, 0.08) 87.5%),
+      linear-gradient(150deg, rgba(52, 211, 153, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(52, 211, 153, 0.08) 87.5%);
+    opacity: 0.6;
   }
 
-  .service-card.featured {
-    background: #2a2a2a;
-    border-color: #4ade80;
-  }
-
-  /* Why Choose Cards */
-  .why-choose > div {
-    background: #252525;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  }
-
-  .why-choose > div:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
+  .mission-card:hover,
+  .vision-card:hover {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.25) 0%, rgba(52, 211, 153, 0.15) 100%);
+    border-color: #34d399;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   }
 
-  /* Info Cards */
+  .mission-card h3,
+  .vision-card h3 {
+    color: #34d399;
+  }
+
+  .mission-card p,
+  .vision-card p {
+    color: #f0f0f0;
+  }
+
+  /* Service Cards - Better Contrast */
+  .service-card {
+    background: #2a2a2a;
+    border-color: #3d3d3d;
+  }
+
+  .service-card h3 {
+    color: #34d399;
+  }
+
+  .service-card p {
+    color: #e8e8e8;
+  }
+
+  .service-card strong {
+    color: #34d399;
+  }
+
+  .service-card li {
+    color: #e0e0e0;
+  }
+
+  .service-card:hover {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, #303030 100%);
+    border-color: #34d399;
+  }
+
+  .service-card.featured {
+    background: #303030;
+    border-color: #34d399;
+  }
+
+  .service-card a {
+    color: #34d399;
+  }
+
+  .service-card a:hover {
+    color: #6ee7b7;
+  }
+
+  /* Why Choose Cards - Enhanced Visibility */
+  .why-choose > div {
+    background: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .why-choose > div:hover {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, #303030 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  }
+
+  .why-choose strong {
+    color: #34d399;
+  }
+
+  .why-choose p {
+    color: #e8e8e8;
+  }
+
+  /* Info Cards - Improved Contrast */
   .info-card {
-    background: #252525;
-    border-color: #404040;
+    background: #2a2a2a;
+    border-color: #3d3d3d;
+  }
+
+  .info-card h3 {
+    color: #34d399;
+  }
+
+  .info-card p,
+  .info-card li {
+    color: #e8e8e8;
   }
 
   .info-card:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
-    border-color: #4ade80;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, #303030 100%);
+    border-color: #34d399;
   }
 
-  /* Process Cards */
+  /* Process Cards - Better Visibility */
   .process-card {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(74, 222, 128, 0.08) 100%);
-    border-left-color: #4ade80;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.2) 0%, rgba(52, 211, 153, 0.12) 100%);
+    border-left-color: #34d399;
   }
 
   .process-card:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.2) 0%, rgba(74, 222, 128, 0.1) 100%);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.25) 0%, rgba(52, 211, 153, 0.15) 100%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
   }
 
-  /* Contact Cards */
+  .process-card strong {
+    color: #34d399;
+  }
+
+  .process-card {
+    color: #f0f0f0;
+  }
+
+  .step-number {
+    background: #34d399;
+    color: #1a1a1a;
+  }
+
+  /* Contact Cards - Enhanced */
   .contact-card {
-    background: #252525;
-    border-color: #404040;
+    background: #2a2a2a;
+    border-color: #3d3d3d;
   }
 
   .contact-card:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
-    border-color: #4ade80;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, #303030 100%);
+    border-color: #34d399;
   }
 
   /* Capability Cards */
   .capability-card {
-    background: #252525;
-    border-color: #404040;
+    background: #2a2a2a;
+    border-color: #3d3d3d;
+  }
+
+  .capability-card strong {
+    color: #34d399;
+  }
+
+  .capability-card p,
+  .capability-card li {
+    color: #e8e8e8;
   }
 
   .capability-card:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
-    border-color: #4ade80;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, #303030 100%);
+    border-color: #34d399;
   }
 
   /* Application Items */
   .application-item {
-    background: #252525;
-    border-color: #404040;
+    background: #2a2a2a;
+    border-left-color: #34d399;
   }
 
-  .application-item:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
-    border-color: #4ade80;
+  .application-item strong {
+    color: #34d399;
+  }
+
+  .application-item {
+    color: #e8e8e8;
   }
 
   /* Team Profile */
   .team-profile {
-    background: #252525;
+    background: #2a2a2a;
+    color: #e8e8e8;
   }
 
-  /* Blog Preview */
+  /* Blog Preview - Better Visibility */
   .blog-preview {
-    background: #202020;
-    border-left-color: #4ade80;
+    background: #252525;
+    border-left-color: #34d399;
   }
 
-  /* Industry Applications Cards */
+  .blog-preview a {
+    color: #34d399;
+  }
+
+  .blog-preview a:hover {
+    color: #6ee7b7;
+  }
+
+  /* Industry Applications Cards - Enhanced */
   .grid > div[class*="g-col"] {
-    background: #252525;
-    border-color: #404040;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    background: #2a2a2a;
+    border-color: #3d3d3d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    color: #e8e8e8;
+  }
+
+  .grid > div[class*="g-col"] strong {
+    color: #34d399;
   }
 
   .grid > div[class*="g-col"]:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-    border-color: #4ade80;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, #303030 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    border-color: #34d399;
+  }
+
+  /* CTA Section - Enhanced Contrast */
+  .cta-section {
+    background: linear-gradient(135deg, #1f4d3d 0%, #163a2c 100%);
+  }
+
+  .cta-section h2 {
+    color: #ffffff;
+  }
+
+  .cta-section p {
+    color: #f5f5f5;
+  }
+
+  /* Services Intro */
+  .services-intro {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, rgba(52, 211, 153, 0.08) 100%);
+    color: #e8e8e8;
+  }
+
+  /* Process Grid Text */
+  .process-grid strong {
+    color: #34d399;
+  }
+
+  .process-grid p {
+    color: #e0e0e0;
+  }
+
+  /* Scroll Arrows - Dark Mode */
+  .scroll-arrow {
+    background: rgba(42, 42, 42, 0.95);
+    color: #34d399;
+  }
+
+  .scroll-arrow:hover {
+    background: rgba(52, 211, 153, 0.2);
+    box-shadow: 0 4px 12px rgba(52, 211, 153, 0.4);
   }
 }
