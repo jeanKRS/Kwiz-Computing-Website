@@ -1,13 +1,13 @@
-/* Minimalist geometric background pattern */
+/* Minimalist geometric background pattern with brand colors */
 body {
-    background-color: #f8f9fa;
+    background-color: #f4ebe4; /* Brand beige background */
     background-image:
-        linear-gradient(30deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
-        linear-gradient(150deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
-        linear-gradient(30deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
-        linear-gradient(150deg, #e9ecef 12%, transparent 12.5%, transparent 87%, #e9ecef 87.5%, #e9ecef),
-        linear-gradient(60deg, rgba(6, 95, 70, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(6, 95, 70, 0.03) 75%, rgba(6, 95, 70, 0.03)),
-        linear-gradient(60deg, rgba(6, 95, 70, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(6, 95, 70, 0.03) 75%, rgba(6, 95, 70, 0.03));
+        linear-gradient(30deg, rgba(233, 148, 91, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(233, 148, 91, 0.08) 87.5%, rgba(233, 148, 91, 0.08)),
+        linear-gradient(150deg, rgba(6, 95, 70, 0.06) 12%, transparent 12.5%, transparent 87%, rgba(6, 95, 70, 0.06) 87.5%, rgba(6, 95, 70, 0.06)),
+        linear-gradient(30deg, rgba(233, 148, 91, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(233, 148, 91, 0.08) 87.5%, rgba(233, 148, 91, 0.08)),
+        linear-gradient(150deg, rgba(6, 95, 70, 0.06) 12%, transparent 12.5%, transparent 87%, rgba(6, 95, 70, 0.06) 87.5%, rgba(6, 95, 70, 0.06)),
+        linear-gradient(60deg, rgba(0, 250, 240, 0.04) 25%, transparent 25.5%, transparent 75%, rgba(0, 250, 240, 0.04) 75%, rgba(0, 250, 240, 0.04)),
+        linear-gradient(60deg, rgba(233, 148, 91, 0.05) 25%, transparent 25.5%, transparent 75%, rgba(233, 148, 91, 0.05) 75%, rgba(233, 148, 91, 0.05));
     background-size: 80px 140px;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     background-attachment: fixed;
@@ -67,7 +67,7 @@ h2::after {
     left: 0;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #065f46 0%, transparent 100%);
+    background: linear-gradient(90deg, #e9945b 0%, #00faf0 50%, transparent 100%);
 }
 
 /* Callout boxes enhancement */
@@ -275,7 +275,7 @@ footer {
     }
 
     h2::after {
-        background: linear-gradient(90deg, #2ecc71 0%, transparent 100%);
+        background: linear-gradient(90deg, #00faf0 0%, #e9945b 50%, transparent 100%);
     }
 
     /* Text Colors */
@@ -285,11 +285,11 @@ footer {
 
     /* Links */
     a {
-        color: #4ade80;
+        color: #00faf0;
     }
 
     a:hover {
-        color: #3ecc81;
+        color: #e9945b;
     }
 
     /* Cards */
@@ -312,7 +312,7 @@ footer {
 
     code {
         background-color: #2a2a2a;
-        color: #3ecc81;
+        color: #00faf0;
     }
 
     /* Images */
@@ -344,7 +344,7 @@ footer {
     }
 
     .nav-link:hover {
-        color: #3ecc81 !important;
+        color: #00faf0 !important;
     }
 
     /* Footer */
@@ -355,8 +355,8 @@ footer {
 
     /* Blockquotes */
     blockquote {
-        background-color: rgba(6, 95, 70, 0.2);
-        border-left-color: #4ade80;
+        background-color: rgba(233, 148, 91, 0.15);
+        border-left-color: #00faf0;
         color: #e8e8e8;
     }
 
