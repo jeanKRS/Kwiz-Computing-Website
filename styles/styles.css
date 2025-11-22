@@ -20,8 +20,8 @@ body {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin: 2rem auto;
-    max-width: 1200px;
+    margin: 1.5rem auto;
+    max-width: 1320px;
 }
 
 /* Smooth gradient overlay for header sections - green to orange blend */
@@ -101,11 +101,33 @@ footer {
 
 /* Responsive adjustments */
 
-/* Large Desktop (1440px and above) */
-@media (min-width: 1440px) {
+/* Extra Large Desktop (1920px and above) */
+@media (min-width: 1920px) {
     .page-columns {
-        max-width: 1400px;
-        padding: 2.5rem;
+        max-width: 1600px;
+        padding: 3rem 3.5rem;
+        margin: 1.5rem auto;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Large Desktop (1440px to 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .page-columns {
+        max-width: 1480px;
+        padding: 2.5rem 3rem;
+        margin: 1.5rem auto;
     }
 
     h1 {
@@ -124,16 +146,18 @@ footer {
 /* Desktop (1024px to 1439px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
     .page-columns {
-        max-width: 1200px;
-        padding: 2rem;
+        max-width: 1320px;
+        padding: 2rem 2.5rem;
+        margin: 1.5rem auto;
     }
 }
 
 /* Tablet (768px to 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .page-columns {
-        padding: 1.5rem;
-        margin: 1.5rem auto;
+        padding: 1.5rem 2rem;
+        margin: 1rem auto;
+        max-width: 96%;
     }
 
     h1 {
@@ -153,7 +177,7 @@ footer {
     }
 
     #title-block-header {
-        padding: 1.5rem;
+        padding: 1.5rem 2rem;
     }
 
     body {
@@ -171,9 +195,10 @@ footer {
     }
 
     .page-columns {
-        margin: 1rem;
-        padding: 1rem;
+        margin: 0.75rem;
+        padding: 1rem 1.25rem;
         background-color: #ffffff;
+        max-width: 98%;
     }
 
     h1 {
@@ -197,7 +222,7 @@ footer {
     }
 
     #title-block-header {
-        padding: 1rem;
+        padding: 1rem 1.25rem;
         margin-bottom: 1rem;
     }
 
@@ -214,7 +239,8 @@ footer {
 
     .page-columns {
         margin: 0.5rem;
-        padding: 0.75rem;
+        padding: 0.75rem 1rem;
+        max-width: 99%;
     }
 
     h1 {
@@ -238,7 +264,7 @@ footer {
     }
 
     .navbar {
-        padding: 0.5rem;
+        padding: 0.5rem 1rem;
     }
 }
 
