@@ -307,6 +307,71 @@
   text-decoration: underline;
 }
 
+/* Mission and Vision Section */
+.mission-vision-section {
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.mission-card,
+.vision-card {
+  background: linear-gradient(135deg, rgba(233, 148, 91, 0.08) 0%, rgba(6, 95, 70, 0.03) 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle geometric pattern to mission/vision cards */
+.mission-card::before,
+.vision-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(30deg, rgba(233, 148, 91, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(233, 148, 91, 0.04) 87.5%),
+    linear-gradient(150deg, rgba(0, 250, 240, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(0, 250, 240, 0.04) 87.5%);
+  background-size: 80px 140px;
+  background-position: 0 0, 40px 70px;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mission-card > *,
+.vision-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 250, 240, 0.2);
+  border-color: #00faf0;
+  background: linear-gradient(135deg, rgba(0, 250, 240, 0.12) 0%, rgba(233, 148, 91, 0.08) 100%);
+}
+
+.mission-card h3,
+.vision-card h3 {
+  color: #065f46;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mission-card p,
+.vision-card p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
 /* Why Choose Section */
 .why-choose > div {
   text-align: center;
@@ -1094,8 +1159,44 @@
     color: #d0d0d0;
   }
 
+  .hero-content h1 {
+    color: #ffffff;
+  }
+
   .hero-section {
-    background: linear-gradient(135deg, rgba(6, 95, 70, 0.2) 0%, rgba(6, 95, 70, 0.1) 50%, #1a1a1a 100%);
+    background: linear-gradient(135deg, rgba(233, 148, 91, 0.15) 0%, rgba(0, 250, 240, 0.08) 50%, #1f1f1f 100%);
+  }
+
+  /* Mission & Vision Cards - Brand Identity Colors */
+  .mission-card,
+  .vision-card {
+    background: linear-gradient(135deg, rgba(233, 148, 91, 0.2) 0%, rgba(6, 95, 70, 0.1) 100%);
+    border-color: #3d3d3d;
+  }
+
+  .mission-card::before,
+  .vision-card::before {
+    background-image:
+      linear-gradient(30deg, rgba(233, 148, 91, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(233, 148, 91, 0.08) 87.5%),
+      linear-gradient(150deg, rgba(0, 250, 240, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(0, 250, 240, 0.08) 87.5%);
+    opacity: 0.6;
+  }
+
+  .mission-card:hover,
+  .vision-card:hover {
+    background: linear-gradient(135deg, rgba(0, 250, 240, 0.25) 0%, rgba(233, 148, 91, 0.15) 100%);
+    border-color: #00faf0;
+    box-shadow: 0 8px 24px rgba(0, 250, 240, 0.3);
+  }
+
+  .mission-card h3,
+  .vision-card h3 {
+    color: #00faf0;
+  }
+
+  .mission-card p,
+  .vision-card p {
+    color: #f0f0f0;
   }
 
   /* Service Cards */
