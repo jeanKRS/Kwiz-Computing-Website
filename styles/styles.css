@@ -15,8 +15,9 @@ body {
 
 /* Ensure content area has subtle background to maintain readability */
 .page-columns {
-    background-color: rgba(255, 255, 255, 0.95);
-    /* backdrop-filter removed for better mobile performance */
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -187,17 +188,19 @@ footer {
 
 /* Mobile and Small Tablets (below 768px) */
 @media (max-width: 767px) {
-    /* Simplify background pattern on mobile for better performance */
+    /* Keep background pattern on mobile with simplified version */
     body {
-        background-image: none;
-        background-color: #f8f9fa;
         font-size: 0.9rem;
+        background-size: 60px 105px;
+        background-position: 0 0, 0 0, 30px 52.5px, 30px 52.5px, 0 0, 30px 52.5px;
     }
 
     .page-columns {
         margin: 0.75rem;
         padding: 1rem 1.25rem;
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         max-width: 98%;
     }
 
@@ -235,11 +238,16 @@ footer {
 @media (max-width: 576px) {
     body {
         font-size: 0.88rem;
+        background-size: 50px 87.5px;
+        background-position: 0 0, 0 0, 25px 43.75px, 25px 43.75px, 0 0, 25px 43.75px;
     }
 
     .page-columns {
         margin: 0.5rem;
         padding: 0.75rem 1rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
         max-width: 99%;
     }
 
@@ -287,7 +295,9 @@ footer {
 
     /* Content Area */
     .page-columns {
-        background-color: rgba(30, 30, 30, 0.95);
+        background-color: rgba(30, 30, 30, 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
@@ -409,12 +419,14 @@ footer {
     /* Mobile Dark Mode Adjustments */
     @media (max-width: 767px) {
         body {
-            background-image: none;
-            background-color: #1a1a1a;
+            background-size: 60px 105px;
+            background-position: 0 0, 0 0, 30px 52.5px, 30px 52.5px, 0 0, 30px 52.5px;
         }
 
         .page-columns {
-            background-color: #222;
+            background-color: rgba(34, 34, 34, 0.8);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
     }
 }

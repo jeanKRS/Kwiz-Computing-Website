@@ -191,7 +191,9 @@
 }
 
 .service-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: 0;
   border-radius: 12px;
   border: 1px solid #e9ecef;
@@ -376,7 +378,9 @@
 .why-choose > div {
   text-align: center;
   padding: 1rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border-radius: 12px;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -423,7 +427,9 @@
 
 /* Industry Applications Cards */
 .grid > div[class*="g-col"] {
-  background: white;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid #e9ecef;
@@ -762,7 +768,9 @@
 }
 
 .capability-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: 2rem;
   border-radius: 12px;
   border: 1px solid #e9ecef;
@@ -854,7 +862,9 @@
 
 /* About Page Styles */
 .team-profile {
-  background: white;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -886,7 +896,9 @@
 }
 
 .info-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: 2rem;
   border-radius: 12px;
   border: 1px solid #e9ecef;
