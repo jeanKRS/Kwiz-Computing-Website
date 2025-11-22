@@ -24,9 +24,9 @@ body {
     max-width: 1200px;
 }
 
-/* Smooth gradient overlay for header sections */
+/* Smooth gradient overlay for header sections - green to orange blend */
 #title-block-header {
-    background: linear-gradient(135deg, rgba(6, 95, 70, 0.05) 0%, rgba(6, 95, 70, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.08) 0%, rgba(233, 148, 91, 0.05) 100%);
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -88,13 +88,14 @@ img {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer enhancement */
+/* Footer enhancement - green to orange gradient */
 footer {
-    background: linear-gradient(135deg, #065f46 0%, #054d38 100%);
+    background: linear-gradient(135deg, #065f46 0%, #0a6b51 40%, #c67d4a 100%);
 }
 
-/* Navigation bar enhancement */
+/* Navigation bar enhancement - green to orange gradient */
 .navbar {
+    background: linear-gradient(90deg, #065f46 0%, #0a6b51 70%, #d98956 100%) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -264,9 +265,9 @@ footer {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    /* Header */
+    /* Header - green to orange blend */
     #title-block-header {
-        background: linear-gradient(135deg, rgba(6, 95, 70, 0.2) 0%, rgba(6, 95, 70, 0.1) 100%);
+        background: linear-gradient(135deg, rgba(6, 95, 70, 0.2) 0%, rgba(233, 148, 91, 0.12) 100%);
     }
 
     /* Headings */
@@ -332,9 +333,9 @@ footer {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    /* Navigation */
+    /* Navigation - green to orange gradient */
     .navbar {
-        background-color: #1a1a1a !important;
+        background: linear-gradient(90deg, #0d4d3a 0%, #1a4a3a 50%, #8b5a32 100%) !important;
         border-bottom: 1px solid #3a3a3a;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
@@ -347,9 +348,9 @@ footer {
         color: #e9945b !important;
     }
 
-    /* Footer */
+    /* Footer - green to orange gradient */
     footer {
-        background: linear-gradient(135deg, #1a4a3a 0%, #143a2a 100%);
+        background: linear-gradient(135deg, #0d4d3a 0%, #1a4a3a 40%, #8b5a32 100%);
         color: #d0d0d0;
     }
 
