@@ -314,12 +314,21 @@ format:
 }
 
 @media (max-width: 768px) {
+    .contact-hero {
+        padding: 1.25rem;
+    }
+
     .contact-hero h1 {
         font-size: 2rem;
     }
 
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.25rem;
     }
 
     .form-row {
@@ -327,7 +336,45 @@ format:
     }
 
     .form-section {
-        padding: 1.5rem;
+        padding: 1.25rem;
+    }
+
+    .appointment-section {
+        padding: 1.25rem 1rem;
+    }
+
+    .faq-item {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-container {
+        padding: 1rem;
+    }
+
+    .contact-hero {
+        padding: 1rem;
+    }
+
+    .contact-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .contact-card {
+        padding: 1rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+    }
+
+    .appointment-section {
+        padding: 1rem;
+    }
+
+    .faq-item {
+        padding: 1rem;
     }
 }
 

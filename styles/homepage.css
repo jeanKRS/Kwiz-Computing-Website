@@ -1122,6 +1122,34 @@
   .vision-card p {
     font-size: 0.95rem;
   }
+
+  .services-grid {
+    padding: 1.25rem;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .service-card > *:not(.service-icon) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .service-card > h3 {
+    padding-top: 1.25rem;
+  }
+
+  .service-card > p:last-of-type,
+  .service-card > ul:last-of-type {
+    padding-bottom: 1.25rem;
+  }
+
+  .blog-preview {
+    padding: 1.25rem;
+  }
+
+  .application-item {
+    padding: 1.25rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1167,6 +1195,47 @@
   .mission-card p,
   .vision-card p {
     font-size: 0.9rem;
+  }
+
+  .services-grid {
+    padding: 1rem;
+    gap: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .service-card > *:not(.service-icon) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .service-card > h3 {
+    padding-top: 1rem;
+  }
+
+  .service-card > p:last-of-type,
+  .service-card > ul:last-of-type {
+    padding-bottom: 1rem;
+  }
+
+  .blog-preview {
+    padding: 1rem;
+  }
+
+  .application-item {
+    padding: 1rem;
+  }
+
+  .info-card,
+  .capability-card {
+    padding: 1rem;
+  }
+
+  .team-profile {
+    padding: 1rem;
+  }
+
+  .services-intro {
+    padding: 1rem;
   }
 
   .process-icon {
