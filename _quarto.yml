@@ -15,7 +15,7 @@ website:
   favicon: images/icon.png
   google-analytics: "G-8JBYS53Y46"
   navbar:
-    logo: images/logo.svg
+    logo: images/logo_inverted.svg
     background: "#065f46"
     foreground: "#ffffff"
     left:
