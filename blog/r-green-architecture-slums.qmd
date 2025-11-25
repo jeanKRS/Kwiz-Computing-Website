@@ -1,6 +1,7 @@
 ---
 title: "Leveraging R for Green Architecture in Slum Areas: Data-Driven Solutions for Sustainable Urban Development"
-author: "Kwiz Computing Technologies"
+author: "Kwizera Jean"
+affiliation: "Kwiz Computing Technologies"
 date: "2025-11-07"
 categories: [R Programming, Sustainability, Urban Development, Green Architecture, Data Analysis, Social Impact]
 image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800"
@@ -15,7 +16,7 @@ execute:
   message: false
 ---
 
-*By Kwiz Computing Technologies • November 7, 2025 • 17 min read*
+*By Kwizera Jean, Kwiz Computing Technologies • November 7, 2025 • 17 min read*
 
 ## Introduction
 

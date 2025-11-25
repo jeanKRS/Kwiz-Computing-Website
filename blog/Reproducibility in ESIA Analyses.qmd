@@ -1,6 +1,7 @@
 ---
 title: "Reproducibility in ESIA Analyses: A Critical Evaluation of Kenya's Environmental Impact Assessments"
-author: "Kwiz Computing Technologies"
+author: "Kwizera Jean"
+affiliation: "Kwiz Computing Technologies"
 format: html
 date: "2025-11-10"
 categories: [ESIA, Data Analysis, Sustainability, R Programming, Business Strategy, Decision Making]
@@ -9,7 +10,7 @@ description: "A non-technical guide for business leaders and decision-makers on 
 reading-time: "18 min read"
 ---
 
-*By Kwiz Computing Technologies • November 10, 2025 • 18 min read*
+*By Kwizera Jean, Kwiz Computing Technologies • November 10, 2025 • 18 min read*
 
 **Executive Summary**
 

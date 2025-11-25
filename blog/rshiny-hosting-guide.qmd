@@ -1,6 +1,7 @@
 ---
 title: "The Complete Guide to Hosting R Shiny Applications: Choose Your Platform and Deploy with Confidence"
-author: "Kwiz Computing Technologies"
+author: "Kwizera Jean"
+affiliation: "Kwiz Computing Technologies"
 date: "2025-10-27"
 categories: [R Programming, Shiny, Cloud Deployment, DevOps, Tutorial, Web Applications]
 image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80"
@@ -14,7 +15,7 @@ format:
     toc-depth: 3
 ---
 
-*By Kwiz Computing Technologies • October 27, 2025 • 14 min read*
+*By Kwizera Jean, Kwiz Computing Technologies • October 27, 2025 • 14 min read*
 
 ![Deploying R Shiny applications to production](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80) *Photo by [Arian Darvishi](https://unsplash.com/@arianismmm) on Unsplash*
 
