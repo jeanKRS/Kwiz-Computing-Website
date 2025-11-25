@@ -260,6 +260,63 @@ create_interactive_table <- function(data, caption = NULL, pageLength = 10,
   }
 }
 
+# Reverse geocoding function using Photon API (OpenStreetMap)
+# Returns a human-readable location name for given coordinates
+reverse_geocode <- function(lon, lat) {
+  # Check for valid coordinates
+  if (is.na(lon) || is.na(lat)) {
+    return("Unknown Location")
+  }
+
+  tryCatch({
+    # Use Photon API (free, no API key needed)
+    url <- paste0("https://photon.komoot.io/reverse?lon=", lon, "&lat=", lat)
+
+    # Fetch the data
+    response <- jsonlite::fromJSON(url)
+
+    # Extract location information
+    if (length(response$features) > 0) {
+      props <- response$features$properties[[1]]
+
+      # Build location string from available components
+      location_parts <- c()
+
+      # Priority order: city/town/village > county/state > country
+      if (!is.null(props$city)) {
+        location_parts <- c(location_parts, props$city)
+      } else if (!is.null(props$town)) {
+        location_parts <- c(location_parts, props$town)
+      } else if (!is.null(props$village)) {
+        location_parts <- c(location_parts, props$village)
+      } else if (!is.null(props$name)) {
+        location_parts <- c(location_parts, props$name)
+      }
+
+      if (!is.null(props$county)) {
+        location_parts <- c(location_parts, props$county)
+      } else if (!is.null(props$state)) {
+        location_parts <- c(location_parts, props$state)
+      }
+
+      if (!is.null(props$country)) {
+        location_parts <- c(location_parts, props$country)
+      }
+
+      if (length(location_parts) > 0) {
+        return(paste(location_parts, collapse = ", "))
+      }
+    }
+
+    # Fallback to coordinates if no location found
+    return(paste0("Near ", round(lat, 2), "°, ", round(lon, 2), "°"))
+
+  }, error = function(e) {
+    # On error, return coordinates
+    return(paste0("Grid Cell (", round(lon, 2), "°, ", round(lat, 2), "°)"))
+  })
+}
+
 # Load all data needed for abstract and inline R code
 # Check if required data files exist
 required_files <- c(
@@ -2162,12 +2219,14 @@ leaflet(spatial_grid_wgs84) %>%
     popup = ~{
       # Calculate centroid coordinates for each polygon
       coords <- st_coordinates(st_centroid(geometry))
+      # Get reverse geocoded location
+      location_name <- reverse_geocode(coords[1], coords[2])
       paste0(
         "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
         "<strong style='color: #ffa873;'>Grid Cell Summary</strong><br>",
         "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
         "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
-        "<strong style='color: #ffa873;'>Location:</strong> Grid Cell (", round(coords[1], 2), "°, ", round(coords[2], 2), "°)<br>",
+        "<strong style='color: #ffa873;'>Location:</strong> ", location_name, "<br>",
         "<hr style='border-color: #ffa873;'>",
         "<strong style='color: #ffa873;'>Records:</strong> ", format(n_records, big.mark = ","), "<br>",
         "<strong style='color: #ffa873;'>Species:</strong> ", n_species, "<br>",
@@ -3133,12 +3192,14 @@ if (file.exists(spatial_grid_file) && file.exists(grid_pred_file)) {
       popup = ~{
         # Calculate centroid coordinates for each polygon
         coords <- st_coordinates(st_centroid(geometry))
+        # Get reverse geocoded location
+        location_name <- reverse_geocode(coords[1], coords[2])
         paste0(
           "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
           "<strong style='color: #ffa873;'>Sampling Bias Analysis</strong><br>",
           "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
           "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Location:</strong> Grid Cell (", round(coords[1], 2), "°, ", round(coords[2], 2), "°)<br>",
+          "<strong style='color: #ffa873;'>Location:</strong> ", location_name, "<br>",
           "<hr style='border-color: #ffa873;'>",
           "<strong style='color: #ffa873;'>Observed:</strong> ", format(n_records, big.mark = ","), " records<br>",
           "<strong style='color: #ffa873;'>Predicted:</strong> ", format(round(predicted_count), big.mark = ","), " records<br>",
@@ -3321,12 +3382,14 @@ if (file.exists(spatial_grid_file) && file.exists(grid_pred_file)) {
       popup = ~{
         # Calculate centroid coordinates for each polygon
         coords <- st_coordinates(st_centroid(geometry))
+        # Get reverse geocoded location
+        location_name <- reverse_geocode(coords[1], coords[2])
         paste0(
           "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
           "<strong style='color: #ffa873;'>Filtered Sampling Bias</strong><br>",
           "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
           "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Location:</strong> Grid Cell (", round(coords[1], 2), "°, ", round(coords[2], 2), "°)<br>",
+          "<strong style='color: #ffa873;'>Location:</strong> ", location_name, "<br>",
           "<hr style='border-color: #ffa873;'>",
           "<strong style='color: #ffa873;'>Observed:</strong> ", format(n_records, big.mark = ","), " records<br>",
           "<strong style='color: #ffa873;'>Predicted:</strong> ", format(round(predicted_count), big.mark = ","), " records<br>",
@@ -3903,12 +3966,14 @@ if (file.exists(spatial_grid_file)) {
       popup = ~{
         # Calculate centroid coordinates for each polygon
         coords <- st_coordinates(st_centroid(geometry))
+        # Get reverse geocoded location
+        location_name <- reverse_geocode(coords[1], coords[2])
         paste0(
           "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
           "<strong style='color: #ffa873;'>Grid Cell Summary</strong><br>",
           "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
           "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Location:</strong> Grid Cell (", round(coords[1], 2), "°, ", round(coords[2], 2), "°)<br>",
+          "<strong style='color: #ffa873;'>Location:</strong> ", location_name, "<br>",
           "<hr style='border-color: #ffa873;'>",
           "<strong style='color: #ffa873;'>Species:</strong> ", n_species, "<br>",
           "<strong style='color: #ffa873;'>Records:</strong> ", format(n_records, big.mark = ","), "<br>",
