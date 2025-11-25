@@ -4,7 +4,13 @@ description: "Comprehensive data science, web development and cloud solutions in
 ---
 
 ::: services-intro
-We deliver comprehensive data science and technology solutions built on transferable technical capabilities. Our expertise spans R programming, statistical analysis, modern web development, cloud infrastructure and software engineering, enabling us to solve complex analytical and technical challenges across diverse industries and domains.
+We deliver comprehensive data science and technology solutions built on transferable technical capabilities:
+
+- **R programming** and statistical analysis
+- **Modern web development** and responsive design
+- **Cloud infrastructure** and deployment
+- **Software engineering** best practices
+- Solving complex analytical and technical challenges across diverse industries and domains
 :::
 
 ------------------------------------------------------------------------
@@ -2246,6 +2252,11 @@ document.addEventListener('DOMContentLoaded', function() {
     color: #e0e0e0;
   }
 
+  .capability-card p,
+  .capability-card ul {
+    color: #e0e0e0;
+  }
+
   /* Application Items */
   .application-item {
     background: #252525;
@@ -2262,7 +2273,8 @@ document.addEventListener('DOMContentLoaded', function() {
     color: #4ade80;
   }
 
-  .application-item {
+  .application-item,
+  .application-item p {
     color: #e0e0e0;
   }
 

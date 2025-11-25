@@ -61,7 +61,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, rgba(233, 148, 91, 0.85) 0%, rgba(217, 125, 66, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(233, 148, 91, 0.75) 0%, rgba(217, 125, 66, 0.75) 100%);
   color: white;
   border-color: #e9945b;
 }
@@ -1311,11 +1311,16 @@
 
   .mission-card h3,
   .vision-card h3 {
-    color: #e9945b;
+    color: #e9945b !important;
   }
 
   .mission-card p,
   .vision-card p {
+    color: #f0f0f0 !important;
+  }
+
+  .mission-card > *,
+  .vision-card > * {
     color: #f0f0f0;
   }
 
