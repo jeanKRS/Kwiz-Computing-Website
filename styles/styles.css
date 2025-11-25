@@ -100,6 +100,13 @@ footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Increase logo size by 1.5x */
+.navbar-brand img {
+    height: auto;
+    max-height: 60px; /* Increased from default ~40px */
+    width: auto;
+}
+
 /* Responsive adjustments */
 
 /* Extra Large Desktop (1920px and above) */
@@ -367,6 +374,15 @@ footer {
         background-color: #2a2a2a;
         border-color: #3a3a3a;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        color: #e8e8e8;
+    }
+
+    .callout-title {
+        color: #f0f0f0 !important;
+    }
+
+    .callout p, .callout li {
+        color: #e8e8e8 !important;
     }
 
     /* Navigation - green to orange gradient */
@@ -414,6 +430,112 @@ footer {
 
     table tbody tr:hover {
         background-color: rgba(6, 95, 70, 0.25);
+    }
+
+    /* Card Styles in Dark Mode */
+    .info-card,
+    .capability-card,
+    .application-item {
+        background: #2a2a2a;
+        border-color: #3a3a3a;
+        color: #e8e8e8;
+    }
+
+    .info-card h3,
+    .info-card h4,
+    .capability-card h4,
+    .capability-card h5 {
+        color: #10b981 !important; /* Brighter green for dark mode */
+    }
+
+    .info-card p,
+    .info-card li,
+    .capability-card p,
+    .capability-card li,
+    .application-item p {
+        color: #d0d0d0 !important;
+    }
+
+    .application-item strong {
+        color: #10b981 !important;
+    }
+
+    .process-card {
+        background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+        border-left-color: #10b981;
+    }
+
+    .process-card strong {
+        color: #10b981 !important;
+    }
+
+    .blog-card {
+        background: #2a2a2a;
+        border-color: #3a3a3a;
+        color: #e8e8e8;
+    }
+
+    .blog-card:hover {
+        border-color: #10b981;
+    }
+
+    .blog-card-title {
+        color: #10b981 !important;
+    }
+
+    .blog-card-description {
+        color: #d0d0d0 !important;
+    }
+
+    .blog-card-meta {
+        color: #999 !important;
+    }
+
+    .blog-card-category {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(6, 95, 70, 0.2) 100%);
+        color: #10b981 !important;
+    }
+
+    /* Blog listing page - fix title visibility */
+    .quarto-listing-default .listing-item .listing-title {
+        color: #f0f0f0 !important;
+    }
+
+    .quarto-listing-default .listing-item .listing-title:hover {
+        color: #e9945b !important;
+    }
+
+    .quarto-listing-default .listing-description {
+        color: #d0d0d0 !important;
+    }
+
+    .quarto-listing-default .listing-item {
+        border-color: #3a3a3a;
+    }
+
+    /* List of Figures and List of Tables cards */
+    .cell-output-display,
+    #tbl-panel-tabset,
+    #fig-panel-tabset,
+    .panel-tabset {
+        background-color: #2a2a2a;
+        color: #e8e8e8;
+    }
+
+    .panel-tabset .nav-link {
+        color: #d0d0d0 !important;
+    }
+
+    .panel-tabset .nav-link.active {
+        background-color: #1a4a3a !important;
+        color: #f0f0f0 !important;
+    }
+
+    /* Figure and table captions */
+    figcaption,
+    .figure-caption,
+    .table-caption {
+        color: #d0d0d0 !important;
     }
 
     /* Mobile Dark Mode Adjustments */
