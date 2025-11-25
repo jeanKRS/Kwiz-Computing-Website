@@ -513,11 +513,17 @@ footer {
         border-color: #3a3a3a;
     }
 
-    /* List of Figures and List of Tables cards */
+    /* List of Figures and List of Tables cards - comprehensive selectors */
     .cell-output-display,
     #tbl-panel-tabset,
     #fig-panel-tabset,
-    .panel-tabset {
+    .panel-tabset,
+    #LOT,
+    #LOF,
+    div[id^="tbl-"],
+    div[id^="fig-"],
+    .quarto-figure,
+    .quarto-layout-panel {
         background-color: #2a2a2a !important;
         color: #e8e8e8 !important;
     }
@@ -525,34 +531,61 @@ footer {
     .panel-tabset .tab-content,
     .panel-tabset .tab-pane,
     .panel-tabset-tabby .tab-content,
-    .panel-tabset-tabby .tab-pane {
+    .panel-tabset-tabby .tab-pane,
+    .tab-content,
+    .tab-pane {
         background-color: #2a2a2a !important;
         color: #e8e8e8 !important;
     }
 
+    /* Nav tabs styling */
+    .nav-tabs,
+    .nav-pills,
     .panel-tabset .nav-link {
         color: #d0d0d0 !important;
+        background-color: transparent !important;
     }
 
+    .nav-tabs .nav-link.active,
+    .nav-pills .nav-link.active,
     .panel-tabset .nav-link.active {
         background-color: #1a4a3a !important;
         color: #f0f0f0 !important;
+        border-color: #1a4a3a !important;
     }
 
-    /* Text inside panel tabsets */
+    /* Text inside panel tabsets and tabs - force light text */
     .panel-tabset h1,
     .panel-tabset h2,
     .panel-tabset h3,
     .panel-tabset h4,
     .panel-tabset h5,
-    .panel-tabset h6 {
+    .panel-tabset h6,
+    .tab-content h1,
+    .tab-content h2,
+    .tab-content h3,
+    .tab-content h4,
+    .tab-content h5,
+    .tab-content h6 {
         color: #f0f0f0 !important;
     }
 
     .panel-tabset p,
     .panel-tabset li,
-    .panel-tabset div {
+    .panel-tabset div,
+    .panel-tabset span,
+    .panel-tabset a,
+    .tab-content p,
+    .tab-content li,
+    .tab-content div,
+    .tab-content span,
+    .tab-content a {
         color: #e8e8e8 !important;
+    }
+
+    .tab-content a:hover,
+    .panel-tabset a:hover {
+        color: #e9945b !important;
     }
 
     /* Figure and table captions */
@@ -560,6 +593,59 @@ footer {
     .figure-caption,
     .table-caption {
         color: #d0d0d0 !important;
+    }
+
+    /* Comprehensive card and content area dark mode support */
+    /* Bootstrap cards in dark mode */
+    div.card {
+        background-color: #2a2a2a !important;
+        border-color: #3a3a3a !important;
+        color: #e8e8e8 !important;
+    }
+
+    div.card-body,
+    div.card-header,
+    div.card-footer {
+        background-color: #2a2a2a !important;
+        color: #e8e8e8 !important;
+    }
+
+    /* Force all text in main content to be light colored */
+    #quarto-content,
+    #quarto-content *:not(.navbar):not(.navbar *):not(.footer):not(.footer *),
+    .page-columns *:not(.navbar):not(.navbar *):not(.footer):not(.footer *),
+    main,
+    main * {
+        color: #e8e8e8;
+    }
+
+    /* Headings should be lighter */
+    #quarto-content h1,
+    #quarto-content h2,
+    #quarto-content h3,
+    #quarto-content h4,
+    #quarto-content h5,
+    #quarto-content h6,
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6 {
+        color: #f0f0f0 !important;
+    }
+
+    /* Links in dark mode */
+    #quarto-content a:not(.navbar a):not(.footer a),
+    .page-columns a:not(.navbar a):not(.footer a),
+    main a {
+        color: #e9945b !important;
+    }
+
+    #quarto-content a:not(.navbar a):not(.footer a):hover,
+    .page-columns a:not(.navbar a):not(.footer a):hover,
+    main a:hover {
+        color: #ffa873 !important;
     }
 
     /* Mobile Dark Mode Adjustments */
