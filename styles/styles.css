@@ -518,8 +518,16 @@ footer {
     #tbl-panel-tabset,
     #fig-panel-tabset,
     .panel-tabset {
-        background-color: #2a2a2a;
-        color: #e8e8e8;
+        background-color: #2a2a2a !important;
+        color: #e8e8e8 !important;
+    }
+
+    .panel-tabset .tab-content,
+    .panel-tabset .tab-pane,
+    .panel-tabset-tabby .tab-content,
+    .panel-tabset-tabby .tab-pane {
+        background-color: #2a2a2a !important;
+        color: #e8e8e8 !important;
     }
 
     .panel-tabset .nav-link {
@@ -529,6 +537,22 @@ footer {
     .panel-tabset .nav-link.active {
         background-color: #1a4a3a !important;
         color: #f0f0f0 !important;
+    }
+
+    /* Text inside panel tabsets */
+    .panel-tabset h1,
+    .panel-tabset h2,
+    .panel-tabset h3,
+    .panel-tabset h4,
+    .panel-tabset h5,
+    .panel-tabset h6 {
+        color: #f0f0f0 !important;
+    }
+
+    .panel-tabset p,
+    .panel-tabset li,
+    .panel-tabset div {
+        color: #e8e8e8 !important;
     }
 
     /* Figure and table captions */
