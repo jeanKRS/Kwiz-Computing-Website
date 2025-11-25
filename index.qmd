@@ -52,11 +52,9 @@ We provide comprehensive data science, web development and cloud solutions built
 
 ### Advanced Analytics & Statistical Modeling
 
-Turn complex data into actionable insights using sophisticated statistical methods, predictive modeling and machine learning techniques.
+Transform complex data into actionable insights with sophisticated statistical methods, predictive modeling and machine learning.
 
-**Core capabilities:** - Exploratory data analysis and pattern detection - Predictive modeling and forecasting - Statistical inference and hypothesis testing - Machine learning and classification
-
-**Example applications:** Environmental impact prediction modeling, financial forecasting, customer behavior analysis, operational efficiency optimization
+Exploratory data analysis • Predictive modeling • Statistical inference • Machine learning
 
 [Learn More →](services.qmd#analytics)
 ::::
@@ -68,11 +66,9 @@ Turn complex data into actionable insights using sophisticated statistical metho
 
 ### Enterprise R Application Development
 
-Build robust, production-grade analytical applications and interactive dashboards using modern R frameworks and software engineering best practices.
+Production-grade analytical applications and interactive dashboards using modern R frameworks and software engineering best practices.
 
-**What we deliver:** - Modular Shiny applications (Rhino framework) - Automated reporting systems - Data visualization platforms - Custom analytical tools
-
-**Example applications:** Environmental monitoring dashboards, business intelligence platforms, research data portals, compliance reporting systems
+Shiny applications • Automated reporting • Data visualization • Custom analytical tools
 
 [See What's Possible →](services.qmd#r-development)
 ::::
@@ -84,11 +80,9 @@ Build robust, production-grade analytical applications and interactive dashboard
 
 ### Data Management & Integration
 
-Design and implement robust data pipelines, quality assurance frameworks and integration systems that ensure data reliability and accessibility.
+Robust data pipelines, quality assurance frameworks and integration systems that ensure data reliability and accessibility.
 
-**Our approach:** - ETL pipeline development - Data validation and quality control - Database design and optimization - API development and integration
-
-**Example applications:** Multi-source environmental data integration, customer data platforms, research data repositories, regulatory reporting systems
+ETL pipelines • Data validation • Database design • API development
 
 [Explore Solutions →](services.qmd)
 ::::
@@ -100,11 +94,9 @@ Design and implement robust data pipelines, quality assurance frameworks and int
 
 ### Custom Analytics Solutions
 
-Develop tailored analytical frameworks and methodologies designed specifically for your organization's unique challenges and requirements.
+Tailored analytical frameworks and methodologies designed for your organization's unique challenges and requirements.
 
-**We specialize in:** - Reproducible analytical workflows - Automated data processing - Custom statistical methodologies - Domain-specific analytics packages
-
-**Example applications:** ESIA reproducibility frameworks, clinical trial analysis systems, financial risk models, supply chain analytics
+Reproducible workflows • Automated processing • Custom methodologies • Domain-specific packages
 
 [Discover More →](services.qmd)
 ::::
@@ -116,11 +108,9 @@ Develop tailored analytical frameworks and methodologies designed specifically f
 
 ### Web Development & Cloud Solutions
 
-Build modern, scalable web applications and cloud infrastructure with professional development practices, responsive design and enterprise-grade security.
+Modern, scalable web applications and cloud infrastructure with professional development practices and enterprise-grade security.
 
-**What we build:** - Responsive web applications - Cloud-native solutions - CI/CD pipelines - API development and integration
-
-**Example applications:** Corporate websites, data portals, SaaS platforms, interactive dashboards, open data systems
+Responsive web apps • Cloud-native solutions • CI/CD pipelines • API integration
 
 [Explore Technologies →](services.qmd)
 ::::
