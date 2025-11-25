@@ -28,17 +28,13 @@ We deliver sophisticated data science solutions combining rigorous statistical m
 :::: {.g-col-12 .g-col-md-6 .mission-card}
 ### 🎯 Our Mission
 
-To empower organizations with data-driven insights and robust analytical solutions that drive meaningful business outcomes, while maintaining the highest standards of software engineering excellence and scientific rigor.
-
-We believe in making sophisticated data science accessible, reproducible and actionable—transforming complex data into strategic decisions that matter.
+To empower organizations with data-driven insights and robust analytical solutions, maintaining the highest standards of software engineering excellence and scientific rigor.
 ::::
 
 :::: {.g-col-12 .g-col-md-6 .vision-card}
 ### 🔭 Our Vision
 
-To be the trusted partner for organizations seeking to harness the full potential of data science—bridging the gap between cutting-edge analytics and practical business value.
-
-We envision a future where every organization, regardless of size, can leverage enterprise-grade data science to make informed decisions, drive innovation and create lasting impact.
+To be the trusted partner bridging cutting-edge analytics and practical business value—enabling organizations to leverage enterprise-grade data science for lasting impact.
 ::::
 :::::::
 
