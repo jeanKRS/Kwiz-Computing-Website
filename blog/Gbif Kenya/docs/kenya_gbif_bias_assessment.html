@@ -197,6 +197,137 @@ window.Quarto = {
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<style>
+/* Dark Mode Support for Blog Cards */
+@media (prefers-color-scheme: dark) {
+  /* Disclaimer Card - Gray background */
+  div[style*="background-color: #f0f0f0"] {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-left-color: #2196F3 !important;
+  }
+
+  div[style*="background-color: #f0f0f0"] p,
+  div[style*="background-color: #f0f0f0"] li,
+  div[style*="background-color: #f0f0f0"] strong {
+    color: #e0e0e0 !important;
+  }
+
+  /* List of Tables Card - Yellow/Amber background */
+  div[style*="background-color: #fff9e6"] {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-left-color: #ffc107 !important;
+  }
+
+  div[style*="background-color: #fff9e6"] p,
+  div[style*="background-color: #fff9e6"] li,
+  div[style*="background-color: #fff9e6"] strong {
+    color: #e0e0e0 !important;
+  }
+
+  div[style*="background-color: #fff9e6"] a {
+    color: #e9945b !important;
+  }
+
+  /* List of Figures Card - Green background */
+  div[style*="background-color: #e8f5e9"] {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-left-color: #4caf50 !important;
+  }
+
+  div[style*="background-color: #e8f5e9"] p,
+  div[style*="background-color: #e8f5e9"] li,
+  div[style*="background-color: #e8f5e9"] strong {
+    color: #e0e0e0 !important;
+  }
+
+  div[style*="background-color: #e8f5e9"] a {
+    color: #4ade80 !important;
+  }
+
+  /* Learning Note Cards - Blue background */
+  div[style*="background-color: #e3f2fd"] {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-left-color: #2196F3 !important;
+  }
+
+  div[style*="background-color: #e3f2fd"] p,
+  div[style*="background-color: #e3f2fd"] li,
+  div[style*="background-color: #e3f2fd"] strong,
+  div[style*="background-color: #e3f2fd"] em {
+    color: #e0e0e0 !important;
+  }
+
+  div[style*="background-color: #e3f2fd"] a {
+    color: #42a5f5 !important;
+  }
+
+  /* Orange Card */
+  div[style*="background-color: #fff3e0"] {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-left-color: #ff9800 !important;
+  }
+
+  div[style*="background-color: #fff3e0"] p,
+  div[style*="background-color: #fff3e0"] li,
+  div[style*="background-color: #fff3e0"] strong {
+    color: #e0e0e0 !important;
+  }
+
+  /* Warning Card - Yellow background */
+  div[style*="background-color: #fff3cd"] {
+    background-color: #3a3a2a !important;
+    color: #e0e0e0 !important;
+  }
+
+  div[style*="background-color: #fff3cd"] p,
+  div[style*="background-color: #fff3cd"] li,
+  div[style*="background-color: #fff3cd"] strong {
+    color: #e0e0e0 !important;
+  }
+
+  /* Code block backgrounds */
+  div[style*="background-color: #ffffff"] {
+    background-color: #1a1a1a !important;
+  }
+
+  pre[style*="background-color: #f6f8fa"],
+  summary[style*="background-color: #f6f8fa"] {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+  }
+
+  summary[onmouseover*="backgroundColor"] {
+    background-color: #2a2a2a !important;
+  }
+
+  summary[onmouseover*="backgroundColor"]:hover {
+    background-color: #3a3a3a !important;
+  }
+
+  /* General text visibility fixes */
+  body.quarto-light {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+  }
+
+  .content {
+    color: #e0e0e0 !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #f0f0f0 !important;
+  }
+
+  p, li, td, span {
+    color: #e8e8e8 !important;
+  }
+}
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/r.min.js"></script>
 <script>

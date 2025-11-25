@@ -100,6 +100,12 @@ footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Increase logo size by 1.5x */
+.navbar-brand img {
+    width: auto;
+    height: 60px; /* Increased from default ~40px by 1.5x */
+}
+
 /* Responsive adjustments */
 
 /* Extra Large Desktop (1920px and above) */
@@ -414,6 +420,66 @@ footer {
 
     table tbody tr:hover {
         background-color: rgba(6, 95, 70, 0.25);
+    }
+
+    /* Blog Listing Items */
+    .quarto-listing .listing-item,
+    .quarto-listing-default .listing-item {
+        background-color: #2a2a2a !important;
+        border-color: #3a3a3a !important;
+        color: #e0e0e0 !important;
+    }
+
+    .quarto-listing .listing-item:hover,
+    .quarto-listing-default .listing-item:hover {
+        background-color: #323232 !important;
+        border-color: #e9945b !important;
+    }
+
+    .quarto-listing .listing-title,
+    .quarto-listing-default .listing-title,
+    .quarto-listing .listing-item h3,
+    .quarto-listing-default .listing-item h3,
+    .quarto-listing .listing-item h3 a,
+    .quarto-listing-default .listing-item h3 a {
+        color: #e9945b !important;
+    }
+
+    .quarto-listing .listing-description,
+    .quarto-listing-default .listing-description,
+    .quarto-listing .listing-item p,
+    .quarto-listing-default .listing-item p {
+        color: #d0d0d0 !important;
+    }
+
+    .quarto-listing .listing-date,
+    .quarto-listing-default .listing-date,
+    .quarto-listing .listing-author,
+    .quarto-listing-default .listing-author,
+    .quarto-listing .listing-category,
+    .quarto-listing-default .listing-category {
+        color: #b0b0b0 !important;
+    }
+
+    /* Blog card titles */
+    .listing-grid .card-title,
+    .listing-grid .listing-title {
+        color: #e9945b !important;
+    }
+
+    .listing-grid .card-text,
+    .listing-grid .listing-description {
+        color: #d0d0d0 !important;
+    }
+
+    .listing-grid .card {
+        background-color: #2a2a2a !important;
+        border-color: #3a3a3a !important;
+    }
+
+    .listing-grid .card:hover {
+        background-color: #323232 !important;
+        border-color: #e9945b !important;
     }
 
     /* Mobile Dark Mode Adjustments */
