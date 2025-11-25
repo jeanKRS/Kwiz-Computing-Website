@@ -2159,12 +2159,22 @@ leaflet(spatial_grid_wgs84) %>%
     fillOpacity = 0.5,
     color = "white",
     weight = 0.8,
-    popup = ~paste0(
-      "<strong>Grid Cell Summary</strong><br>",
-      "Records: ", format(n_records, big.mark = ","), "<br>",
-      "Species: ", n_species, "<br>",
-      "Log10 Records: ", round(log10(n_records + 1), 2)
-    ),
+    popup = ~{
+      # Calculate centroid coordinates for each polygon
+      coords <- st_coordinates(st_centroid(geometry))
+      paste0(
+        "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
+        "<strong style='color: #ffa873;'>Grid Cell Summary</strong><br>",
+        "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
+        "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
+        "<strong style='color: #ffa873;'>Location:</strong> Grid Cell (", round(coords[1], 2), "°, ", round(coords[2], 2), "°)<br>",
+        "<hr style='border-color: #ffa873;'>",
+        "<strong style='color: #ffa873;'>Records:</strong> ", format(n_records, big.mark = ","), "<br>",
+        "<strong style='color: #ffa873;'>Species:</strong> ", n_species, "<br>",
+        "<strong style='color: #ffa873;'>Log10 Records:</strong> ", round(log10(n_records + 1), 2),
+        "</div>"
+      )
+    },
     highlightOptions = highlightOptions(
       weight = 2,
       color = "#666",
@@ -3120,17 +3130,27 @@ if (file.exists(spatial_grid_file) && file.exists(grid_pred_file)) {
       fillOpacity = 0.5,
       color = "white",
       weight = 0.5,
-      popup = ~paste0(
-        "<strong>Sampling Bias Analysis</strong><br>",
-        "<b>Observed:</b> ", format(n_records, big.mark = ","), " records<br>",
-        "<b>Predicted:</b> ", format(round(predicted_count), big.mark = ","), " records<br>",
-        "<b>Residual:</b> ", round(residual_count, 1), "<br>",
-        "<b>Std. Residual:</b> ", round(residual_std, 2), "<br>",
-        "<hr>",
-        ifelse(residual_std < -1, "<b style='color: blue;'>Under-sampled</b>",
-               ifelse(residual_std > 1, "<b style='color: red;'>Over-sampled</b>",
-                      "<b>As expected</b>"))
-      ),
+      popup = ~{
+        # Calculate centroid coordinates for each polygon
+        coords <- st_coordinates(st_centroid(geometry))
+        paste0(
+          "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
+          "<strong style='color: #ffa873;'>Sampling Bias Analysis</strong><br>",
+          "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
+          "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
+          "<strong style='color: #ffa873;'>Location:</strong> Grid Cell (", round(coords[1], 2), "°, ", round(coords[2], 2), "°)<br>",
+          "<hr style='border-color: #ffa873;'>",
+          "<strong style='color: #ffa873;'>Observed:</strong> ", format(n_records, big.mark = ","), " records<br>",
+          "<strong style='color: #ffa873;'>Predicted:</strong> ", format(round(predicted_count), big.mark = ","), " records<br>",
+          "<strong style='color: #ffa873;'>Residual:</strong> ", round(residual_count, 1), "<br>",
+          "<strong style='color: #ffa873;'>Std. Residual:</strong> ", round(residual_std, 2), "<br>",
+          "<hr style='border-color: #ffa873;'>",
+          ifelse(residual_std < -1, "<strong style='color: #2166AC;'>Under-sampled</strong>",
+                 ifelse(residual_std > 1, "<strong style='color: #B2182B;'>Over-sampled</strong>",
+                        "<strong style='color: #ffa873;'>As expected</strong>")),
+          "</div>"
+        )
+      },
       highlightOptions = highlightOptions(
         weight = 2,
         color = "#666",
@@ -3298,17 +3318,27 @@ if (file.exists(spatial_grid_file) && file.exists(grid_pred_file)) {
       fillOpacity = 0.5,
       color = "white",
       weight = 0.5,
-      popup = ~paste0(
-        "<strong>Filtered Sampling Bias</strong><br>",
-        "<b>Observed:</b> ", format(n_records, big.mark = ","), " records<br>",
-        "<b>Predicted:</b> ", format(round(predicted_count), big.mark = ","), " records<br>",
-        "<b>Residual:</b> ", round(residual_filtered, 1), "<br>",
-        "<b>Std. Residual (filtered):</b> ", round(residual_std_filtered, 2), "<br>",
-        "<hr>",
-        ifelse(residual_std_filtered < -1, "<b style='color: blue;'>Under-sampled</b>",
-               ifelse(residual_std_filtered > 1, "<b style='color: red;'>Over-sampled</b>",
-                      "<b>As expected</b>"))
-      ),
+      popup = ~{
+        # Calculate centroid coordinates for each polygon
+        coords <- st_coordinates(st_centroid(geometry))
+        paste0(
+          "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
+          "<strong style='color: #ffa873;'>Filtered Sampling Bias</strong><br>",
+          "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
+          "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
+          "<strong style='color: #ffa873;'>Location:</strong> Grid Cell (", round(coords[1], 2), "°, ", round(coords[2], 2), "°)<br>",
+          "<hr style='border-color: #ffa873;'>",
+          "<strong style='color: #ffa873;'>Observed:</strong> ", format(n_records, big.mark = ","), " records<br>",
+          "<strong style='color: #ffa873;'>Predicted:</strong> ", format(round(predicted_count), big.mark = ","), " records<br>",
+          "<strong style='color: #ffa873;'>Residual:</strong> ", round(residual_filtered, 1), "<br>",
+          "<strong style='color: #ffa873;'>Std. Residual (filtered):</strong> ", round(residual_std_filtered, 2), "<br>",
+          "<hr style='border-color: #ffa873;'>",
+          ifelse(residual_std_filtered < -1, "<strong style='color: #2166AC;'>Under-sampled</strong>",
+                 ifelse(residual_std_filtered > 1, "<strong style='color: #B2182B;'>Over-sampled</strong>",
+                        "<strong style='color: #ffa873;'>As expected</strong>")),
+          "</div>"
+        )
+      },
       highlightOptions = highlightOptions(
         weight = 2,
         color = "#666",
@@ -3870,12 +3900,22 @@ if (file.exists(spatial_grid_file)) {
       fillOpacity = 0.5,
       color = "white",
       weight = 0.8,
-      popup = ~paste0(
-        "<strong>Grid Cell Summary</strong><br>",
-        "Species: ", n_species, "<br>",
-        "Records: ", format(n_records, big.mark = ","), "<br>",
-        "Log10 Species: ", round(log10(n_species + 1), 2)
-      ),
+      popup = ~{
+        # Calculate centroid coordinates for each polygon
+        coords <- st_coordinates(st_centroid(geometry))
+        paste0(
+          "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
+          "<strong style='color: #ffa873;'>Grid Cell Summary</strong><br>",
+          "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
+          "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
+          "<strong style='color: #ffa873;'>Location:</strong> Grid Cell (", round(coords[1], 2), "°, ", round(coords[2], 2), "°)<br>",
+          "<hr style='border-color: #ffa873;'>",
+          "<strong style='color: #ffa873;'>Species:</strong> ", n_species, "<br>",
+          "<strong style='color: #ffa873;'>Records:</strong> ", format(n_records, big.mark = ","), "<br>",
+          "<strong style='color: #ffa873;'>Log10 Species:</strong> ", round(log10(n_species + 1), 2),
+          "</div>"
+        )
+      },
       highlightOptions = highlightOptions(
         weight = 2,
         color = "#666",
