@@ -25,6 +25,89 @@ cat('
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/r.min.js"></script>
+
+<style>
+/* Modal for script popup */
+.script-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.script-modal-content {
+  background-color: #2a2a2a;
+  color: #e8e8e8;
+  margin: 3% auto;
+  padding: 20px;
+  border: 1px solid #ffa873;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(255, 168, 115, 0.3);
+}
+
+.script-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ffa873;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.script-modal-header h2 {
+  color: #ffa873 !important;
+  margin: 0;
+}
+
+.script-modal-close {
+  color: #ffa873;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.script-modal-close:hover,
+.script-modal-close:focus {
+  color: #ff8c4a;
+}
+
+.script-link {
+  color: #ffa873 !important;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.script-link:hover {
+  color: #ff8c4a !important;
+}
+
+.script-content {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #ffa873;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.script-content strong {
+  color: #ffa873 !important;
+}
+</style>
+
 <script>
 // Initialize highlight.js for dynamically created code blocks
 document.addEventListener("DOMContentLoaded", function() {
@@ -34,8 +117,167 @@ document.addEventListener("DOMContentLoaded", function() {
       hljs.highlightElement(block);
     });
   }, 100);
+
+  // Convert script references to clickable links
+  makeScriptLinksClickable();
 });
+
+// Script information database
+const scriptInfo = {
+  "scripts/01_data_download.R": {
+    title: "GBIF Data Download Script",
+    description: "This script handles downloading biodiversity occurrence data from GBIF for Kenya.",
+    sections: [
+      "Line 40-60: GBIF download request setup",
+      "Line 80-120: Data loading and initial filtering",
+      "Line 150-180: CoordinateCleaner tests application",
+      "Line 267-279: Summary statistics calculation"
+    ],
+    keyFunctions: ["occ_download()", "occ_download_get()", "clean_coordinates()", "summarise()"]
+  },
+  "scripts/01b_data_quality_assessment.R": {
+    title: "Data Quality Assessment Script",
+    description: "Comprehensive quality flagging and assessment of GBIF data.",
+    sections: [
+      "Line 90-220: Add quality flags (missing coords, high uncertainty, etc.)",
+      "Line 350-380: Calculate filtering strategies (minimal, moderate, strict)",
+      "Line 447-455: Compile quality assessment object"
+    ],
+    keyFunctions: ["add_flag_tracking()", "cc_val()", "mutate()", "bind_rows()"]
+  },
+  "scripts/02_spatial_bias.R": {
+    title: "Spatial Bias Analysis Script",
+    description: "Analyzes spatial patterns and biases in sampling effort across Kenya.",
+    sections: [
+      "Line 50-180: Create hexagonal grid and calculate sampling metrics",
+      "Line 220-275: Moran\\'s I spatial autocorrelation test",
+      "Line 320-420: Environmental bias analysis (KS tests)"
+    ],
+    keyFunctions: ["st_make_grid()", "Moran.I()", "ks.test()", "extract()"]
+  },
+  "scripts/03_temporal_bias.R": {
+    title: "Temporal Bias Analysis Script",
+    description: "Analyzes temporal patterns in data collection over time.",
+    sections: [
+      "Line 85-150: Temporal aggregation and trend analysis",
+      "Line 190-250: Mann-Kendall trend tests",
+      "Interactive visualization creation"
+    ],
+    keyFunctions: ["group_by()", "summarise()", "MannKendall()", "plot_ly()"]
+  },
+  "scripts/04_taxonomic_bias.R": {
+    title: "Taxonomic Bias Analysis Script",
+    description: "Examines taxonomic representation and diversity patterns.",
+    sections: [
+      "Class-level summary and Gini coefficient calculation",
+      "Species rarity classification and distribution analysis",
+      "Diversity indices computation"
+    ],
+    keyFunctions: ["count()", "ineq()", "diversity()", "specnumber()"]
+  },
+  "scripts/05_statistical_models.R": {
+    title: "Statistical Modeling Script",
+    description: "Builds GLM models to predict sampling effort and identify biases.",
+    sections: [
+      "Environmental covariate extraction",
+      "Negative binomial GLM fitting",
+      "Predictor importance analysis",
+      "Model diagnostics and validation"
+    ],
+    keyFunctions: ["glm.nb()", "predict()", "anova()", "residuals()"]
+  }
+};
+
+function makeScriptLinksClickable() {
+  // Find all text nodes containing script references
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT,
+    null,
+    false
+  );
+
+  const nodesToReplace = [];
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    if (node.textContent.includes("scripts/") && node.parentElement.tagName !== "SCRIPT") {
+      nodesToReplace.push(node);
+    }
+  }
+
+  nodesToReplace.forEach(node => {
+    const text = node.textContent;
+    const scriptRegex = /(scripts\/[\\w_]+\\.R)/g;
+
+    if (scriptRegex.test(text)) {
+      const span = document.createElement("span");
+      span.innerHTML = text.replace(scriptRegex, (match) => {
+        return `<a class="script-link" onclick="showScriptModal(\'${match}\')">${match}</a>`;
+      });
+      node.parentElement.replaceChild(span, node);
+    }
+  });
+}
+
+function showScriptModal(scriptPath) {
+  const info = scriptInfo[scriptPath] || {
+    title: scriptPath,
+    description: "Script information not available.",
+    sections: ["This is a reference script in the analysis pipeline."],
+    keyFunctions: []
+  };
+
+  let content = `
+    <div class="script-content">
+      <p><strong>Description:</strong> ${info.description}</p>
+      <br>
+      <p><strong>Key Sections:</strong></p>
+      <ul style="color: #e8e8e8;">
+        ${info.sections.map(s => `<li>${s}</li>`).join("")}
+      </ul>
+      ${info.keyFunctions.length > 0 ? `
+        <br>
+        <p><strong>Key Functions Used:</strong></p>
+        <ul style="color: #e8e8e8;">
+          ${info.keyFunctions.map(f => `<li><code style="color: #ffa873; background: #2a2a2a;">${f}</code></li>`).join("")}
+        </ul>
+      ` : ""}
+      <br>
+      <p style="color: #999; font-style: italic; font-size: 0.9em;">
+        Note: This popup shows a summary of the script\\'s purpose and structure.
+        The full analysis code is embedded inline in the document above.
+      </p>
+    </div>
+  `;
+
+  document.getElementById("scriptModalTitle").innerHTML = info.title;
+  document.getElementById("scriptModalBody").innerHTML = content;
+  document.getElementById("scriptModal").style.display = "block";
+}
+
+function closeScriptModal() {
+  document.getElementById("scriptModal").style.display = "none";
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  const modal = document.getElementById("scriptModal");
+  if (event.target == modal) {
+    closeScriptModal();
+  }
+}
 </script>
+
+<!-- Modal HTML -->
+<div id="scriptModal" class="script-modal">
+  <div class="script-modal-content">
+    <div class="script-modal-header">
+      <h2 id="scriptModalTitle">Script Information</h2>
+      <span class="script-modal-close" onclick="closeScriptModal()">&times;</span>
+    </div>
+    <div id="scriptModalBody"></div>
+  </div>
+</div>
 ')
 ```
 
