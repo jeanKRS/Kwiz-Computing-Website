@@ -1316,12 +1316,12 @@
 
   .mission-card p,
   .vision-card p {
-    color: #f0f0f0 !important;
+    color: #e9945b !important;
   }
 
   .mission-card > *,
   .vision-card > * {
-    color: #f0f0f0;
+    color: #e9945b;
   }
 
   /* Service Cards */
