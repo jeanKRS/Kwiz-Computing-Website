@@ -10,7 +10,7 @@ We deliver comprehensive data science and technology solutions built on transfer
 - **Modern web development** and responsive design
 - **Cloud infrastructure** and deployment
 - **Software engineering** best practices
-- Solving complex analytical and technical challenges across diverse industries and domains
+- **Solving complex analytical and technical challenges** across diverse industries and domains
 :::
 
 ------------------------------------------------------------------------
@@ -1972,6 +1972,11 @@ document.addEventListener('DOMContentLoaded', function() {
   margin-bottom: 0.5rem;
 }
 
+.capability-card p {
+  font-size: 0.95rem;
+}
+
+
 /* Applications Grid Styling - Horizontal Sliding */
 .applications-grid {
   display: flex;
@@ -2146,26 +2151,36 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* Engagement Cards */
-  .engagement-card {
-    background: #252525;
+    .engagement-card {
+    background: #252525 !important;
     border-color: #404040;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
 
   .engagement-card:hover {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%);
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, #2a2a2a 100%) !important;
     border-color: #4ade80;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   }
 
   .engagement-card h3,
   .engagement-card strong {
-    color: #4ade80;
+    color: #4ade80 !important;
   }
 
   .engagement-card p,
   .engagement-card li {
+    color: #e0e0e0 !important;
+  }
+
+  /* Ensure all engagement card text is visible */
+  .engagement-card * {
     color: #e0e0e0;
+  }
+
+  .engagement-card h3,
+  .engagement-card strong {
+    color: #4ade80 !important;
   }
 
   /* Process Cards */
@@ -2244,18 +2259,28 @@ document.addEventListener('DOMContentLoaded', function() {
     background: #2a2a2a;
   }
 
-  .capability-card strong {
-    color: #4ade80;
+    .capability-card strong {
+    color: #4ade80 !important;
   }
 
   .capability-card li {
-    color: #e0e0e0;
+    color: #e0e0e0 !important;
   }
 
   .capability-card p,
   .capability-card ul {
+    color: #e0e0e0 !important;
+  }
+
+  /* Ensure all text content is visible */
+  .capability-card * {
     color: #e0e0e0;
   }
+
+  .capability-card strong {
+    color: #4ade80 !important;
+  }
+
 
   /* Application Items */
   .application-item {
@@ -2269,14 +2294,24 @@ document.addEventListener('DOMContentLoaded', function() {
     box-shadow: 0 6px 16px rgba(74, 222, 128, 0.3);
   }
 
-  .application-item strong {
-    color: #4ade80;
+    .application-item strong {
+    color: #4ade80 !important;
   }
 
   .application-item,
   .application-item p {
+    color: #e0e0e0 !important;
+  }
+
+  /* Ensure all text is visible */
+  .application-item * {
     color: #e0e0e0;
   }
+
+  .application-item strong {
+    color: #4ade80 !important;
+  }
+
 
   /* Scroll Arrows */
   .scroll-arrow {
@@ -2305,8 +2340,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* Pricing Cards */
-  .pricing-card {
-    background: #252525;
+    .pricing-card {
+    background: #252525 !important;
     border-color: #404040;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
@@ -2315,29 +2350,52 @@ document.addEventListener('DOMContentLoaded', function() {
   .pricing-card.featured-pricing {
     border-color: #4ade80;
     box-shadow: 0 8px 24px rgba(74, 222, 128, 0.3);
+    background: #2a2a2a !important;
   }
 
   .pricing-card h4 {
-    color: #4ade80;
+    color: #4ade80 !important;
   }
 
   .pricing-card strong {
-    color: #4ade80;
+    color: #4ade80 !important;
   }
 
   .pricing-card li,
   .pricing-card p {
+    color: #e0e0e0 !important;
+  }
+
+  /* Ensure all pricing card text is visible */
+  .pricing-card * {
+    color: #e0e0e0;
+  }
+
+  .pricing-card h4,
+  .pricing-card strong {
+    color: #4ade80 !important;
+  }
+
+  /* Factor Items */
+  .factor-item {
+    background: #252525 !important;
+    border-color: #404040;
+    color: #e0e0e0 !important;
+  }
+
+  .factor-item strong {
+    color: #4ade80 !important;
+  }
+
+  .factor-item * {
     color: #e0e0e0;
   }
 
   .factor-item strong {
-    color: #4ade80;
+    color: #4ade80 !important;
   }
 
-  .factor-item {
-    color: #e0e0e0;
-  }
-
+  /* Sample Project Estimates Table */
   .estimate-examples table {
     background: #252525;
     border-color: #404040;
@@ -2345,13 +2403,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   .estimate-examples th {
     background: #2a2a2a;
-    color: #4ade80;
+    color: #4ade80 !important;
     border-color: #404040;
   }
 
   .estimate-examples td {
-    color: #e0e0e0;
+    color: #ffffff !important;
     border-color: #404040;
+  }
+
+  .estimate-examples tr:nth-child(even) {
+    background: #2a2a2a;
+  }
+
+  .estimate-examples tr:nth-child(odd) {
+    background: #252525;
+  }
+
+  /* Ensure table text is always visible */
+  .estimate-examples tr:hover td {
+    color: #ffffff !important;
   }
 }
 
