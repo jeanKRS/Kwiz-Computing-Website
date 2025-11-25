@@ -610,6 +610,59 @@ footer {
         color: #e8e8e8 !important;
     }
 
+    /* Override ALL inline background styles in dark mode */
+    div[style*="background-color: #f0f0f0"],
+    div[style*="background-color: #fff9e6"],
+    div[style*="background-color: #e8f5e9"],
+    div[style*="background-color: #f8f9fa"],
+    div[style*="background-color: #e9ecef"],
+    div[style*="background-color: #ffffff"],
+    div[style*="background-color:#f0f0f0"],
+    div[style*="background-color:#fff9e6"],
+    div[style*="background-color:#e8f5e9"],
+    div[style*="background-color:#f8f9fa"],
+    div[style*="background-color:#e9ecef"],
+    div[style*="background-color:#ffffff"],
+    div[style*="background"],
+    summary[style*="background"],
+    pre[style*="background"],
+    details[style*="background"] {
+        background-color: #2a2a2a !important;
+        color: #e8e8e8 !important;
+    }
+
+    /* Force all divs with inline styles to have light text */
+    div[style] *,
+    details[style] *,
+    summary[style] *,
+    pre[style] * {
+        color: #e8e8e8 !important;
+    }
+
+    /* Headings in styled divs */
+    div[style] h1,
+    div[style] h2,
+    div[style] h3,
+    div[style] h4,
+    div[style] h5,
+    div[style] h6,
+    div[style] strong {
+        color: #f0f0f0 !important;
+    }
+
+    /* Links in styled divs */
+    div[style] a,
+    details[style] a,
+    summary[style] a {
+        color: #e9945b !important;
+    }
+
+    div[style] a:hover,
+    details[style] a:hover,
+    summary[style] a:hover {
+        color: #ffa873 !important;
+    }
+
     /* Force all text in main content to be light colored */
     #quarto-content,
     #quarto-content *:not(.navbar):not(.navbar *):not(.footer):not(.footer *),
