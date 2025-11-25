@@ -261,39 +261,40 @@ create_interactive_table <- function(data, caption = NULL, pageLength = 10,
 }
 
 # Load all data needed for abstract and inline R code
+# NOTE: Data files not included in repository - file checks and loading disabled
 # Check if required data files exist
-required_files <- c(
-  here("blog", "Gbif Kenya", "results", "data_quality", "data_quality_assessment.rds"),
-  here("blog", "Gbif Kenya", "results", "data_quality", "kenya_gbif_flagged.rds"),
-  here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_bias_summary.rds"),
-  here("blog", "Gbif Kenya", "results", "temporal_bias", "temporal_bias_summary.rds"),
-  here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds")
-)
-
-missing_files <- !sapply(required_files, file.exists)
-
-if (any(missing_files)) {
-  stop("\n\n========================================\n",
-       "ERROR: Required data files are missing!\n",
-       "========================================\n\n",
-       "The following files do not exist:\n",
-       paste("  -", required_files[missing_files], collapse = "\n"), "\n\n",
-       "These files are created by running the analysis pipeline.\n\n",
-       "To generate all required data files, run:\n\n",
-       "  cd ", here(), "\n",
-       "  Rscript run_all_analyses.R\n\n",
-       "This will:\n",
-       "  1. Download GBIF data for Kenya\n",
-       "  2. Perform quality assessment\n",
-       "  3. Conduct spatial, temporal, and taxonomic bias analyses\n",
-       "  4. Fit statistical models\n",
-       "  5. Generate all figures and tables\n",
-       "  6. Render this R Markdown document\n\n",
-       "========================================\n")
-}
+# required_files <- c(
+#   here("blog", "Gbif Kenya", "results", "data_quality", "data_quality_assessment.rds"),
+#   here("blog", "Gbif Kenya", "results", "data_quality", "kenya_gbif_flagged.rds"),
+#   here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_bias_summary.rds"),
+#   here("blog", "Gbif Kenya", "results", "temporal_bias", "temporal_bias_summary.rds"),
+#   here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds")
+# )
+#
+# missing_files <- !sapply(required_files, file.exists)
+#
+# if (any(missing_files)) {
+#   stop("\n\n========================================\n",
+#        "ERROR: Required data files are missing!\n",
+#        "========================================\n\n",
+#        "The following files do not exist:\n",
+#        paste("  -", required_files[missing_files], collapse = "\n"), "\n\n",
+#        "These files are created by running the analysis pipeline.\n\n",
+#        "To generate all required data files, run:\n\n",
+#        "  cd ", here(), "\n",
+#        "  Rscript run_all_analyses.R\n\n",
+#        "This will:\n",
+#        "  1. Download GBIF data for Kenya\n",
+#        "  2. Perform quality assessment\n",
+#        "  3. Conduct spatial, temporal, and taxonomic bias analyses\n",
+#        "  4. Fit statistical models\n",
+#        "  5. Generate all figures and tables\n",
+#        "  6. Render this R Markdown document\n\n",
+#        "========================================\n")
+# }
 
 # Load data files
-# NOTE FOR LEARNERS: These load intermediate results for use in abstract/inline code.
+# NOTE FOR LEARNERS: Data loading disabled - RDS files not included in repository
 # The complete code pipelines showing HOW these objects are generated appear later:
 #   - quality_assessment: See "Data Quality Assessment" section (Quality Flagging Pipeline card)
 #   - kenya_flagged: See "Data Quality Assessment" section (Quality Flagging Pipeline card)
@@ -301,23 +302,23 @@ if (any(missing_files)) {
 #   - temporal_summary: See "Results > Temporal Patterns" section (Temporal Trends card)
 #   - taxonomic_summary: See "Taxonomic Bias" section (Taxonomic Diversity card)
 
-quality_assessment <- readRDS(here("blog", "Gbif Kenya", "results", "data_quality", "data_quality_assessment.rds"))
-quality_tracking <- quality_assessment$tracking
-coord_issues <- quality_assessment$coord_issues
-quality_metrics <- quality_assessment$metrics
-
-# Load flagged data to get actual filtering numbers
-kenya_flagged <- readRDS(here("blog", "Gbif Kenya", "results", "data_quality", "kenya_gbif_flagged.rds"))
-
-spatial_summary <- readRDS(here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_bias_summary.rds"))
-moran_results <- spatial_summary$moran_results
-
-temporal_summary <- readRDS(here("blog", "Gbif Kenya", "results", "temporal_bias", "temporal_bias_summary.rds"))
-temporal_stats <- temporal_summary$temporal_stats
-
-taxonomic_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds"))
-diversity_metrics <- taxonomic_summary$diversity_metrics
-gini_records <- diversity_metrics$value[diversity_metrics$metric == "Gini_records"]
+# quality_assessment <- readRDS(here("blog", "Gbif Kenya", "results", "data_quality", "data_quality_assessment.rds"))
+# quality_tracking <- quality_assessment$tracking
+# coord_issues <- quality_assessment$coord_issues
+# quality_metrics <- quality_assessment$metrics
+#
+# # Load flagged data to get actual filtering numbers
+# kenya_flagged <- readRDS(here("blog", "Gbif Kenya", "results", "data_quality", "kenya_gbif_flagged.rds"))
+#
+# spatial_summary <- readRDS(here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_bias_summary.rds"))
+# moran_results <- spatial_summary$moran_results
+#
+# temporal_summary <- readRDS(here("blog", "Gbif Kenya", "results", "temporal_bias", "temporal_bias_summary.rds"))
+# temporal_stats <- temporal_summary$temporal_stats
+#
+# taxonomic_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds"))
+# diversity_metrics <- taxonomic_summary$diversity_metrics
+# gini_records <- diversity_metrics$value[diversity_metrics$metric == "Gini_records"]
 ```
 
 # Abstract
@@ -475,10 +476,11 @@ Understanding both quality and bias is critical across data domains for:
 <em>This is a common pattern: load results first, explain methodology, then show complete code.</em>
 </div>
 
-```{r load-data}
+```{r load-data, eval=FALSE}
 # Load metadata and summary statistics
-metadata <- readRDS(here("blog", "Gbif Kenya", "data", "processed", "metadata.rds"))
-summary_stats <- readRDS(here("blog", "Gbif Kenya", "data", "processed", "summary_stats.rds"))
+# NOTE: Data files not included in repository - chunk disabled
+# metadata <- readRDS(here("blog", "Gbif Kenya", "data", "processed", "metadata.rds"))
+# summary_stats <- readRDS(here("blog", "Gbif Kenya", "data", "processed", "summary_stats.rds"))
 ```
 
 ### Data Download
@@ -665,11 +667,12 @@ create_interactive_table(summary_table, ...)
 </ul>
 </div>
 
-```{r load-quality-data}
+```{r load-quality-data, eval=FALSE}
 # Load comprehensive data quality assessment
-quality_tracking <- quality_assessment$tracking
-coord_issues <- quality_assessment$coord_issues
-quality_metrics <- quality_assessment$metrics
+# NOTE: Data loading disabled - quality_assessment not available
+# quality_tracking <- quality_assessment$tracking
+# coord_issues <- quality_assessment$coord_issues
+# quality_metrics <- quality_assessment$metrics
 ```
 
 <a id="pipeline-quality"></a>
@@ -953,10 +956,11 @@ By comparing these metrics across filtering strategies, we demonstrate that our 
 </ul>
 </div>
 
-```{r load-spatial-data}
-spatial_grid <- readRDS(here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_grid_effort.rds"))
-moran_results <- spatial_summary$moran_results
-env_bias <- spatial_summary$env_bias_summary
+```{r load-spatial-data, eval=FALSE}
+# NOTE: Data files not included in repository - chunk disabled
+# spatial_grid <- readRDS(here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_grid_effort.rds"))
+# moran_results <- spatial_summary$moran_results
+# env_bias <- spatial_summary$env_bias_summary
 ```
 
 <a id="pipeline-spatial-grid"></a>
@@ -1132,15 +1136,16 @@ The K-S test compares cumulative distribution functions and returns a D-statisti
 </ul>
 </div>
 
-```{r load-temporal-data}
+```{r load-temporal-data, eval=FALSE}
 ### Data Flow Summary:
 # Load temporal bias summary → extract year-by-year data and statistics
+# NOTE: Data files not included in repository - chunk disabled
 
-temporal_bias_summary <- readRDS(here("blog", "Gbif Kenya", "results", "temporal_bias","temporal_bias_summary.rds"))
-temporal_summary <- temporal_bias_summary$temporal_summary  # Year-by-year data frame
-temporal_stats <- temporal_bias_summary$temporal_stats      # Overall statistics
-trend_tests <- temporal_bias_summary$trend_tests
-gap_summary <- temporal_bias_summary$gap_summary
+# temporal_bias_summary <- readRDS(here("blog", "Gbif Kenya", "results", "temporal_bias","temporal_bias_summary.rds"))
+# temporal_summary <- temporal_bias_summary$temporal_summary  # Year-by-year data frame
+# temporal_stats <- temporal_bias_summary$temporal_stats      # Overall statistics
+# trend_tests <- temporal_bias_summary$trend_tests
+# gap_summary <- temporal_bias_summary$gap_summary
 ```
 
 Temporal bias refers to uneven distribution of sampling effort over time. This can confound analyses of biodiversity change, species trends, and phenology. We assessed temporal patterns using multiple approaches:
@@ -1193,10 +1198,11 @@ We analyzed the distribution of records across months to identify potential seas
 </ul>
 </div>
 
-```{r load-taxonomic-data}
-taxonomic_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds"))
-class_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "class_summary.rds"))
-rarity_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "rarity_summary.rds"))
+```{r load-taxonomic-data, eval=FALSE}
+# NOTE: Data files not included in repository - chunk disabled
+# taxonomic_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds"))
+# class_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "class_summary.rds"))
+# rarity_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "rarity_summary.rds"))
 ```
 
 <a id="pipeline-taxonomic"></a>
@@ -1396,9 +1402,10 @@ We generated species accumulation curves showing cumulative species richness as 
 </ul>
 </div>
 
-```{r load-model-data}
-modeling_summary <- readRDS(here("blog", "Gbif Kenya", "results", "statistical_models",  "modeling_summary.rds"))
-model_summaries <- readRDS(here("blog", "Gbif Kenya", "results", "statistical_models",  "model_summaries.rds"))
+```{r load-model-data, eval=FALSE}
+# NOTE: Data files not included in repository - chunk disabled
+# modeling_summary <- readRDS(here("blog", "Gbif Kenya", "results", "statistical_models",  "modeling_summary.rds"))
+# model_summaries <- readRDS(here("blog", "Gbif Kenya", "results", "statistical_models",  "model_summaries.rds"))
 ```
 
 ```{r validate-model-predictors, echo=FALSE}
@@ -1759,8 +1766,9 @@ Of the ***`r format(n_original, big.mark=",")`*** records originally downloaded 
 
 **Interpretation**: The *`r round(flag_rate, 1)`*% flag rate reflects the prevalence of quality issues in aggregated biodiversity data, comparable to filtering rates in other regional GBIF assessments (typically 40-95% depending on quality standards). Importantly, our flagging approach preserves all records while documenting quality issues, allowing different analyses to apply appropriate filters based on their specific requirements. For example, spatial bias assessments should retain records flagged as "near urban centers" since urban clustering is the bias being measured, while species distribution models might exclude such records. This flexible approach balances data quality with analytical needs and ensures transparency in quality control decisions.
 
-```{r fig-quality-summary, fig.cap="Comparison of filtering strategies showing the number of records that would be retained under different quality filtering approaches (minimal, moderate, strict). This demonstrates the flexibility of the flagging framework to support different analytical requirements while preserving all records with documented quality flags."}
-knitr::include_graphics(file.path(figures_dir, "data_quality_filter_levels.png"))
+```{r fig-quality-summary, fig.cap="Comparison of filtering strategies showing the number of records that would be retained under different quality filtering approaches (minimal, moderate, strict). This demonstrates the flexibility of the flagging framework to support different analytical requirements while preserving all records with documented quality flags.", eval=FALSE, echo=FALSE}
+# Note: Figure file not included in repository
+# knitr::include_graphics(file.path(figures_dir, "data_quality_filter_levels.png"))
 ```
 
 ### Quality Flag Summary
