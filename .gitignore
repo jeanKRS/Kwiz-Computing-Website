@@ -74,8 +74,8 @@ proposals/
 .github/
 
 # Ignore everything under blog/Gbif Kenya
-blog/Gbif Kenya /*
+blog/Gbif Kenya/*
 
 # BUT keep the docs folder
-!blog/Gbif Kenya /docs/
-!blog/Gbif Kenya /docs/kenya_gbif_bias_assessment.qmd
+!blog/Gbif Kenya/docs/
+!blog/Gbif Kenya/docs/kenya_gbif_bias_assessment.qmd

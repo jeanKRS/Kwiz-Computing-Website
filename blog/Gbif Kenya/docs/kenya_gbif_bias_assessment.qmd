@@ -131,7 +131,7 @@ suppressPackageStartupMessages({
 })
 
 # Source utility functions
-source(here("R", "utils.R"))
+source(here("blog", "Gbif Kenya", "R", "utils.R"))
 
 # Set paths
 data_processed <- here("data", "processed")
@@ -269,11 +269,11 @@ create_interactive_table <- function(data, caption = NULL, pageLength = 10,
 # Load all data needed for abstract and inline R code
 # Check if required data files exist
 required_files <- c(
-  file.path(data_outputs, "data_quality_assessment.rds"),
-  file.path(data_processed, "kenya_gbif_flagged.rds"),
-  file.path(data_outputs, "spatial_bias_summary.rds"),
-  file.path(data_outputs, "temporal_bias_summary.rds"),
-  file.path(data_outputs, "taxonomic_bias_summary.rds")
+  here("blog", "Gbif Kenya", "results", "data_quality", "data_quality_assessment.rds"),
+  here("blog", "Gbif Kenya", "results", "data_quality", "kenya_gbif_flagged.rds"),
+  here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_bias_summary.rds"),
+  here("blog", "Gbif Kenya", "results", "temporal_bias", "temporal_bias_summary.rds"),
+  here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds")
 )
 
 missing_files <- !sapply(required_files, file.exists)
@@ -307,21 +307,21 @@ if (any(missing_files)) {
 #   - temporal_summary: See "Results > Temporal Patterns" section (Temporal Trends card)
 #   - taxonomic_summary: See "Taxonomic Bias" section (Taxonomic Diversity card)
 
-quality_assessment <- readRDS(file.path(data_outputs, "data_quality_assessment.rds"))
+quality_assessment <- readRDS(here("blog", "Gbif Kenya", "results", "data_quality", "data_quality_assessment.rds"))
 quality_tracking <- quality_assessment$tracking
 coord_issues <- quality_assessment$coord_issues
 quality_metrics <- quality_assessment$metrics
 
 # Load flagged data to get actual filtering numbers
-kenya_flagged <- readRDS(file.path(data_processed, "kenya_gbif_flagged.rds"))
+kenya_flagged <- readRDS(here("blog", "Gbif Kenya", "results", "data_quality", "kenya_gbif_flagged.rds"))
 
-spatial_summary <- readRDS(file.path(data_outputs, "spatial_bias_summary.rds"))
+spatial_summary <- readRDS(here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_bias_summary.rds"))
 moran_results <- spatial_summary$moran_results
 
-temporal_summary <- readRDS(file.path(data_outputs, "temporal_bias_summary.rds"))
+temporal_summary <- readRDS(here("blog", "Gbif Kenya", "results", "temporal_bias", "temporal_bias_summary.rds"))
 temporal_stats <- temporal_summary$temporal_stats
 
-taxonomic_summary <- readRDS(file.path(data_outputs, "taxonomic_bias_summary.rds"))
+taxonomic_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds"))
 diversity_metrics <- taxonomic_summary$diversity_metrics
 gini_records <- diversity_metrics$value[diversity_metrics$metric == "Gini_records"]
 ```
@@ -482,12 +482,9 @@ Understanding both quality and bias is critical across data domains for:
 </div>
 
 ```{r load-data}
-# Load flagged data (with quality flags, not filtered)
-kenya_flagged <- readRDS(file.path(data_processed, "kenya_gbif_flagged.rds"))
-
 # Load metadata and summary statistics
-metadata <- readRDS(file.path(data_processed, "metadata.rds"))
-summary_stats <- readRDS(file.path(data_processed, "summary_stats.rds"))
+metadata <- readRDS(here("blog", "Gbif Kenya", "data", "processed", "metadata.rds"))
+summary_stats <- readRDS(here("blog", "Gbif Kenya", "data", "processed", "summary_stats.rds"))
 ```
 
 ### Data Download
@@ -676,7 +673,6 @@ create_interactive_table(summary_table, ...)
 
 ```{r load-quality-data}
 # Load comprehensive data quality assessment
-quality_assessment <- readRDS(file.path(data_outputs, "data_quality_assessment.rds"))
 quality_tracking <- quality_assessment$tracking
 coord_issues <- quality_assessment$coord_issues
 quality_metrics <- quality_assessment$metrics
@@ -964,8 +960,7 @@ By comparing these metrics across filtering strategies, we demonstrate that our 
 </div>
 
 ```{r load-spatial-data}
-spatial_grid <- readRDS(file.path(data_outputs, "spatial_grid_effort.rds"))
-spatial_summary <- readRDS(file.path(data_outputs, "spatial_bias_summary.rds"))
+spatial_grid <- readRDS(here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_grid_effort.rds"))
 moran_results <- spatial_summary$moran_results
 env_bias <- spatial_summary$env_bias_summary
 ```
@@ -1147,7 +1142,7 @@ The K-S test compares cumulative distribution functions and returns a D-statisti
 ### Data Flow Summary:
 # Load temporal bias summary → extract year-by-year data and statistics
 
-temporal_bias_summary <- readRDS(file.path(data_outputs, "temporal_bias_summary.rds"))
+temporal_bias_summary <- readRDS(here("blog", "Gbif Kenya", "results", "temporal_bias","temporal_bias_summary.rds"))
 temporal_summary <- temporal_bias_summary$temporal_summary  # Year-by-year data frame
 temporal_stats <- temporal_bias_summary$temporal_stats      # Overall statistics
 trend_tests <- temporal_bias_summary$trend_tests
@@ -1205,9 +1200,9 @@ We analyzed the distribution of records across months to identify potential seas
 </div>
 
 ```{r load-taxonomic-data}
-taxonomic_summary <- readRDS(file.path(data_outputs, "taxonomic_bias_summary.rds"))
-class_summary <- readRDS(file.path(data_outputs, "class_summary.rds"))
-rarity_summary <- readRDS(file.path(data_outputs, "rarity_summary.rds"))
+taxonomic_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "taxonomic_bias_summary.rds"))
+class_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "class_summary.rds"))
+rarity_summary <- readRDS(here("blog", "Gbif Kenya", "results", "taxonomic_bias", "rarity_summary.rds"))
 ```
 
 <a id="pipeline-taxonomic"></a>
@@ -1408,8 +1403,8 @@ We generated species accumulation curves showing cumulative species richness as 
 </div>
 
 ```{r load-model-data}
-modeling_summary <- readRDS(file.path(data_outputs, "modeling_summary.rds"))
-model_summaries <- readRDS(file.path(data_outputs, "model_summaries.rds"))
+modeling_summary <- readRDS(here("blog", "Gbif Kenya", "results", "statistical_models",  "modeling_summary.rds"))
+model_summaries <- readRDS(here("blog", "Gbif Kenya", "results", "statistical_models",  "model_summaries.rds"))
 ```
 
 ```{r validate-model-predictors, echo=FALSE}
@@ -2146,7 +2141,7 @@ With less than *`r round(effort_summary$percent_covered, 1)`*% of Kenya's area c
 # Requires spatial grid data from scripts/02_spatial_bias.R
 
 # Check if spatial grid data exists
-spatial_grid_file <- file.path(data_outputs, "spatial_grid_effort.rds")
+spatial_grid_file <- here("blog", "Gbif Kenya", "results", "spatial_bias", "spatial_grid_effort.rds")
 
 if (file.exists(spatial_grid_file)) {
   # Load spatial grid data
@@ -2393,7 +2388,7 @@ kable(env_bias_table,
 
 ```{r interactive-environmental-bias, fig.cap="Interactive environmental bias assessment. Hover over the distributions to see density values and explore the differences between sampled and available environmental space."}
 # Load environmental comparison data
-env_comp_file <- file.path(data_outputs, "environmental_comparison.rds")
+env_comp_file <- here("blog", "Gbif Kenya", "results", "spatial_bias",  "environmental_comparison.rds")
 
 if (file.exists(env_comp_file)) {
   env_comparison <- readRDS(env_comp_file)
@@ -2833,7 +2828,7 @@ fig_treemap <- plot_ly(
 ) %>%
   layout(
     title = list(
-      text = "Taxonomic Representation in GBIF Kenya Data (Top 15 Classes)",
+      text = "Taxonomic Representation in Gbif KenyaData (Top 15 Classes)",
       font = list(size = 16)
     ),
     margin = list(l = 0, r = 0, t = 40, b = 0)
