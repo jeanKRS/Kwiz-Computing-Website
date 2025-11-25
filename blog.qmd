@@ -5,7 +5,7 @@ listing:
   contents:
     - "blog/*.qmd"
     - "!blog.qmd"
-    - "../Gbif Kenya/docs/kenya_gbif_bias_assessment.qmd"  # Direct path
+    - "blog/Gbif Kenya/docs/kenya_gbif_bias_assessment.qmd"  # Direct path
   sort: "date desc"
   type: default
   categories: true

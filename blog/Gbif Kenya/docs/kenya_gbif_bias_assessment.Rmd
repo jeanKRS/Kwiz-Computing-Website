@@ -1,6 +1,7 @@
 ---
 title: "Comprehensive Data Quality Assessment and Cleaning: A Case Study Using GBIF Biodiversity Data from Kenya"
-author: "Kwiz Computing Technologies"
+author: "Kwizera Jean"
+affiliation: "Kwiz Computing Technologies"
 date: "*`r format(Sys.Date(), '%B %d, %Y')`*"
 output:
   html_document:
@@ -23,7 +24,6 @@ output:
     fig_caption: yes
 bibliography: references.bib
 csl: ecology.csl
-thumbnail: ../images/data_cleaning_documentation_gap.png
 ---
 
 ```{r syntax-highlighting-setup, echo=FALSE, results='asis'}
@@ -131,12 +131,13 @@ suppressPackageStartupMessages({
 })
 
 # Source utility functions
-source(here("R", "utils.R"))
+# Note: utils.R file not found - functions defined inline if needed
+# source(here("blog", "Gbif Kenya", "R", "utils.R"))
 
-# Set paths
-data_processed <- here("data", "processed")
-data_outputs <- here("data", "outputs")
-figures_dir <- here("figures")
+# Set paths - relative to blog/Gbif Kenya directory
+data_processed <- here("blog", "Gbif Kenya", "data", "processed")
+data_outputs <- here("blog", "Gbif Kenya", "data", "outputs")
+figures_dir <- here("blog", "Gbif Kenya", "figures")
 
 # Helper functions for interactive documentation
 # Creates a "function flow" annotation showing which code generated a result
