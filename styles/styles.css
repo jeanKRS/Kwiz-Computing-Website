@@ -356,7 +356,26 @@ footer {
 
     code {
         background-color: #2a2a2a;
-        color: #e9945b;
+        color: #e9945b !important;
+        padding: 2px 6px;
+        border-radius: 3px;
+    }
+
+    /* Inline code in all contexts */
+    p code,
+    li code,
+    td code,
+    th code,
+    div code,
+    span code {
+        color: #ffa873 !important;
+        background-color: #2a2a2a !important;
+    }
+
+    /* Code blocks */
+    pre code {
+        background-color: transparent !important;
+        color: #d0d0d0 !important;
     }
 
     /* Images */
@@ -637,6 +656,16 @@ footer {
     summary[style] *,
     pre[style] * {
         color: #e8e8e8 !important;
+    }
+
+    /* Inline code in styled divs should be orange */
+    div[style] code,
+    details[style] code,
+    summary[style] code,
+    div[style] li code,
+    div[style] p code {
+        color: #ffa873 !important;
+        background-color: #2a2a2a !important;
     }
 
     /* Headings in styled divs */
