@@ -317,6 +317,36 @@ reverse_geocode <- function(lon, lat) {
   })
 }
 
+# Batch reverse geocoding with rate limiting and caching
+# Geocodes multiple locations with progress tracking
+batch_reverse_geocode <- function(sf_data, delay = 0.5) {
+  message("Starting batch reverse geocoding for ", nrow(sf_data), " grid cells...")
+
+  # Calculate centroids
+  centroids <- st_centroid(sf_data$geometry)
+  coords <- st_coordinates(centroids)
+
+  # Initialize location column
+  locations <- character(nrow(sf_data))
+
+  # Geocode with progress tracking
+  for (i in 1:nrow(coords)) {
+    if (i %% 10 == 0) {
+      message("  Progress: ", i, "/", nrow(coords), " cells geocoded")
+    }
+
+    locations[i] <- reverse_geocode(coords[i, 1], coords[i, 2])
+
+    # Rate limiting to be respectful to the API
+    if (i < nrow(coords)) {
+      Sys.sleep(delay)
+    }
+  }
+
+  message("Batch geocoding complete!")
+  return(locations)
+}
+
 # Load all data needed for abstract and inline R code
 # Check if required data files exist
 required_files <- c(
@@ -2201,6 +2231,22 @@ if (file.exists(spatial_grid_file)) {
 # Transform to WGS84 for leaflet
 spatial_grid_wgs84 <- st_transform(spatial_grid, 4326)
 
+# Pre-compute reverse geocoded locations (with caching)
+geocode_cache_file <- here("blog", "Gbif Kenya", "results", "spatial_bias", "geocoded_locations.rds")
+
+if (file.exists(geocode_cache_file)) {
+  # Load cached geocoded locations
+  message("Loading cached reverse geocoded locations...")
+  spatial_grid_wgs84$location_name <- readRDS(geocode_cache_file)
+} else {
+  # Compute reverse geocoded locations for all grid cells
+  spatial_grid_wgs84$location_name <- batch_reverse_geocode(spatial_grid_wgs84, delay = 0.5)
+
+  # Cache the results for future use
+  saveRDS(spatial_grid_wgs84$location_name, geocode_cache_file)
+  message("Geocoded locations cached to: ", geocode_cache_file)
+}
+
 # Create color palette for record counts (log scale)
 pal <- colorNumeric(
   palette = "viridis",
@@ -2219,18 +2265,16 @@ leaflet(spatial_grid_wgs84) %>%
     popup = ~{
       # Calculate centroid coordinates for each polygon
       coords <- st_coordinates(st_centroid(geometry))
-      # Get reverse geocoded location
-      location_name <- reverse_geocode(coords[1], coords[2])
       paste0(
-        "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
-        "<strong style='color: #ffa873;'>Grid Cell Summary</strong><br>",
-        "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
-        "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
-        "<strong style='color: #ffa873;'>Location:</strong> ", location_name, "<br>",
-        "<hr style='border-color: #ffa873;'>",
-        "<strong style='color: #ffa873;'>Records:</strong> ", format(n_records, big.mark = ","), "<br>",
-        "<strong style='color: #ffa873;'>Species:</strong> ", n_species, "<br>",
-        "<strong style='color: #ffa873;'>Log10 Records:</strong> ", round(log10(n_records + 1), 2),
+        "<div style='color: #ffa873 !important; font-family: Arial, sans-serif;'>",
+        "<strong style='color: #ffa873 !important;'>Grid Cell Summary</strong><br>",
+        "<strong style='color: #ffa873 !important;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
+        "<strong style='color: #ffa873 !important;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
+        "<strong style='color: #ffa873 !important;'>Location:</strong> ", location_name, "<br>",
+        "<hr style='border-color: #ffa873 !important;'>",
+        "<strong style='color: #ffa873 !important;'>Records:</strong> ", format(n_records, big.mark = ","), "<br>",
+        "<strong style='color: #ffa873 !important;'>Species:</strong> ", n_species, "<br>",
+        "<strong style='color: #ffa873 !important;'>Log10 Records:</strong> ", round(log10(n_records + 1), 2),
         "</div>"
       )
     },
@@ -3172,6 +3216,14 @@ if (file.exists(spatial_grid_file) && file.exists(grid_pred_file)) {
   # Transform to WGS84 for leaflet
   grid_wgs84 <- st_transform(grid_with_pred, 4326)
 
+  # Add pre-computed reverse geocoded locations (load from cache if available)
+  if (file.exists(geocode_cache_file)) {
+    grid_wgs84$location_name <- readRDS(geocode_cache_file)[match(grid_wgs84$grid_id, spatial_grid$grid_id)]
+  } else {
+    # If cache doesn't exist, compute on the fly
+    grid_wgs84$location_name <- batch_reverse_geocode(grid_wgs84, delay = 0.5)
+  }
+
   # Create diverging color palette for residuals (blue-white-red)
   rng <- max(abs(grid_wgs84$residual_std), na.rm = TRUE)
   
@@ -3192,23 +3244,21 @@ if (file.exists(spatial_grid_file) && file.exists(grid_pred_file)) {
       popup = ~{
         # Calculate centroid coordinates for each polygon
         coords <- st_coordinates(st_centroid(geometry))
-        # Get reverse geocoded location
-        location_name <- reverse_geocode(coords[1], coords[2])
         paste0(
-          "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
-          "<strong style='color: #ffa873;'>Sampling Bias Analysis</strong><br>",
-          "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Location:</strong> ", location_name, "<br>",
-          "<hr style='border-color: #ffa873;'>",
-          "<strong style='color: #ffa873;'>Observed:</strong> ", format(n_records, big.mark = ","), " records<br>",
-          "<strong style='color: #ffa873;'>Predicted:</strong> ", format(round(predicted_count), big.mark = ","), " records<br>",
-          "<strong style='color: #ffa873;'>Residual:</strong> ", round(residual_count, 1), "<br>",
-          "<strong style='color: #ffa873;'>Std. Residual:</strong> ", round(residual_std, 2), "<br>",
-          "<hr style='border-color: #ffa873;'>",
-          ifelse(residual_std < -1, "<strong style='color: #2166AC;'>Under-sampled</strong>",
-                 ifelse(residual_std > 1, "<strong style='color: #B2182B;'>Over-sampled</strong>",
-                        "<strong style='color: #ffa873;'>As expected</strong>")),
+          "<div style='color: #ffa873 !important; font-family: Arial, sans-serif;'>",
+          "<strong style='color: #ffa873 !important;'>Sampling Bias Analysis</strong><br>",
+          "<strong style='color: #ffa873 !important;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
+          "<strong style='color: #ffa873 !important;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
+          "<strong style='color: #ffa873 !important;'>Location:</strong> ", location_name, "<br>",
+          "<hr style='border-color: #ffa873 !important;'>",
+          "<strong style='color: #ffa873 !important;'>Observed:</strong> ", format(n_records, big.mark = ","), " records<br>",
+          "<strong style='color: #ffa873 !important;'>Predicted:</strong> ", format(round(predicted_count), big.mark = ","), " records<br>",
+          "<strong style='color: #ffa873 !important;'>Residual:</strong> ", round(residual_count, 1), "<br>",
+          "<strong style='color: #ffa873 !important;'>Std. Residual:</strong> ", round(residual_std, 2), "<br>",
+          "<hr style='border-color: #ffa873 !important;'>",
+          ifelse(residual_std < -1, "<strong style='color: #2166AC !important;'>Under-sampled</strong>",
+                 ifelse(residual_std > 1, "<strong style='color: #B2182B !important;'>Over-sampled</strong>",
+                        "<strong style='color: #ffa873 !important;'>As expected</strong>")),
           "</div>"
         )
       },
@@ -3362,6 +3412,14 @@ if (file.exists(spatial_grid_file) && file.exists(grid_pred_file)) {
   # Transform filtered data to WGS84 for leaflet
   grid_filtered_wgs84 <- st_transform(grid_filtered, 4326)
 
+  # Add pre-computed reverse geocoded locations (load from cache if available)
+  if (file.exists(geocode_cache_file)) {
+    grid_filtered_wgs84$location_name <- readRDS(geocode_cache_file)[match(grid_filtered_wgs84$grid_id, spatial_grid$grid_id)]
+  } else {
+    # If cache doesn't exist, compute on the fly
+    grid_filtered_wgs84$location_name <- batch_reverse_geocode(grid_filtered_wgs84, delay = 0.5)
+  }
+
   # Create diverging color palette for filtered residuals
   rng_filtered <- max(abs(grid_filtered_wgs84$residual_std_filtered), na.rm = TRUE)
 
@@ -3382,23 +3440,21 @@ if (file.exists(spatial_grid_file) && file.exists(grid_pred_file)) {
       popup = ~{
         # Calculate centroid coordinates for each polygon
         coords <- st_coordinates(st_centroid(geometry))
-        # Get reverse geocoded location
-        location_name <- reverse_geocode(coords[1], coords[2])
         paste0(
-          "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
-          "<strong style='color: #ffa873;'>Filtered Sampling Bias</strong><br>",
-          "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Location:</strong> ", location_name, "<br>",
-          "<hr style='border-color: #ffa873;'>",
-          "<strong style='color: #ffa873;'>Observed:</strong> ", format(n_records, big.mark = ","), " records<br>",
-          "<strong style='color: #ffa873;'>Predicted:</strong> ", format(round(predicted_count), big.mark = ","), " records<br>",
-          "<strong style='color: #ffa873;'>Residual:</strong> ", round(residual_filtered, 1), "<br>",
-          "<strong style='color: #ffa873;'>Std. Residual (filtered):</strong> ", round(residual_std_filtered, 2), "<br>",
-          "<hr style='border-color: #ffa873;'>",
-          ifelse(residual_std_filtered < -1, "<strong style='color: #2166AC;'>Under-sampled</strong>",
-                 ifelse(residual_std_filtered > 1, "<strong style='color: #B2182B;'>Over-sampled</strong>",
-                        "<strong style='color: #ffa873;'>As expected</strong>")),
+          "<div style='color: #ffa873 !important; font-family: Arial, sans-serif;'>",
+          "<strong style='color: #ffa873 !important;'>Filtered Sampling Bias</strong><br>",
+          "<strong style='color: #ffa873 !important;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
+          "<strong style='color: #ffa873 !important;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
+          "<strong style='color: #ffa873 !important;'>Location:</strong> ", location_name, "<br>",
+          "<hr style='border-color: #ffa873 !important;'>",
+          "<strong style='color: #ffa873 !important;'>Observed:</strong> ", format(n_records, big.mark = ","), " records<br>",
+          "<strong style='color: #ffa873 !important;'>Predicted:</strong> ", format(round(predicted_count), big.mark = ","), " records<br>",
+          "<strong style='color: #ffa873 !important;'>Residual:</strong> ", round(residual_filtered, 1), "<br>",
+          "<strong style='color: #ffa873 !important;'>Std. Residual (filtered):</strong> ", round(residual_std_filtered, 2), "<br>",
+          "<hr style='border-color: #ffa873 !important;'>",
+          ifelse(residual_std_filtered < -1, "<strong style='color: #2166AC !important;'>Under-sampled</strong>",
+                 ifelse(residual_std_filtered > 1, "<strong style='color: #B2182B !important;'>Over-sampled</strong>",
+                        "<strong style='color: #ffa873 !important;'>As expected</strong>")),
           "</div>"
         )
       },
@@ -3948,6 +4004,16 @@ if (file.exists(spatial_grid_file)) {
   # Transform to WGS84 for leaflet
   spatial_grid_wgs84 <- st_transform(spatial_grid, 4326)
 
+  # Add pre-computed reverse geocoded locations (load from cache if available)
+  if (file.exists(geocode_cache_file)) {
+    spatial_grid_wgs84$location_name <- readRDS(geocode_cache_file)
+  } else {
+    # If cache doesn't exist, compute on the fly
+    spatial_grid_wgs84$location_name <- batch_reverse_geocode(spatial_grid_wgs84, delay = 0.5)
+    # Cache the results for future use
+    saveRDS(spatial_grid_wgs84$location_name, geocode_cache_file)
+  }
+
   # Create color palette for species richness (log scale)
   pal_species <- colorNumeric(
     palette = "viridis",
@@ -3966,18 +4032,16 @@ if (file.exists(spatial_grid_file)) {
       popup = ~{
         # Calculate centroid coordinates for each polygon
         coords <- st_coordinates(st_centroid(geometry))
-        # Get reverse geocoded location
-        location_name <- reverse_geocode(coords[1], coords[2])
         paste0(
-          "<div style='color: #ffa873; font-family: Arial, sans-serif;'>",
-          "<strong style='color: #ffa873;'>Grid Cell Summary</strong><br>",
-          "<strong style='color: #ffa873;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
-          "<strong style='color: #ffa873;'>Location:</strong> ", location_name, "<br>",
-          "<hr style='border-color: #ffa873;'>",
-          "<strong style='color: #ffa873;'>Species:</strong> ", n_species, "<br>",
-          "<strong style='color: #ffa873;'>Records:</strong> ", format(n_records, big.mark = ","), "<br>",
-          "<strong style='color: #ffa873;'>Log10 Species:</strong> ", round(log10(n_species + 1), 2),
+          "<div style='color: #ffa873 !important; font-family: Arial, sans-serif;'>",
+          "<strong style='color: #ffa873 !important;'>Grid Cell Summary</strong><br>",
+          "<strong style='color: #ffa873 !important;'>Longitude:</strong> ", round(coords[1], 4), "°<br>",
+          "<strong style='color: #ffa873 !important;'>Latitude:</strong> ", round(coords[2], 4), "°<br>",
+          "<strong style='color: #ffa873 !important;'>Location:</strong> ", location_name, "<br>",
+          "<hr style='border-color: #ffa873 !important;'>",
+          "<strong style='color: #ffa873 !important;'>Species:</strong> ", n_species, "<br>",
+          "<strong style='color: #ffa873 !important;'>Records:</strong> ", format(n_records, big.mark = ","), "<br>",
+          "<strong style='color: #ffa873 !important;'>Log10 Species:</strong> ", round(log10(n_species + 1), 2),
           "</div>"
         )
       },
