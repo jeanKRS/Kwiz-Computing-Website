@@ -79,3 +79,5 @@ blog/Gbif Kenya/*
 # BUT keep the docs folder
 !blog/Gbif Kenya/docs/
 !blog/Gbif Kenya/docs/kenya_gbif_bias_assessment.qmd
+!blog/Gbif Kenya/docs/article_a_discovery.qmd
+!blog/Gbif Kenya/docs/article_b_data_quality.qmd

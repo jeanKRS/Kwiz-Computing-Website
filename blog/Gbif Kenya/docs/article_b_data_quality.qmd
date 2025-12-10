@@ -1,0 +1,477 @@
+---
+title: "Data Quality Lessons from 5 Million Biodiversity Records: A Kenya Case Study"
+author: "Jean K"
+date: "2025-12-09"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-summary: "Show code"
+    theme: cosmo
+    self-contained: true
+execute:
+  echo: false
+  warning: false
+  message: false
+categories: [Data Quality, Reproducible Research, R, Data Science, Methodology]
+description: "A framework for transparent and reproducible data quality assessment, demonstrated with 5 million biodiversity records from Kenya."
+image: "../figures/data_quality_preview.png"
+---
+
+
+```{r setup}
+#| include: false
+
+# Load required packages
+library(here)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(plotly)
+library(DT)
+library(knitr)
+library(kableExtra)
+library(readr)
+
+# Set paths relative to this article's location (in blog/Gbif Kenya/docs/)
+results_dir <- here("blog", "Gbif Kenya", "results")
+
+# Alternative: use relative path from docs folder
+# results_dir <- "../results"
+
+# Load pre-computed results
+quality_assessment <- readRDS(file.path(results_dir, "data_quality", "data_quality_assessment.rds"))
+quality_tracking <- read_csv(file.path(results_dir, "data_quality", "data_quality_tracking.csv"))
+taxonomic_summary <- readRDS(file.path(results_dir, "taxonomic_bias", "taxonomic_bias_summary.rds"))
+class_summary <- readRDS(file.path(results_dir, "taxonomic_bias", "class_summary.rds"))
+kenya_flagged <- readRDS(file.path(results_dir, "data_quality", "kenya_gbif_flagged.rds"))
+
+# Extract diversity metrics
+diversity_metrics <- taxonomic_summary$diversity_metrics
+gini_records <- diversity_metrics$value[diversity_metrics$metric == "Gini_records"]
+```
+
+> "After quality control, 500,000 records remained."
+
+This sentence appears in countless research papers. It tells us almost nothing.
+
+*What* was removed? *Why*? Would different quality thresholds change the conclusions? Could another researcher reproduce the cleaning process?
+
+These questions matter. Data quality decisions propagate through every downstream analysis. Yet most studies treat data cleaning as a black box — something that happens before the "real" science begins.
+
+Using 4.9 million biodiversity records from Kenya as a case study, I developed a framework for **transparent, reproducible data quality assessment**. The lessons apply far beyond biodiversity — to epidemiological surveillance, environmental monitoring, citizen science, and any domain built on large observational datasets.
+
+-----------------
+
+## Lesson 1: Flag, Don't Delete
+
+Traditional data cleaning removes "problematic" records permanently. This approach has a fundamental flaw: **what counts as problematic depends entirely on your research question**.
+
+Consider records located near urban centres. For species distribution modelling, these might introduce unwanted bias toward human-modified habitats. But for *studying* sampling bias, those urban-proximate records are exactly what you need — they reveal the accessibility patterns you're measuring.
+
+**Deleting them destroys the signal.**
+
+My approach: flag every quality issue with a boolean column, document the criteria transparently, and let each downstream analysis apply filters appropriate to its specific requirements.
+
+### The Impact of Different Filtering Strategies
+
+```{r sensitivity-analysis}
+#| fig-cap: "Sensitivity analysis: How different filtering strategies affect data retention and biodiversity metrics."
+
+# Define three filtering strategies and calculate metrics for each
+minimal_data <- kenya_flagged %>%
+  filter(!flag_missing_coords, !flag_missing_species)
+
+moderate_data <- kenya_flagged %>%
+  filter(!flag_missing_coords, !flag_missing_species,
+         !flag_invalid_date, !flag_any_coord_issue)
+
+strict_data <- kenya_flagged %>%
+  filter(!flag_missing_coords, !flag_missing_species,
+         !flag_invalid_date, !flag_any_coord_issue,
+         !flag_high_uncertainty, !flag_duplicate,
+         !flag_inappropriate_basis)
+
+# Calculate metrics for each strategy
+sensitivity_metrics <- data.frame(
+  Strategy = c("Minimal", "Moderate", "Strict"),
+  Records = c(nrow(minimal_data), nrow(moderate_data), nrow(strict_data)),
+  Retention_Pct = c(
+    100 * nrow(minimal_data) / nrow(kenya_flagged),
+    100 * nrow(moderate_data) / nrow(kenya_flagged),
+    100 * nrow(strict_data) / nrow(kenya_flagged)
+  ),
+  Species = c(
+    n_distinct(minimal_data$species),
+    n_distinct(moderate_data$species),
+    n_distinct(strict_data$species)
+  ),
+  Families = c(
+    n_distinct(minimal_data$family),
+    n_distinct(moderate_data$family),
+    n_distinct(strict_data$family)
+  ),
+  Classes = c(
+    n_distinct(minimal_data$class),
+    n_distinct(moderate_data$class),
+    n_distinct(strict_data$class)
+  )
+)
+
+# Create interactive comparison table
+datatable(
+  sensitivity_metrics %>%
+    mutate(
+      `Retention (%)` = sprintf("%.1f%%", Retention_Pct),
+      Records = format(Records, big.mark = ","),
+      Species = format(Species, big.mark = ",")
+    ) %>%
+    select(Strategy, Records, `Retention (%)`, Species, Families, Classes),
+  caption = "Compare filtering strategies: Click headers to sort",
+  options = list(
+    pageLength = 5,
+    dom = 't',
+    ordering = TRUE
+  ),
+  rownames = FALSE,
+  class = 'cell-border stripe hover'
+) %>%
+  formatStyle(
+    'Strategy',
+    target = 'row',
+    backgroundColor = styleEqual('Moderate', '#E8F4F8'),
+    fontWeight = styleEqual('Moderate', 'bold')
+  )
+```
+
+::: {.callout-important}
+## A 49 Percentage Point Difference
+The difference between minimal (94%) and strict (45%) filtering is **49 percentage points**. Conclusions that hold under one strategy but collapse under another aren't robust — and you'd never know without testing.
+:::
+
+-----------------
+
+## Lesson 2: Document Everything Systematically
+
+Most studies report aggregate cleaning statistics: "X% of records were removed due to quality issues." This lacks the granularity needed for reproducibility or comparison.
+
+**Systematic documentation** means quantifying each quality issue independently:
+
+### Interactive Quality Flag Summary
+
+```{r quality-flags-chart}
+#| fig-cap: "Quality flag frequencies across 4.9 million records. Hover for details."
+
+quality_plot_data <- quality_tracking %>%
+  filter(records_flagged > 0) %>%
+  arrange(desc(records_flagged)) %>%
+  mutate(issue = factor(issue, levels = issue))
+
+fig_quality <- plot_ly(
+  data = quality_plot_data,
+  x = ~issue,
+  y = ~records_flagged,
+  type = 'bar',
+  marker = list(
+    color = ~percent_flagged,
+    colorscale = 'Reds',
+    colorbar = list(title = "% of Dataset"),
+    line = list(color = 'rgb(8,48,107)', width = 1)
+  ),
+  hovertemplate = paste0(
+    '<b>%{x}</b><br>',
+    'Records Flagged: %{y:,}<br>',
+    'Percentage: %{marker.color:.2f}%<br>',
+    '<extra></extra>'
+  )
+) %>%
+  layout(
+    title = list(
+      text = "Data Quality Issues Identified",
+      font = list(size = 16)
+    ),
+    xaxis = list(
+      title = "Quality Issue",
+      tickangle = -45
+    ),
+    yaxis = list(
+      title = "Number of Records Flagged",
+      hoverformat = ','
+    ),
+    hovermode = 'closest',
+    margin = list(b = 150)
+  )
+
+fig_quality
+```
+
+```{r quality-table}
+#| tbl-cap: "Detailed breakdown of data quality flags"
+
+quality_table <- quality_tracking %>%
+  filter(records_flagged > 0) %>%
+  arrange(desc(records_flagged)) %>%
+  mutate(
+    `Records Flagged` = format(records_flagged, big.mark = ","),
+    `% of Original` = sprintf("%.2f%%", percent_flagged)
+  ) %>%
+  select(`Quality Issue` = issue, Description = description, 
+         `Records Flagged`, `% of Original`)
+
+kable(quality_table, booktabs = TRUE, align = c("l", "l", "r", "r")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE, font_size = 11)
+```
+
+This granularity enables:
+
+- **Cross-study comparison**: Are coordinate issues more prevalent in Kenya than Tanzania?
+- **Targeted improvement**: Data providers can identify which issues most affect their contributions
+- **Appropriate filtering**: Researchers can apply thresholds suitable for their needs
+- **Reproducibility**: Another analyst can apply identical criteria
+
+-----------------
+
+## Lesson 3: Sensitivity Analysis Reveals Robustness
+
+If your conclusions only hold under one specific filtering configuration, they may be **artefacts of arbitrary data quality decisions** rather than genuine patterns.
+
+Sensitivity analysis — testing key findings across multiple filtering strategies — separates robust conclusions from fragile ones.
+
+```{r robustness-visual}
+#| fig-cap: "How key metrics change across filtering strategies. Robust patterns persist across all strategies."
+
+# Create comparison visualization
+metrics_long <- sensitivity_metrics %>%
+  mutate(
+    Records_scaled = Records / max(Records) * 100,
+    Species_scaled = Species / max(Species) * 100
+  ) %>%
+  select(Strategy, `Record Retention (%)` = Retention_Pct, 
+         `Species Richness (scaled)` = Species_scaled) %>%
+  pivot_longer(cols = -Strategy, names_to = "Metric", values_to = "Value")
+
+fig_robust <- plot_ly(
+  data = metrics_long,
+  x = ~Strategy,
+  y = ~Value,
+  color = ~Metric,
+  type = 'bar',
+  colors = c('#2E86AB', '#A23B72'),
+  hovertemplate = paste0(
+    '<b>%{x}</b><br>',
+    '%{data.name}: %{y:.1f}%<br>',
+    '<extra></extra>'
+  )
+) %>%
+  layout(
+    title = list(
+      text = "Metric Sensitivity to Filtering Strategy",
+      font = list(size = 16)
+    ),
+    xaxis = list(title = "Filtering Strategy"),
+    yaxis = list(title = "Percentage", ticksuffix = "%"),
+    barmode = 'group',
+    legend = list(orientation = 'h', y = -0.2)
+  )
+
+fig_robust
+```
+
+In my Kenya analysis:
+
+- **Species richness** dropped 32% between minimal and strict filtering — highly sensitive
+- **Taxonomic inequality** remained extreme (Gini > 0.95) under all strategies — robust
+- **Spatial clustering** persisted regardless of filtering — robust
+- **Environmental bias** was significant under all configurations — robust
+
+The core findings proved robust. But species-level analyses would be highly sensitive to filtering choices. **Knowing this shapes interpretation.**
+
+-----------------
+
+## Lesson 4: Reproducibility Is Infrastructure
+
+Every statistic in my analysis traces to source code. Every figure links to the exact computation that generated it. The complete pipeline — from raw GBIF download to final interactive visualisations — is documented and executable.
+
+This isn't academic virtue signalling. It's **practical infrastructure**:
+
+| Benefit | Description |
+|---------|-------------|
+| **Verification** | Sceptical readers can check my work |
+| **Extension** | Others can adapt the framework for different contexts |
+| **Updating** | Re-run as new data accumulates |
+| **Teaching** | Serves as a learning resource |
+
+Reproducibility transforms a one-off analysis into a **reusable asset**.
+
+-----------------
+
+## Lesson 5: Bias Assessment Requires Multiple Dimensions
+
+Data quality isn't just about individual record accuracy. **Systematic biases** — patterns in *where*, *when*, and *what* gets observed — can be more insidious than random errors.
+
+### The Three Dimensions of Bias
+
+```{r bias-dimensions}
+#| fig-cap: "Multi-dimensional bias assessment framework"
+
+bias_summary <- data.frame(
+  Dimension = c("Spatial", "Temporal", "Taxonomic"),
+  Key_Metric = c("Moran's I (autocorrelation)", 
+                 "Mann-Kendall τ (trend)", 
+                 "Gini coefficient (inequality)"),
+  Finding = c("Strong positive clustering (p < 0.001)",
+              "Significant increasing trend (τ = 0.79)",
+              "Extreme inequality (Gini = 0.966)"),
+  Implication = c("Sampling concentrated in accessible areas",
+                  "Data accumulation confounds trend detection",
+                  "Most taxa severely underrepresented")
+)
+
+datatable(
+  bias_summary,
+  options = list(dom = 't', ordering = FALSE),
+  rownames = FALSE,
+  class = 'cell-border stripe hover'
+) %>%
+  formatStyle(
+    'Dimension',
+    fontWeight = 'bold',
+    backgroundColor = '#f8f9fa'
+  )
+```
+
+### Taxonomic Inequality: A Lorenz Curve
+
+The Lorenz curve below shows how records are distributed among taxonomic classes. The further the curve bows from the diagonal (perfect equality), the greater the inequality.
+
+```{r lorenz-curve}
+#| fig-cap: "Lorenz curve showing taxonomic inequality. Gini = 0.966 indicates extreme concentration of records in few classes."
+
+# Create Lorenz curve data
+tax_proportions <- class_summary %>%
+  arrange(n_records) %>%
+  mutate(
+    prop_records = n_records / sum(n_records),
+    cumsum_records = cumsum(prop_records),
+    prop_classes = row_number() / n(),
+    cumsum_classes = prop_classes
+  )
+
+# Create interactive Lorenz curve
+rng <- max(abs(tax_proportions$cumsum_records), na.rm = TRUE)
+
+fig_lorenz <- plot_ly() %>%
+  add_trace(
+    x = c(0, 1),
+    y = c(0, 1),
+    type = 'scatter',
+    mode = 'lines',
+    name = 'Perfect Equality',
+    line = list(color = 'red', dash = 'dash', width = 2),
+    hovertemplate = 'Perfect Equality Line<extra></extra>'
+  ) %>%
+  add_trace(
+    data = tax_proportions,
+    x = ~cumsum_classes,
+    y = ~cumsum_records,
+    type = 'scatter',
+    mode = 'lines',
+    name = 'Actual Distribution',
+    line = list(color = '#2E86AB', width = 3),
+    hovertemplate = paste0(
+      '<b>Cumulative Distribution</b><br>',
+      'Classes: %{x:.1%}<br>',
+      'Records: %{y:.1%}<br>',
+      '<extra></extra>'
+    ),
+    fill = 'tonexty',
+    fillcolor = 'rgba(46, 134, 171, 0.2)'
+  ) %>%
+  layout(
+    title = list(
+      text = sprintf("Taxonomic Inequality<br><sub>Gini Coefficient = %.3f</sub>", gini_records),
+      font = list(size = 16)
+    ),
+    xaxis = list(
+      title = "Cumulative Proportion of Classes",
+      tickformat = ".0%",
+      range = c(0, 1)
+    ),
+    yaxis = list(
+      title = "Cumulative Proportion of Records",
+      tickformat = ".0%",
+      range = c(0, 1)
+    ),
+    hovermode = 'closest',
+    showlegend = TRUE,
+    legend = list(x = 0.1, y = 0.9)
+  )
+
+fig_lorenz
+```
+
+Each dimension reveals different limitations:
+
+- **Spatial bias** affects geographic predictions
+- **Temporal bias** confounds trend detection
+- **Taxonomic bias** undermines comparative analyses
+- **Environmental bias** compromises model transferability
+
+Assessing only one dimension misses the full picture.
+
+-----------------
+
+## Transferable Principles
+
+While demonstrated with biodiversity data, these lessons apply broadly:
+
+| Principle | Biodiversity Example | General Application |
+|-----------|---------------------|---------------------|
+| Flag, don't delete | Retain urban records for bias analysis | Retain outliers for anomaly detection |
+| Document systematically | Quantify each coordinate issue type | Report each validation failure mode |
+| Test sensitivity | Compare filtering strategies | Vary preprocessing parameters |
+| Ensure reproducibility | Version-controlled R scripts | Documented data pipelines |
+| Assess multiple dimensions | Spatial, temporal, taxonomic | Geographic, temporal, demographic |
+
+Disease surveillance, environmental sensor networks, survey research, citizen science platforms — all face analogous challenges. **The framework transfers directly.**
+
+-----------------
+
+## Tools and Resources
+
+This analysis was built entirely in R:
+
+| Package | Purpose |
+|---------|---------|
+| [`{rgbif}`](https://docs.ropensci.org/rgbif/) | GBIF data access |
+| [`{CoordinateCleaner}`](https://ropensci.github.io/CoordinateCleaner/) | Coordinate validation |
+| [`{occAssess}`](https://github.com/robboyd/occAssess) | Bias assessment |
+| [`{sf}`](https://r-spatial.github.io/sf/), [`{terra}`](https://rspatial.github.io/terra/) | Spatial analysis |
+| [`{plotly}`](https://plotly.com/r/), [`{leaflet}`](https://rstudio.github.io/leaflet/) | Interactive visualisation |
+| [Quarto](https://quarto.org/) | Reproducible documentation |
+
+-----------------
+
+## Conclusion
+
+Big data doesn't automatically mean good data. The volume of observations matters less than their **quality, representativeness, and documentation**.
+
+Before drawing conclusions from large observational datasets, we need frameworks for understanding their limitations — **systematically, transparently, and reproducibly**.
+
+The goal isn't perfect data. It's **honest accounting of imperfect data**, enabling appropriate interpretation and targeted improvement.
+
+-----------------
+
+📖 **Full interactive analysis with complete methodology and code:**
+[Comprehensive Data Quality Assessment and Bias Analysis of GBIF Biodiversity Data in Kenya](kenya_gbif_bias_assessment.html)
+
+-----------------
+
+*Independent analysis conducted to advance data quality methods. Not peer-reviewed. Feedback welcome.*
+
+::: {.callout-note}
+## About This Analysis
+This work was produced by [Kwiz Computing Technologies](https://www.kwizresearch.com), a data science consultancy specialising in R programming, environmental data science, and reproducible research workflows.
+:::

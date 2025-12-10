@@ -1,0 +1,191 @@
+---
+title: "Kenya’s Biodiversity in GBIF: The Good, the Gaps, the Path Forward"
+author: "Jean K · Kwiz Computing Technologies"
+format:
+  pptx:
+    slide-level: 2
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| include: false
+
+# Load required packages
+library(here)
+library(dplyr)
+library(tidyr)
+library(sf)
+library(plotly)
+library(leaflet)
+library(DT)
+library(knitr)
+library(kableExtra)
+
+# Set paths relative to this article's location (in blog/Gbif Kenya/docs/)
+results_dir <- here::here("blog", "Gbif Kenya", "results")
+figures_dir <- here::here("blog", "Gbif Kenya", "figures")
+
+# Load pre-processed data (assumed to be prepared in earlier steps)
+env_comparison <- readRDS(file.path(results_dir, "spatial_bias", "environmental_comparison.rds"))
+taxonomic_summary <- readRDS(here(results_dir, "taxonomic_bias", "taxonomic_bias_summary.rds"))
+data_quality <- readRDS(here(results_dir, "data_quality", "data_quality_assessment.rds"))
+class_summary <- readRDS(here(results_dir, "taxonomic_bias", "class_summary.rds"))
+```
+
+```{r presentation-libs}
+# extra libraries for static graphics in slides (does not change analysis objects)
+library(ggplot2)
+library(treemapify)
+library(scales)
+library(forcats)
+```
+
+# Title slide
+
+![](logo.jpg){width=40%}
+
+---
+
+## Why this study?
+
+- Kenya’s biodiversity is legendary.
+- But how much of it is actually *visible* in open data?
+- Based on **4.9M GBIF records**, this reveals how sampling shapes what we think we know.
+
+---
+
+## Scope of Data
+
+- Uses **ONLY GBIF-mediated open-access data** for Kenya.
+- Excludes national datasets (KWS, WRTI, NMK, universities, conservancies).
+- This is **“Kenya through the GBIF window”**, not a full inventory.
+
+---
+
+## Discovery 1 — Limited Coverage
+
+Only **13.3%** of Kenya has any biodiversity records in GBIF.
+
+```{r discovery1-map, fig.height=5, fig.width=8}
+# reuse the same grid used in the article's leaflet map
+hex_grid <- readRDS(here(results_dir, "spatial_bias", "spatial_grid_effort.rds"))
+
+ggplot(hex_grid) +
+  geom_sf(aes(fill = log10(n_records + 1)), colour = NA) +
+  scale_fill_gradientn(
+    colours = c("#f0f0f0", "#e9945b", "#065f46"),
+    name = "log10(records + 1)"
+  ) +
+  labs(
+    title = "Sampling effort across Kenya",
+    subtitle = "Hexagonal grid (~10 km). Many areas have no records."
+  ) +
+  theme_minimal()
+```
+
+---
+
+## Discovery 2 — Taxonomic Bias
+
+**87.5% of all records are birds.**
+
+```{r discovery2-treemap, fig.height=5, fig.width=8}
+ggplot(
+  class_summary,
+  aes(
+    area  = n_records,
+    fill  = kingdom,
+    label = paste(class, "\n", scales::comma(n_records), "records")
+  )
+) +
+  geom_treemap(colour = "white") +
+  geom_treemap_text(colour = "white", reflow = TRUE) +
+  labs(
+    title = "Taxonomic representation in Kenya's GBIF data",
+    subtitle = "Aves dominates",
+    fill = "Kingdom"
+  ) +
+  theme_minimal()
+```
+
+---
+
+## Discovery 3 — Data Quality Issues
+
+```{r discovery3-quality, fig.height=5, fig.width=8}
+ggplot(data_quality$tracking, aes(x = issue, y = records_flagged)) +
+  geom_col() +
+  coord_flip() +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Data quality flags",
+    x = "",
+    y = "Records"
+  ) +
+  theme_minimal()
+```
+
+---
+
+## Discovery 4 — Environmental Bias
+
+```{r discovery4-env, fig.height=6, fig.width=8}
+env_long <- env_comparison %>%
+  pivot_longer(
+    cols = c(elevation, temperature, precipitation),
+    names_to = "variable",
+    values_to = "value"
+  ) %>%
+  filter(!is.na(value))
+
+ggplot(env_long, aes(x = value, colour = type, fill = type)) +
+  geom_density(alpha = 0.25) +
+  facet_wrap(~ variable, scales = "free") +
+  scale_colour_manual(values = c("available" = "#888888", "sampled" = "#065f46")) +
+  scale_fill_manual(values = c("available" = "#cccccc", "sampled" = "#a5d6c2")) +
+  labs(
+    title = "Environmental bias in sampling",
+    subtitle = "Sampled locations represent a narrow slice of Kenya's environmental conditions."
+  ) +
+  theme_minimal()
+```
+
+---
+
+## Implications for Kenya
+
+- Gaps form a **roadmap** for:
+  - Strategic biodiversity surveys
+  - Bias-aware modelling
+  - Better conservation planning
+- Helps distinguish “species absent” from “species unsampled”.
+
+---
+
+## Vision 2030 Alignment
+
+- Vision 2030 calls for:
+  - Mapping wildlife hotspots
+  - Enhancing ecological monitoring
+  - Developing a national wildlife database at KWS HQ
+- This GBIF baseline complements national data systems.
+
+---
+
+## Global Context
+
+Findings mirror global patterns described by:
+- Meyer et al. (2015)
+- Beck et al. (2014)
+- Oliver et al. (2021)
+- Hughes (2021)
+
+---
+
+## Conclusion
+
+Kenya’s biodiversity is richer than open data suggests.
+Understanding what is **missing** strengthens research, policy and conservation decisions.
